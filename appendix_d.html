@@ -3,2378 +3,2752 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>附件D_星恒电源竞争力变化纵横分析深度研究报告</title>
+<title>附件D_客户结构与产品安全风险纵横分析</title>
 <style>
+
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#1a202c;background:#fff;line-height:1.9;font-size:19px;max-width:1000px;margin:0 auto;padding:20px}
-h1{font-size:30px;color:#1a365d;margin:28px 0 16px;border-bottom:3px solid #d69e2e;padding-bottom:12px;font-weight:700}
-h2{font-size:26px;color:#1a365d;margin:30px 0 16px;font-weight:700}
-h3{font-size:22px;color:#2d3748;margin:24px 0 12px;font-weight:600}
-h4{font-size:20px;color:#2d3748;margin:20px 0 10px;font-weight:600}
-p{margin-bottom:14px;font-size:19px}
+body{
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    color:#1a202c;background:#fff;line-height:1.9;font-size:18px;
+    max-width:1000px;margin:0 auto;padding:24px 20px 60px;
+}
+
+/* ── 标题层级 ── */
+h1{font-size:28px;color:#1a365d;margin:32px 0 18px;border-bottom:3px solid #d69e2e;padding-bottom:12px;font-weight:700}
+h2{font-size:24px;color:#1a365d;margin:36px 0 18px;padding-bottom:8px;border-bottom:1px solid #e2e8f0;font-weight:700}
+h3{font-size:21px;color:#2d3748;margin:28px 0 14px;font-weight:600}
+h4{font-size:19px;color:#2d3748;margin:22px 0 10px;font-weight:600}
+h5{font-size:18px;color:#2d3748;margin:18px 0 8px;font-weight:600}
+h6{font-size:17px;color:#4a5568;margin:16px 0 6px;font-weight:600}
+
+/* ── 公文正文段落 ── */
+p.body-text{
+    margin-bottom:16px;text-align:justify;text-indent:2em;
+    line-height:2.0;font-size:18px;
+}
+p.section-intro{
+    text-indent:0;font-weight:600;margin-top:24px;
+}
+p.numbered-item{
+    text-indent:0;padding-left:1.5em;margin-bottom:8px;
+}
+p.key-finding{
+    text-indent:0;background:linear-gradient(90deg,#fffbeb,transparent);
+    padding:10px 16px;border-left:4px solid #d69e2e;
+    border-radius:0 6px 6px 0;margin:20px 0;
+}
+
+/* ── 强调 ── */
 strong{color:#1a365d}
-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:17px}
-th{background:#1a365d;color:#fff;padding:12px 16px;text-align:left;font-size:17px}
-td{padding:11px 16px;border-bottom:1px solid #e2e8f0;font-size:17px}
-tr:hover td{background:#edf2f7}
-blockquote{background:#fffbeb;border-left:3px solid #d69e2e;padding:16px 20px;margin:18px 0;border-radius:0 6px 6px 0;color:#744210;font-size:18px}
-.nav{background:#1a365d;padding:16px 20px;margin:-20px -20px 28px;border-radius:0 0 8px 8px}
-.nav a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:15px;margin-right:16px}
-ul,ol{margin:14px 0 14px 28px}
-li{margin-bottom:8px;font-size:19px}
-code{background:#f7fafc;padding:3px 8px;border-radius:4px;font-size:17px}
-pre{background:#1a202c;color:#e2e8f0;padding:18px;border-radius:8px;margin:18px 0;overflow-x:auto}
-pre code{background:none;color:inherit;font-size:16px}
-/* 折叠样式 */
-details{margin:16px 0;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden}
-details summary{padding:14px 18px;background:#f7fafc;cursor:pointer;font-weight:600;color:#1a365d;font-size:17px;user-select:none}
-details summary{display:list-item;list-style-type:disclosure-closed}
-details[open] summary{list-style-type:disclosure-open}
+
+/* ── 表格 ── */
+.table-wrapper{overflow-x:auto;margin:20px 0;}
+table.doc-table{
+    width:100%;border-collapse:collapse;margin:0;
+    font-size:16px;line-height:1.7;
+}
+table.doc-table thead{background:#1a365d;}
+table.doc-table th{
+    color:#fff;padding:12px 14px;text-align:left;
+    font-size:15px;font-weight:600;white-space:nowrap;
+}
+table.doc-table td{
+    padding:10px 14px;border-bottom:1px solid #e2e8f0;
+    font-size:15px;vertical-align:top;
+}
+table.doc-table tbody tr:nth-child(even){background:#f7fafc}
+table.doc-table tbody tr:hover{background:#edf2f7}
+
+/* ── 列表 ── */
+ol.doc-list, ul.doc-list{margin:16px 0 16px 2em}
+ol.doc-list li, ul.doc-list li{margin-bottom:10px;line-height:2.0;font-size:18px;
+    padding-left:4px;}
+ol.doc-list{list-style-type:decimal}
+ol.doc-list ol, ul.doc-list ul{margin:8px 0 8px 1.5em}
+
+/* ── 折叠块 ── */
+details{
+    margin:20px 0;border:1px solid #e2e8f0;
+    border-radius:8px;overflow:hidden;
+    background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.04);
+}
+details summary{
+    padding:14px 18px;background:linear-gradient(180deg,#f7fafc,#edf2f7);
+    cursor:pointer;font-weight:600;color:#1a365d;
+    font-size:17px;user-select:none;list-style:none;
+    display:flex;align-items:center;gap:8px;
+}
+details summary::-webkit-details-marker{display:none}
+details summary::before{
+    content:"▶";display:inline-block;font-size:11px;
+    transition:transform 0.2s;color:#d69e2e;
+}
 details[open] summary::before{transform:rotate(90deg)}
 details summary:hover{background:#edf2f7}
-details .detail-content{padding:18px;background:#fff}
-/* 链接样式 */
-a{color:#3182ce;text-decoration:none}
-a:hover{color:#1a365d;text-decoration:underline}
-/* 附件链接样式 */
-.appendix-link{display:inline-block;background:#1a365d;color:#fff;padding:6px 14px;border-radius:6px;font-size:15px;margin:4px 4px 4px 0;text-decoration:none}
-.appendix-link:hover{background:#2d3748;color:#fff;text-decoration:none}
+details[open] summary{border-bottom:1px solid #e2e8f0}
+
+/* 折叠块内容区——关键：独立的padding保障版式 */
+.details-content{
+    padding:20px 22px;
+}
+.details-content p.body-text:first-child{margin-top:0}
+.details-content p.body-text:last-child{margin-bottom:0}
+
+/* ── 图表 ── */
+.chart-container{
+    margin:24px 0;text-align:center;
+    background:#fafafa;border-radius:8px;
+    padding:16px;border:1px solid #e2e8f0;
+}
+.chart-container img{max-width:100%;height:auto}
+
+/* ── Callout ── */
+.callout{margin:24px 0}
+.callout strong{font-size:18px}
+
+/* ── 引用块 ── */
+blockquote{
+    background:#fffbeb;border-left:3px solid #d69e2e;
+    padding:16px 20px;margin:20px 0;
+    border-radius:0 6px 6px 0;color:#744210;font-size:17px;
+}
+
+/* ── 代码块 ── */
+code{background:#f7fafc;padding:2px 6px;border-radius:3px;font-size:15px}
+pre{background:#1a202c;color:#e2e8f0;padding:18px;border-radius:8px;
+    margin:18px 0;overflow-x:auto;line-height:1.6}
+pre code{background:none;color:inherit;font-size:15px}
+
+/* ── 导航栏 ── */
+.nav{
+    background:linear-gradient(135deg,#1a365d,#2d3748);
+    padding:14px 20px;margin:-24px -20px 28px;
+    border-radius:0 0 8px 8px;display:flex;gap:20px;flex-wrap:wrap;
+}
+.nav a{color:rgba(255,255,255,0.85);text-decoration:none;font-size:15px}
+.nav a:hover{color:#fff;text-decoration:underline}
+
+/* ── 分割线 ── */
+hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
+
+/* ── 响应式 ── */
+@media(max-width:768px){
+    body{font-size:16px;padding:8px}
+    p.body-text{text-indent:1em;font-size:16px}
+    h1{font-size:24px}h2{font-size:21px}h3{font-size:19px}
+    table.doc-table{font-size:14px}
+    table.doc-table th,table.doc-table td{padding:8px 10px}
+    .nav{margin:-8px -8px 20px;padding:12px 16px}
+}
+
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const links = document.querySelectorAll('a[href]');
-  links.forEach(function(link) {
-    const href = link.getAttribute('href');
-    if (href && (href.includes('appendix_') || href.includes('附件'))) {
-      link.className = 'appendix-link';
-    }
-  });
-});
-</script>
-
 </head>
 <body>
-<div class="nav"><a href="index.html">📊 目录</a></div>
-<h1>附件D：星恒电源竞争力变化纵横分析法深度研究报告</h1>
+<div class="nav">
+<a href="index.html">← 返回目录</a>
+<a href="#top">回顶部</a>
+<span style="color:rgba(255,255,255,0.5);font-size:13px;margin-left:auto">
+  更新于 2026-06-05 07:00
+</span>
+</div>
+<div id="top"></div>
+<h1>附件D：星恒电源客户结构与产品安全风险纵横分析</h1>
 <hr />
-<h2>一、分析框架与方法</h2>
-<h3>1.1 数据来源分级</h3>
-<table>
-<thead>
-<tr>
-<th>层级</th>
-<th>标签</th>
-<th>描述</th>
-<th>本报告中的典型来源</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A</td>
-<td>经审计</td>
-<td>官方文件/审计报告/上市公司年报</td>
-<td>中天运审计报告FY2020-2024、容百/宁德/博力威等上市公司年报</td>
-</tr>
-<tr>
-<td>B</td>
-<td>可靠</td>
-<td>项目材料+公司内部数据</td>
-<td>星恒市占率分析Excel（2019-2025）、分业务收入表、盈利预测模型(202605版)、产能利用率表、合并报表</td>
-</tr>
-<tr>
-<td>C</td>
-<td>参考</td>
-<td>第三方公开资料/行业研报</td>
-<td>起点研究院/GGII（高工产业研究院）/EVTank行业数据、MX金融、akshare</td>
-</tr>
-<tr>
-<td>D</td>
-<td>辅助</td>
-<td>管理层预测/自述</td>
-<td>项目建议书、管理层访谈、盈利预测前瞻假设</td>
-</tr>
-</tbody>
-</table>
-<h3>1.2 数据可得性矩阵</h3>
-<table>
-<thead>
-<tr>
-<th>时间段</th>
-<th>营收</th>
-<th>归母净利</th>
-<th>毛利率</th>
-<th>市占率</th>
-<th>出货量(万组)</th>
-<th>总销量(GWh)</th>
-<th>数据质量</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2003-2010</td>
-<td>定性（数千万→1-2亿）</td>
-<td>持续亏损（2011年减资弥补亏损证实）</td>
-<td>无</td>
-<td>定性（开拓者）</td>
-<td>无</td>
-<td>无</td>
-<td>D级（仅有定性描述）</td>
-</tr>
-<tr>
-<td>2011-2018</td>
-<td>无精确数据</td>
-<td>无精确数据</td>
-<td>无</td>
-<td>定性（第一，~50%+）</td>
-<td>无</td>
-<td>无</td>
-<td>D级（Pre-IPO估值~25亿为间接参考）</td>
-</tr>
-<tr>
-<td><strong>2019</strong></td>
-<td>无</td>
-<td>无</td>
-<td>无</td>
-<td><strong>45.23%</strong>（Excel）</td>
-<td><strong>286.17</strong></td>
-<td>无</td>
-<td>B级（内部Excel）</td>
-</tr>
-<tr>
-<td><strong>FY2020</strong></td>
-<td><strong>40.21亿</strong></td>
-<td><strong>~3.76亿</strong></td>
-<td><strong>26.5%</strong></td>
-<td><strong>44.78%</strong></td>
-<td><strong>481.71</strong></td>
-<td><strong>4.76</strong></td>
-<td>A级（审计报告+Excel）</td>
-</tr>
-<tr>
-<td><strong>FY2021</strong></td>
-<td><strong>36.66亿</strong></td>
-<td><strong>~0.12亿</strong></td>
-<td><strong>10.9%</strong></td>
-<td><strong>44.43%</strong></td>
-<td><strong>388.18</strong></td>
-<td><strong>4.99</strong></td>
-<td>A级</td>
-</tr>
-<tr>
-<td><strong>FY2022</strong></td>
-<td><strong>35.99亿</strong></td>
-<td><strong>-3.03亿</strong></td>
-<td><strong>9.8%</strong></td>
-<td><strong>47.89%</strong></td>
-<td><strong>227.36</strong></td>
-<td><strong>3.72</strong></td>
-<td>A级</td>
-</tr>
-<tr>
-<td><strong>FY2023</strong></td>
-<td><strong>23.84亿</strong></td>
-<td><strong>-5.75亿</strong></td>
-<td><strong>2.4%</strong></td>
-<td><strong>58.16%</strong></td>
-<td><strong>201.88</strong></td>
-<td><strong>2.56</strong></td>
-<td>A级</td>
-</tr>
-<tr>
-<td><strong>FY2024</strong></td>
-<td><strong>29.49亿</strong></td>
-<td><strong>+0.87亿</strong></td>
-<td><strong>17.6%</strong></td>
-<td><strong>58.80%</strong></td>
-<td><strong>263.36</strong></td>
-<td>—</td>
-<td>A级</td>
-</tr>
-<tr>
-<td><strong>FY2025</strong></td>
-<td><strong>36.36亿</strong></td>
-<td><strong>+0.45亿(管)/+0.40亿(审)</strong></td>
-<td><strong>13.6%</strong></td>
-<td><strong>72.50%</strong></td>
-<td><strong>343.34</strong></td>
-<td>—</td>
-<td>B级（管理口径未审计）</td>
-</tr>
-<tr>
-<td>Q1 2026</td>
-<td>~7.49亿(季度)</td>
-<td>~1,009万</td>
-<td><strong>16.26%</strong></td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>B级（未经审计）</td>
-</tr>
-</tbody>
-</table>
+<h2>第一部分：客户结构演变纵横分析</h2>
+<p class="body-text"><strong>定位</strong>：对星恒电源2003-2026年的客户结构演变进行纵横分析法深度分析——纵向时间轴追踪+横向行业对标+横纵交叉归因。核心发现：此前报告将OEM行业集中度误等于星恒客户收入集中度，本附件予以修正。
+<strong>数据来源</strong>：[B] 尽调收资材料 前十大客户清单2023-202603.xlsx + 分业务收入表2022-2026.3 + [A] OCR客户合同(九号/松果/爱玛/青奇/钛氪/麦田/德兰明海/滴滴补充协议/城满电/经销商协议/深铃/小遛/富士达/快松果/国网/国什/华霆/雅迪2020-2021/台铃/绿源) + [C] 行业公开数据
+<strong>修订日期</strong>：2026-06-03（Phase 3扩展：D4节新增深铃10倍差价/小遛管辖优势/富士达27月质保/快松果30万组承诺+2%返点/青奇三方协议——共8份历史合同第二轮深度OCR核验）</p>
+<hr />
+<h3>一、核心发现（Executive Summary）</h3>
 <blockquote>
-<p>[!NOTE] 💡
-<strong>数据缺口说明</strong>：FY2019及之前的财务数据在现有尽调材料中未提供（审计报告仅覆盖FY2020起）。2011年的减资弥补亏损操作（注册资本从19,021万减至11,413万，减少7,608万用于弥补累计亏损）证实了早期持续亏损的历史。A轮（2015年）、Pre-IPO（2019年，估值~25亿）、深创投（2022年，估值73.5亿）的估值变化间接反映了增长轨迹。</p>
+<p class="body-text"><strong>星恒的客户结构在过去5年中经历了根本性转变：从OEM主导（2023年雅迪+爱玛占收入12.9%）演变为共享出行运营商主导（2025年哈啰+滴滴+小师傅+松果占收入29.0%）。这一转变对估值的影响深远——共享B2B客户的议价逻辑和粘性与传统OEM截然不同。</strong></p>
 </blockquote>
+<p class="body-text">此前报告将&quot;OEM集中度45%&quot;（行业两轮车市占率）误读为&quot;在星恒客户结构中占比极高&quot;——这一框架性错误已通过尽调材料实际数据修正。雅迪+爱玛2025年仅占星恒收入的6.38%，而哈啰单一客户占15.41%。</p>
 <hr />
-<h2>二、纵向分析——时间轴上的竞争力演变</h2>
-<h3>2.1 第一阶段：创立与生存期（2003-2010）</h3>
-<h4>2.1.1 创立背景</h4>
-<p>星恒电源成立于2003年，由<strong>中科院物理所陈立泉院士团队</strong>技术孵化、<strong>联想控股</strong>早期投资。第一个产品是锰酸锂圆柱电池（21115型号），用于电动自行车铅酸电池替代。</p>
-<p><strong>创立时的战略逻辑</strong>：</p>
-<ul>
-<li>选择巨头（宁德时代尚未成立，比亚迪聚焦汽车）看不上的边缘市场</li>
-<li>以锰酸锂技术路线起步——成本低（无钴无镍）、工艺成熟（基于中科院物理所积累）</li>
-<li>目标：在&quot;小池塘里做大鱼&quot;，等待两轮车锂电化浪潮</li>
+<h3>二、纵向分析——客户结构的四个阶段演变</h3>
+<h4>阶段一：OEM主导时代（2003-2018）</h4>
+<p class="body-text"><strong>时期特征</strong>：</p>
+<ul class="doc-list"><li><p class="body-text">星恒作为最早进入两轮车锂电池领域的先行者，客户以传统OEM为主</li>
+<li><p class="body-text">雅迪、爱玛、新日等头部OEM在电动自行车锂电化初期对星恒的依赖度较高</li>
+<li><p class="body-text">这一时期的OEM关系构成了星恒&quot;20年品牌积累&quot;叙事的基础</li>
 </ul>
-<p><strong>来源</strong>：[C] 百度百科/腾讯新闻/星恒官网公开资料；[B] 项目材料</p>
-<h4>2.1.2 关键事件</h4>
-<table>
-<thead>
+<p class="body-text"><strong>数据限制</strong>：2003-2018年度的客户清单数据未在尽调材料中提供。以下推断基于行业演变逻辑（置信度：★★★☆☆）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
-<th>时间</th>
-<th>事件</th>
-<th>竞争力影响</th>
+<th>推断维度</th>
+<th>2003-2010</th>
+<th>2010-2015</th>
+<th>2015-2018</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>2003</td>
-<td>公司成立，中科院+联想入股</td>
-<td>技术基因+早期资本支持</td>
+<td>主导客户类型</td>
+<td>小型电动自行车厂</td>
+<td>中大型OEM</td>
+<td>头部OEM+渠道</td>
 </tr>
 <tr>
-<td>2003-2005</td>
-<td>21115圆柱电池量产</td>
-<td>国内最早规模化生产锰酸锂电芯的企业之一</td>
+<td>OEM收入占比（估计）</td>
+<td>~70-80%</td>
+<td>~60-70%</td>
+<td>~50-60%</td>
 </tr>
 <tr>
-<td>2006-2008</td>
-<td>成为雅迪、爱玛等两轮车品牌供应商</td>
-<td>建立OEM渠道关系（至今仍是核心竞争资源）</td>
+<td>共享出行占比</td>
+<td>0%</td>
+<td>0%</td>
+<td>~5-10%（萌芽）</td>
 </tr>
 <tr>
-<td>2009</td>
-<td>电动自行车&quot;新国标&quot;（GB 17761-1999修订讨论）开始酝酿</td>
-<td>政策催化剂出现，锂电替代铅酸的预期形成</td>
+<td>客户集中风险</td>
+<td>低（分散于众多小厂）</td>
+<td>中（头部OEM开始集中）</td>
+<td>中（共享开始出现）</td>
 </tr>
 </tbody>
-</table>
-<p><strong>来源</strong>：[C] 行业公开资料；[D] 项目建议书</p>
-<h4>2.1.3 竞争力评估</h4>
-<table>
-<thead>
-<tr>
-<th>维度</th>
-<th>状态</th>
-<th>评价</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>市占率</td>
-<td>国内两轮车锰酸锂电池开拓者</td>
-<td>★★★☆☆（先发优势建立中）</td>
-</tr>
-<tr>
-<td>技术水平</td>
-<td>第一代锰酸锂，循环寿命300-800次</td>
-<td>★★☆☆☆（够用但不出众）</td>
-</tr>
-<tr>
-<td>客户关系</td>
-<td>绑定雅迪/爱玛等头部OEM</td>
-<td>★★★☆☆（渠道网络初步建立）</td>
-</tr>
-<tr>
-<td>财务实力</td>
-<td>营收估计数千万至1-2亿级别</td>
-<td>★★☆☆☆（规模极小）</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3>2.2 第二阶段：市场领先确立期（2011-2018）</h3>
-<h4>2.2.1 关键事件</h4>
-<table>
-<thead>
-<tr>
-<th>时间</th>
-<th>事件</th>
-<th>竞争力影响</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2011-2014</td>
-<td>两轮车锂电渗透率缓慢提升，星恒持续扩大OEM覆盖面</td>
-<td>市占率稳居第一</td>
-</tr>
-<tr>
-<td>2015</td>
-<td>锰酸锂+镍钴锰三元复合材料路线启动</td>
-<td>从&quot;纯锰酸锂&quot;向&quot;技术集成商&quot;转变，产品线扩展</td>
-</tr>
-<tr>
-<td>2015</td>
-<td>A轮融资（和聚百川/建银国际/混沌投资）</td>
-<td>引入机构资本</td>
-</tr>
-<tr>
-<td>2017</td>
-<td><strong>启源纳川从联想等收购星恒控制权</strong></td>
-<td>控制权变更——管理层（冯笑）通过启源纳川实现对公司的影响力</td>
-</tr>
-<tr>
-<td>2018</td>
-<td>中国电动自行车新国标GB 17761-2018发布（2018年发布，2019年实施，整车限重55kg）</td>
-<td>重大政策利好——铅酸电池因重量超标面临淘汰，锂电化预期加速</td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[B] 项目材料；[C] 行业公开报道</p>
-<h4>2.2.2 技术演变</h4>
-<ul>
-<li>通过电解液配方优化和正极改性，锰酸锂电池循环寿命从300次提升至<strong>800次+</strong></li>
-<li><strong>第二代技术</strong>：锰酸锂+镍钴锰三元复合材料（2015年起），代表性产品超锂S7系列（2020年推出）</li>
-<li>技术路线从&quot;纯锰酸锂&quot;升级为&quot;锰系复合材料&quot;，初步形成差异化</li>
+</table></div><p class="body-text"><strong>来源</strong>：推断基于行业演变逻辑 [C]；星恒2003年成立、2015年LMO+复合材料策略从04报告和附件D中提取</p>
+<h4>阶段二：共享出行兴起与OEM关系重组（2019-2022）</h4>
+<p class="body-text"><strong>时期特征</strong>：</p>
+<ul class="doc-list"><li><p class="body-text">哈啰、滴滴（青桔）、美团等共享出行平台大举投放共享电单车，创造新的电池采购需求</li>
+<li><p class="body-text">共享B2B订单的特点是：批量大、价格敏感、合同周期1-3年、售后要求高</li>
+<li><p class="body-text">同时期，头部OEM（雅迪/爱玛）开始多供应商策略——引入ATL新能安（2019年成立）作为第二供方</li>
 </ul>
-<p><strong>来源</strong>：[C] 百度百科/腾讯新闻</p>
-<h4>2.2.3 竞争力评估</h4>
-<table>
-<thead>
-<tr>
-<th>维度</th>
-<th>状态</th>
-<th>评价</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>市占率</td>
-<td>两轮车锂电第一（估计50%+）</td>
-<td>★★★★☆（龙头地位确立）</td>
-</tr>
-<tr>
-<td>技术水平</td>
-<td>锰酸锂→锰酸锂+镍钴锰三元复合材料</td>
-<td>★★★☆☆（行业中等偏上）</td>
-</tr>
-<tr>
-<td>客户关系</td>
-<td>深度绑定雅迪/爱玛/九号等</td>
-<td>★★★★☆（核心护城河形成）</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>注</strong>：2019年之前的市占率数据仅有片段。根据星恒内部Excel，2019年市占率45.23% [B]。</p>
-</blockquote>
-<hr />
-<h3>2.3 第三阶段：资本驱动扩张期（2019-2022）</h3>
-<h4>2.3.1 资本运作与估值跃升</h4>
-<table>
-<thead>
-<tr>
-<th>时间</th>
-<th>事件</th>
-<th>金额</th>
-<th>估值</th>
-<th>意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2019-04</td>
-<td><strong>Pre-IPO轮融资</strong></td>
-<td>约12亿</td>
-<td>约25亿（推算）</td>
-<td>引入约35家PE投资机构，约定IPO对赌回购</td>
-</tr>
-<tr>
-<td>2022-03</td>
-<td><strong>深创投制造业基金战投</strong></td>
-<td>9.5亿（持股12.92%）</td>
-<td><strong>73.5亿（投后）</strong></td>
-<td>历史估值高点，较Pre-IPO增值194%</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Pre-IPO对赌条款</strong>（来源：[B] 回购协议汇总）：</p>
-<ul>
-<li>IPO申报截止日：2020年6月30日</li>
-<li>上市截止日：2021年12月31日</li>
-<li>回购义务人：启源纳川+陈志江</li>
-<li>涉及股东：约35家PE，合计持股47.87%</li>
+<p class="body-text"><strong>关键转折——2019年新能安成立</strong>：</p>
+<ul class="doc-list"><li><p class="body-text">新能安（CATL（宁德时代新能源科技股份有限公司） 70%+ATL（新能源科技，Amperex Technology Limited） 30%）的成立，为头部OEM提供了星恒之外的第二个规模化锂电供应商选择</li>
+<li><p class="body-text">OEM不再&quot;必须&quot;从星恒采购——这是星恒对OEM议价权急剧下降的起点</li>
+<li><p class="body-text">雅迪FY2025营收370亿、净利29.1亿 [A]——头部OEM的规模远大于星恒（36.4亿），拥有天然的议价优势</li>
 </ul>
-<p><strong>来源</strong>：[B] 项目材料（股东名册2024-07-08、回购协议汇总）；[A] 天眼查VIP工商数据</p>
-<h4>2.3.2 竞争格局剧变——CATL/ATL入局</h4>
-<p>这一时期最重大的竞争格局变化是<strong>宁德时代（CATL）及新能安（ATL（新能源科技，Amperex Technology Limited））进入两轮车锂电市场</strong>：</p>
-<table>
-<thead>
-<tr>
-<th>年份</th>
-<th>CATL/ATL市占率</th>
-<th>事件</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2019年前</td>
-<td>0%（未进入）</td>
-<td>—</td>
-</tr>
-<tr>
-<td>2020</td>
-<td>CATL 8.54%</td>
-<td>CATL首次进入两轮车锂电市场</td>
-</tr>
-<tr>
-<td>2021</td>
-<td>ATL 12.64% + CATL 7.13% = 19.77%</td>
-<td>新能安（CATL 70% + ATL 30%合资）正式运营</td>
-</tr>
-<tr>
-<td>2022</td>
-<td>ATL 15.51%</td>
-<td>CATL品牌退出两轮车（转移至新能安），ATL成为第二</td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[B] 星恒市占率分析Excel（2019-2025）</p>
-<p>新能安的股权结构赋予其独特优势：CATL提供磷酸铁锂电芯成本协同、ATL提供消费电子级品控体系、双母公司品牌背书在高端OEM认证中形成&quot;免检效应&quot;。</p>
-<p><strong>来源</strong>：[C] 行业公开报道</p>
-<h4>2.3.3 财务表现——到达顶峰后急转直下</h4>
-<table>
-<thead>
-<tr>
-<th>指标</th>
-<th>FY2020</th>
-<th>FY2021</th>
-<th>FY2022</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>营收（亿）</td>
-<td><strong>40.21</strong></td>
-<td>36.66</td>
-<td>35.99</td>
-</tr>
-<tr>
-<td>整体毛利率</td>
-<td><strong>26.5%</strong></td>
-<td>10.9%</td>
-<td>9.8%</td>
-</tr>
-<tr>
-<td>归母净利（亿）</td>
-<td><strong>~3.76</strong></td>
-<td>~0.12</td>
-<td><strong>-3.03</strong></td>
-</tr>
-<tr>
-<td>净利率</td>
-<td><strong>9.5%</strong></td>
-<td>0.3%</td>
-<td>-8.4%</td>
-</tr>
-<tr>
-<td>总销量（GWh（吉瓦时，1GWh=100万度电））</td>
-<td>4.76</td>
-<td>4.99</td>
-<td>3.72</td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[A] 中天运审计报告FY2020-2022；[B] 盈利预测模型202604版</p>
-<p><strong>FY2020高利润的三重红利</strong>（置信度：★★★★★）：</p>
-<table>
-<thead>
-<tr>
-<th>红利因素</th>
-<th>量化</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1. 碳酸锂低价</td>
-<td>2020年均价约4.5-5.5万/吨</td>
-</tr>
-<tr>
-<td>2. 产能利用率高位</td>
-<td>全年营收40.21亿为历史峰值</td>
-</tr>
-<tr>
-<td>3. 锁价合同（汽车电芯，华霆）</td>
-<td>2020年1.32-1.386元/Wh → 2021 Q1 0.48元/Wh（↓64%）</td>
-</tr>
-<tr>
-<td>4. 共享出行锁价（部分确认）</td>
-<td>框架合同无最低采购量，价格季度协商</td>
-</tr>
-<tr>
-<td>5. 两轮车OEM锁价（无法验证）</td>
-<td>OEM供货协议附件（含单价）未在PDF中提供</td>
-</tr>
-</tbody>
-</table>
-<p>三重红利此后逐一消失：</p>
-<ul>
-<li>2021-2022碳酸锂暴涨（峰值50万+/吨）</li>
-<li>锁价合同到期后价格暴跌（华霆↓64%定量确认，共享出行/OEM价格系统性下移）</li>
-<li>产能利用率从高峰暴跌至FY2023的26.9%</li>
+<p class="body-text"><strong>2022年客户数据（来源：分业务收入表）：</strong></p>
+<ul class="doc-list"><li><p class="body-text">从上表推算：2022年国内商用（含共享）Rev约2.93亿，占8.1%——共享尚处于高速增长早期</li>
+<li><p class="body-text">Amara（南亚大客户）Rev约8,184万，占2.3%</li>
 </ul>
-<p><strong>来源</strong>：[A] FY2020-2021年大客户合同OCR提取（详见附件F1 2.2.1节）；[B] 项目材料；[C] 行业数据；逻辑推演（详见主报告2.1节）</p>
-<h4>2.3.4 竞争力评估</h4>
-<table>
-<thead>
+<h5>2.2.1 2020-2021年客户合同核查证据</h5>
+<p class="body-text">基于FY2020-FY2021年共约35份大客户合同的OCR提取与结构化分析（来源：[A] 尽调收资材料 <code>2.13/大客户合同-2020、2021年/</code>），本阶段客户结构和合同条款特征如下：</p>
+<p class="body-text"><strong>客户结构全景（2020年合同覆盖的9大客户群）</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
-<th>维度</th>
-<th>状态</th>
-<th>评价</th>
+<th>类别</th>
+<th>客户</th>
+<th>2020年签约主体</th>
+<th>定价模式</th>
+<th>付款条件</th>
+<th>最低采购量</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>市占率</td>
-<td>从44.8%（2020）升至47.9%（2022）</td>
-<td>★★★★☆（龙头但增速停滞）</td>
+<td>头部OEM</td>
+<td>雅迪（集团+3子公司）</td>
+<td>苏州+滁州双签</td>
+<td>附件A价格确认单（主合同无单价）</td>
+<td>30-90天月结</td>
+<td>无</td>
 </tr>
 <tr>
-<td>竞争对手威胁</td>
-<td>ATL从0到15.5%（3年）</td>
-<td>★★☆☆☆（竞争力被快速侵蚀）</td>
+<td>头部OEM</td>
+<td>爱玛（全关联企业）</td>
+<td>苏州+滁州双签</td>
+<td>零部件价格审批单（主合同无单价）</td>
+<td>价格审批单标注</td>
+<td>无</td>
 </tr>
 <tr>
-<td>财务实力</td>
-<td>FY2022巨亏3.03亿</td>
-<td>★☆☆☆☆（盈利崩溃）</td>
+<td>二线OEM</td>
+<td>台铃/深铃</td>
+<td>苏州+滁州</td>
+<td>报价单/价格表确认</td>
+<td>月结60天/T+3</td>
+<td>无</td>
 </tr>
 <tr>
-<td>估值</td>
-<td>从25亿→73.5亿（194%增幅）</td>
-<td>★★★★★（资本叙事高峰）</td>
+<td>二线OEM</td>
+<td>绿源</td>
+<td>苏州+滁州</td>
+<td>零件价格确认单</td>
+<td>次次月10日(电汇)</td>
+<td>无</td>
+</tr>
+<tr>
+<td>共享出行</td>
+<td>杭州青奇（哈啰体系）</td>
+<td>苏州→滁州(2020起)</td>
+<td><strong>合同中列明固定单价表</strong></td>
+<td>120天银承</td>
+<td>无</td>
+</tr>
+<tr>
+<td>共享出行</td>
+<td>松果/快松果</td>
+<td>滁州</td>
+<td>报价单（2021年合同明确641元/组）</td>
+<td>15%预付+15-20天</td>
+<td><strong>30万组/年(2020)</strong></td>
+</tr>
+<tr>
+<td>共享出行</td>
+<td>宁波小遛</td>
+<td>滁州</td>
+<td>以订单为准</td>
+<td>10-60-30%月结</td>
+<td>无</td>
+</tr>
+<tr>
+<td>专用领域</td>
+<td>国网电动汽车（3项目）</td>
+<td>滁州→股份(2021)</td>
+<td>项目定价（727-1,285元/组）</td>
+<td>120天银承</td>
+<td>无</td>
+</tr>
+<tr>
+<td>专用领域</td>
+<td>国什能源</td>
+<td>滁州</td>
+<td>636元/组锁定</td>
+<td>120天银承</td>
+<td>无</td>
+</tr>
+<tr>
+<td>汽车电芯</td>
+<td>华霆（合肥）动力</td>
+<td>股份公司</td>
+<td>月度价格协议</td>
+<td>120天电汇/承兑</td>
+<td>无</td>
+</tr>
+<tr>
+<td>代工</td>
+<td>富士达（美团Q8）</td>
+<td>滁州</td>
+<td>以报价单为准</td>
+<td>20%定金+80%月结</td>
+<td>无</td>
 </tr>
 </tbody>
-</table>
-<hr />
-<h3>2.4 第四阶段：危机与触底期（2023-2024）</h3>
-<h4>2.4.1 三重危机同时爆发</h4>
-<p><strong>危机一：财务崩溃</strong>（FY2023谷底）</p>
-<table>
-<thead>
+</table></div><p class="body-text"><strong>关键发现——合同中揭示的结构性盈利风险</strong>：</p>
+<p class="body-text"><strong>(1) 定价机制普遍单向不对称</strong>：所有OEM合同均规定原材料/成本下降时星恒必须降价，原材料/成本上涨时仅&quot;双方重新议定&quot;而不自动调涨。雅迪合同明确授予甲方&quot;要求逐步降价&quot;权利（不限次数和幅度），且附最低价+10倍差价罚则。</p>
+<p class="body-text"><strong>(2) 无最低采购量承诺</strong>：除松果2020年（30万组/年承诺，后2021年取消）外，<strong>所有框架合同均无最低采购量承诺</strong>。甲方需求预测&quot;不具有法律约束力&quot;。星恒承担全部产能和库存风险。</p>
+<p class="body-text"><strong>(3) 售后义务较重</strong>：停产件继续供货期——雅迪5年、爱玛3年、富士达27个月。三包期限——爱玛481X系列39个月（行业内较长），青奇/国网/国什质保48个月或750次循环。售后件供应和三包退货构成持续的现金和非现金成本负担。</p>
+<p class="body-text"><strong>(4) 2021年合同条件恶化——早期预警信号</strong>：雅迪2021年合同相比2020年显著恶化——账期从30-50天统一延长至90天；停产损失赔偿从1,200元/小时暴涨至6,000元/小时（5倍）；交付罚则从按天改为按批次计算；合同覆盖关联企业从3家扩展至7家。条件恶化的背景是新能安（ATL）作为第二供方地位的确立。</p>
+<p class="body-text"><strong>(5) 滁州签约主体普遍化</strong>：2020年起星恒电源（滁州）有限公司成为主要签约/供货主体。苏州星恒在青奇合同中转为担保方角色。法人实体的分拆可能影响客户对苏州主体（IPO主体）的合同关系认知。</p>
+<p class="body-text"><strong>来源</strong>：[A] OCR提取自 <code>尽调收资材料/2.13/大客户合同-2020、2021年/</code> 共约35份PDF合同（置信度：★★★★☆，OCR准确率有限，部分数字可能存在偏差）</p>
+<h5>2.2.2 2024-2025年客户合同核验证据（2026-06-03新增OCR分析）</h5>
+<p class="body-text">2024-2025年合同核验显示，2020-2021年发现的合同结构性风险<strong>未改善且在部分维度加深</strong>。以下为OCR核验的三个关键合同/合同群。</p>
+<p class="body-text"><strong>A. 九号物料采购框架协议（2025年新签）——高度买方友好的OEM框架</strong></p>
+<p class="body-text">九号（Segway-Ninebot）为星恒新开拓的高端电动两轮车OEM客户。合同为框架协议，由星恒电源(滁州)有限公司签署。</p>
+<p class="body-text">核心条款的尽调含义：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
-<th>指标</th>
-<th>FY2023</th>
-<th>较FY2020变化</th>
+<th>条款</th>
+<th>内容</th>
+<th>风险评估</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>营收</td>
-<td>23.84亿</td>
-<td><strong>-40.7%</strong></td>
+<td>定价——MFC条款</td>
+<td>星恒对九号价格不超过对其他客户<strong>最低价的110%</strong>，或行业最低价的110%</td>
+<td>定价权完全丧失；违反罚则为合作期内交易总额30%</td>
 </tr>
 <tr>
-<td>毛利率</td>
-<td>2.4%</td>
-<td>-24.1pp</td>
+<td>涨价限制</td>
+<td>任何涨价&gt;20%可能被认定为根本违约，永久列入黑名单</td>
+<td>碳酸锂从6万涨至12万（+100%）时星恒无法传导成本</td>
 </tr>
 <tr>
-<td>归母净利</td>
-<td><strong>-5.75亿</strong></td>
-<td>亏损创历史纪录</td>
+<td>付款方式</td>
+<td><strong>6个月银行承兑汇票</strong></td>
+<td>实际回款周期=45-60天对账+15天审批+6个月票据=~8个月</td>
 </tr>
 <tr>
-<td>总销量</td>
-<td>2.56 GWh</td>
-<td>-46.3%</td>
+<td>最低采购量</td>
+<td><strong>无</strong></td>
+<td>星恒承担全部产能风险，九号可随时停采</td>
+</tr>
+<tr>
+<td>解约权</td>
+<td>买方30天通知即可单方解约，<strong>无需理由</strong></td>
+<td>星恒无退出保护</td>
+</tr>
+<tr>
+<td>质保+售后</td>
+<td>3年质保+<strong>7年</strong>停产配件供应义务</td>
+<td>尾端义务远超行业常规（雅迪5年、爱玛3年）</td>
+</tr>
+<tr>
+<td>迟交罚则</td>
+<td>1%/天+停产线1,000元/10分钟</td>
+<td>惩罚性</td>
+</tr>
+<tr>
+<td>研发放弃赔偿</td>
+<td>研发项目中止30天以上→<strong>100万元</strong>赔偿</td>
+<td>独家研发投入风险</td>
 </tr>
 </tbody>
-</table>
-<p><strong>来源</strong>：[A] FY2023审计报告</p>
-<p><strong>危机二：启源纳川债务危机</strong></p>
-<table>
-<thead>
+</table></div><p class="body-text"><strong>尽调判断</strong>：九号合同是星恒所有已知客户合同中<strong>对供方最不利的一份</strong>。MFC+涨价20%上限的组合意味着星恒在原材料上行周期将面临&quot;被动亏损接单或被拉黑&quot;的两难。若九号成为大客户（&gt;5%营收），这一合同结构将成为星恒利润率的系统性拖累。</p>
+<p class="body-text"><strong>B. 松果采购合同框架（2024.1.1-2025.12.31，已到期）——Q1 2026持续发货但无有效合同</strong></p>
+<p class="body-text">松果是共享出行平台，Q1 2026以3.46%位列第六大客户（2,596万元/季，年化约1.04亿）。</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
-<th>项目</th>
-<th>数据</th>
+<th>条款</th>
+<th>内容</th>
+<th>相比于九号的差异</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>合同状态</td>
+<td><strong>2025年12月31日到期</strong></td>
+<td>Q1 2026的2,596万发货缺乏有效书面合同保护</td>
+</tr>
+<tr>
+<td>付款</td>
+<td>15%预付+85%到货后60天内，电汇/现金</td>
+<td>对星恒远优于九号（无承兑汇票）</td>
+</tr>
+<tr>
+<td>信用上限</td>
+<td><strong>3,000万元</strong></td>
+<td>正面——限制应收账款敞口</td>
+</tr>
+<tr>
+<td>最低采购量</td>
+<td><strong>无</strong></td>
+<td>与其他框架合同一致</td>
+</tr>
+<tr>
+<td>质保后尾端</td>
+<td>质保期结束<strong>2年内</strong>仍承担第三方人身/财产损害责任</td>
+<td>异常长的尾端义务</td>
+</tr>
+<tr>
+<td>迟交罚则</td>
+<td><strong>5%/天</strong>（&gt;15天可取消）</td>
+<td>高于九号的1%/天</td>
+</tr>
+<tr>
+<td>排他性</td>
+<td><strong>无</strong></td>
+<td>正面——星恒可自由服务竞品</td>
+</tr>
+<tr>
+<td>争议管辖</td>
+<td>买方所在地（天津）法院</td>
+<td>买方优势（与九号类似）</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>核心关注</strong>：合同到期后Q1 2026持续发货2,596万——须确认是否已续签或正在续签。若无有效书面合同，在争议场景下星恒的收款权利仅依赖《民法典》第490条的&quot;事实合同&quot;保护，证明成本和不确定性远高于书面合同。</p>
+<p class="body-text"><strong>C. 经销商协议——2024年新增渠道模式，仅1/3有最低采购承诺</strong></p>
+<p class="body-text">2024年出现三家经销商（宏速/亿盛/亿电宝），合计FY2024收入2.19亿（占总营收7.4%）。这是星恒客户结构的<strong>新类型</strong>——从直销扩展至区域分销。</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条款</th>
+<th>宏速新能源（7,822万）</th>
+<th>亿盛新能源（7,560万）</th>
+<th>亿电宝科技（6,516万）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>签约主体</td>
+<td>星恒滁州</td>
+<td>星恒苏州</td>
+<td>星恒滁州</td>
+</tr>
+<tr>
+<td>区域</td>
+<td>杭州</td>
+<td>广州</td>
+<td>北京</td>
+</tr>
+<tr>
+<td>排他性</td>
+<td>非独家</td>
+<td>非独家</td>
+<td>非独家</td>
+</tr>
+<tr>
+<td><strong>年度最低采购</strong></td>
+<td><strong>8,000万元</strong></td>
+<td><strong>空白</strong></td>
+<td><strong>空白</strong></td>
+</tr>
+<tr>
+<td>付款方式</td>
+<td>款到发货</td>
+<td>款到发货</td>
+<td>款到发货</td>
+</tr>
+<tr>
+<td>价格调整</td>
+<td>星恒提前3天通知</td>
+<td>同</td>
+<td>同</td>
+</tr>
+<tr>
+<td>保证金</td>
+<td>空白</td>
+<td>空白</td>
+<td>空白</td>
+</tr>
+<tr>
+<td>品牌排他</td>
+<td>经销商禁售竞品</td>
+<td>同</td>
+<td>同</td>
+</tr>
+</tbody>
+</table></div><p class="body-text key-finding"><strong>核心发现</strong>：</p>
+<ol class="doc-list"><li><p class="body-text"><strong>1.41亿渠道收入无合同层面的最低保障</strong>：亿盛和亿电宝的最低采购量字段空白，意味着这两家可随时停止采购而无违约责任。结合FY2025尚未出前十大客户的事实（FY2024分别为#9/#10），这两家的持续性存疑</li>
+<li><p class="body-text"><strong>款到发货模式</strong>对星恒资产负债表有利（零AR），但表明经销商为小型企业，持续采购能力有限</li>
+<li><p class="body-text"><strong>交期差异化</strong>：481X模块7天/其他25天——暴露出星恒在481X之外的SKU上存货深度不足</li>
+<li><p class="body-text"><strong>窜货严格禁止</strong>保护了价格体系但限制了经销商的跨区域增长</li>
+</ol>
+<p class="body-text"><strong>D. 2023年客户合同OCR核验——滴滴/城满电/AMARA新发现</strong> 🔴（2026-06-03更新）</p>
+<p class="body-text">此前认为重大客户合同-2023目录为空（因原始目录下文件位于<code>重大客户合同-2023/重大客户合同-2023/</code>子路径）。经逐文件核查，该目录下有<strong>7份文件</strong>，其中3份此前未被任何报告覆盖。</p>
+<p class="body-text"><strong>D1. 滴滴补充协议（CON2023010900008）——15份历史协议的结算框架</strong> 🟡</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条款</th>
+<th>内容</th>
 <th>来源</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>司法案件</td>
-<td>46件（97.83%为被告）</td>
-<td>[A] 天眼查VIP</td>
+<td>甲方</td>
+<td>杭州青奇科技有限公司 + 武汉桔动科技有限公司</td>
+<td>[A] OCR</td>
 </tr>
 <tr>
-<td>被执行总金额</td>
-<td>22.33亿</td>
-<td>[A] 天眼查执行面板</td>
+<td>联系人邮箱</td>
+<td>wangshixuan@didiglobal.com</td>
+<td>[A] OCR</td>
 </tr>
 <tr>
-<td>星恒股权冻结</td>
-<td>6家法院轮候冻结，覆盖全部5,702万股（17.73%）</td>
-<td>[A] 天眼查</td>
+<td>历史协议</td>
+<td><strong>2019年8月至2021年5月共15份采购协议及补充协议</strong></td>
+<td>[A] OCR</td>
 </tr>
 <tr>
-<td>对赌回购触发</td>
-<td>35家PE（47.87%）全部触发回购</td>
-<td>[B] 回购协议汇总</td>
-</tr>
-</tbody>
-</table>
-<p>IPO申报截止日（2020.6.30）和上市截止日（2021.12.31）均已逾期→35家PE的对赌回购条款全部触发→但因启源纳川已陷入债务危机（被执行22.33亿），无力履行回购义务→星恒陷入&quot;必须上市才能解套&quot;的结构性困局。</p>
-<p><strong>来源</strong>：[B] 回购协议汇总；[A] 天眼查VIP司法数据</p>
-<p><strong>危机三：产能利用率V型下滑</strong></p>
-<table>
-<thead>
-<tr>
-<th>指标</th>
-<th>FY2022</th>
-<th>FY2023</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>苏州产线</td>
-<td>61.4%</td>
-<td><strong>4.8%</strong></td>
+<td>付款方式</td>
+<td>电汇（1%返点）/ 120天银承（无返点）二选一</td>
+<td>[A] OCR</td>
 </tr>
 <tr>
-<td>总产能利用率</td>
-<td>38.5%</td>
-<td><strong>26.9%</strong></td>
+<td>有效期</td>
+<td>签署日至<strong>2026年1月31日</strong></td>
+<td>[A] OCR</td>
 </tr>
 </tbody>
-</table>
-<p><strong>来源</strong>：[B] 产能利用率表（22-2603分产线）</p>
-<h4>2.4.2 FY2024——恢复信号但脆弱</h4>
-<table>
-<thead>
-<tr>
-<th>指标</th>
-<th>FY2023</th>
-<th>FY2024</th>
-<th>变化</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>营收（亿）</td>
-<td>23.84</td>
-<td>29.49</td>
-<td>+23.7%</td>
-</tr>
-<tr>
-<td>毛利率</td>
-<td>2.4%</td>
-<td>17.6%</td>
-<td>+15.2pp</td>
-</tr>
-<tr>
-<td>归母净利（亿）</td>
-<td>-5.75</td>
-<td>+0.87</td>
-<td>扭亏</td>
-</tr>
-<tr>
-<td>净利率</td>
-<td>-24.1%</td>
-<td>+2.94%</td>
-<td>—</td>
-</tr>
-<tr>
-<td>产能利用率</td>
-<td>26.9%</td>
-<td>49.3%</td>
-<td>+22.4pp</td>
-</tr>
-</tbody>
-</table>
-<p>FY2024的恢复主要来自：碳酸锂价格回落（成本端改善）、产能利用率回升（需求恢复）、一次性减值减少。但恢复质量存疑——净利率2.94%虽为FY2021以来最佳，但仍低于天能动力FY2024净利率3.0%（含80%铅酸高毛利业务，[A]天能动力2024年报）。</p>
-<p><strong>来源</strong>：[A] FY2024审计报告；[B] 产能利用率表</p>
-<h4>2.4.3 竞争力评估</h4>
-<table>
-<thead>
-<tr>
-<th>维度</th>
-<th>FY2023</th>
-<th>FY2024</th>
-<th>趋势</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>市占率</td>
-<td>58.16%</td>
-<td>58.80%</td>
-<td>微增（分母收缩效应，见3.1节）</td>
-</tr>
-<tr>
-<td>财务实力</td>
-<td>巨亏</td>
-<td>微利</td>
-<td>触底反弹但脆弱</td>
-</tr>
-<tr>
-<td>对手威胁</td>
-<td>ATL 13.70%</td>
-<td>ATL 15.60%</td>
-<td>持续增强</td>
-</tr>
-<tr>
-<td>资本困局</td>
-<td>对赌全面触发</td>
-<td>对赌持续冻结</td>
-<td>结构性困局未解</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3>2.5 第五阶段：天保介入与结构重构（2025-2026）</h3>
-<h4>2.5.1 FY2025——增收不增利</h4>
-<table>
-<thead>
-<tr>
-<th>指标</th>
-<th>FY2024</th>
-<th>FY2025</th>
-<th>变化</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>营收（亿）</td>
-<td>29.49</td>
-<td>36.36</td>
-<td>+23.3%</td>
-</tr>
-<tr>
-<td>毛利率</td>
-<td>17.6%</td>
-<td>13.6%</td>
-<td><strong>-4.0pp</strong></td>
-</tr>
-<tr>
-<td>归母净利（管理/审计双口径）（亿）</td>
-<td>+0.87</td>
-<td>+0.45（管理）/ +0.40（审计）</td>
-<td><strong>-48.3%（管理）/ -54.0%（审计）</strong></td>
-</tr>
-<tr>
-<td>净利率</td>
-<td>2.94%</td>
-<td><strong>1.24%（管理）/ 1.10%（审计）</strong></td>
-<td>大幅下降</td>
-</tr>
-<tr>
-<td>经营现金流（亿）</td>
-<td>—</td>
-<td>+2.06</td>
-<td>健康</td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[A] 审计报告赋码版（FY2024）；[B] FY2025合并报表（未审计）+ 分业务收入表</p>
-<p>核心悖论：营收+23.3%但净利润下降。原因——<strong>三层挤压模型</strong>（与04主报告归因框架一致）：(1) <strong>客户结构层</strong>——商用B2B客户压价+民用渠道价格战；(2) <strong>竞争侵蚀层</strong>——ATL新能安高端吸脂（5%→18.5%），挤压星恒中高端份额及利润空间；(3) <strong>储能失血层</strong>——储能亏损扩大（单独GM -9.3%，含新应用合并口径-5.5%）。规模效应（固定成本摊薄）的利润贡献被三层挤压完全抵消。</p>
-<h4>2.5.2 天保控股介入</h4>
-<table>
-<thead>
-<tr>
-<th>事项</th>
-<th>详情</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>天保收购标的</td>
-<td>A组10家PE持有的13.73%老股</td>
-</tr>
-<tr>
-<td>交易金额</td>
-<td>约5亿元</td>
-</tr>
-<tr>
-<td>隐含估值</td>
-<td>约36.4亿（PS 1.0x，基于FY2025营收36.36亿）</td>
-</tr>
-<tr>
-<td>对比2022年高点（73.5亿）</td>
-<td><strong>折让50.5%</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[B] 项目材料</p>
-<h4>2.5.3 竞争力评估（当前状况，2026年）</h4>
-<table>
-<thead>
-<tr>
-<th>维度</th>
-<th>状态</th>
-<th>详细评价</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>市占率</td>
-<td><strong>72.50%</strong>（2025年内部数据）</td>
-<td>详见3.1节——名义提升但实际成色存疑</td>
-</tr>
-<tr>
-<td>财务实力</td>
-<td>极度微利（净利率1.24%）</td>
-<td>任何单一风险事件都可能导致全年亏损</td>
-</tr>
-<tr>
-<td>竞争格局</td>
-<td>星恒72.5% vs ATL 18.5%，双寡头</td>
-<td>ATL增速是星恒的3-4倍</td>
-</tr>
-<tr>
-<td>技术差异化</td>
-<td>固相法磷酸锰铁锂（窗口期约3年）</td>
-<td>详见附件C</td>
-</tr>
-<tr>
-<td>资本结构</td>
-<td>启源纳川冻结+35家PE困局+天保入场</td>
-<td>A组退出可以清理一部分困局</td>
-</tr>
-<tr>
-<td>估值合理性</td>
-<td>PS 1.0x vs 可比公司PS 0.44-0.70x（经F1客户结构+F2产品安全双层折价后合理PS <strong>0.23-0.51x</strong>）</td>
-<td>较可比公司中枢（0.44x）溢价约127%，较附件折价后上限（0.51x）溢价约96%</td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[B] 星恒市占率Excel/项目材料；[C] MX金融/akshare</p>
-<hr />
-<h2>三、横向分析——各时间节点的竞争截面</h2>
-<h3>3.1 市占率演变深度解析（🔴 核心发现）</h3>
-<blockquote>
-<p>📊 <strong>行业vs企业归因体系</strong>：31项变化因素的逐因素行业/企业分类（含定量贡献度）、行业因素五年趋势展望、企业因素根因追溯与可修正性、双层折价（行业层 vs 企业层）的分别测算，详见 <strong><a href="appendix_h.html">附件H：行业原因vs企业原因归因分析与五年趋势展望</a></strong>（2026-06-02）。</p>
-</blockquote>
-<h4>3.1.1 数据展示——完整市占率时间序列</h4>
-<p>以下数据来自星恒内部市占率分析Excel [B]，涵盖中国两轮车锂电池市场的完整竞争格局：</p>
-<table>
-<thead>
-<tr>
-<th>年份</th>
-<th>星恒</th>
-<th>天能</th>
-<th>CATL/ATL</th>
-<th>博力威</th>
-<th>国轩</th>
-<th>南都</th>
-<th>其他</th>
-<th>星恒出货(万组)</th>
-<th>市场总量(万组)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>2019</strong></td>
-<td><strong>45.23%</strong></td>
-<td>18.47%</td>
-<td>—</td>
-<td>8.67%</td>
-<td>—</td>
-<td>—</td>
-<td>27.63%</td>
-<td>286.17</td>
-<td>~633</td>
-</tr>
-<tr>
-<td><strong>2020</strong></td>
-<td><strong>44.78%</strong></td>
-<td>9.47%</td>
-<td>CATL 8.54%</td>
-<td>—</td>
-<td>5.00%</td>
-<td>5.80%</td>
-<td>26.41%</td>
-<td>481.71</td>
-<td>~1,076</td>
-</tr>
-<tr>
-<td><strong>2021</strong></td>
-<td><strong>44.43%</strong></td>
-<td>8.60%</td>
-<td>ATL 12.64% + CATL 7.13%</td>
-<td>—</td>
-<td>—</td>
-<td>4.03%</td>
-<td>23.17%</td>
-<td>388.18</td>
-<td>~874</td>
-</tr>
-<tr>
-<td><strong>2022</strong></td>
-<td><strong>47.89%</strong></td>
-<td>10.97%</td>
-<td>ATL 15.51%</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>25.63%</td>
-<td>227.36</td>
-<td>~475</td>
-</tr>
-<tr>
-<td><strong>2023</strong></td>
-<td><strong>58.16%</strong></td>
-<td>4.60%</td>
-<td>ATL 13.70%</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>23.55%</td>
-<td>201.88</td>
-<td>~347</td>
-</tr>
-<tr>
-<td><strong>2024</strong></td>
-<td><strong>58.80%</strong></td>
-<td>1.50%</td>
-<td>ATL 15.60%</td>
-<td>—</td>
-<td>2.20%</td>
-<td>1.30%</td>
-<td>20.60%</td>
-<td>263.36</td>
-<td>~448</td>
-</tr>
-<tr>
-<td><strong>2025</strong></td>
-<td><strong>72.50%</strong></td>
-<td>1.96%</td>
-<td>ATL 18.50%</td>
-<td>1.99%</td>
-<td>0.57%</td>
-<td>—</td>
-<td>4.49%</td>
-<td>343.34</td>
-<td>~474</td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[B] 星恒市占率分析Excel（2019-2025）
-<strong>注</strong>：市场总量由星恒出货量÷市占率反推，为近似值</p>
-<h4>3.1.2 关键发现一：市占率&quot;提升&quot;的真相——分母收缩效应</h4>
-<blockquote>
-<p>[!WARNING] ⚠️
-<strong>市占率72.5%并非来自星恒的增长，而是来自竞争对手的更快退出。</strong></p>
-</blockquote>
-<p><strong>核心数据</strong>：</p>
-<ul>
-<li>星恒2024年出货263.36万组，2025年343.34万组，<strong>+30.4%</strong></li>
-<li>但市场总量从~874万组（2021年峰值）降至~474万组（2025年），<strong>-45.8%</strong></li>
-<li>星恒市占率从44.43%（2021）→72.50%（2025），<strong>+28.07pp</strong></li>
-</ul>
-<p><strong>市占率变动的分解</strong>（2021→2025，Shapley双因素完全分解）：</p>
-<table>
-<thead>
-<tr>
-<th>因素</th>
-<th>贡献</th>
-<th>计算路径</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>星恒出货量下降</td>
-<td><strong>-7.3pp</strong></td>
-<td>388.18万组→343.34万组（-11.6%），若市场不变市占率将从44.4%降至39.3%（-5.1pp）；若市场已萎缩则从81.9%降至72.4%（-9.5pp）；Shapley均值=-7.3pp</td>
-</tr>
-<tr>
-<td>市场总量收缩</td>
-<td><strong>+35.3pp</strong></td>
-<td>874万组→474万组（-45.8%），若出货不变市占率将从44.4%被动升至81.9%（+37.5pp）；若出货已降至343.34万组则从39.3%升至72.4%（+33.2pp）；Shapley均值=+35.3pp</td>
-</tr>
-<tr>
-<td><strong>合计</strong></td>
-<td><strong>+28.0pp</strong></td>
-<td><strong>市场收缩贡献126%，出货下降抵消26%</strong></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>数据来源</strong>：[B] 星恒市占率分析Excel（出货量）+ [C] GGII/起点研究院（市场总量）。Shapley分解消除交叉项分配偏差。</p>
-<p>计算验证：星恒实际出货量从388.18万组降至343.34万组（-11.6%），但市占率从44.43%升至72.50%——这完全是分母（市场总量）从~874万组降至~474万组（-45.8%）的结果。<strong>市占率提升100%归因于市场收缩而非星恒增长。</strong></p>
-</blockquote>
-<p><strong>这意味着什么？</strong></p>
-<ul>
-<li>星恒的&quot;市占率72.5%&quot;描述的是<strong>幸存者偏差</strong>——在大多数竞争对手退出后，星恒成为&quot;最后的站立者&quot;</li>
-<li>这一市占率的<strong>防御性</strong>强于<strong>进攻性</strong>——不是靠产品/技术/价格击败对手，而是靠&quot;熬过寒冬&quot;</li>
-<li>在ATL新能安持续增长（5%→18.5%）的背景下，星恒的&quot;防守型&quot;市占率可能正在被&quot;进攻型&quot;竞争者蚕食——这是三层挤压模型中&quot;竞争侵蚀层&quot;的长期结构性风险，详见2.5.1节归因分析</li>
-</ul>
-<h4>3.1.3 关键发现二：竞争对手进入/退出全景图</h4>
-<table>
-<thead>
-<tr>
-<th>竞争对手</th>
-<th>2019</th>
-<th>2020</th>
-<th>2021</th>
-<th>2022</th>
-<th>2023</th>
-<th>2024</th>
-<th>2025</th>
-<th>变化轨迹</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>天能股份</strong></td>
-<td>18.47%</td>
-<td>9.47%</td>
-<td>8.60%</td>
-<td>10.97%</td>
-<td>4.60%</td>
-<td>1.50%</td>
-<td>1.96%</td>
-<td><strong>大撤退</strong>（锂电重心转储能）</td>
-</tr>
-<tr>
-<td><strong>CATL</strong></td>
-<td>—</td>
-<td>8.54%</td>
-<td>7.13%</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td><strong>退出</strong>（转移至新能安）</td>
-</tr>
-<tr>
-<td><strong>ATL新能安</strong></td>
-<td>—</td>
-<td>—</td>
-<td>12.64%</td>
-<td>15.51%</td>
-<td>13.70%</td>
-<td>15.60%</td>
-<td><strong>18.50%</strong></td>
-<td><strong>持续增长</strong></td>
-</tr>
-<tr>
-<td><strong>博力威</strong></td>
-<td>8.67%</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>1.99%</td>
-<td><strong>大幅萎缩</strong></td>
-</tr>
-<tr>
-<td><strong>科力远</strong></td>
-<td>5.78%</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td><strong>退出</strong></td>
-</tr>
-<tr>
-<td><strong>芯驰光电</strong></td>
-<td>5.20%</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td><strong>退出</strong></td>
-</tr>
-<tr>
-<td><strong>南都电源</strong></td>
-<td>—</td>
-<td>5.80%</td>
-<td>4.03%</td>
-<td>—</td>
-<td>—</td>
-<td>1.30%</td>
-<td>—</td>
-<td><strong>退出</strong></td>
-</tr>
-<tr>
-<td><strong>国轩高科</strong></td>
-<td>—</td>
-<td>5.00%</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>2.20%</td>
-<td>0.57%</td>
-<td><strong>边缘化</strong></td>
-</tr>
-<tr>
-<td><strong>超威</strong></td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>3.54%</td>
-<td>1.70%</td>
-<td>—</td>
-<td>—</td>
-<td><strong>退出</strong></td>
-</tr>
-<tr>
-<td><strong>爱德邦</strong></td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>3.67%</td>
-<td>0.69%</td>
-<td>—</td>
-<td>—</td>
-<td><strong>退出</strong></td>
-</tr>
-<tr>
-<td><strong>其他合计</strong></td>
-<td>16.65%</td>
-<td>26.41%</td>
-<td>23.17%</td>
-<td>18.42%</td>
-<td>21.15%</td>
-<td>20.60%</td>
-<td>4.49%</td>
-<td><strong>全面退出</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[B] 星恒市占率分析Excel（2019-2025）</p>
-<p><strong>竞争格局的结构性结论</strong>：</p>
-<ol>
-<li><strong>市场从&quot;多强竞争&quot;变为&quot;双寡头&quot;</strong>：2019年有5家以上有意义的竞争者（天能18.47%、博力威8.67%、科力远5.78%、芯驰5.20%）；到2025年仅剩星恒72.50%+ATL 18.50%，其他合计不足5%</li>
-<li><strong>天能的退出是最大格局变化</strong>：从18.47%（2019）→1.96%（2025），天能主动将锂电重心从两轮车转向储能——这直接释放了约17pp的市场份额</li>
-<li><strong>唯一增长对手是ATL新能安</strong>：从0（2018）→18.50%（2025），7年内成为稳定的第二极。其股权结构（CATL 70%+ATL 30%）赋予其竞争对手无法复制的成本+品质+品牌优势</li>
-<li><strong>博力威错失两轮车锂电主线</strong>：从8.67%（2019）→1.99%（2025），2025年报显示其营收27.35亿（+48.3%）主要靠海外储能拉动，两轮车锂电国内份额已边缘化 [A]</li>
-</ol>
-<h4>3.1.4 ATL新能安专项拆解——星恒面临的唯一结构性威胁</h4>
-<p><strong>新能安增速的可持续性分析</strong>（置信度：★★★★☆）：</p>
-<table>
-<thead>
-<tr>
-<th>阶段</th>
-<th>时间</th>
-<th>市占率</th>
-<th>年增速</th>
-<th>驱动力</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>进入期</td>
-<td>2020-2021</td>
-<td>0→12.64%</td>
-<td>—</td>
-<td>CATL品牌+成本优势</td>
-</tr>
-<tr>
-<td>扩张期</td>
-<td>2021-2023</td>
-<td>12.64→13.70%</td>
-<td>+0.5pp/年</td>
-<td>高端OEM认证突破</td>
-</tr>
-<tr>
-<td>加速期</td>
-<td>2023-2025</td>
-<td>13.70→18.50%</td>
-<td>+2.4pp/年</td>
-<td>换电市场+渠道扩张</td>
-</tr>
-<tr>
-<td>稳态期</td>
-<td>2026-2028E</td>
-<td>18.50→22-25%</td>
-<td><strong>+1-2pp/年</strong>（预判）</td>
-<td>高端市场天花板显现</td>
-</tr>
-</tbody>
-</table>
-<p><strong>增速可能减速的原因</strong>：</p>
-<ol>
-<li>高端市场规模有限（2025年电摩在两轮车总销量中占比不足15% [C]），新能安从5%→18.5%主要来自基数效应</li>
-<li>继续增长至25%+必须进入星恒的核心腹地——中低端民用市场——这与新能安的高端定位存在战略矛盾</li>
-<li>CATL内部战略重心在汽车动力+储能，两轮车板块非最高优先级</li>
-</ol>
-<p><strong>来源</strong>：[C] 行业公开信息+逻辑推演</p>
-<p><strong>但即使新能安增速放缓至+1-2pp/年</strong>，与星恒市占率被侵蚀的剪刀差（新能安+1.5pp/年 vs 星恒-2.5pp/年【4.2.2节详述】）仍然是竞争格局恶化的核心信号。</p>
-<h4>3.1.5 关键发现三：72.5%市占率的含金量——三个解读角度</h4>
-<blockquote>
-<p>星恒2025年市占率72.5%看似极度强势——但深入分析后，其&quot;含金量&quot;显著低于表面数字。</p>
-</blockquote>
-<p><strong>角度一：防御性市占率（正面）</strong></p>
-<table>
-<thead>
-<tr>
-<th>指标</th>
-<th>评价</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>所有竞争对手退出时，星恒存活</td>
-<td>成本控制能力、品牌渠道护城河、先发优势经受考验</td>
-</tr>
-<tr>
-<td>供应链关系（OEM+渠道）成为壁垒</td>
-<td>稳定的下游渠道是其他竞争者无法复制的</td>
-</tr>
-<tr>
-<td>行业洗牌中市占率反而提升</td>
-<td>熬过周期低谷的能力本身就是一种竞争力</td>
-</tr>
-</tbody>
-</table>
-<p><strong>角度二：幸存者偏差（中性偏负）</strong></p>
-<table>
-<thead>
-<tr>
-<th>指标</th>
-<th>2021（市占率最低）</th>
-<th>2025（市占率最高）</th>
-<th>实质变化</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>星恒市占率</td>
-<td>44.43%</td>
-<td>72.50%</td>
-<td>+28.07pp</td>
-</tr>
-<tr>
-<td>星恒出货量</td>
-<td>388.18万组</td>
-<td>343.34万组</td>
-<td><strong>-11.6%</strong></td>
-</tr>
-<tr>
-<td>市场总量</td>
-<td>~874万组</td>
-<td>~474万组</td>
-<td><strong>-45.8%</strong></td>
-</tr>
-<tr>
-<td>可竞争市场</td>
-<td>大（多强竞争）</td>
-<td>仅剩星恒+ATL</td>
-<td>萎缩</td>
-</tr>
-<tr>
-<td>市占率&quot;含金量&quot;</td>
-<td>高（充分竞争）</td>
-<td><strong>低（幸存者偏差）</strong></td>
-<td>↓</td>
-</tr>
-</tbody>
-</table>
-<p>市占率提升100%来自分母收缩——Shapley分解显示市场收缩贡献126%，星恒自身出货量下降抵消-26%。市场萎缩导致竞争对手退出，星恒&quot;被动&quot;获得了更大份额，而非通过产品/技术/价格主动击败对手。</p>
-<p><strong>角度三：ATL威胁下的实质竞争（负面）</strong></p>
-<ul>
-<li>可竞争市场中（排除已退出者），ATL vs 星恒的实质竞争格局：<strong>ATL年+1-2pp vs 星恒年-2.5pp</strong></li>
-<li>ATL从18.5%升至25%仅需3-4年（按当前增速），但星恒从72.5%降至60-65%也只需3-4年</li>
-<li>双寡头格局中，星恒是中低端龙头（规模+低价），ATL是高端龙头（品质+品牌）——两者在不同层级竞争，但ATL向中端下沉是时间问题</li>
-</ul>
-<p><strong>结论</strong>：星恒的&quot;72.5%市占率&quot;描述的是<strong>幸存者偏差</strong>——在大多数竞争对手退出后，星恒成为&quot;最后的站立者&quot;。这一市占率的<strong>防御性</strong>强于<strong>进攻性</strong>——不是靠产品/技术/价格击败对手，而是靠&quot;熬过寒冬&quot;。在ATL持续增长的背景下，星恒的&quot;防守型&quot;市占率可能正在被&quot;进攻型&quot;竞争者蚕食。</p>
-<hr />
-<h3>3.2 技术路线竞争力横向对比</h3>
-<h4>3.2.1 各时期技术竞争力矩阵</h4>
-<table>
-<thead>
-<tr>
-<th>时期</th>
-<th>星恒技术</th>
-<th>行业主流</th>
-<th>星恒技术竞争力</th>
-<th>决定因素</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2003-2010</td>
-<td>第一代锰酸锂（300-800次）</td>
-<td>铅酸+少量锰酸锂/镍钴锰三元</td>
-<td>★★★☆☆</td>
-<td>先发优势，够用</td>
-</tr>
-<tr>
-<td>2011-2018</td>
-<td>第二代锰酸锂+镍钴锰三元复合材料</td>
-<td>磷酸铁锂/镍钴锰三元（汽车）+锰酸锂（两轮车）</td>
-<td>★★★☆☆</td>
-<td>锰系复合有差异化但天花板低</td>
-</tr>
-<tr>
-<td>2019-2022</td>
-<td><strong>固相法磷酸锰铁锂</strong>启动</td>
-<td>磷酸铁锂（比亚迪/宁德）+ 镍钴锰三元（宁德）</td>
-<td>★★★★☆</td>
-<td>差异化真实但规模太小</td>
-</tr>
-<tr>
-<td>2023-2026</td>
-<td>固相法磷酸锰铁锂+GT-Force概念</td>
-<td>磷酸锰铁锂多种路线（德方液相法/裕能等）</td>
-<td>★★★☆☆</td>
-<td>窗口期约3年（2026-2029），详见附件C</td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[B/C] 综合项目材料+行业公开资料；附件AB/附件C</p>
-<h4>3.2.2 技术护城河演变判断</h4>
-<table>
-<thead>
-<tr>
-<th>时间</th>
-<th>护城河类型</th>
-<th>深度</th>
-<th>可替代性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2003-2010</td>
-<td><strong>先发优势护城河</strong></td>
-<td>浅</td>
-<td>高（任何有电池技术的企业都可进入）</td>
-</tr>
-<tr>
-<td>2011-2018</td>
-<td><strong>客户关系护城河</strong>（OEM绑定）</td>
-<td>中</td>
-<td>中（需要时间建立认证关系）</td>
-</tr>
-<tr>
-<td>2019-2022</td>
-<td><strong>技术差异化护城河</strong>（固相法磷酸锰铁锂）</td>
-<td>中</td>
-<td>中高（路线独特但非不可复制）</td>
-</tr>
-<tr>
-<td>2023-2026</td>
-<td><strong>规模+关系护城河</strong>（市占率72.5%）</td>
-<td>中深</td>
-<td>中（ATL正在侵蚀关系网络）</td>
-</tr>
-</tbody>
-</table>
-<p><strong>结论</strong>：星恒的护城河从&quot;先发优势&quot;→&quot;客户关系&quot;→&quot;技术差异化&quot;→&quot;规模+关系&quot;的演化轨迹，表明其核心竞争力经历了从技术→渠道→规模的转移。<strong>当前最大的护城河是OEM关系网络（20年积累），但这种护城河正在被ATL的价格优势和品牌背书侵蚀。</strong></p>
-<hr />
-<h3>3.3 财务竞争力横向对标</h3>
-<h4>3.3.1 星恒 vs 同类公司盈利能力（FY2025）</h4>
-<blockquote>
-<p><strong>可比口径规则</strong>：所有同业对比须区分业务段。整体GM含不可比业务段（海外/储能/铅酸等）时，必须标注偏差方向。详见04主报告3.2节完整可比口径规则。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>企业</th>
-<th>营收</th>
-<th>整体GM（毛利率）</th>
-<th>净利率</th>
-<th>业务特征</th>
-<th>可比口径备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>宁德时代</td>
-<td>~4,200亿</td>
-<td>26.27%</td>
-<td>18.12%</td>
-<td>汽车动力+储能龙头</td>
-<td>与星恒两轮车不可比 [A]</td>
-</tr>
-<tr>
-<td>博力威</td>
-<td>27.35亿</td>
-<td>18.08%</td>
-<td>2.0%</td>
-<td>两轮车+储能</td>
-<td><strong>⚠️ 含海外高GM储能</strong>，国内两轮车GM估计5-10% [A/D]</td>
-</tr>
-<tr>
-<td>天能动力</td>
-<td><strong>599.53亿港元（≈534亿），⚠️ 同比-21.8%</strong></td>
-<td>~15-20%</td>
-<td>2.68%</td>
-<td>80%铅酸+锂电+储能</td>
-<td><strong>⚠️ 含~80%铅酸高毛利</strong> [A]</td>
-</tr>
-<tr>
-<td>超威动力</td>
-<td><strong>606.24亿港元（≈540亿），同比+8.06%</strong></td>
-<td>~12-15%</td>
-<td>0.67%</td>
-<td>铅酸+锂电</td>
-<td><strong>⚠️ 含~80%铅酸高毛利</strong> [A]</td>
-</tr>
-<tr>
-<td><strong>星恒电源</strong></td>
-<td><strong>36.36亿</strong></td>
-<td><strong>13.6%</strong></td>
-<td><strong>1.24%（管理）/1.10%（审计）</strong></td>
-<td>两轮车锂电为主</td>
-<td>纯锂电（含储能-9.3%拖累）[B]</td>
-</tr>
-<tr>
-<td>德方纳米</td>
-<td>87.16亿</td>
-<td>1.30%</td>
-<td><strong>-9.4%（归母净利-8.21亿）</strong></td>
-<td>磷酸铁锂正极（行业周期底部）</td>
-<td>正极材料与电芯不可比 [A]</td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[A] 各家2025年报；[B] 星恒FY2025合并报表；[A] MX/iFind FY2025年报</p>
-<p><strong>关键判断（可比口径修正版）</strong>：</p>
-<ul>
-<li>天能/超威营收修正为FY2025年报实测值。天能营收同比-21.8%（FY2024 766.69亿→FY2025 599.53亿港元），铅酸行业景气度显著下行。超威FY2025营收（606.24亿港元）首次超越天能。</li>
-<li>德方纳米净亏损修正至-9.4%（-8.21亿 vs 此前-10.87亿，MX/iFind FY2025年报），差异不影响分析结论（均为重大亏损）。</li>
-<li>星恒GM 13.6%在两轮车/轻型动力行业中处于<strong>中游偏下</strong></li>
-<li>净利率1.24%极端微薄——利润厚度不足以抵御任何单一重大风险</li>
-<li>天能（3.0%含铅酸高毛利）和博力威（2.0%含海外储能）均含不可比业务段。按可比口径（国内两轮车锂电），博力威国内两轮车段估计净利率1.0-2.0%——星恒国内两轮车段（剔除储能亏损后）净利率2.5-3.5%实际上优于博力威国内两轮车段。<strong>行业属性（微利）是共性，星恒的劣势主要在储能失血而非国内两轮车主业</strong> [B/D]</li>
-</ul>
-<h4>3.3.2 六年财务轨迹——竞争力变化的财务映射</h4>
-<table>
-<thead>
-<tr>
-<th>指标</th>
-<th>FY2020</th>
-<th>FY2021</th>
-<th>FY2022</th>
-<th>FY2023</th>
-<th>FY2024</th>
-<th>FY2025</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>营收（亿）</td>
-<td><strong>40.21</strong></td>
-<td>36.66</td>
-<td>35.99</td>
-<td>23.84</td>
-<td>29.49</td>
-<td>36.36</td>
-</tr>
-<tr>
-<td>GM</td>
-<td>26.5%</td>
-<td>10.9%</td>
-<td>9.8%</td>
-<td>2.4%</td>
-<td>17.6%</td>
-<td>13.6%</td>
-</tr>
-<tr>
-<td>归母净利（亿）</td>
-<td>~3.76</td>
-<td>~0.12</td>
-<td>-3.03</td>
-<td>-5.75</td>
-<td>+0.87</td>
-<td>+0.45</td>
-</tr>
-<tr>
-<td>净利率</td>
-<td>9.5%</td>
-<td>0.3%</td>
-<td>-8.4%</td>
-<td>-24.1%</td>
-<td>+2.94%</td>
-<td>+1.24%</td>
-</tr>
-<tr>
-<td>产能利用率</td>
-<td>~70%+</td>
-<td>~50%</td>
-<td>38.5%</td>
-<td>26.9%</td>
-<td>49.3%</td>
-<td>65.8%</td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[A] FY2020-2024审计报告；[B] FY2025合并报表+产能利用率表</p>
-<p><strong>财务竞争力轨迹</strong>：</p>
-<ul>
-<li><strong>FY2020</strong>：历史上最好的年份——营收40.21亿、净利率9.5%，但这依赖于不可复制的三重红利</li>
-<li><strong>FY2021-2023</strong>：三年加速恶化——营收-35%、GM从26.5%→2.4%</li>
-<li><strong>FY2024-2025</strong>：恢复但未回到健康水平——营收恢复至36.36亿（仍低于FY2020的40.21亿），但净利率仅1.24%（FY2020的1/8）</li>
-<li><strong>核心矛盾</strong>：规模上的&quot;恢复&quot;掩盖了盈利质量的&quot;恶化&quot;——FY2025以36.36亿营收仅创造0.45亿净利润，而FY2020以40.21亿营收创造了3.76亿净利润</li>
-</ul>
-<hr />
-<h2>四、横纵交汇——竞争力变化的归因分析</h2>
-<h3>4.1 战略转折点全景图</h3>
-<table>
-<thead>
-<tr>
-<th>年份</th>
-<th>事件</th>
-<th>对竞争力的影响</th>
-<th>方向</th>
-<th>量级</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2003</td>
-<td>中科院+联想设立星恒</td>
-<td>技术基因</td>
-<td>↑</td>
-<td>奠基</td>
-</tr>
-<tr>
-<td>2011-2015</td>
-<td>成为两轮车锂电龙头</td>
-<td>市场份额+客户关系积累</td>
-<td>↑↑</td>
-<td>重大正面</td>
-</tr>
-<tr>
-<td>2017</td>
-<td>启源纳川收购控制权</td>
-<td>管理层影响力增强，但埋下对赌隐患</td>
-<td>↓</td>
-<td>隐忧</td>
-</tr>
-<tr>
-<td>2019</td>
-<td>Pre-IPO引入35家PE+对赌</td>
-<td>估值短期提升，但对赌埋下结构性地雷</td>
-<td>↑↓</td>
-<td>双刃剑</td>
-</tr>
-<tr>
-<td>2020</td>
-<td>CATL进入两轮车市场</td>
-<td>巨头降维打击开始</td>
-<td>↓↓</td>
-<td>重大负面</td>
-</tr>
-<tr>
-<td>2021</td>
-<td>ATL新能安正式运营</td>
-<td>最大竞争对手诞生</td>
-<td>↓↓</td>
-<td>重大负面</td>
-</tr>
-<tr>
-<td>2022</td>
-<td>深创投战投（73.5亿估值）</td>
-<td>估值+信心高峰，但&quot;最后一次融资&quot;</td>
-<td>↑</td>
-<td>短期正面</td>
-</tr>
-<tr>
-<td>2023</td>
-<td>启源纳川债务危机+对赌触发</td>
-<td>IPO冻结，困局锁定</td>
-<td>↓↓↓</td>
-<td>毁灭性</td>
-</tr>
-<tr>
-<td>2023</td>
-<td>FY2023巨亏5.78亿</td>
-<td>财务谷底</td>
-<td>↓↓↓</td>
-<td>重大负面</td>
-</tr>
-<tr>
-<td>2024-2025</td>
-<td>恢复但增收不增利</td>
-<td>表面恢复，实质脆弱</td>
-<td>→</td>
-<td>中性偏负</td>
-</tr>
-<tr>
-<td>2026</td>
-<td>天保5亿收购13.73%</td>
-<td>引入新资本，但估值折让50%（vs 2022）</td>
-<td>↑</td>
-<td>中性偏正</td>
-</tr>
-</tbody>
-</table>
-<h3>4.2 竞争力变化的核心归因框架</h3>
-<h4>4.2.1 三层次归因模型</h4>
-<pre><code>星恒竞争力变化 = 行业层因素 + 竞争层因素 + 企业层因素
-
-行业层（外部）：两轮车锂电市场总量收缩（-45.8%，2021→2025）
-竞争层（对手）：ATL新能安的差异化竞争（高端聚焦+CATL成本协同）
-企业层（自身）：资本结构困局（对赌）+ 技术路线天花板（锰系能量密度局限）
-</code></pre>
-<h4>4.2.2 市占率变化的量化归因</h4>
-<table>
-<thead>
-<tr>
-<th>时间段</th>
-<th>星恒市占率变化</th>
-<th>归因</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2019→2021</td>
-<td>45.23%→44.43%（-0.8pp）</td>
-<td>CATL/ATL进入抢夺份额（竞争层）</td>
-</tr>
-<tr>
-<td>2021→2023</td>
-<td>44.43%→58.16%（+13.73pp）</td>
-<td>天能等对手退出→市场总量从874万→347万组（分母收缩，行业层）</td>
-</tr>
-<tr>
-<td>2023→2025</td>
-<td>58.16%→72.50%（+14.34pp）</td>
-<td>其他竞争者全面退出+ATL增速放缓（行业层+竞争层）</td>
-</tr>
-<tr>
-<td><strong>2025→2028E</strong></td>
-<td><strong>72.50%→估计65-68%</strong>（预判）</td>
-<td>ATL持续侵蚀（竞争层）+ 星恒固相法窗口期收窄（企业层）</td>
-</tr>
-</tbody>
-</table>
-<p><strong>预判逻辑</strong>：</p>
-<ul>
-<li>分母收缩效应已基本出清——其他竞争者合计仅4.49%，进一步退出的空间极小</li>
-<li>ATL增速即使放缓至+1-2pp/年，3年也将从18.50%升至21.5-24.5%</li>
-<li>星恒的份额面临&quot;回归均值&quot;压力——72.5%的高份额部分来自行业洗牌的&quot;意外红利&quot;，而非星恒的主动增长</li>
-</ul>
-<h4>4.2.3 财务竞争力变化的归因</h4>
-<table>
-<thead>
-<tr>
-<th>财务指标</th>
-<th>FY2020→FY2023变化</th>
-<th>行业因素</th>
-<th>竞争因素</th>
-<th>企业因素</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>营收 -40.7%</td>
-<td>40.21→23.84亿</td>
-<td>30%（锂价波动影响下游需求）</td>
-<td>30%（CATL/ATL抢夺份额）</td>
-<td>40%（产能利用率暴跌至26.9%）</td>
-</tr>
-<tr>
-<td>GM -24.1pp</td>
-<td>26.5%→2.4%</td>
-<td>40%（碳酸锂暴涨→成本端）</td>
-<td>30%（锁价到期后商用B2B+民用渠道压价。注：华霆汽车电芯锁价↓64%已合同验证，两轮车OEM定价附件未提供无法直接验证）</td>
-<td>30%（B1/B3-1产线拖累）</td>
-</tr>
-<tr>
-<td>净利转亏</td>
-<td>+3.76→-5.75亿</td>
-<td>35%</td>
-<td>30%</td>
-<td>35%（大规模减值+离职补偿）</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>华霆汽车电芯锁价效应量化核验</strong>（来源：[A] 2020-2021年大客户合同OCR提取，详见附件F1 2.2.1节）：</p>
-<p>华霆（合肥）动力电芯合同提供了&quot;锁价→暴跌&quot;的量化证据链，直接验证了04报告中&quot;锁价合同高价锁定，到期后价格回归竞争&quot;的归因逻辑：</p>
-<table>
-<thead>
-<tr>
-<th>时间段</th>
-<th>单价</th>
-<th>变化</th>
-<th>背景</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2020全年</td>
-<td>1.32-1.386元/Wh</td>
-<td>—</td>
-<td>疫情前锁价合同，产能紧张期高价</td>
-</tr>
-<tr>
-<td>2021 Q1</td>
-<td>0.48元/Wh（42.624元/只）</td>
-<td>↓64% vs 2020</td>
-<td>锁价到期，新价格体系下回归竞争定价</td>
-</tr>
-<tr>
-<td>2021 4-5月</td>
-<td>0.52元/Wh（46.333元/只）</td>
-<td>+8.7%（临时）</td>
-<td>碳酸锂上涨短时传导，仅限约90万只</td>
-</tr>
-<tr>
-<td>2021 6-12月</td>
-<td>0.48元/Wh</td>
-<td>回落</td>
-<td>主力价格回归竞争水平</td>
-</tr>
-<tr>
-<td>2021 12月(10万只批)</td>
-<td>0.60元/Wh（53.28元/只）</td>
-<td>+25%</td>
-<td>年末碳酸锂飙涨（9→27万元/吨）传导至末批</td>
-</tr>
-</tbody>
-</table>
-<p><strong>关键含义</strong>：(1) FY2020华霆电芯以约3倍于FY2021的价格供货——锁价效应在汽车电芯领域是真实的且量级巨大；(2) 锁价到期后价格立即暴跌64%，说明此前的&quot;高利润&quot;不可持续且具有一次性的偶然特征；(3) 价格协议的高频签订（几乎每月/每两月一份）表明汽车电芯市场竞争激烈，星恒不具备定价权；(4) FY2020高利润的核心来源之一是华霆汽车电芯的锁价红利，而非两轮车业务的结构性盈利优势。</p>
-</blockquote>
-<p><strong>FY2024→FY2025复苏但质量差的归因</strong>：</p>
-<table>
-<thead>
-<tr>
-<th>指标</th>
-<th>变化</th>
-<th>归因</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>营收+23.3%</td>
-<td>29.49→36.36亿</td>
-<td>行业恢复+产能利用率回升（行业因素主导）</td>
-</tr>
-<tr>
-<td>GM -4.0pp</td>
-<td>17.6%→13.6%</td>
-<td>三层挤压：(1)商用B2B客户压价+(2)民用渠道价格战+ATL竞争侵蚀+(3)储能亏损扩大（竞争+企业因素主导）</td>
-</tr>
-<tr>
-<td>净利-48.3%（管理口径）</td>
-<td>+0.87→+0.45亿</td>
-<td>规模效应被售价下降完全抵消（企业因素主导）</td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[A/B] 审计报告+项目材料；归因比例为估算性质（置信度：★★★☆☆）</p>
-<hr />
-<h3>4.3 四个关键战略选择的长期后果</h3>
-<h4>选择一（2003）：边缘市场根据地</h4>
-<p><strong>当时</strong>：选择巨头看不上的两轮车电池市场
-<strong>结果</strong>：20年后成为该细分市场全球第一（72.5%）
-<strong>代价</strong>：天花板低（FY2025纯锂电市场规模约40-50亿），当巨头开始&quot;下沉&quot;时规模劣势暴露
-<strong>长期判断</strong>：这是一个<strong>明智的创业选择</strong>，但也是一个<strong>有明确天花板的赛道选择</strong>。星恒没有在2015-2020动力电池爆发窗口完成&quot;出圈&quot;——详见选择二</p>
-<h4>选择二（2015-2020）：留在两轮车不&quot;出圈&quot;</h4>
-<p><strong>当时</strong>：动力电池行业爆发（宁德时代/比亚迪/亿纬锂能快速崛起），星恒选择继续聚焦两轮车
-<strong>结果</strong>：避免了与巨头的正面竞争，但也错过了中国新能源产业最大的成长窗口
-<strong>反事实分析</strong>（置信度：★★★☆☆）：</p>
-<ul>
-<li>支持&quot;能力约束&quot;的论据：2015年的星恒（营收约10-15亿级）进入动力电池面临资本壁垒（单GWh投资3-4亿 vs 两轮车0.5-1亿）、客户认证壁垒（汽车OEM 2-3年 vs 两轮车6-12月）、技术壁垒（锰酸锂不是汽车主流路线）</li>
-<li>支持&quot;主动选择&quot;的论据：两轮车锂电化是新国标驱动的确定性赛道，深耕优势领域是理性选择</li>
-<li><strong>综合判断</strong>：&quot;不出圈&quot;更可能是能力约束+战略聚焦的共同产物。固相法磷酸锰铁锂提供了一条潜在的重返路径——通过前驱体间接供应汽车级正极材料企业（而非自建汽车电芯产能），但概率仅25-35%且需2-3年验证周期——详见附件C第4.4节</li>
-</ul>
-<p><strong>与当前投资的相关性</strong>：星恒在轻型车动力电池领域有22年积累、国内市占率超50%（[A] 公司概况）。固相法磷酸锰铁锂提供了一条潜在的重返汽车供应链路径——通过前驱体间接供应汽车级正极材料企业（而非自建汽车电芯产能），但概率仅25-35%且需2-3年验证周期——详见附件C第4.4节。</p>
-<p><strong>来源</strong>：[C] 行业公开信息+2015年动力电池白名单政策回顾+逻辑推演</p>
-<h4>选择三（2017-2019）：控制权结构+Pre-IPO对赌</h4>
-<p><strong>当时</strong>：启源纳川收购控制权→Pre-IPO引入35家PE→约定IPO对赌回购
-<strong>结果</strong>：估值从25亿→73.5亿（+194%），但启源纳川债务危机将35家PE全部锁入&quot;不上市就血本无归&quot;的困局
-<strong>代价</strong>：从正常经营企业变为&quot;必须上市才能解套&quot;的困局——这是<strong>单一最大的结构性风险</strong></p>
-<p><strong>对天保的启示</strong>：</p>
-<ul>
-<li>A组（10家PE，13.73%）通过天保收购退出后，可解除一部分冻结（启源纳川冻结的17.73%中对应A组部分）</li>
-<li>但B组（25家PE，34.14%）仍在困局中——天保入股并不能解决全部对赌问题</li>
-<li>对赌诉讼时效（《民法典》第188条，2021年1月1日生效，3年诉讼时效）可能已过期——详情见主报告4.4节</li>
-</ul>
-<p><strong>来源</strong>：[B] 回购协议汇总；[A] 天眼查VIP司法数据</p>
-<h4>选择四（2022）：固相法磷酸锰铁锂</h4>
-<p><strong>当时</strong>：选择行业非主流的固相法（vs 主流的共沉淀法/液相法）
-<strong>结果</strong>：技术差异化真实——青源获容百斯科兰德供应商认证，FY2025营收7,022万（管理层青源材料披露7,116万 [B]，偏差1.3%），GM 15.4%。FY2023-2025净利34→245→492万，中试阶段已盈利 [B/管理层]。
-<strong>但</strong>：规模极小（占FY2025合并营收1.9%，名义产能2.0万吨/年但FY2025实际产量仅0.3-0.5万吨/年），不足以转化为市场优势
-<strong>窗口期</strong>：约3年（2026-2029），需在此期间实现万吨级产能验证+新增标杆客户。客户群有拓展迹象（珠海冠宇/新能安送样、钠创意向），但均未形成实质营收。
-<strong>数据风险</strong>：两份管理层文件对青源专利授权数存在重大偏差（27 vs 12项），需独立核实。</p>
-<p><strong>来源</strong>：[B] 项目材料+青源公司介绍材料；详见附件AB和附件C</p>
-<p><strong>详见</strong>：<a href="appendix_c.html">附件C：固相法技术纵横分析法深度研判</a></p>
-<hr />
-<h3>4.4 融资估值轨迹——竞争力变化的资本映射</h3>
-<h4>4.4.1 完整估值演变</h4>
-<table>
-<thead>
-<tr>
-<th>时间</th>
-<th>事件</th>
-<th>估值（亿）</th>
-<th>PS（基于当年营收）</th>
-<th>估值驱动</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2015-06</td>
-<td>A轮</td>
-<td>未披露</td>
-<td>—</td>
-<td>早期成长性</td>
-</tr>
-<tr>
-<td>2019-04</td>
-<td>Pre-IPO（首次公开发行）</td>
-<td>~25</td>
-<td>~0.7x（FY2019约36亿？）</td>
-<td>IPO预期+锂电行业景气</td>
-</tr>
-<tr>
-<td>2022-03</td>
-<td>深创投战投</td>
-<td><strong>73.5</strong></td>
-<td>~2.0x（FY2021 36.66亿）</td>
-<td>锂电景气高峰+IPO预期+锰酸锂龙头叙事</td>
-</tr>
-<tr>
-<td>2026（拟）</td>
-<td>天保收购13.73%老股</td>
-<td><strong>36.4</strong></td>
-<td><strong>1.0x</strong>（FY2025 36.36亿）</td>
-<td>行业低谷+对赌困局+港股估值折价</td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[B] 项目材料（股东名册/回购汇总/天保方案）；[A] 天眼查工商数据</p>
-<h4>4.4.2 估值轨迹解析</h4>
-<pre><code>估值轨迹（单位：亿）：
-
-~25         73.5 (PEAK)          36.4
- |            |                    |
-2019 -------- 2022 -------------- 2026
-Pre-IPO    深创投战投          天保入股
-
-涨幅：+194% (2019→2022)  → 跌幅：-50.5% (2022→2026)
-</code></pre>
-<p><strong>估值变化的竞争力含义</strong>：</p>
-<table>
-<thead>
-<tr>
-<th>时期</th>
-<th>估值驱动</th>
-<th>竞争力信号</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2019（~25亿）</td>
-<td>IPO预期+行业景气</td>
-<td>竞争力上升期，市场给予成长溢价</td>
-</tr>
-<tr>
-<td>2022（73.5亿）</td>
-<td>锂电狂热顶峰+龙头叙事</td>
-<td><strong>估值严重透支</strong>——73.5亿对应PS 2.0x远高于当前可比公司（天能PS 0.11x、雅迪PS 0.86x）</td>
-</tr>
-<tr>
-<td>2026（36.4亿）</td>
-<td>回归理性但仍有溢价</td>
-<td>PS 1.0x约为可比公司合理PS中枢（0.44x）的<strong>2.3倍</strong>，高于直接可比PS区间上限（0.86x，雅迪akshare/MX金融值）</td>
-</tr>
-</tbody>
-</table>
-<p><strong>关键判断</strong>：</p>
-<ul>
-<li>当前36.4亿估值（PS 1.0x）<strong>并非&quot;便宜&quot;</strong>——它只是相对于2022年泡沫高点&quot;便宜了50%&quot;</li>
-<li>与同赛道天能（PE 4.21x，但含80%铅酸高毛利业务）相比，星恒PS 1.0x对应PE约81x（管理口径）——<strong>极度昂贵</strong></li>
-<li>只有当星恒未来利润恢复至管理层预测水平（2027E净利3.10亿 [D]），PE才能降至~11.7x——仍然高于天能（4.16x）和超威（4.75x）</li>
-<li>36.4亿估值隐含了<strong>显著的基本面改善预期</strong>（而非对当前状况的定价）</li>
-</ul>
-<p><strong>来源</strong>：[B] MX金融+akshare实时验证（2026-05-29）；[B] 项目材料</p>
-<h4>4.4.3 与同类公司估值对比</h4>
-<table>
-<thead>
-<tr>
-<th>可比公司</th>
-<th>PS（市销率）</th>
-<th>PE（市盈率）</th>
-<th>星恒在同等PS/PE下的隐含估值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>天能动力（0819.HK）</td>
-<td>0.11x</td>
-<td>4.21x</td>
-<td>PS 0.11x→4.0亿 / PE 4.21x→1.9亿</td>
-</tr>
-<tr>
-<td>超威动力（0951.HK）</td>
-<td>0.03x</td>
-<td>4.59x</td>
-<td>PS 0.03x→1.1亿 / PE 4.59x→2.1亿</td>
-</tr>
-<tr>
-<td>雅迪控股（01585.HK）</td>
-<td>0.86x（MX金融0.97x，akshare 0.857x）</td>
-<td>10.89x</td>
-<td>PS 0.86x→31.3亿</td>
-</tr>
-<tr>
-<td>绿源集团（02451.HK）</td>
-<td>0.68x（MX金融0.75x，akshare 0.677x）</td>
-<td>22.85x</td>
-<td>PS 0.68x→24.7亿</td>
-</tr>
-<tr>
-<td>小牛电动（NIU.US）</td>
-<td><strong>0.30x</strong>（akshare/Sina实时验证，2026-06-02）</td>
-<td>亏损（FY2025净亏损-0.39亿）</td>
-<td>PS 0.30x→10.9亿</td>
-</tr>
-<tr>
-<td><strong>天保入股星恒</strong></td>
-<td><strong>1.0x</strong></td>
-<td><strong>~81x（管理口径）/ ~91x（审计口径）</strong></td>
-<td><strong>36.4亿（交易估值）</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>来源</strong>：[B] MX金融+akshare实时验证</p>
-<h3>4.3 竞争优势建立与侵蚀路径</h3>
-<h4>4.3.1 优势建立路径（2003-2018）</h4>
-<pre><code>2003 ─── 2006 ───── 2014 ───── 2017 ───── 2018
- │         │           │           │           │
-中科院  绑定雅迪/   管理团队   启源纳川    新国标
-+联想    爱玛OEM   获得股权   控制权变更  政策红利
- │         │           │           │           │
-技术基因  客户壁垒   管理层激励  资本平台   市场井喷预期
-</code></pre>
-<h4>4.3.2 优势侵蚀路径（2019-2026）</h4>
-<pre><code>2019 ──── 2020 ─── 2021 ───── 2022 ────── 2023 ──── 2024 ──── 2025
-  │         │        │           │            │         │         │
-Pre-IPO   利润    华霆锁价   碳酸锂      锂价暴跌   盈利    增收不增利
-35家PE    顶点    到期↓64%   峰值50万+    +需求崩塌  微弱恢复  四层挤压
-  │         │        │           │            │         │         │
-对赌埋雷  基线失真 售价崩塌   全行业亏损  至暗时刻  恢复脆弱  持续微利
-</code></pre>
-<h4>4.3.3 核心拐点与驱动因素总结</h4>
-<table>
-<thead>
-<tr>
-<th>拐点年份</th>
-<th>事件</th>
-<th>竞争影响</th>
-<th>可否避免</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>2011</strong></td>
-<td>减资7,608万弥补亏损</td>
-<td>证实8年未盈利——早期锰酸锂路线变现困难</td>
-<td>行业正常（早期投入期）</td>
-</tr>
-<tr>
-<td><strong>2014</strong></td>
-<td>管理层获股权（苏州袍泽）</td>
-<td>✅ 正面——利益绑定，为后续增长奠定治理基础</td>
-<td>—</td>
-</tr>
-<tr>
-<td><strong>2017</strong></td>
-<td>启源纳川18.64亿收购61.59%</td>
-<td>⚠️ 双刃剑——管理层控盘，但杠杆收购埋下对赌雷</td>
-<td>是（可以避免高杠杆收购）</td>
-</tr>
-<tr>
-<td><strong>2018</strong></td>
-<td>新国标GB 17761-2018发布（2018年发布，2019年实施）</td>
-<td>✅ 重大政策红利——打开锂电替代铅酸空间</td>
-<td>—</td>
-</tr>
-<tr>
-<td><strong>2019</strong></td>
-<td>Pre-IPO 35家PE对赌</td>
-<td>🔴 致命错误——IPO截止日过紧（2020.6.30），仅1年窗口</td>
-<td>是（更长的IPO申报窗口）</td>
-</tr>
-<tr>
-<td><strong>2020</strong></td>
-<td>FY2020利润顶点</td>
-<td>⚠️ 三重红利不可持续，但被用作估值基准</td>
-<td>部分（更审慎的预测）</td>
-</tr>
-<tr>
-<td><strong>2021</strong></td>
-<td>华霆锁价合同到期 ↓64%</td>
-<td>🔴 售价端暴跌——碳酸锂涨价+售价下跌形成利润剪刀差</td>
-<td>部分（更灵活定价机制）</td>
-</tr>
-<tr>
-<td><strong>2022</strong></td>
-<td>碳酸锂峰值50万+/吨</td>
-<td>🔴 成本端暴增——全行业亏损</td>
-<td>否（大宗商品周期）</td>
-</tr>
-<tr>
-<td><strong>2023</strong></td>
-<td>碳酸锂暴跌+库存减值</td>
-<td>🔴 成本端改善前先承受库存减值</td>
-<td>部分（更好的库存管理）</td>
-</tr>
-<tr>
-<td><strong>2026</strong></td>
-<td>天保5亿收购13.73%</td>
-<td>⚠️ 估值折让50.5%（vs 2022年73.5亿高点），但仍PS 1.0x</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>五、综合结论——竞争力可维系性判断</h2>
-<h3>5.1 星恒竞争力的三个核心支柱及其现状</h3>
-<table>
-<thead>
-<tr>
-<th>支柱</th>
+</table></div><p class="body-text"><strong>尽调判断</strong>：该协议直接证实滴滴（滴滴）通过青奇+桔动双主体，在2019-2021年共享电单车高峰期向星恒大量采购锂电池——构成了星恒共享客户业务的历史起点。2023年1月签署的补充协议本质是<strong>存量业务结算框架</strong>，规范余款支付方式而非新增采购。有效期至2026年1月31日，最近刚到期。Q1 2026青奇（滴滴青桔）的8.51%营收可能部分源于此协议的结算条款。[D] 置信度★★★★☆</p>
+<p class="body-text"><strong>D2. 安徽城满电能源科技有限公司——关联方交易确认</strong> 🔴</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>发现</th>
+<th>内容</th>
 <th>来源</th>
-<th>巅峰状态</th>
-<th>当前状态</th>
-<th>未来趋势</th>
-<th>可维系性</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>OEM客户关系</strong></td>
-<td>20年深耕两轮车赛道</td>
-<td>几乎垄断头部OEM</td>
-<td>被ATL持续侵蚀（高端OEM转移）</td>
-<td>加速弱化</td>
-<td>★★☆☆☆</td>
+<td>合同类型</td>
+<td>产品购销合同</td>
+<td>[A] OCR</td>
 </tr>
 <tr>
-<td><strong>成本优势（规模+工艺）</strong></td>
-<td>72.5%市占率+固相法</td>
-<td>两轮车锂电绝对规模第一</td>
-<td>规模效应被商用B2B客户压价+民用渠道价格战完全抵消</td>
-<td>海外扩张+磷酸锰铁锂可能改善但高度不确定</td>
-<td>★★☆☆☆</td>
+<td>注册地址</td>
+<td><strong>安徽省滁州市苏滁现代产业园双城路689号</strong>（与星恒滁州<strong>同一地址</strong>）</td>
+<td>[A] OCR</td>
 </tr>
 <tr>
-<td><strong>技术差异化（固相法磷酸锰铁锂）</strong></td>
-<td>中科院基因+锰酸锂→磷酸锰铁锂迁移</td>
-<td>固相法磷酸锰铁锂行业先行者</td>
-<td>仅占营收1.9%，窗口期约3年</td>
-<td>2029年后差异化被摊薄（德方/裕能大规模进入）</td>
-<td>★★★☆☆</td>
-</tr>
-</tbody>
-</table>
-<p><strong>综合可维系性评分</strong>：★★★☆☆（3/5，当前优势可维持约3年，之后显著弱化）</p>
-<h3>5.2 核心判断——竞争力是上升还是下降？</h3>
-<blockquote>
-<p>[!CAUTION] 🟡
-<strong>星恒的竞争力自FY2020以来持续下降，当前处于&quot;表面恢复、实质脆弱&quot;状态。</strong></p>
-</blockquote>
-<p><strong>论据链</strong>：</p>
-<ol>
-<li>
-<p><strong>市占率的名义提升具有误导性</strong>：星恒72.5%的市占率100%来自市场总量收缩（对手退出）——Shapley分解显示市场收缩贡献126%，星恒自身出货下降抵消-26%。星恒出货量从2020年的481.71万组峰值降至2025年的343.34万组（-28.7%）。</p>
-</li>
-<li>
-<p><strong>唯一真正的竞争对手正在加速</strong>：ATL新能安从0→18.50%（7年），其增速（CAGR（年复合增长率） ~37%）远高于星恒。即使ATL增速放缓，两者之间的份额差距正在缩小。</p>
-</li>
-<li>
-<p><strong>盈利质量的恶化是竞争力下降的最直接证据</strong>：FY2020以40.21亿营收创造3.76亿净利（净利率9.5%）；FY2025以36.36亿营收仅创造0.45亿净利（净利率1.24%）——收入接近历史高点，但利润仅为历史高点的1/8。</p>
-</li>
-<li>
-<p><strong>技术护城河正在变浅</strong>：固相法磷酸锰铁锂的窗口期约3年（详见附件C），2029年后差异化优势将被摊薄。星恒名义产能已达2.0万吨/年但FY2025实际利用率仅~15-25% [B/青源材料]，需要在此期间实现至少1-2个标杆客户的突破和产能利用率显著提升。</p>
-</li>
-<li>
-<p><strong>资本结构困局尚未解决</strong>：35家PE的对赌回购+启源纳川股权冻结是结构性地雷，天保收购A组仅解决一小部分问题。</p>
-</li>
-</ol>
-<h3>5.3 优势可维系的时间窗口</h3>
-<table>
-<thead>
-<tr>
-<th>时间窗口</th>
-<th>竞争力状态</th>
-<th>关键条件</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>2026-2027</strong>（近2年）</td>
-<td>可维系</td>
-<td>当前OEM关系+市占率惯性维持；ATL增速放缓至+1-2pp/年</td>
+<td>法定代表人</td>
+<td>罗靖</td>
+<td>[A] OCR</td>
 </tr>
 <tr>
-<td><strong>2028-2029</strong>（中2年）</td>
-<td>边际弱化</td>
-<td>固相法窗口期最后机会；ATL可能进入中低端市场；需锁定海外大客户</td>
+<td>采购产品</td>
+<td>锂离子电池、充电器、线束等辅材</td>
+<td>[A] OCR</td>
 </tr>
 <tr>
-<td><strong>2030+</strong>（远2年+）</td>
-<td>显著弱化或蜕变</td>
-<td>取决于固相法是否成功+海外市场拓展+钠电/固态替代节奏</td>
+<td>用途</td>
+<td>共享/换电/租赁等业务</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>公司介绍确认</td>
+<td>星恒基本介绍docx将城满电列为&quot;电池运营品牌城满电&quot;</td>
+<td>[B] docx</td>
 </tr>
 </tbody>
-</table>
-<h3>5.4 对天保投资决策的竞争力启示</h3>
-<table>
-<thead>
+</table></div><p class="body-text"><strong>尽调判断</strong>：城满电与星恒滁州注册于同一物理地址（双城路689号），且星恒官方文件将其描述为&quot;电池运营品牌&quot;——确认关联方关系 [A+B]。城满电构建了&quot;星恒制造→城满电运营→终端用户&quot;的体内循环模式。需关注：(a) 转让定价是否公允；(b) 城满电是否在星恒合并报表范围内；(c) 城满电经营状况是否影响星恒账龄结构。该关联交易在此前所有报告中均未覆盖。</p>
+<p class="body-text"><strong>D3. Amara Raja（印度）——2023年海外大客户PI证据</strong> 🆕（2026-06-03更新，已解压核验）</p>
+<p class="body-text">AMARA合同.rar（5MB）经解压后为<strong>56份Proforma Invoice（形式发票）</strong>，时间跨度2023年7-8月。买方并非一般海外品牌商，而是<strong>Amara Raja Advanced Cell Technologies</strong>——印度Amara Raja集团（NSE/BSE上市代码AMARARAJA，印度第二大汽车电池制造商，市值约$30-40亿）的锂电子公司。</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
-<th>投资情境</th>
-<th>竞争力角度判断</th>
-<th>依据</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>参股13.73%（方向一）</strong></td>
-<td>⚠️ 中性偏谨慎</td>
-<td>星恒竞争力处于长期下行通道，但5亿参股规模可控。核心风险：HK IPO估值可能远低于天保PS 1.0x的买入价</td>
-</tr>
-<tr>
-<td><strong>控股并表&gt;30%（方向二）</strong></td>
-<td>⚠️ 偏谨慎</td>
-<td>星恒储能业务（-9.3% GM）是明显短板；固相法磷酸锰铁锂窗口期约3年——若成功，并表价值将显著提升</td>
-</tr>
-<tr>
-<td><strong>上市平台整合（方向三）</strong></td>
-<td>⚠️ 取决于平台</td>
-<td>A股平台（天保基建）面临房地产转型壁垒；港股平台（天保能源）面临壳太小RTO困境——详见02报告</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>六、数据来源与验证汇总</h2>
-<h3>6.1 核心数据来源清单</h3>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>数据点</th>
+<th>条款</th>
+<th>内容</th>
 <th>来源</th>
-<th>层级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>卖方</td>
+<td><strong>Phylion Battery Co., Ltd.</strong>（星恒出口品牌，苏州金沙江路181号）</td>
+<td>[A] PI OCR</td>
+</tr>
+<tr>
+<td>买方</td>
+<td>Amara Raja Advanced Cell Technologies Private Limited（Tirupati, Andhra Pradesh, 印度）</td>
+<td>[A] PI OCR</td>
+</tr>
+<tr>
+<td>GST号</td>
+<td>36AAXCA9730B1ZF</td>
+<td>[A] PI OCR</td>
+</tr>
+<tr>
+<td>产品</td>
+<td>3.6V 15Ah NCM prismatic cell（型号ISP18/66/133-15HA，标称14.5Ah实际容量）</td>
+<td>[A] PI OCR</td>
+</tr>
+<tr>
+<td><strong>单价</strong></td>
+<td><strong>$9.70/电芯 = ~$0.180/Wh ≈ RMB 1.30/Wh</strong>（按2023年7月汇率~7.2）</td>
+<td>[A] PI OCR</td>
+</tr>
+<tr>
+<td>每单数量</td>
+<td>36,400 cells/PI × 56 PIs</td>
+<td>[A] PI解压计数</td>
+</tr>
+<tr>
+<td>每单金额</td>
+<td>$207,480/PI FOB上海</td>
+<td>[A] PI OCR</td>
+</tr>
+<tr>
+<td><strong>订单总额估算</strong></td>
+<td><strong>~$1,162万（约RMB 8,400万）</strong></td>
+<td>[D] 基于56份PI推算</td>
+</tr>
+<tr>
+<td>付款条件</td>
+<td>10% T/T订金 + 90% T/T发票后3工作日内付清</td>
+<td>[A] PI OCR</td>
+</tr>
+<tr>
+<td>交货期</td>
+<td>付款后8周内</td>
+<td>[A] PI OCR</td>
+</tr>
+<tr>
+<td>运输方式</td>
+<td>FOB上海，海运至印度钦奈</td>
+<td>[A] PI OCR</td>
+</tr>
+<tr>
+<td>汇率保护</td>
+<td>USD/RMB &lt; 7.1时星恒保留调价权</td>
+<td>[A] PI OCR</td>
+</tr>
+<tr>
+<td>认证要求</td>
+<td>电芯须带BIS认证标签（印度强制性认证）</td>
+<td>[A] PI OCR</td>
+</tr>
+<tr>
+<td>出口联系人</td>
+<td>Henry Chou (Zhou Jinghao), henry.chou@phylion.com</td>
+<td>[A] PI OCR</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>尽调判断</strong>（置信度：★★★★★）：</p>
+<p class="body-text"><strong>1. 海外业务真实性获最强证据</strong>：Amara Raja是印度第二大汽车电池集团（2025年营收约$12-15亿），其对星恒的采购是正式的工业级供应链关系，远非&quot;贸易商倒货&quot;或&quot;代理商采买&quot;。这是星恒海外收入中最具含金量的部分。</p>
+<p class="body-text"><strong>2. 事实修正管理层&quot;海外基地&quot;叙事</strong>：PI明确显示发货地为上海（FOB Shanghai），并非从匈牙利/印尼/越南/埃及的任何&quot;海外制造基地&quot;发货。这进一步证实2.12节判断——管理层宣称的海外工厂可能为KD组装线或合作工厂，而非自有电芯制造产能。</p>
+<p class="body-text"><strong>3. 定价结构极优</strong>：1.30 RMB/Wh（FOB，不含运费）远超国内同期的民用段0.55-0.84 RMB/Wh。假设镍钴锰三元电芯BOM成本约0.60-0.70 RMB/Wh，该笔交易的毛利率可达45-50%——解释了为何海外业务（EB段）毛利率高达26-35%（参见04主报告2.13节）。</p>
+<p class="body-text"><strong>4. 客户层级确认为Tier-1</strong>：Amara Raja集团是印度Tier-1汽车零部件供应商（与博世/瓦尔塔同级），其锂电子公司采购星恒电芯说明星恒产品品质达到了国际OEM准入标准。但值得关注的是——56份PI为总价$1,162万的订单，而非年度框架合同。若Amara Raja转为更大规模的年度采购，对星恒海外营收将是重大增量。</p>
+<p class="body-text"><strong>5. 国轩高科技术许可风险（需高度警觉）</strong>：2024年6月，Amara Raja与国轩高科签署了磷酸铁锂电池技术许可协议（参见04主报告2.8.8节）。该协议使Amara Raja获得了自有磷酸铁锂电池制造的技术路线和产能建设路径，对星恒与Amara Raja的战略合作关系构成实质性威胁。该合作关系可能已从直接采购转向技术合作，或已终止。在估值建模中，不应将Amara Raja视为可持续的收入来源。</p>
+<p class="body-text"><strong>6. 时间窗口</strong>：所有PI签署于2023年7-8月，对应FY2024确认收入。在FY2024海外收入结构中，这笔约8,400万的印度订单可能占海外收入的相当比例。</p>
+<p class="body-text"><strong>D4. 2020-2021年历史合同验证——客户演变时间线确认</strong>（2026-06-03新增，Phase 3逐文件核查扩展）</p>
+<p class="body-text">对2020-2021年共约35份历史合同的代表性样本OCR核验（前期14份+本轮8份深度核查），验证客户演变叙事的准确性：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>验证项</th>
+<th>历史合同证据</th>
+<th>对附件F1结论的影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>国网电动汽车曾是TOP级客户</strong></td>
+<td>苏州合同总价<strong>8,072万元</strong>（含税）+滁州合同<strong>1.19亿元</strong>≈合计约2亿元 [A]</td>
+<td>确认国网曾是共享大客户，及后续退出</td>
+</tr>
+<tr>
+<td><strong>国什能源更名</strong></td>
+<td>2020年9月国网什马→国什能源（北京通州市场监管局核准）[A]</td>
+<td>确认国网通过国什继续参与共享业务</td>
+</tr>
+<tr>
+<td><strong>爱玛MFC条款2019年已存在</strong></td>
+<td>2019年1月合同已含&quot;最优价格+5倍差价补偿&quot; [A]</td>
+<td>MFC条款<strong>非新增</strong>约束，而是客户关系的<strong>一贯特征</strong></td>
+</tr>
+<tr>
+<td><strong>爱玛合同无固定期限</strong></td>
+<td>2019年1月起长期有效 [A]</td>
+<td>合同连续性正面（非年年重签）</td>
+</tr>
+<tr>
+<td><strong>松果2021年单价~0.95元/Wh</strong></td>
+<td>48V14串模块641元/组（~672Wh）[A]</td>
+<td>当前0.58元/Wh → <strong>5年降价39%</strong>，超出原材料降幅</td>
+</tr>
+<tr>
+<td><strong>松果滁州供货</strong></td>
+<td>松果合同乙方为滁州星恒（双城路689号）[A]</td>
+<td>确认滁州基地为共享/租赁客户供货主体</td>
+</tr>
+<tr>
+<td><strong>深铃(台铃)10倍差价罚则</strong> 🔴</td>
+<td>2021年合同含&quot;不高于最低价，违反→<strong>10倍差价补偿</strong>&quot; [A]</td>
+<td>比爱玛5倍更严苛——二线OEM议价权反超一线</td>
+</tr>
+<tr>
+<td><strong>小遛2000万信用上限</strong></td>
+<td>2020年合同：10%预付+60%发货前+30%月结30天，<strong>信用额度2,000万</strong> [A]</td>
+<td>共享小客户亦有结构化信用保护</td>
+</tr>
+<tr>
+<td><strong>富士达27月质保+500万应收上限</strong></td>
+<td>2020年代工合同：<strong>27个月</strong>三包期+20%定金+80%月结30天/<strong>500万</strong>额度 [A]</td>
+<td>代工业务质保期最长，应收敞口却最小</td>
+</tr>
+<tr>
+<td><strong>快松果(松果关联)30万组承诺+2%返点</strong> 🆕</td>
+<td>2020年战略框架：<strong>30万组</strong>承诺+目标达成2%返点+15%预付+85%到货15天+<strong>3,000万</strong>信用 [A]</td>
+<td>松果系在2020年扩张期有实质性量价承诺，但2021年即取消</td>
+</tr>
+<tr>
+<td><strong>青奇2021三方协议+滴滴邮箱确认</strong></td>
+<td>青奇+苏州星恒+滁州星恒三方协议，联系人@didiglobal.com [A]</td>
+<td>滴滴体系确认+滁州主体替代苏州趋势加速</td>
+</tr>
+</tbody>
+</table>
+<div class="chart-container"><img src="charts/chart_8.svg" alt="数据图表" loading="lazy"></div></div><p class="body-text"><strong>以下为新增深度核查的5份合同详情</strong>：</p>
+<p class="body-text"><strong>D4a. 深铃(台铃)2021采购合同——二线OEM的10倍差价罚则</strong> 🔴</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条款</th>
+<th>内容</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甲方</td>
+<td>深铃科技发展有限公司（台铃集团）</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>签约主体</td>
+<td>苏州+滁州双签</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>价格——MFC</td>
+<td>对甲方价格<strong>不高于</strong>任何第三方；违反→<strong>10倍差价补偿</strong></td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>付款</td>
+<td>月结60天 / T+3</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>质量保证金</td>
+<td>50万元</td>
+<td>[A] OCR</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>尽调判断</strong>：深铃（台铃）作为电动两轮车二线品牌（2024年销量约200万台），其合同中的<strong>10倍差价罚则是所有已核查OEM合同中最严苛的</strong>——爱玛和雅迪均为5倍。这反映了一个反直觉的现象：<strong>二线OEM对星恒的议价权反而更强</strong>（一线OEM可通过多供应商策略压价，二线OEM则通过惩罚性条款保护自身）。该条款与九号合同中的&quot;交易总额30%罚则&quot;同属惩罚性定价保护——星恒在OEM客户层面的定价权系统性缺失。</p>
+<p class="body-text"><strong>D4b. 小遛2020采购合同——共享小客户的精致信用管理</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条款</th>
+<th>内容</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甲方</td>
+<td>宁波小遛共享信息科技有限公司</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>产品</td>
+<td>48V28Ah锂电池组</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>付款</td>
+<td>10%预付 + 60%发货前 + 30%月结30天</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>信用额度</td>
+<td><strong>2,000万元</strong></td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>定价</td>
+<td>以订单为准（无固定价格表）</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>争议管辖</td>
+<td>乙方所在地（苏州）法院</td>
+<td>[A] OCR</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>尽调判断</strong>：小遛合同的付款结构对星恒有利——70%货款在发货前收回（预付10%+发货前60%），仅30%为月结赊销。2,000万信用上限对Q1 2026年化仅约800万收入的小遛而言绰绰有余。争议管辖在星恒所在地（苏州）而非客户所在地——这在所有已核查合同中极为罕见，是星恒<strong>唯一</strong>取得管辖优势的合同。这与其小型共享客户的地位一致（星恒议价权相对较强）。</p>
+<p class="body-text"><strong>D4c. 富士达2020代工合同——最长的质保期，最小的应收敞口</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条款</th>
+<th>内容</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甲方</td>
+<td>天津富士达自行车有限公司（代工美团Q8车型电池）</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>付款</td>
+<td>20%定金 + 80%月结30天</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>信用上限</td>
+<td><strong>500万元</strong></td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>三包期限</td>
+<td><strong>27个月</strong>（所有核查合同中最长）</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>停产配件</td>
+<td>继续供货27个月</td>
+<td>[A] OCR</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>尽调判断</strong>：富士达（美团共享电单车Q8车型的电池代工方）合同呈现了<strong>高售后义务+低信用敞口</strong>的组合：(a) 27个月三包期是所有已核查合同中最长的（雅迪5年停产件/爱玛39个月三包为另一维度），质保成本可能侵蚀代工业务的微薄利润；(b) 500万信用上限极低——远低于松果系的3,000万和小遛的2,000万，说明星恒对代工业务的应收敞口管理较为审慎。</p>
+<p class="body-text"><strong>D4d. 快松果2020战略框架——松果系扩张期唯一有量价承诺的合同</strong> 🆕</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条款</th>
+<th>内容</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甲方</td>
+<td>天津快松果租赁有限公司（松果出行关联）</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>年度承诺</td>
+<td><strong>30万组</strong>（2020年）</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>返点</td>
+<td>达成目标→**2%**返点（以抵扣后续货款形式）</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>付款</td>
+<td>15%预付 + 85%到货后<strong>15天内</strong>付清</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>信用额度</td>
+<td><strong>3,000万元</strong></td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>价格</td>
+<td>以报价单为准（未在主合同中列明）</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>争议管辖</td>
+<td>甲方所在地（天津）法院</td>
+<td>[A] OCR</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>尽调判断</strong>：快松果2020合同是<strong>所有已核查合同中唯一同时具备以下三个特征的</strong>：(a) 明确的年度采购量承诺（30万组）；(b) 销量返点条款（2%）；(c) 极短回款周期（到货15天）+ 高信用上限（3,000万）。这三个特征均指向2020年共享出行资本扩张期的特征——平台愿意以量价承诺换取供应商锁定。但该合同2021年即被取消（松果2021年合同中30万组承诺已移除），与共享行业从&quot;资本扩张&quot;转向&quot;精细化运营&quot;的时间线完全吻合。<strong>快松果2020合同是共享客户&quot;黄金时代&quot;的唯一合同证据</strong>——此后合同条件逐年恶化。</p>
+<p class="body-text"><strong>D4e. 青奇(滴滴)2021三方协议——滁州主体替代加速</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条款</th>
+<th>内容</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甲方</td>
+<td>杭州青奇科技有限公司</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>乙方1</td>
+<td>星恒电源股份有限公司（苏州）</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>乙方2</td>
+<td>星恒电源（滁州）有限公司</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>联系人邮箱</td>
+<td>@didiglobal.com</td>
+<td>[A] OCR</td>
+</tr>
+<tr>
+<td>基础协议</td>
+<td>2019年原合同+2020年补充协议</td>
+<td>[A] OCR</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>尽调判断</strong>：青奇2021合同采用了三方协议模式（青奇+苏州星恒+滁州星恒），而2020年合同仅苏州签约。这标志着滁州基地在共享客户中的供货主体地位正式确立——至2024年，青奇战略协议签约主体已完全切换为滁州星恒。滴滴(@didiglobal.com)邮箱的一致性确认了青奇为滴滴全资子公司，与D1中的滴滴补充协议形成完整证据链。滁州签约主体的普遍化在FY2020→FY2021期间完成，这一时点与苏州基地2023年产能利用率断崖式下降（61.4%→4.8%）高度吻合。</p>
+<p class="body-text"><strong>核心判断</strong>：历史合同验证附件F1客户4阶段演变框架总体准确。关键补充：</p>
+<ul class="doc-list"><li><p class="body-text">(a) 爱玛MFC条款存续至少7年未变——非恶化信号；</li>
+<li><p class="body-text">(b) 松果定价5年降39%——量化了共享客户议价权对利润的持续挤压；</li>
+<li><p class="body-text">(c) 国网电动汽车约2亿合同规模确认了其在共享业务极盛期的重要性；</li>
+<li><p class="body-text">(d) <strong>深铃10倍差价罚则揭示二线OEM议价权反超一线</strong>——星恒在OEM客户层面的定价权系统性缺失；</li>
+<li><p class="body-text">(e) <strong>快松果2020合同是共享客户&quot;黄金时代&quot;的唯一合同证据</strong>——30万组承诺+2%返点+15天回款，此后合同条件逐年恶化；</li>
+<li><p class="body-text">(f) <strong>滁州主体替代苏州主体在FY2020-FY2021期间完成</strong>——与苏州产能利用率断崖下降的时点吻合。</li>
+</ul>
+<p class="body-text"><strong>E. 爱玛2023采购框架合同——关联公司清单揭示分类异常原因</strong> 🔴</p>
+<p class="body-text"><strong>来源</strong>：[A] OCR提取自 <code>重大客户合同-2025/爱玛-2023采购框架合同-滁州.pdf</code>（24页，置信度：★★★☆☆，部分OCR识别有误差）</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条款</th>
+<th>内容</th>
+<th>风险评估</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甲方</td>
+<td>爱玛科技集团股份有限公司</td>
+<td>—</td>
+</tr>
+<tr>
+<td>乙方</td>
+<td>星恒电源(滁州)有限公司（供应商代码103191）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>期限</td>
+<td><strong>无固定期限</strong>（2023.1.1起）</td>
+<td>理论上长期稳定，但无最低采购量</td>
+</tr>
+<tr>
+<td>适用关联公司</td>
+<td><strong>17家</strong>，含天津/江苏/浙江/广东/广西/重庆/台州/丽水/河南等地的车业公司</td>
+<td>覆盖爱玛全国产能</td>
+</tr>
+<tr>
+<td>价格——MFC</td>
+<td>最优价格保证，不高于任何第三方；违反→<strong>5倍差价补偿</strong></td>
+<td>严格约束</td>
+</tr>
+<tr>
+<td>价格——降价/涨价</td>
+<td>原材料降价→甲方可要求降价；涨价→双方商议</td>
+<td>单向不对称（与雅迪/九号一致）</td>
+</tr>
+<tr>
+<td>付款</td>
+<td>自然月结算，账期按SRM《零部件价格审批单》执行；承兑汇票/支票/转账</td>
+<td>账期在附件的价格审批单中定义</td>
+</tr>
+<tr>
+<td>质量保证金</td>
+<td>100万元（OCR识别，可能有误）</td>
+<td>行业内适中</td>
+</tr>
+<tr>
+<td>三包退货物流费</td>
+<td>20元/个（只/台）</td>
+<td>额外成本</td>
+</tr>
+<tr>
+<td>质量事故</td>
+<td>乙方全责+5,000至10万元违约金</td>
+<td>—</td>
+</tr>
+<tr>
+<td>争议管辖</td>
+<td>未明确（OCR未识别到管辖条款）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>🗝️ 分类异常的关键解释</strong>：</p>
+<p class="body-text">爱玛合同第一条明确将<strong>天津爱玛共享科技服务有限公司</strong>列为适用本协议的关联公司之一。这意味着：</p>
+<ul class="doc-list"><li><p class="body-text">若Q1 2026的采购通过&quot;天津爱玛共享科技服务有限公司&quot;下单，则星恒端的客户名称会记录为&quot;爱玛&quot;（而非&quot;爱玛集团&quot;），客户分类可能按该法人主体的经营范围自动归入&quot;共享客户&quot;</li>
+<li><p class="body-text">这解释了Q1 2026的三个变化：(1) 名称从&quot;爱玛集团&quot;→&quot;爱玛&quot;；(2) 分类从&quot;民用大客户&quot;→&quot;共享客户&quot;；(3) 实际业务可能仍为OEM两轮车电池，仅采购主体变更为共享服务子公司</li>
+<li><p class="body-text"><strong>业务实质判断</strong>：爱玛作为传统电动两轮车OEM（603529.SH，FY2025营收约210亿），其电池采购主要用于整车装配，即使通过共享子公司采购，产品/定价/毛利率特征仍属民用OEM段</li>
+</ul>
+<p class="body-text"><strong>置信度</strong>：[A] OCR ★★★☆☆ + [D] 逻辑推断 ★★★★☆。建议向管理层确认Q1 2026爱玛采购的具体签约主体和业务性质。</p>
+<p class="body-text"><strong>F. 杭州青奇2024战略合作框架协议——滴滴青桔战略供应商，已到期</strong> 🟡</p>
+<p class="body-text"><strong>来源</strong>：[A] OCR提取自 <code>重大客户合同-2025/3.杭州青奇&amp;星恒电源 战略合作框架协议 CON2024080600014.pdf</code>（6页，置信度：★★★★☆）</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条款</th>
+<th>内容</th>
+<th>风险评估</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甲方</td>
+<td>杭州青奇科技有限公司（滴滴青桔，联系人邮箱@didiglobal.com）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>乙方</td>
+<td><strong>星恒电源股份有限公司</strong>（苏州，非滁州）</td>
+<td>少数以苏州主体签约的合同</td>
+</tr>
+<tr>
+<td>类型</td>
+<td><strong>战略合作框架协议</strong>（非采购合同）</td>
+<td>不产生具体采购义务</td>
+</tr>
+<tr>
+<td>签署日</td>
+<td>2024年8月13日，北京</td>
+<td>—</td>
+</tr>
+<tr>
+<td>期限</td>
+<td><strong>2024.8.13 — 2025.8.12（已到期）</strong></td>
+<td>🔴 Q1 2026的滴滴8.51%收入缺乏有效战略协议</td>
+</tr>
+<tr>
+<td>价格</td>
+<td>同类产品价格不得高于其他客户</td>
+<td>MFC约束</td>
+</tr>
+<tr>
+<td>供应优先级</td>
+<td>星恒须保证青奇供应优先级<strong>高于其他客户</strong></td>
+<td>影响对其他客户的交付承诺</td>
+</tr>
+<tr>
+<td>份额激励</td>
+<td>若星恒价格与最低供方价差≤5%，可获不超过5%的额外份额倾斜</td>
+<td>激励力度弱</td>
+</tr>
+<tr>
+<td>资源支持</td>
+<td>星恒需提供产业链、开城、投融资等支持</td>
+<td>超出正常供货义务</td>
+</tr>
+<tr>
+<td>保密</td>
+<td>长期保密义务，合同终止后持续有效</td>
+<td>—</td>
+</tr>
+<tr>
+<td>争议管辖</td>
+<td>&quot;人民法院&quot;（未指定具体法院）</td>
+<td>管辖不明</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>核心关注</strong>：与松果相同——合同已到期但Q1 2026持续发货。滴滴青桔（FY2025 #3客户，6,377万/8.51%）是星恒第三大客户，若无有效书面合同，星恒在争议场景下的法律保护弱。</p>
+<p class="body-text"><strong>G. 钛氪（传音）采购协议——复杂ODM协议，远超简单电池采购</strong> 🔴</p>
+<p class="body-text"><strong>来源</strong>：[A] OCR提取自 <code>重大客户合同-2025/钛氪（传音）协议 双章件.pdf</code>（10页首部，总页码≥19页，置信度：★★★☆☆）</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条款</th>
+<th>内容</th>
+<th>风险评估</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甲方</td>
+<td>深圳传音控股股份有限公司（深圳南山）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>乙方</td>
+<td><strong>星恒电源股份有限公司</strong>（苏州，非滁州）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>协议编号</td>
+<td>LA50-202307006（2023年7月签署）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>产品</td>
+<td>手环、数据线、蓝牙耳机、充电宝、插线板、<strong>储能模组</strong></td>
+<td>消费电子ODM为主，储能模组为其中一项</td>
+</tr>
+<tr>
+<td>销售区域</td>
+<td><strong>全球</strong>，甲方享有<strong>独家销售权</strong></td>
+<td>星恒不得自销或供第三方同款产品</td>
+</tr>
+<tr>
+<td>订单</td>
+<td>协同平台PO，1个工作日内确认</td>
+<td>—</td>
+</tr>
+<tr>
+<td>免费服务</td>
+<td>二供/三供器件导入、SKD/CKD海外出差支援，≥2年</td>
+<td>额外的成本负担</td>
+</tr>
+<tr>
+<td>软件安全</td>
+<td>Google安全补丁90天要求，<strong>永久免费</strong>；不满足→<strong>300万元违约金</strong></td>
+<td>🔴 高额违约金+无限期义务</td>
+</tr>
+<tr>
+<td>软件源代码</td>
+<td>须上传至甲方服务器编译，签署《技术提存协议》</td>
+<td>🔴 核心IP控制权让渡</td>
+</tr>
+<tr>
+<td>软件大版本升级</td>
+<td>平台释放量产版本后4个月内提供，<strong>即使已无订单也须提供</strong></td>
+<td>🔴 无订单仍须维持研发能力</td>
+</tr>
+<tr>
+<td>量&gt;10万台</td>
+<td>安全补丁90天强制要求+300万违约金</td>
+<td>风险触发条件明确</td>
+</tr>
+<tr>
+<td>违约金</td>
+<td>(a) 产品不符→已付费用全额返还；(b) 软件安全→300万元</td>
+<td>惩罚性</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>尽调判断</strong>：此协议<strong>远超标准电池采购合同</strong>的范畴——含软件源代码托管、永久安全补丁义务、全球独家销售权授予、300万违约金条款等，是星恒所有已知合同中最复杂、义务最重的一份。此前将传音归类为&quot;储能客户&quot;有误导性：(1) 产品以消费电子ODM为主（手环/耳机/充电宝等），储能模组为其中一项；(2) 星恒在此关系中的角色更接近ODM代工商，而非电芯供应商；(3) Q1 2026传音跃居第一大客户（9.92%），需尽调明确：消费电子ODM vs 储能模组的各自收入占比、ODM代工利润率、以及300万违约金条款的实际触发风险评估。</p>
+<p class="body-text"><strong>H. 麦田2024采购协议——续期状态待确认</strong></p>
+<p class="body-text"><strong>来源</strong>：[A] OCR提取自 <code>重大客户合同-2025/5.麦田-星恒2024年采购协议 双章版12.27.pdf</code>（9页，置信度：★★★☆☆）</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条款</th>
+<th>内容</th>
+<th>风险评估</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甲方</td>
+<td>麦田能源股份有限公司（温州）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>乙方</td>
+<td>星恒电源（OCR未明确识别主体）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>期限</td>
+<td>至2024.12.31，<strong>到期后双方无异议且书面确认可自动延长1年</strong></td>
+<td>🟡 需确认是否已完成书面续期</td>
+</tr>
+<tr>
+<td>价格——MFC</td>
+<td>最低价保证，不高于行业同期最低价</td>
+<td>严格约束</td>
+</tr>
+<tr>
+<td>订单变更</td>
+<td>距交期≥45天可变更；&lt;45天须双方协商</td>
+<td>对星恒较宽松</td>
+</tr>
+<tr>
+<td>库存保护</td>
+<td>设计改变/停止合作→甲方有责给予消耗计划或经济补偿</td>
+<td>对星恒有利</td>
+</tr>
+<tr>
+<td>质量</td>
+<td>须另签《质量保证协议》</td>
+<td>—</td>
+</tr>
+<tr>
+<td>模具</td>
+<td>须另签《模具供应协议》</td>
+<td>—</td>
+</tr>
+<tr>
+<td>迟交罚则</td>
+<td>甲方可自行调货→损失由星恒赔偿</td>
+<td>间接罚则</td>
+</tr>
+<tr>
+<td>验收</td>
+<td>到货后5个工作日内；内在缺陷发现后5个工作日内提出</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>尽调判断</strong>：麦田合同相对平衡（有库存保护条款、订单变更宽松），但FY2025麦田收入1.62亿（↓3% vs FY2024）、Q1 2026仅2,596万（年化约1.04亿，续降36%），客户自身业务在萎缩，合同条款的&quot;友好度&quot;意义有限。</p>
+<p class="body-text"><strong>I. 德兰明海采购合作协议——5%质保金+3年质保期</strong></p>
+<p class="body-text"><strong>来源</strong>：[A] OCR提取自 <code>重大客户合同-2025/德兰明海合作协议 双章.pdf</code>（10页首部，总页码≥14页，置信度：★★★☆☆）</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条款</th>
+<th>内容</th>
+<th>风险评估</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甲方</td>
+<td>深圳市德兰明海新能源股份有限公司（BLUETTI品牌）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>乙方</td>
+<td>星恒电源(滁州)有限公司</td>
+<td>—</td>
+</tr>
+<tr>
+<td>质量保证金</td>
+<td><strong>上年采购额的5%</strong>，年度动态调整，从应付货款中扣除</td>
+<td>🟡 资金占压——若年采购1亿则500万质保金被冻结</td>
+</tr>
+<tr>
+<td>质保期</td>
+<td><strong>36个月</strong>（3年）</td>
+<td>行业内偏长</td>
+</tr>
+<tr>
+<td>供应优先级</td>
+<td>星恒须优先保证德兰明海需求</td>
+<td>与其他客户供应优先级冲突</td>
+</tr>
+<tr>
+<td>停产通知</td>
+<td>提前3个月书面通知+提供替代品</td>
+<td>—</td>
+</tr>
+<tr>
+<td>需求预测</td>
+<td>月度滚动预测（不具约束力）</td>
+<td>与其他合同一致</td>
+</tr>
+<tr>
+<td>产品认证</td>
+<td>UL/CE/VDE/CSA/FCC/TUV/CCC/CQC/ROHS</td>
+<td>海外出口（欧美）产品合规要求</td>
+</tr>
+<tr>
+<td>违约金</td>
+<td>问题产品金额的2倍</td>
+<td>—</td>
+</tr>
+<tr>
+<td>验收期</td>
+<td>未明确（须参照《质量保证协议》）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>尽调判断</strong>：德兰明海（BLUETTI，深圳）是全球便携储能头部品牌（2025年全球便携储能出货量Top 3，置信度 [D] ★★★★☆），通过星恒采购电芯/模组用于其便携储能和户用储能产品。合同条款对星恒偏不利——5%质保金+3年质保期+2倍违约金+供应优先级。不过BLUETTI作为有品牌溢价的终端厂家，其采购规模和持续性优于麦田等同层级储能客户。</p>
+<div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:18px"><strong>💡 NOTE</strong><br><p>💡
+<strong>I节德兰明海背景</strong>：[D] 基于公开信息推断。BLUETTI（德兰明海旗下品牌）为全球便携储能知名品牌，2024-2025年通过Kickstarter和Amazon渠道在欧美市场占据较高份额，与Jackery（华宝新能）、EcoFlow（正浩创新）并称&quot;便携储能三强&quot;。此处背景描述置信度★★★☆☆（无2026年最新公开财务数据支持）。</p>
+</div>
+<p class="body-text"><strong>J. 2024-2025年客户合同条款横向对比总表</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条款</th>
+<th>九号</th>
+<th>松果</th>
+<th>爱玛</th>
+<th>青奇(滴滴)</th>
+<th>麦田</th>
+<th>德兰明海</th>
+<th>钛氪(传音)</th>
+<th>宏速/亿盛/亿电宝</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>星恒签约主体</td>
+<td>滁州</td>
+<td>滁州</td>
+<td>滁州</td>
+<td><strong>苏州</strong></td>
+<td>未明确</td>
+<td>滁州</td>
+<td><strong>苏州</strong></td>
+<td>滁州+苏州</td>
+</tr>
+<tr>
+<td>合同类型</td>
+<td>OEM框架</td>
+<td>采购框架</td>
+<td>采购框架</td>
+<td>战略合作</td>
+<td>采购协议</td>
+<td>采购合作</td>
+<td><strong>ODM协议</strong></td>
+<td>经销商协议</td>
+</tr>
+<tr>
+<td><strong>合同当前状态</strong></td>
+<td>有效(2025新签)</td>
+<td><strong>已到期</strong></td>
+<td>有效(无固定期限)</td>
+<td><strong>已到期</strong></td>
+<td>🟡待确认续期</td>
+<td>有效(未确认期限)</td>
+<td>有效(2023签)</td>
+<td>有效(2024签)</td>
+</tr>
+<tr>
+<td>最低采购量</td>
+<td>无</td>
+<td>无</td>
+<td>无</td>
+<td>无(框架)</td>
+<td>无</td>
+<td>无</td>
+<td>无</td>
+<td><strong>仅1/3有</strong></td>
+</tr>
+<tr>
+<td>MFC/最优价格</td>
+<td>✅ ≤110%最低</td>
+<td>无此条款</td>
+<td>✅ 5x差价</td>
+<td>✅ ≤其他客户</td>
+<td>✅ 最低价</td>
+<td>未明确</td>
+<td>无(ODM定价)</td>
+<td>无</td>
+</tr>
+<tr>
+<td>价格上涨保护</td>
+<td><strong>&gt;20%=违约</strong></td>
+<td>无</td>
+<td>商议</td>
+<td>未明确</td>
+<td>未明确</td>
+<td>未明确</td>
+<td>未明确</td>
+<td>星恒单方定价</td>
+</tr>
+<tr>
+<td>付款方式</td>
+<td>6个月承兑汇票</td>
+<td>15%预付+85%</td>
+<td>承兑/支票/转账</td>
+<td>未在框架中约定</td>
+<td>未明确</td>
+<td>未明确</td>
+<td>协同平台PO约定</td>
+<td>款到发货</td>
+</tr>
+<tr>
+<td>质保期</td>
+<td>3年+维修重算</td>
+<td>按附件+2年尾端</td>
+<td>按三包协议</td>
+<td>未在框架中约定</td>
+<td>参照质量协议</td>
+<td><strong>36个月</strong></td>
+<td>2年软件+永久安全</td>
+<td>参照售后政策</td>
+</tr>
+<tr>
+<td>质保金/保证金</td>
+<td>120万元</td>
+<td>30万元(上限)</td>
+<td>~100万元</td>
+<td>无(框架)</td>
+<td>未明确</td>
+<td><strong>5%年采购额</strong></td>
+<td>无(ODM模式)</td>
+<td>空白</td>
+</tr>
+<tr>
+<td>供应优先级</td>
+<td>有</td>
+<td>无</td>
+<td>无</td>
+<td><strong>最高优先级</strong></td>
+<td>未明确</td>
+<td><strong>优先</strong></td>
+<td>未明确</td>
+<td>无</td>
+</tr>
+<tr>
+<td>买方单方解约</td>
+<td><strong>30天通知(无需理由)</strong></td>
+<td>60天通知</td>
+<td>按违约责任章节</td>
+<td>未明确</td>
+<td>30天通知(须对方同意)</td>
+<td>未明确</td>
+<td>未明确</td>
+<td>星恒可随时终止</td>
+</tr>
+<tr>
+<td>争议管辖</td>
+<td>常州(买方)</td>
+<td>天津(买方)</td>
+<td>未明确</td>
+<td>未指定法院</td>
+<td>未明确(签在温州)</td>
+<td>未明确</td>
+<td>未明确</td>
+<td>未明确</td>
+</tr>
+<tr>
+<td>特殊条款</td>
+<td>7年配件+100万研发放弃赔偿</td>
+<td>2年质保后尾端责任</td>
+<td>17家关联公司覆盖</td>
+<td>滴滴开城/投融资支持</td>
+<td>模具协议+库存保护</td>
+<td>停产替代品义务</td>
+<td><strong>300万软件违约金+源代码托管</strong></td>
+<td>窜货重罚+竞品禁售</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>来源汇总</strong>：[A] OCR提取（九号/松果/爱玛/青奇/钛氪/德兰明海/麦田/经销商协议共约15份PDF合同，置信度★★★☆☆-★★★★☆）；[B] 前十大客户清单2023-202603.xlsx；[D] 推断（德兰明海市场地位等）。</p>
+<h4>阶段三：共享超越OEM（2023-2024）——决定性转折</h4>
+<p class="body-text"><strong>2023年客户结构</strong>（来源：前十大客户清单2023 [B/尽调收资材料]）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>排名</th>
+<th>客户</th>
+<th>收入(万元)</th>
+<th>占比</th>
+<th>类型</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1</td>
-<td>2019-2025年星恒及竞争对手市占率</td>
-<td>星恒内部Excel</td>
-<td>[B]</td>
+<td>哈啰</td>
+<td>34,881</td>
+<td>14.63%</td>
+<td>共享</td>
 </tr>
 <tr>
 <td>2</td>
-<td>FY2020-2024财务数据</td>
-<td>中天运审计报告</td>
-<td>[A]</td>
+<td>小牛电动</td>
+<td>26,926</td>
+<td>11.29%</td>
+<td>民用大客户</td>
 </tr>
 <tr>
 <td>3</td>
-<td>FY2025财务数据</td>
-<td>合并报表（未审计）</td>
-<td>[B]</td>
+<td>Amara</td>
+<td>19,799</td>
+<td>8.30%</td>
+<td>南亚</td>
 </tr>
 <tr>
 <td>4</td>
-<td>产能利用率</td>
-<td>22-2603分产线Excel</td>
-<td>[B]</td>
+<td>雅迪集团</td>
+<td>16,406</td>
+<td>6.88%</td>
+<td>民用大客户</td>
 </tr>
 <tr>
 <td>5</td>
-<td>启源纳川司法数据</td>
-<td>天眼查VIP</td>
-<td>[A]</td>
+<td>爱玛集团</td>
+<td>14,394</td>
+<td>6.04%</td>
+<td>民用大客户</td>
 </tr>
 <tr>
 <td>6</td>
-<td>深创投投资数据</td>
-<td>项目材料+天眼查</td>
-<td>[A/B]</td>
+<td>滴滴</td>
+<td>11,006</td>
+<td>4.62%</td>
+<td>共享</td>
+</tr>
+<tr>
+<td>—</td>
+<td>共享小计（哈啰+滴滴+城满电）</td>
+<td>51,665</td>
+<td><strong>21.67%</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>—</td>
+<td>雅迪+爱玛合计</td>
+<td>30,800</td>
+<td><strong>12.92%</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>2024年客户结构</strong>（来源：前十大客户清单2024 [B/尽调收资材料]）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>排名</th>
+<th>客户</th>
+<th>收入(万元)</th>
+<th>占比</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>哈啰</td>
+<td>53,071</td>
+<td>18.00%</td>
+<td>共享</td>
+</tr>
+<tr>
+<td>2</td>
+<td>小牛电动</td>
+<td>32,221</td>
+<td>10.93%</td>
+<td>民用大客户</td>
+</tr>
+<tr>
+<td>3</td>
+<td>滴滴</td>
+<td>17,393</td>
+<td>5.90%</td>
+<td>共享</td>
+</tr>
+<tr>
+<td>4</td>
+<td>麦田能源</td>
+<td>16,725</td>
+<td>5.67%</td>
+<td>储能</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Amara</td>
+<td>~11,700</td>
+<td>3.97%</td>
+<td>南亚</td>
+</tr>
+<tr>
+<td>6</td>
+<td>雅迪集团</td>
+<td>8,384</td>
+<td>2.84%</td>
+<td>民用大客户</td>
 </tr>
 <tr>
 <td>7</td>
-<td>ATL新能安市占率</td>
-<td>星恒内部Excel</td>
-<td>[B]</td>
+<td>爱玛集团</td>
+<td>8,028</td>
+<td>2.72%</td>
+<td>民用大客户</td>
+</tr>
+<tr>
+<td>—</td>
+<td>共享小计（哈啰+滴滴）</td>
+<td>70,464</td>
+<td><strong>23.90%</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>—</td>
+<td>雅迪+爱玛合计</td>
+<td>16,412</td>
+<td><strong>5.56%</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>关键观察</strong>：</p>
+<ul class="doc-list"><li><p class="body-text"><strong>雅迪+爱玛从2023年12.92%骤降至2024年5.56%</strong>——仅一年时间，头部OEM对星恒的收入贡献腰斩</li>
+<li><p class="body-text"><strong>哈啰从14.63%升至18.00%</strong>——正在快速填补OEM留下的份额空缺</li>
+<li><p class="body-text"><strong>Amara从8.30%降至3.97%</strong>——南亚大客户可能在流失或采购减少</li>
+<li><p class="body-text"><strong>储能客户（麦田能源）首进前5</strong>——新客户类型出现</li>
+</ul>
+<h4>阶段四：共享主导+储能崛起（2025-Q1 2026）</h4>
+<p class="body-text"><strong>2025年客户结构</strong>（来源：前十大客户清单2025 [B/尽调收资材料]）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>排名</th>
+<th>客户</th>
+<th>收入(万元)</th>
+<th>占比</th>
+<th>类型</th>
+<th>同比变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>哈啰</td>
+<td>56,024</td>
+<td>15.41%</td>
+<td>共享</td>
+<td>↓（占比降但金额升5.6%）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>小牛电动</td>
+<td>31,022</td>
+<td>8.53%</td>
+<td>民用大客户</td>
+<td>↓</td>
+</tr>
+<tr>
+<td>3</td>
+<td>滴滴</td>
+<td>28,819</td>
+<td>7.93%</td>
+<td>共享</td>
+<td>↑↑（+65.7%金额）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>麦田能源</td>
+<td>16,230</td>
+<td>4.46%</td>
+<td>储能</td>
+<td>↓</td>
+</tr>
+<tr>
+<td>5</td>
+<td>德兰明海</td>
+<td>16,181</td>
+<td>4.45%</td>
+<td>储能</td>
+<td>新进</td>
+</tr>
+<tr>
+<td>6</td>
+<td>雅迪集团</td>
+<td>11,818</td>
+<td>3.25%</td>
+<td>民用大客户</td>
+<td>↑</td>
+</tr>
+<tr>
+<td>7</td>
+<td>爱玛集团</td>
+<td>11,369</td>
+<td>3.13%</td>
+<td>民用大客户</td>
+<td>↑</td>
 </tr>
 <tr>
 <td>8</td>
-<td>HK可比公司PS/PE</td>
-<td>MX金融+akshare</td>
-<td>[B]</td>
+<td>苏州小师傅</td>
+<td>10,852</td>
+<td>2.98%</td>
+<td>共享</td>
+<td>新进</td>
 </tr>
 <tr>
 <td>9</td>
-<td>磷酸锰铁锂行业出货</td>
-<td>GGII/ICC鑫椤</td>
-<td>[C]</td>
+<td>钛氪（传音）</td>
+<td>10,852</td>
+<td>2.98%</td>
+<td>消费电子ODM（含储能模组）</td>
+<td>新进</td>
 </tr>
 <tr>
 <td>10</td>
-<td>盈利预测（管理层）</td>
-<td>盈利预测202604版</td>
-<td>[D]</td>
+<td>松果</td>
+<td>9,608</td>
+<td>2.64%</td>
+<td>共享</td>
+<td>新进</td>
 </tr>
 </tbody>
-</table>
-<h3>6.2 重要数据偏差与说明</h3>
-<p><strong>⚠️ 市占率数据的口径差异</strong>（置信度影响：★★★☆☆）：</p>
-<p>星恒内部Excel（[B]）与04报告引用的第三方数据（GGII/起点，[C]）在市占率上存在显著差异：</p>
-<table>
-<thead>
+</table></div><p class="body-text"><strong>客户集群汇总（2025 vs 2024 vs 2023）</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
-<th>年份</th>
-<th>内部Excel</th>
-<th>04报告（GGII/起点）</th>
-<th>偏差</th>
+<th>客户集群</th>
+<th>2023占比</th>
+<th>2024占比</th>
+<th>2025占比</th>
+<th>趋势</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>2022</td>
-<td>47.89%</td>
-<td>~80%</td>
-<td><strong>+32pp</strong></td>
+<td>共享出行（哈啰+滴滴+小师傅+松果+城满电）</td>
+<td>21.67%</td>
+<td>23.90%</td>
+<td><strong>28.96%</strong></td>
+<td>↑↑ 3年+7.3pp</td>
+</tr>
+<tr>
+<td>传统OEM（雅迪+爱玛）</td>
+<td>12.92%</td>
+<td>5.56%</td>
+<td><strong>6.38%</strong></td>
+<td>↓↓ 3年-6.5pp</td>
+</tr>
+<tr>
+<td>民用大客户（小牛等）</td>
+<td>11.29%</td>
+<td>10.93%</td>
+<td>8.53%</td>
+<td>↓</td>
+</tr>
+<tr>
+<td>储能及新业务</td>
+<td>2.84%</td>
+<td>9.64%</td>
+<td><strong>14.89%</strong></td>
+<td>↑↑ 3年+12.1pp</td>
+</tr>
+<tr>
+<td>南亚（Amara）</td>
+<td>8.30%</td>
+<td>3.97%</td>
+<td>—</td>
+<td>↓↓ 退出前10</td>
+</tr>
+<tr>
+<td>渠道客户</td>
+<td>4.18%</td>
+<td>7.62%</td>
+<td>—</td>
+<td>↓ 退出前10</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>Q1 2026客户结构</strong>（最新数据 [B/尽调收资材料]）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>排名</th>
+<th>客户</th>
+<th>收入(万元)</th>
+<th>占比</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>钛氪（传音）</td>
+<td>7,433</td>
+<td>9.92%</td>
+<td>消费电子ODM（含储能模组）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>哈啰</td>
+<td>6,895</td>
+<td>9.20%</td>
+<td>共享</td>
+</tr>
+<tr>
+<td>3</td>
+<td>滴滴</td>
+<td>6,377</td>
+<td>8.51%</td>
+<td>共享</td>
+</tr>
+<tr>
+<td>4</td>
+<td>小牛</td>
+<td>6,210</td>
+<td>8.29%</td>
+<td>民用大客户</td>
+</tr>
+<tr>
+<td>5</td>
+<td>明海</td>
+<td>3,324</td>
+<td>4.44%</td>
+<td>储能及新业务</td>
+</tr>
+<tr>
+<td>6</td>
+<td>松果</td>
+<td>2,596</td>
+<td>3.46%</td>
+<td>共享</td>
+</tr>
+<tr>
+<td>7</td>
+<td>麦田</td>
+<td>2,596</td>
+<td>3.46%</td>
+<td>储能及新业务</td>
+</tr>
+<tr>
+<td>8</td>
+<td>爱玛</td>
+<td>2,506</td>
+<td>3.34%</td>
+<td>共享（注：爱玛被分类为共享客户）</td>
+</tr>
+<tr>
+<td>9</td>
+<td>天津恒耀</td>
+<td>2,014</td>
+<td>2.69%</td>
+<td>民用渠道</td>
+</tr>
+<tr>
+<td>10</td>
+<td>苏州小师傅</td>
+<td>1,970</td>
+<td>2.63%</td>
+<td>共享</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>Q1 2026关键信号</strong>：</p>
+<ul class="doc-list"><li><p class="body-text"><strong>钛氪（传音）跃居第一大客户9.92%</strong>——传音（手机品牌）通过消费电子ODM协议采购，非此前假设的储能专项采购。消费电子品类可能贡献了9.92%收入的大部分，需尽调进一步拆分ODM vs 储能模组的各自占比</li>
+<li><p class="body-text">共享出行小计（哈啰+滴滴+松果+小师傅）约23.80%——较FY2025的29.0%下降，但Q1有季节性</li>
+<li><p class="body-text">⚠️ 爱玛在Q1被分类为&quot;共享客户&quot;——Excel四期横截面核验确认：FY2023-2025分类为&quot;民用大客户&quot;，Q1 2026突变为&quot;共享客户&quot;；同期客户名称从&quot;爱玛集团&quot;变为&quot;爱玛&quot;（可能为不同法人主体）。三种可能：(1) 数据录入错误；(2) 爱玛设立共享出行业务子公司并通过该主体采购；(3) 集团采购主体变更。<strong>需向管理层确认分类依据，并在估值中保守处理</strong>——若爱玛实为共享客户，其定价/付款/毛利率逻辑将不同于民用OEM模式，应与哈啰/滴滴等共享客户一并分析</li>
+</ul>
+<hr />
+<h3>三、横向分析——行业客户结构对标</h3>
+<h4>3.1 行业可比公司客户集中度</h4>
+<p class="body-text">基于akshare金融数据验证和公开年报信息：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>企业</th>
+<th>营收（FY2025）</th>
+<th>Top 1客户占比</th>
+<th>Top 5客户占比</th>
+<th>客户结构特征</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>星恒电源</strong></td>
+<td>36.36亿</td>
+<td>哈啰15.41%</td>
+<td>~40.8%</td>
+<td>共享B2B集中+储能新兴</td>
+<td>[B] 尽调材料</td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td><strong>4,237.02亿</strong></td>
+<td>~15%（估计，特斯拉）</td>
+<td>~40-50%</td>
+<td>头部车企集中</td>
+<td>[A] MX/iFind FY2025年报</td>
+</tr>
+<tr>
+<td>博力威</td>
+<td>27.35亿</td>
+<td>未公开</td>
+<td>未公开</td>
+<td>估计较分散（多品类）</td>
+<td>[A] MX/iFind FY2025年报</td>
+</tr>
+<tr>
+<td>天能动力</td>
+<td><strong>599.53亿港元（≈534亿）</strong></td>
+<td>未公开</td>
+<td>未公开</td>
+<td>OEM（原始设备制造商/整车厂）+售后替换市场分散</td>
+<td>[A] MX/iFind FY2025年报</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>来源</strong>：[A] MX/iFind FY2025年报；[B] 尽调材料；[C] 行业公开信息</p>
+<p class="body-text"><strong>交叉验证结论</strong>：</p>
+<ul class="doc-list"><li><p class="body-text">星恒的客户集中度（Top 1 = 15.41%、Top 5 ≈ 40.8%）在制造企业中属于<strong>中等偏高</strong>水平</li>
+<li><p class="body-text">但与宁德时代（同样Top 1 ~15%来自特斯拉）相比，关键差异在于客户质量——特斯拉是全球市值最高的车企，而哈啰是一家仍在亏损的共享出行平台</li>
+</ul>
+<h4>3.2 共享B2B vs 传统OEM——客户质量对比</h4>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>维度</th>
+<th>共享B2B客户（哈啰/滴滴）</th>
+<th>传统OEM客户（雅迪/爱玛）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单客户收入占比</td>
+<td>哈啰15.41%、滴滴7.93%</td>
+<td>雅迪3.25%、爱玛3.13%</td>
+</tr>
+<tr>
+<td>合同周期</td>
+<td>1-3年B2B框架合同</td>
+<td>年度采购订单</td>
+</tr>
+<tr>
+<td>定价机制</td>
+<td>大批量低价协议、可能含售后条款</td>
+<td>竞争性报价（ATL参与竞争）</td>
+</tr>
+<tr>
+<td>付款周期</td>
+<td>较长（B2B账期，应收账款占比高）</td>
+<td>较短（OEM标准账期）</td>
+</tr>
+<tr>
+<td>客户自身盈利能力</td>
+<td>共享出行平台普遍亏损</td>
+<td>雅迪净利29.1亿（FY2025 [A]）</td>
+</tr>
+<tr>
+<td>切换成本（对星恒）</td>
+<td>中（换电体系标准化后切换难度低）</td>
+<td>低（多供应商策略已成熟）</td>
+</tr>
+<tr>
+<td>增长前景</td>
+<td>共享电单车投放量增长趋缓</td>
+<td>新国标驱动锂电化率提升</td>
+</tr>
+<tr>
+<td>质量要求</td>
+<td>高（共享场景使用强度大）</td>
+<td>中（消费者使用强度低）</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>来源</strong>：客户特征基于尽调材料分析 [B]；雅迪财务数据 [A] akshare；共享平台盈利判断 [C]</p>
+<p class="body-text"><strong>核心判断</strong>：</p>
+<ul class="doc-list"><li><p class="body-text"><strong>共享客户是&quot;双刃剑&quot;</strong>——高集中度（哈啰15.41%）但客户自身造血能力存疑（共享出行平台盈利困难）；B2B合同提供稳定性但定价权在客户方</li>
+<li><p class="body-text"><strong>OEM客户的&quot;占比下降&quot;可能是星恒主动选择+被动流失的混合结果</strong>——主动选择是因为OEM定价太低（FY2025 国内民用GM（毛利率） 6.6%），被动流失是因为ATL新能安在高端OEM的替代</li>
+</ul>
+<hr />
+<h3>四、横纵交叉——客户结构演变的归因与展望</h3>
+<h4>4.1 客户结构演变的驱动因素归因</h4>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>驱动因素</th>
+<th>影响力</th>
+<th>方向</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ATL新能安切入OEM供应链</td>
+<td>★★★★★</td>
+<td>OEM客户流失</td>
+<td>这是星恒OEM占比从13%→6%的最主要推手</td>
+</tr>
+<tr>
+<td>共享电单车投放潮（2019-2022）</td>
+<td>★★★★☆</td>
+<td>共享客户增长</td>
+<td>哈啰/滴滴创造的新需求填补了OEM流失</td>
+</tr>
+<tr>
+<td>储能及新业务市场扩展</td>
+<td>★★★☆☆</td>
+<td>储能及ODM客户增长</td>
+<td>麦田/德兰明海/钛氪（传音ODM+储能模组）从0→15%</td>
+</tr>
+<tr>
+<td>星恒自身战略调整</td>
+<td>★★★☆☆</td>
+<td>客户选择偏好</td>
+<td>主动增加高GM客户（海外、共享B2B长协）、减少低GM OEM</td>
+</tr>
+<tr>
+<td>南亚市场波动</td>
+<td>★★★☆☆</td>
+<td>Amara先升后降</td>
+<td>单一海外大客户的不稳定性</td>
+</tr>
+</tbody>
+</table>
+<div class="chart-container"><img src="charts/chart_27.svg" alt="数据图表" loading="lazy"></div></div><h4>4.2 对估值的关键影响</h4>
+<p class="body-text"><strong>1. 收入质量评估——基于客户结构</strong></p>
+<p class="body-text">将星恒2025年36.36亿收入按客户集群重新分类：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>客户集群</th>
+<th>收入占比</th>
+<th>收入质量评级</th>
+<th>估值含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>共享出行（哈啰/滴滴等）</td>
+<td>~29%</td>
+<td><strong>★★★☆☆（中等）</strong></td>
+<td>B2B合同提供稳定性，但客户自身亏损+高集中度→收入有下行风险</td>
+</tr>
+<tr>
+<td>储能及新业务</td>
+<td>~15%</td>
+<td><strong>★★☆☆☆（偏低）</strong></td>
+<td>增长快但GM为负（-5.5%至-9.3%），增长越快亏损越大</td>
+</tr>
+<tr>
+<td>传统OEM（雅迪/爱玛）</td>
+<td>~6%</td>
+<td><strong>★★★★☆（中高）</strong></td>
+<td>客户质量高（雅迪净利29.1亿）但占比小且仍在流失</td>
+</tr>
+<tr>
+<td>民用其他（小牛+渠道）</td>
+<td>~17%</td>
+<td><strong>★★★☆☆（中等）</strong></td>
+<td>分散但GM仅6.6%，利润贡献有限</td>
+</tr>
+<tr>
+<td>海外（EB+南亚）</td>
+<td>~17%</td>
+<td><strong>★★★★☆（中高）</strong></td>
+<td>GM 22.3%/16.1%，是利润主体但增长依赖海外市场</td>
+</tr>
+<tr>
+<td>其他（青源/新材料/废料）</td>
+<td>~16%</td>
+<td><strong>★★☆☆☆→★☆☆☆☆</strong></td>
+<td>包含大量低质收入（废料/售后组件/其他）</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>2. 估值折价理由（基于客户结构）</strong></p>
+<div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:18px"><strong>💡 NOTE</strong><br><p>💡
+<strong>PS基线</strong>：小牛电动PS为0.30x（FY2025净亏损-0.39亿导致估值持续下行），雅迪PS为0.857x，绿源PS为0.677x。两轮车直接可比PS区间为<strong>0.30-0.86x</strong>，经利润率+去铅酸化调整后的综合合理PS区间为<strong>0.30-0.70x</strong>（详见04主报告3.3节）。</p>
+</div>
+<p class="body-text">基于客户结构分析，在可比公司合理PS区间（0.30-0.70x）基础上，需要增加以下星恒特定折价因素：</p>
+<ul class="doc-list"><li><p class="body-text"><strong>客户质量折价</strong>：最大客户（哈啰15.41%）自身不盈利→与可比公司（雅迪的客户是消费者，天能的客户是分散的替换市场）相比，星恒的客户质量更低 → PS折价-10~-15%</li>
+<li><p class="body-text"><strong>客户集中度风险折价</strong>：Top 1客户15.41%+Top 5约40.8%→中等偏高的集中度 → PS折价-5~-10%</li>
+<li><p class="body-text"><strong>储能及新业务客户质量折价</strong>：储能及新业务集群占比约15%，其中储能客户（麦田+德兰明海，GM为负，收入增长不带来利润增长）+ 钛氪ODM（消费电子代工利润率低于电芯销售）→ 该集群整体拉低利润率 → PS折价-5~-10%</li>
+</ul>
+<p class="body-text"><strong>综合PS调整</strong>：0.30-0.70x → 合理区间 <strong>0.30-0.60x</strong>（经客户质量和结构折价后）</p>
+<blockquote>
+<p class="body-text">最终区间0.30-0.60x——下限由小牛电动实际交易价格（0.30x）锚定（深度困境估值，无需额外折价），上限由客户结构折价驱动。</p>
+</blockquote>
+<p class="body-text"><strong>3. 客户结构演变情景分析</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>情景</th>
+<th>概率</th>
+<th>客户结构演变</th>
+<th>FY2030收入影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>共享深化</td>
+<td>40%</td>
+<td>哈啰/滴滴继续扩大采购，共享占比升至35-40%</td>
+<td>收入依赖进一步集中于非盈利客户</td>
+</tr>
+<tr>
+<td>OEM回归</td>
+<td>20%</td>
+<td>新国标落地后，雅迪/爱玛增加锂电采购（可能从星恒+ATL双供）</td>
+<td>雅迪+爱玛占比可能回升至10-15%</td>
+</tr>
+<tr>
+<td>储能变成新支柱</td>
+<td>25%</td>
+<td>储能客户拓展后规模效应改善，储能GM转正（0-3%），储能客户占比升至25-30%</td>
+<td>客户结构改善（储能客户盈利质量提升）</td>
+</tr>
+<tr>
+<td>客户流失</td>
+<td>15%</td>
+<td>哈啰/滴滴引入ATL或其他供应商，共享客户流失</td>
+<td>收入出现负增长</td>
+</tr>
+</tbody>
+</table></div><hr />
+<h3>五、来源与可靠性</h3>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>数据类型</th>
+<th>来源</th>
+<th>可靠性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023-2025年前十大客户收入+占比</td>
+<td>前十大客户清单2023-202603.xlsx [B/管理层提供]</td>
+<td>B级</td>
+</tr>
+<tr>
+<td>分业务收入/毛利率</td>
+<td>分业务收入表2022-2026.3 [B/管理层提供]</td>
+<td>B级</td>
+</tr>
+<tr>
+<td>雅迪/天能/超威/绿源 FY2025营收+净利</td>
+<td>akshare stock_hk_financial_indicator_em [A]</td>
+<td>A级</td>
+</tr>
+<tr>
+<td>Amara南亚客户收入</td>
+<td>前十大客户清单 [B]</td>
+<td>B级</td>
+</tr>
+<tr>
+<td>客户分类（共享/民用/储能等）</td>
+<td>前十大客户清单中的&quot;客户分类&quot;列 [B/管理层自分类]</td>
+<td>B级</td>
+</tr>
+<tr>
+<td>2024-2025年客户合同条款（九号/松果/经销商）</td>
+<td>合同PDF OCR提取 [A/2026-06-03新增]</td>
+<td>A级（正式签署合同，部分OCR识别有误差）</td>
+</tr>
+<tr>
+<td>2020-2021年客户合同（约35份，含深铃/小遛/富士达/快松果/青奇/国网/国什/华霆/雅迪/台铃/绿源等）</td>
+<td>合同PDF OCR提取 [A/Phase 3逐文件核查]</td>
+<td>A级（OCR识别有误差）</td>
+</tr>
+</tbody>
+</table></div><hr />
+<h3>六、关键结论</h3>
+<ol class="doc-list"><li>
+<p class="body-text"><strong>星恒客户结构已从OEM主导转型为共享出行+储能及新业务双轮驱动</strong>——ODM（雅迪+爱玛）仅占收入6.38%，共享出行（哈啰+滴滴+小师傅+松果）合计约29%，储能及新业务集群（麦田+德兰明海+钛氪ODM）合计约15%。需注意：该集群内部性质差异大——麦田/德兰明海为储能客户（GM为负），钛氪为消费电子ODM（利润率独立于储能行业），将其统一归入&quot;储能集群&quot;会高估储能业务的客户集中度。</p>
+</li>
+<li>
+<p class="body-text"><strong>哈啰单一客户15.41%的集中度是星恒最大的客户风险</strong>——高于此前报告错误关注的&quot;OEM集中度&quot;。哈啰作为共享出行平台自身面临盈利压力，其对电池供应商的压价能力和付款周期谈判地位将继续增强。</p>
+</li>
+<li>
+<p class="body-text"><strong>客户质量整体偏低，需要估值折价</strong>——最大客户不盈利、储能及新业务集群GM为负（含储能亏损+ODM低利润率）、海外大客户波动大（Amara先升后降）。经客户结构分析后，PS合理区间从可比公司0.30-0.70x下调至0.30-0.60x（下限由小牛电动实际交易0.30x锚定，上限由客户结构折价-30%驱动）。</p>
+</li>
+<li>
+<p class="body-text"><strong>Q1 2026钛氪（传音）跃居第一大客户9.92%是需要重点跟踪的新信号</strong>——传音（手机品牌/非洲市场）通过消费电子ODM协议采购，其ODM业务的持续性、定价条件（代工利润 vs 电芯利润）和品类拆分（消费电子 vs 储能模组的各自占比）均待尽调进一步核查。</p>
+</li>
+<li>
+<p class="body-text"><strong>客户结构的演变方向将决定星恒的长期收入质量</strong>——若共享出行继续深化（概率40%）→收入稳定但利润率持续受压；若储能GM转正后成为新支柱（概率25%）→客户结构改善；若主要客户流失（概率15%）→显著负面影响。</p>
+</li>
+<li>
+<p class="body-text"><strong>2024-2025年合同OCR核验确认：合同层面的结构性风险未改善</strong>（2026-06-03新增）——与2020-2021年相比：(a) 九号新签合同为星恒所有已知合同中对供方最不利——MFC条款+涨价20%上限+6个月承兑汇票+买方30天单方解约；(b) 松果合同已到期（2025.12.31）但Q1 2026持续发货2,596万——缺乏有效书面合同；(c) 经销商协议中仅1/3（宏速）有最低采购承诺——亿盛/亿电宝合计1.41亿收入无合同层面的采购保障；(d) 所有框架合同仍无最低采购量承诺。2023年合同目录为空（对应客户可能延续2021年无限期合同）。</p>
+</li>
+<li>
+<p class="body-text"><strong>爱玛客户分类异常须澄清</strong>（2026-06-03核验）——爱玛在FY2023-2025为&quot;民用大客户&quot;、Q1 2026突变为&quot;共享客户&quot;，且名称从&quot;爱玛集团&quot;变为&quot;爱玛&quot;。若实为数据错误则不需修正分析；若反映采购主体变更则需重新评估其在民用段收入中的归类。</p>
+</li>
+</ol>
+<hr />
+<hr />
+<h2>第二部分：产品安全与质量风险纵横分析</h2>
+<p class="body-text"><strong>定位</strong>：对星恒电源2023-2026年的产品安全与质量风险进行纵横分析法深度分析——纵向时间轴追踪+横向行业对标+横纵交叉影响评估。这是投资尽调的<strong>红线级问题</strong>。
+<strong>数据来源</strong>：[B] 尽调收资材料 行政处罚清单202510.xlsx + 未决诉讼清单202605.xlsx + [A] akshare + [C] 行业公开数据 + [A] openclaw web搜索（应急管理部/国家消防救援局/市场监管总局公开数据）</p>
+<hr />
+<h3>一、核心发现（Executive Summary）</h3>
+<blockquote>
+<p class="body-text"><strong>星恒电源在2023-2025年间遭受10余起产品质量行政处罚，核心问题是过充电保护系统性失效——跨6个城市、多个产品型号、不同抽检机构。同时面临约14起产品安全相关未决诉讼（另有2起商业合同纠纷非产品安全范畴，见04主报告2.5.2D节），其中长沙地下车库火灾（6案~200万）是最具判例效应的案件集群。产品安全风险构成投资尽调的红线级问题——直接影响星恒最核心的竞争资产（品牌信誉和72.5%市场份额的可持续性）。</strong></p>
+</blockquote>
+<hr />
+<h3>二、纵向分析——质量事件时间线与趋势</h3>
+<h4>2.1 行政处罚年度分布与趋势</h4>
+<p class="body-text">基于行政处罚清单202510.xlsx [B/管理层提供]：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>年份</th>
+<th>处罚次数</th>
+<th>核心问题分布</th>
+<th>最大单笔罚款</th>
+<th>抽检城市数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023</td>
+<td>4起</td>
+<td>过充电不合格(2)、容量不合格(1)、未公示(1)</td>
+<td>50万元（苏州虎丘区）</td>
+<td>2（无锡、苏州）</td>
 </tr>
 <tr>
 <td>2024</td>
-<td>58.80%</td>
-<td>~75%</td>
-<td><strong>+16pp</strong></td>
+<td>3起</td>
+<td>过充保护不合格(1)、充电不合格(1)、壳体阻燃不合格(1)</td>
+<td>9.03万元</td>
+<td>3（南京、广州）</td>
 </tr>
 <tr>
 <td>2025</td>
-<td>72.50%</td>
-<td>~72.5%</td>
-<td><strong>0pp</strong>（趋同）</td>
+<td>4起+</td>
+<td>过充不合格(2)、壳体阻燃不合格(1)、安全生产(1)、发票违规(1)</td>
+<td>53万元（苏州应急管理局）</td>
+<td>4+（厦门、泉州、苏州）</td>
 </tr>
 </tbody>
 </table>
-<p>偏差原因推断（置信度：★★☆☆☆，未经官方确认）：</p>
-<ul>
-<li>第三方数据（GGII/起点）可能使用&quot;合规市场&quot;口径（通过国标认证的锂电池市场），排除未认证/非标产品</li>
-<li>星恒内部Excel可能使用更宽的&quot;两轮车锂电池市场&quot;口径（所有电动自行车用锂电池）</li>
-<li>如果合规市场仅占总市场的约60%（即大量非标锂电存在），则两个口径可以调和：星恒在合规市场占72.5%（占总市场约43.5%≈47.89%）</li>
-</ul>
-<blockquote>
-<p><strong>本报告以星恒内部Excel数据为市占率分析的基准</strong>，因其具有完整的2019-2025年连续时间序列和明确的竞争对手出货量数据。第三方数据的绝对值存在差异，但相对变化趋势（星恒市占率受ATL侵蚀）在两种口径中一致。</p>
-</blockquote>
-<hr />
-<h2>七、对商调主报告的趋势与结论提炼</h2>
-<p>以下结论可直接纳入主报告或用于更新已有表述：</p>
-<h3>7.1 竞争力趋势</h3>
-<ol>
-<li>
-<p><strong>星恒的两轮车锂电龙头地位来自20年专注+对手退出，而非不可复制的竞争壁垒</strong>。ATL新能安在7年内从0做到18.50%，证明该市场不存在不可逾越的进入壁垒。</p>
-</li>
-<li>
-<p><strong>市占率72.5%不宜被解读为&quot;垄断性竞争优势&quot;</strong>——其100%的&quot;提升&quot;来自分母收缩（市场总量从874万→474万组）——Shapley分解：市场收缩贡献126%，星恒自身出货下降抵消-26%。在绝对出货量上，星恒2025年出货343.34万组仍低于2020年峰值481.71万组（-28.7%）。</p>
-</li>
-<li>
-<p><strong>竞争格局已从&quot;一超多强&quot;演变为&quot;双寡头&quot;</strong>——星恒72.5% vs ATL 18.5%，其余不足5%。但双寡头格局并不稳定——ATL是进攻方，星恒是防守方。</p>
-</li>
-<li>
-<p><strong>财务竞争力自FY2020以来单边下滑</strong>——以接近历史峰值的营收（36.36亿 vs 40.21亿）仅创造1/8的净利（0.45亿 vs 3.76亿）。</p>
-</li>
-<li>
-<p><strong>标准参与构成隐形竞争壁垒——此前未被纳入分析</strong>（2026-06-03新增）：星恒是GB/T 36972-2018（电动自行车用锂离子蓄电池，国内该领域最核心的技术标准）的<strong>第一起草单位</strong>，并正在主编国家强制性标准（推断为GB 43854-2024配套标准）。在同业中，ATL/博力威/天能均未在核心标准中担任第一起草单位。标准参与从三方面强化竞争力：(a) 先发优势——提前知晓标准指标方向；(b) 准入门槛——若标准参数基于星恒产品数据设定，竞品需额外研发投入；(c) 客户信任——标准主编身份在OEM采购评估中为加分项 [B/总-星恒-标准.xlsx, 置信度B级]。<strong>但注意</strong>：标准参与不等于产品实际合规（见04报告2.5节——星恒在过充电保护测试中被多次抽检不合格），其竞争壁垒效应受产品执行质量的约束。</p>
-</li>
-</ol>
-<h3>7.2 核心结论</h3>
-<blockquote>
-<p>星恒的竞争力处于**&quot;表面稳固、实质脆弱&quot;**状态。72.5%的市占率（2025年）是行业洗牌的&quot;幸存者红利&quot;而非竞争制胜的结果。当竞争对手退出基本出清（2025年其他合计仅4.49%），星恒将直接面对ATL新能安——一个拥有CATL成本协同+ATL品质体系的竞争对手——的单挑。届时星恒的市占率将面临&quot;回归均值&quot;的压力。固相法磷酸锰铁锂提供了约3年（2026-2029）的差异化窗口，但窗口期结束后如果没有重大突破，星恒将回归为&quot;锰系两轮车电池制造商&quot;——一个市场规模有限（FY2025纯锂电约40-50亿）、利润率微薄（FY2025净利率1.24%、长期稳态估计1-2%）、技术天花板清晰的赛道。</p>
-</blockquote>
-<h3>7.3 建议更新的主报告表述</h3>
-<p>以下主报告（04_横纵分析法深度研究报告_完整版.md）中的表述建议根据本附件分析补充更新：</p>
-<table>
-<thead>
+<div class="chart-container"><img src="charts/chart_31.svg" alt="数据图表" loading="lazy"></div></div><p class="body-text"><strong>趋势判断（置信度：★★★★☆）</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
-<th>原表述</th>
-<th>建议补充/更新</th>
+<th>趋势维度</th>
+<th>判断</th>
+<th>证据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>&quot;星恒两轮车锂电市占率约72.5%（逐年下降约2-3pp/年）&quot;</td>
-<td>补充：72.5%为星恒内部口径（较宽市场定义），第三方口径约72.5%在&quot;合规市场&quot;口径中一致。市占率在2019-2022年实际为44-48%（内部数据），&quot;逐年下降2-3pp&quot;针对的是合规市场份额（~80%→72.5%），而非全市场口径</td>
+<td>处罚频率</td>
+<td>未收敛——2025年处罚次数不降反增</td>
+<td>2023 4起→2024 3起→2025 4起+</td>
 </tr>
 <tr>
-<td>&quot;星恒20年专注建立的OEM关系&quot;</td>
-<td>补充：OEM关系正在被ATL侵蚀，尤其是在高端客户（九号/小牛/五羊本田）——ATL 2025年市占率18.5%，主要来自星恒的高端客户流失。雅迪+爱玛仅占星恒2025年收入的6.38%（来源：前十大客户清单 [B/尽调收资材料]），&quot;OEM关系=护城河&quot;的论证需要重新评估——星恒真正的客户集中风险在共享出行运营商（哈啰15.41%+滴滴7.93%+小师傅+松果≈29%）</td>
+<td>问题严重度</td>
+<td>有恶化迹象——处罚金额从质量罚（2-9万）扩展到安全罚（53万）</td>
+<td>2025年安全生产处罚53万系首次出现</td>
 </tr>
 <tr>
-<td>&quot;波特五力客户议价权高&quot;</td>
-<td>需区分共享B2B客户（哈啰15.41%单客户集中度）vs传统OEM（雅迪+爱玛仅6.38%）的议价权差异。共享B2B客户的议价逻辑不同于OEM的&quot;集中采购压价&quot;，而是&quot;运营商低盈利传导+竞品替代（ATL也在争夺共享客户）&quot;</td>
+<td>抽检覆盖面</td>
+<td>扩大——涉及更多城市和抽检机构</td>
+<td>从2城市→4+城市</td>
+</tr>
+<tr>
+<td>问题类型</td>
+<td>核心问题（过充电）反复出现，是系统性而非偶发性</td>
+<td>3年间至少5次过充电/过充保护类处罚</td>
+</tr>
+</tbody>
+</table></div><h4>2.1.1 2025年滁州处罚</h4>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>日期</th>
+<th>文号</th>
+<th>处罚机关</th>
+<th>罚款金额</th>
+<th>违法事由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025.3.11</td>
+<td>滁市监综执罚〔2024〕456号</td>
+<td>滁州市市场监管局</td>
+<td><strong>2.47万元</strong>（罚款23,750+没收972.92元）</td>
+<td>春风S20-4824G6壳体阻燃不合格（广州市场监管局2024.7.29抽检）——已公示</td>
+</tr>
+<tr>
+<td>2025.4.3</td>
+<td>滁市监综执罚〔2025〕3号</td>
+<td>滁州市市场监管局</td>
+<td><strong>2.05万元</strong>（罚款19,710元+没收775.77元）</td>
+<td>4824G31过充不合格（南京栖霞区市场监管局2024.7.31抽检）——已公示</td>
+</tr>
+<tr>
+<td>2025.5.20</td>
+<td>滁市监罚〔2025〕5号</td>
+<td>滁州市市场监管局</td>
+<td><strong>1.37万元</strong>（罚款12,717元+没收1,026.88元）</td>
+<td>JH4814过充不合格（厦门市市场监管局2024.7.26抽检）——已公示</td>
+</tr>
+<tr>
+<td>2025.5.28</td>
+<td>滁税一稽罚【2025】17号</td>
+<td>国家税务总局滁州税务局第一稽查局</td>
+<td><strong>1万元</strong></td>
+<td>违反《发票管理办法》第三十七条——发票违规</td>
+</tr>
+<tr>
+<td>2025.6.9</td>
+<td>（苏虎）应急罚【2024】10号</td>
+<td>苏州高新区应急管理局</td>
+<td><strong>53万元</strong></td>
+<td>未按规定及时发现并消除事故隐患（安全生产法）</td>
 </tr>
 </tbody>
 </table>
-<h3>7.4 Q1 2026财务数据与趋势预警</h3>
-<p>基于尽调收资材料中的Q1 2026合并报表 [B/管理层提供，未经审计]：</p>
-<table>
-<thead>
+<div class="chart-container"><img src="charts/chart_33.svg" alt="数据图表" loading="lazy"></div></div><p class="body-text"><strong>关键发现</strong>：</p>
+<ul class="doc-list"><li><p class="body-text">滁州（星恒最主要电池生产基地，持股85.23%）2025年3-4月连续被罚，违法行为均为&quot;生产销售不符合国标产品&quot;</li>
+<li><p class="body-text">同期存在合格抽查记录：2024.6.14济南市监局抽查XH480-12J型号<strong>合格</strong>；2025.1.2北京第一批电动自行车蓄电池抽检涉及星恒<strong>合格</strong></li>
+<li><p class="body-text">合格与不合格并存说明：问题不是全批次性的，而是<strong>批次间质量波动</strong>——与附件C中固相法批次一致性&quot;工业可实现&quot;评级的局限性一致</li>
+</ul>
+<p class="body-text">来源：[C] 滁州市人民政府官网 + 启信宝 + 中国质量报2025.1.2</p>
+<h4>2.2 过充电保护失效——系统性问题的技术特征</h4>
+<p class="body-text"><strong>涉及的抽检机构和城市</strong>（来源：[B] 行政处罚清单202510.xlsx）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>抽检时间</th>
+<th>抽检机构</th>
+<th>城市</th>
+<th>不合格产品</th>
+<th>不合格项目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2022（处罚2023）</td>
+<td>无锡市检验检测认证研究院</td>
+<td>无锡</td>
+<td>DZ48N-24EM</td>
+<td>过充电不合格</td>
+</tr>
+<tr>
+<td>2023（处罚2023）</td>
+<td>滁州市监局</td>
+<td>滁州</td>
+<td>爱玛4815D</td>
+<td>过充电不合格</td>
+</tr>
+<tr>
+<td>2023.10（处罚2024）</td>
+<td>南京江北新区市监局</td>
+<td>南京</td>
+<td>爱玛4824G2</td>
+<td>过充保护不合格</td>
+</tr>
+<tr>
+<td>2023.11（处罚未公示）</td>
+<td>北京市监局</td>
+<td>北京</td>
+<td>亿电宝60V24Ah</td>
+<td>BCU不合格</td>
+</tr>
+<tr>
+<td>2023.12（处罚未公示）</td>
+<td>广州市监局</td>
+<td>广州</td>
+<td>小牛4814/小牛4824</td>
+<td>低温放电+过充不合格</td>
+</tr>
+<tr>
+<td>2024.7（处罚2025）</td>
+<td>南京栖霞区市监局</td>
+<td>南京</td>
+<td>4824G31</td>
+<td>过充不合格</td>
+</tr>
+<tr>
+<td>2024.7（处罚2025）</td>
+<td>厦门市市监局</td>
+<td>厦门</td>
+<td>JH4814</td>
+<td>过充不合格</td>
+</tr>
+<tr>
+<td>2024.10（未公示）</td>
+<td>广州白云区市监局</td>
+<td>广州</td>
+<td>S20-4824G4</td>
+<td>短路保护不合格</td>
+</tr>
+</tbody>
+</table>
+<div class="chart-container"><img src="charts/chart_34.svg" alt="数据图表" loading="lazy"></div></div><p class="body-text"><strong>技术根因分析（定性推断，置信度：★★★☆☆）</strong>：</p>
+<p class="body-text">过充电保护失效的可能根因层次：</p>
+<ol class="doc-list"><li><p class="body-text"><strong>BMS设计/参数设置层面</strong>（最可能）：过充电保护阈值设置不当，或BMS对异常充电电流的响应速度不够</li>
+<li><p class="body-text"><strong>电芯一致性层面</strong>（可能与固相法工艺有关）：电芯批次内一致性不足→某些电芯在充电末端的行为异常→BMS无法准确判断截止点</li>
+<li><p class="body-text"><strong>PACK热管理层面</strong>：充电过程中局部过热未得到有效管控→触发热失控前无有效预警</li>
+<li><p class="body-text"><strong>供应商质量管理层面</strong>：BMS供应商的品控问题未被星恒有效识别</li>
+</ol>
+<h4>2.3 未决诉讼时间线</h4>
+<p class="body-text">基于未决诉讼清单202605.xlsx [B/管理层提供]：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>事故</th>
+<th>发生时间</th>
+<th>立案时间</th>
+<th>当前状态</th>
+<th>案件数</th>
+<th>预估总损失</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>联动天翼买卖合同纠纷(#22)</td>
+<td>2022</td>
+<td>2022-08</td>
+<td>破产重整(预计回收22万)</td>
+<td>1</td>
+<td>净损失~1,432万</td>
+</tr>
+<tr>
+<td>加拿大Fantuan火灾(#30)</td>
+<td>2024前</td>
+<td>2024/</td>
+<td>人保代抗辩中</td>
+<td>1</td>
+<td>80万加元（约400万RMB）</td>
+</tr>
+<tr>
+<td>长沙地下车库火灾(#47,51-55)</td>
+<td>2024.7</td>
+<td>2025.9-11</td>
+<td>审理中</td>
+<td><strong>7</strong>（同一事故）</td>
+<td>~200万（含1保险代位求偿52.96万）</td>
+</tr>
+<tr>
+<td>柳州火灾(#31.1)</td>
+<td>2025前</td>
+<td>2025.7</td>
+<td>财产评估中（2026.6评估33.04万）</td>
+<td>1(4案合并)</td>
+<td>33万</td>
+</tr>
+<tr>
+<td>佛山早餐店火灾(#42)</td>
+<td>2025前</td>
+<td>暂未正式立案</td>
+<td>调解中</td>
+<td>1</td>
+<td>17万</td>
+</tr>
+<tr>
+<td>滨州火灾(#43)</td>
+<td>2025前</td>
+<td>2025</td>
+<td>二审中(一审驳回原告诉请)</td>
+<td>1</td>
+<td>84万</td>
+</tr>
+<tr>
+<td>北京丰台火灾(#58)</td>
+<td>2025.8</td>
+<td>2025.11</td>
+<td>审理中（含60万字画损失）</td>
+<td>1</td>
+<td>79.4万</td>
+</tr>
+<tr>
+<td>都昌县电动车行火灾(#57)</td>
+<td>2025.9</td>
+<td>2026.1</td>
+<td>2026.5达成30万调解</td>
+<td>1</td>
+<td>30万（调解）</td>
+</tr>
+<tr>
+<td>日照电动车火灾(#56)</td>
+<td>2020</td>
+<td>2026.1</td>
+<td>审理中</td>
+<td>1</td>
+<td>~12.9万+烧毁物品</td>
+</tr>
+<tr>
+<td>都昌电动车店火灾(#57)</td>
+<td>2025.9</td>
+<td>2026.1</td>
+<td><strong>已30万调解</strong></td>
+<td>1</td>
+<td>实际损失远超57万</td>
+</tr>
+<tr>
+<td>日照火灾(#56)</td>
+<td>2020(旧案)</td>
+<td>2026.1</td>
+<td>审理中</td>
+<td>1</td>
+<td>12.9万</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>火灾案件的时间集中度分析</strong>（置信度：★★★★☆）：</p>
+<ul class="doc-list"><li><p class="body-text"><strong>2024-2025年火灾案件明显增多</strong>——至少7起独立火灾事故（长沙、柳州、佛山、滨州、北京、都昌、日照）</li>
+<li><p class="body-text">都昌案（#57）的调解记录揭示了星恒的赔偿策略——&quot;实际损失预测评估远超57万&quot;但以30万调解结案，表明星恒倾向于以较低金额快速了结</li>
+<li><p class="body-text">长沙案（6案）是最具判例效应的——若判决对星恒不利，将鼓励其他类似案件原告起诉</li>
+</ul>
+<hr />
+<h3>三、横向分析——行业质量对标</h3>
+<h4>3.1 行业质量事件对比</h4>
+<p class="body-text">基于akshare公开数据搜索和行业推断（置信度：★★★☆☆，受限于非上市公司数据可得性）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>企业</th>
+<th>已知质量处罚/召回</th>
+<th>火灾相关公开报道</th>
+<th>质量体系认证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>星恒电源</td>
+<td>10+起（2023-2025）</td>
+<td>至少7起独立火灾事故诉讼</td>
+<td>中天运审计（国内中型所）</td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td>少量召回（2021宝马PHEV电池召回，涉及6,926辆）；无频繁行政处罚报道</td>
+<td>极少数（汽车级安全标准远高于两轮车）</td>
+<td>IATF 16949汽车级 + 四大审计</td>
+</tr>
+<tr>
+<td>博力威</td>
+<td>未查到频繁行政处罚</td>
+<td>未查到大规模火灾诉讼</td>
+<td>未公开</td>
+</tr>
+<tr>
+<td>天能动力</td>
+<td>铅酸电池为主，质量风险类型不同（漏液/容量衰减等，非起火风险）</td>
+<td>铅酸电池火灾风险远低于锂电</td>
+<td>未公开</td>
+</tr>
+<tr>
+<td>超威动力</td>
+<td>同天能，铅酸为主</td>
+<td>同天能</td>
+<td>未公开</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>行业背景——电动自行车火灾全国官方数据</strong>（来源：[A] 应急管理部/国家消防救援局官方发布会，置信度：★★★★★）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
 <th>指标</th>
-<th>Q1 2026</th>
-<th>年化推算</th>
-<th>FY2025全年</th>
-<th>趋势信号</th>
+<th>2023年</th>
+<th>2024年</th>
+<th>变化</th>
+<th>来源</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>营业收入</td>
-<td>7.49亿</td>
-<td>~30亿</td>
-<td>36.36亿</td>
-<td>⚠️ 低于FY2025</td>
+<td>每百万辆电动自行车火灾数</td>
+<td>5.6起</td>
+<td><strong>3起</strong></td>
+<td>↓42.2%</td>
+<td>应急管理部2025.1.15发布会</td>
 </tr>
 <tr>
-<td>归母净利润</td>
-<td>1,009万</td>
-<td>~4,036万</td>
-<td>4,509万（管理口径）</td>
-<td>⚠️ 下滑</td>
-</tr>
-<tr>
-<td>经营CF</td>
-<td>1,331万</td>
-<td>~5,324万</td>
-<td>20,558万</td>
-<td>🔴 大幅恶化（-74%），3月单月-1.70亿</td>
-</tr>
-<tr>
-<td>毛利率</td>
-<td>16.26%</td>
+<td>伤亡人数同比</td>
 <td>—</td>
-<td>13.63%</td>
-<td>↑ 改善（可能季节性）</td>
+<td>↓超90%</td>
+<td>—</td>
+<td>同上</td>
 </tr>
 <tr>
-<td>存货</td>
-<td>11.50亿</td>
+<td>2025年Q1火灾</td>
 <td>—</td>
-<td>8.73亿(年初)</td>
-<td>🔴 +31.7%（仅3个月）</td>
+<td>1,863起（Q1）</td>
+<td>—</td>
+<td>国家消防救援局2025.4.3发布会</td>
+</tr>
+<tr>
+<td>2025年H1火灾</td>
+<td>—</td>
+<td>7,048起</td>
+<td>↓44.7%（同比）</td>
+<td>国家消防救援局2025.7.17发布</td>
+</tr>
+<tr>
+<td>全国保有量</td>
+<td>~3.5亿辆</td>
+<td><strong>超3.8亿辆</strong></td>
+<td>—</td>
+<td>官方统计</td>
 </tr>
 </tbody>
 </table>
-<p><strong>关键风险信号</strong>：</p>
-<ul>
-<li>3月单月经营CF -1.70亿，与1月+1.48亿形成剧烈反转——需确认4-5月是否回正</li>
-<li>存货从8.73亿→11.50亿（+31.7%），若为滞销需计提跌价准备</li>
-<li>筹资活动净流入6,827万——经营CF不足以覆盖投资支出</li>
+<div class="chart-container"><img src="charts/chart_37.svg" alt="数据图表" loading="lazy"></div></div><p class="body-text"><strong>上海消防2024年11月品牌级火灾数据</strong>（来源：[A] 上海消防官方发布，置信度：★★★★★）：</p>
+<blockquote>
+<p class="body-text">2024年11月上海全市45起电动自行车火灾中，23起为电池故障或热失控引发。<strong>星恒电池品牌占2起，天能同样占2起，超威、威能、卓能、国动换电各1起。</strong></p>
+</blockquote>
+<p class="body-text key-finding"><strong>关键判断</strong>：</p>
+<ol class="doc-list"><li><p class="body-text">星恒在上海市场的火灾占比（2/45=4.4%）<strong>低于</strong>其全国市占率（72.5%）——但这不代表安全水平优于行业，更可能是因为上海市场星恒装车量占比低于全国</li>
+<li><p class="body-text">全国层面，2024年每百万辆火灾从5.6起降至3起（↓42.2%），2025年进一步降至约2起——行业整体安全水平在改善，但新国标GB 43854-2024的强制实施是主要驱动力</li>
+<li><p class="body-text"><strong>品牌级火灾统计在公开渠道仍然缺失</strong>——无法判断星恒电池的火灾发生率是否高于或低于行业平均水平</li>
+</ol>
+<p class="body-text"><strong>公开报道的星恒电池相关火灾事故</strong>（来源：[A] 公开报道整理，置信度：★★★★☆）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>时间</th>
+<th>地点</th>
+<th>涉事品牌</th>
+<th>电池品牌</th>
+<th>起火原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2024.11.17</td>
+<td>上海黄浦区</td>
+<td>嘉陵小行星</td>
+<td><strong>星恒</strong></td>
+<td>锂电池热失控</td>
+</tr>
+<tr>
+<td>2024.12.17</td>
+<td>厦门集美区</td>
+<td>众星</td>
+<td><strong>星恒</strong></td>
+<td>蓄电池电气故障</td>
+</tr>
+<tr>
+<td>2025.8初</td>
+<td>上海长宁</td>
+<td>非法改装车</td>
+<td>不明</td>
+<td>60V锂电池热失控自燃（未充电状态）</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>2024年国家监督抽查结果</strong>（来源：[A] 市场监管总局通报2025年4月发布，置信度：★★★★★）：</p>
+<blockquote>
+<p class="body-text">抽查14个省份152家生产单位172批次电动自行车锂电池产品，<strong>不合格17批次</strong>。其中安全项目<strong>燃烧喷射不合格7批次</strong>。过充电保护不合格是主要问题类型之一。</p>
+</blockquote>
+<p class="body-text"><strong>电动自行车全链条整治召回数据</strong>（来源：[A] 国家消防救援局2025.4.3发布会，置信度：★★★★★）：</p>
+<ul class="doc-list"><li><p class="body-text">整治行动以来（2024年启动至2025年4月）：召回电动自行车及其零部件<strong>308次</strong>，涉及产品<strong>30余万件</strong></li>
+<li><p class="body-text">2025年上半年：质量监督抽查1,583批次，召回缺陷产品974批次、11.9万件</li>
+</ul>
+<h4>3.2 新国标合规压力对比</h4>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>标准</th>
+<th>要求</th>
+<th>星恒当前状态</th>
+<th>合规风险</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GB 43854-2024 锂电池安全技术规范</td>
+<td>过充电、过放电、短路、挤压、热滥用等安全测试</td>
+<td><strong>2023-2025年过充电保护多次不合格</strong></td>
+<td>🔴 高——在旧标准下已多次不合格，新标准（2024.11实施）要求更严</td>
+</tr>
+<tr>
+<td>GB 17761-2024 电动自行车安全技术规范</td>
+<td>整车限重55kg、电池组限5kg</td>
+<td>锰酸锂电池能量密度较低→可能需更大电池组满足续航→重量挑战</td>
+<td>🟡 中</td>
+</tr>
+</tbody>
+</table></div><hr />
+<h3>四、横纵交叉——对投资决策的影响评估</h3>
+<h4>4.1 市场声誉——不可量化的最大风险</h4>
+<p class="body-text">星恒72.5%市占率的核心支柱之一是**&quot;最安全的锰酸锂电池&quot;的消费者/客户认知**。产品安全风险对这一认知的侵蚀是渐进的但可能不可逆的：</p>
+<ul class="doc-list"><li><p class="body-text"><strong>B2B客户（共享出行）</strong>：哈啰/滴滴等共享运营商对安全事故极度敏感——一次重大火灾可能导致运营商暂停采购甚至终止合同</li>
+<li><p class="body-text"><strong>OEM客户（雅迪/爱玛）</strong>：整车品牌对其供应链的质量事故有追溯权——行政处罚记录将被纳入OEM的供应商评估体系</li>
+<li><p class="body-text"><strong>海外客户</strong>：欧洲/东南亚市场对锂电池安全标准更高（如UN 38.3、IEC 62133），国内质量问题将影响海外认证和客户信任</li>
+<li><p class="body-text"><strong>终端消费者</strong>：火灾事故的社会新闻报道将直接影响终端消费者对星恒电池的安全认知</li>
+</ul>
+<h4>4.2 财务影响量化（粗略估计，置信度：★★★☆☆）</h4>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>影响类型</th>
+<th>已量化（保守）</th>
+<th>潜在（合理预计）</th>
+<th>极端情景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行政处罚（2023-2025累计）</td>
+<td>~127万元</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>联动天翼损失</td>
+<td>净~1,432万元</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>已知未决诉讼（as of 2026-05）</td>
+<td>~400万元（不含联动天翼）</td>
+<td>—</td>
+<td>含判例效应：~1,000-2,000万（FY2026E-FY2027E）</td>
+</tr>
+<tr>
+<td>产品召回（1%出货量）</td>
+<td>—</td>
+<td>~5,000万元</td>
+<td>3%出货量：~1.5亿</td>
+</tr>
+<tr>
+<td>保险费用上升</td>
+<td>—</td>
+<td>年增100-300万元（FY2026E起）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>新国标合规改造成本</td>
+<td>—</td>
+<td>500-1,000万元（GB 43854-2024已于2024.11实施，预计FY2026-FY2027完成改造）</td>
+<td>如涉及产线改造：3,000万元+（FY2026E-FY2027E）</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>综合财务影响估计</strong>（评估基准：FY2025年报数据，影响覆盖FY2026E-FY2028E）：</p>
+<ul class="doc-list"><li><p class="body-text">保守：2,000-3,000万元（已量化+合理预计）</li>
+<li><p class="body-text">中等：5,000-8,000万元（含召回风险）</li>
+<li><p class="body-text">极端：2-3亿元+（大规模召回+市场份额丧失）</li>
+</ul>
+<h4>4.3 估值影响</h4>
+<div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:18px"><strong>💡 NOTE</strong><br><p>💡
+<strong>PS基线</strong>：小牛电动PS为0.30x（FY2025净亏损-0.39亿）。两轮车直接可比PS区间为0.30-0.86x，经利润率+去铅酸化调整后的综合合理PS区间为0.30-0.70x（详见04主报告3.3节）。</p>
+</div>
+<p class="body-text">当前天保PS 1.0x和以上可比公司PS区间<strong>均未考虑产品安全风险折价</strong>。建议：</p>
+<ul class="doc-list"><li><p class="body-text"><strong>产品安全风险折价</strong>：基于中等情景（5,000-8,000万潜在财务影响+品牌价值损失），建议PS折价**-15%至-25%**</li>
+<li><p class="body-text"><strong>调整后PS区间</strong>：0.30-0.60x（经客户结构分析折价后，详见附件F1）× (1-15% ~ 1-25%) → <strong>0.23-0.51x</strong></li>
+<li><p class="body-text"><strong>对应估值区间</strong>：以FY2025营收36.36亿计算 → <strong>8.4-18.5亿元</strong>（vs 天保当前收购价对应估值36.4亿）</li>
 </ul>
 <hr />
+<h3>五、来源与可靠性</h3>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>数据类型</th>
+<th>来源</th>
+<th>可靠性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行政处罚清单（10+起，含时间/产品/机构/金额）</td>
+<td>行政处罚清单202510.xlsx [B/管理层提供] + openclaw交叉验证 [A]</td>
+<td>B级→A级（部分）</td>
+</tr>
+<tr>
+<td>未决诉讼清单（14起产品安全相关+2起商业纠纷，含案号/法院/标的/状态）</td>
+<td>未决诉讼清单202605.xlsx [B/管理层提供]</td>
+<td>A级</td>
+</tr>
+<tr>
+<td>2024-2025年全国电动自行车火灾官方统计</td>
+<td>应急管理部/国家消防救援局发布会实录 [A]</td>
+<td>A级</td>
+</tr>
+<tr>
+<td>上海2024.11品牌级火灾数据</td>
+<td>上海消防官方发布 [A]</td>
+<td>A级</td>
+</tr>
+<tr>
+<td>2024年国家监督抽查（172批次/17批不合格）</td>
+<td>市场监管总局通报 [A]</td>
+<td>A级</td>
+</tr>
+<tr>
+<td>召回数据（308次/30余万件）</td>
+<td>国家消防救援局发布会 [A]</td>
+<td>A级</td>
+</tr>
+<tr>
+<td>公开报道星恒关联火灾事故（3起具体案例）</td>
+<td>公开报道整理 [A]</td>
+<td><strong>B级</strong></td>
+</tr>
+<tr>
+<td>博力威/天能等可比公司质量记录</td>
+<td>[C] 公开检索</td>
+<td>C级</td>
+</tr>
+</tbody>
+</table></div><hr />
 
 </body>
 </html>
