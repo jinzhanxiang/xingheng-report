@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>附件F2_产品安全与质量风险纵横分析深度研究报告</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#1a202c;background:#fff;line-height:1.9;font-size:19px;max-width:1000px;margin:0 auto;padding:20px}
+h1{font-size:30px;color:#1a365d;margin:28px 0 16px;border-bottom:3px solid #d69e2e;padding-bottom:12px;font-weight:700}
+h2{font-size:26px;color:#1a365d;margin:30px 0 16px;font-weight:700}
+h3{font-size:22px;color:#2d3748;margin:24px 0 12px;font-weight:600}
+h4{font-size:20px;color:#2d3748;margin:20px 0 10px;font-weight:600}
+p{margin-bottom:14px;font-size:19px}
+strong{color:#1a365d}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:17px}
+th{background:#1a365d;color:#fff;padding:12px 16px;text-align:left;font-size:17px}
+td{padding:11px 16px;border-bottom:1px solid #e2e8f0;font-size:17px}
+tr:hover td{background:#edf2f7}
+blockquote{background:#fffbeb;border-left:3px solid #d69e2e;padding:16px 20px;margin:18px 0;border-radius:0 6px 6px 0;color:#744210;font-size:18px}
+.nav{background:#1a365d;padding:16px 20px;margin:-20px -20px 28px;border-radius:0 0 8px 8px}
+.nav a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:15px;margin-right:16px}
+ul,ol{margin:14px 0 14px 28px}
+li{margin-bottom:8px;font-size:19px}
+code{background:#f7fafc;padding:3px 8px;border-radius:4px;font-size:17px}
+pre{background:#1a202c;color:#e2e8f0;padding:18px;border-radius:8px;margin:18px 0;overflow-x:auto}
+pre code{background:none;color:inherit;font-size:16px}
+/* 折叠样式 */
+details{margin:16px 0;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden}
+details summary{padding:14px 18px;background:#f7fafc;cursor:pointer;font-weight:600;color:#1a365d;font-size:17px;user-select:none}
+details summary{display:list-item;list-style-type:disclosure-closed}
+details[open] summary{list-style-type:disclosure-open}
+details[open] summary::before{transform:rotate(90deg)}
+details summary:hover{background:#edf2f7}
+details .detail-content{padding:18px;background:#fff}
+/* 链接样式 */
+a{color:#3182ce;text-decoration:none}
+a:hover{color:#1a365d;text-decoration:underline}
+/* 附件链接样式 */
+.appendix-link{display:inline-block;background:#1a365d;color:#fff;padding:6px 14px;border-radius:6px;font-size:15px;margin:4px 4px 4px 0;text-decoration:none}
+.appendix-link:hover{background:#2d3748;color:#fff;text-decoration:none}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const links = document.querySelectorAll('a[href]');
+  links.forEach(function(link) {
+    const href = link.getAttribute('href');
+    if (href && (href.includes('appendix_') || href.includes('附件'))) {
+      link.className = 'appendix-link';
+    }
+  });
+});
+</script>
+
+</head>
+<body>
+<div class="nav"><a href="index.html">📊 目录</a></div>
+<h1>附件F2：星恒电源产品安全与质量风险纵横分析法深度研究报告</h1>
+<p><strong>定位</strong>：对星恒电源2023-2026年的产品安全与质量风险进行纵横分析法深度分析——纵向时间轴追踪+横向行业对标+横纵交叉影响评估。这是投资尽调的<strong>红线级问题</strong>。
+<strong>数据来源</strong>：[B] 尽调收资材料 行政处罚清单202510.xlsx + 未决诉讼清单202605.xlsx + [A] akshare + [C] 行业公开数据 + [A] openclaw web搜索（应急管理部/国家消防救援局/市场监管总局公开数据）</p>
+<hr />
+<h2>一、核心发现（Executive Summary）</h2>
+<blockquote>
+<p><strong>星恒电源在2023-2025年间遭受10余起产品质量行政处罚，核心问题是过充电保护系统性失效——跨6个城市、多个产品型号、不同抽检机构。同时面临约14起产品安全相关未决诉讼（另有2起商业合同纠纷非产品安全范畴，见04主报告2.5.2D节），其中长沙地下车库火灾（6案~200万）是最具判例效应的案件集群。产品安全风险构成投资尽调的红线级问题——直接影响星恒最核心的竞争资产（品牌信誉和72.5%市场份额的可持续性）。</strong></p>
+</blockquote>
+<hr />
+<h2>二、纵向分析——质量事件时间线与趋势</h2>
+<h3>2.1 行政处罚年度分布与趋势</h3>
+<p>基于行政处罚清单202510.xlsx [B/管理层提供]：</p>
+<table>
+<thead>
+<tr>
+<th>年份</th>
+<th>处罚次数</th>
+<th>核心问题分布</th>
+<th>最大单笔罚款</th>
+<th>抽检城市数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023</td>
+<td>4起</td>
+<td>过充电不合格(2)、容量不合格(1)、未公示(1)</td>
+<td>50万元（苏州虎丘区）</td>
+<td>2（无锡、苏州）</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>3起</td>
+<td>过充保护不合格(1)、充电不合格(1)、壳体阻燃不合格(1)</td>
+<td>9.03万元</td>
+<td>3（南京、广州）</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>4起+</td>
+<td>过充不合格(2)、壳体阻燃不合格(1)、安全生产(1)、发票违规(1)</td>
+<td>53万元（苏州应急管理局）</td>
+<td>4+（厦门、泉州、苏州）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>趋势判断（置信度：★★★★☆）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>趋势维度</th>
+<th>判断</th>
+<th>证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>处罚频率</td>
+<td>未收敛——2025年处罚次数不降反增</td>
+<td>2023 4起→2024 3起→2025 4起+</td>
+</tr>
+<tr>
+<td>问题严重度</td>
+<td>有恶化迹象——处罚金额从质量罚（2-9万）扩展到安全罚（53万）</td>
+<td>2025年安全生产处罚53万系首次出现</td>
+</tr>
+<tr>
+<td>抽检覆盖面</td>
+<td>扩大——涉及更多城市和抽检机构</td>
+<td>从2城市→4+城市</td>
+</tr>
+<tr>
+<td>问题类型</td>
+<td>核心问题（过充电）反复出现，是系统性而非偶发性</td>
+<td>3年间至少5次过充电/过充保护类处罚</td>
+</tr>
+</tbody>
+</table>
+<h3>2.1.1 2025年滁州处罚</h3>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>文号</th>
+<th>处罚机关</th>
+<th>罚款金额</th>
+<th>违法事由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025.3.11</td>
+<td>滁市监综执罚〔2024〕456号</td>
+<td>滁州市市场监管局</td>
+<td><strong>2.47万元</strong>（罚款23,750+没收972.92元）</td>
+<td>春风S20-4824G6壳体阻燃不合格（广州市场监管局2024.7.29抽检）——已公示</td>
+</tr>
+<tr>
+<td>2025.4.3</td>
+<td>滁市监综执罚〔2025〕3号</td>
+<td>滁州市市场监管局</td>
+<td><strong>2.05万元</strong>（罚款19,710元+没收775.77元）</td>
+<td>4824G31过充不合格（南京栖霞区市场监管局2024.7.31抽检）——已公示</td>
+</tr>
+<tr>
+<td>2025.5.20</td>
+<td>滁市监罚〔2025〕5号</td>
+<td>滁州市市场监管局</td>
+<td><strong>1.37万元</strong>（罚款12,717元+没收1,026.88元）</td>
+<td>JH4814过充不合格（厦门市市场监管局2024.7.26抽检）——已公示</td>
+</tr>
+<tr>
+<td>2025.5.28</td>
+<td>滁税一稽罚【2025】17号</td>
+<td>国家税务总局滁州税务局第一稽查局</td>
+<td><strong>1万元</strong></td>
+<td>违反《发票管理办法》第三十七条——发票违规</td>
+</tr>
+<tr>
+<td>2025.6.9</td>
+<td>（苏虎）应急罚【2024】10号</td>
+<td>苏州高新区应急管理局</td>
+<td><strong>53万元</strong></td>
+<td>未按规定及时发现并消除事故隐患（安全生产法）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键发现</strong>：</p>
+<ul>
+<li>滁州（星恒最主要电池生产基地，持股85.23%）2025年3-4月连续被罚，违法行为均为&quot;生产销售不符合国标产品&quot;</li>
+<li>同期存在合格抽查记录：2024.6.14济南市监局抽查XH480-12J型号<strong>合格</strong>；2025.1.2北京第一批电动自行车蓄电池抽检涉及星恒<strong>合格</strong></li>
+<li>合格与不合格并存说明：问题不是全批次性的，而是<strong>批次间质量波动</strong>——与附件C中固相法批次一致性&quot;工业可实现&quot;评级的局限性一致</li>
+</ul>
+<p>来源：[C] 滁州市人民政府官网 + 启信宝 + 中国质量报2025.1.2</p>
+<h3>2.2 过充电保护失效——系统性问题的技术特征</h3>
+<p><strong>涉及的抽检机构和城市</strong>（来源：[B] 行政处罚清单202510.xlsx）：</p>
+<table>
+<thead>
+<tr>
+<th>抽检时间</th>
+<th>抽检机构</th>
+<th>城市</th>
+<th>不合格产品</th>
+<th>不合格项目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2022（处罚2023）</td>
+<td>无锡市检验检测认证研究院</td>
+<td>无锡</td>
+<td>DZ48N-24EM</td>
+<td>过充电不合格</td>
+</tr>
+<tr>
+<td>2023（处罚2023）</td>
+<td>滁州市监局</td>
+<td>滁州</td>
+<td>爱玛4815D</td>
+<td>过充电不合格</td>
+</tr>
+<tr>
+<td>2023.10（处罚2024）</td>
+<td>南京江北新区市监局</td>
+<td>南京</td>
+<td>爱玛4824G2</td>
+<td>过充保护不合格</td>
+</tr>
+<tr>
+<td>2023.11（处罚未公示）</td>
+<td>北京市监局</td>
+<td>北京</td>
+<td>亿电宝60V24Ah</td>
+<td>BCU不合格</td>
+</tr>
+<tr>
+<td>2023.12（处罚未公示）</td>
+<td>广州市监局</td>
+<td>广州</td>
+<td>小牛4814/小牛4824</td>
+<td>低温放电+过充不合格</td>
+</tr>
+<tr>
+<td>2024.7（处罚2025）</td>
+<td>南京栖霞区市监局</td>
+<td>南京</td>
+<td>4824G31</td>
+<td>过充不合格</td>
+</tr>
+<tr>
+<td>2024.7（处罚2025）</td>
+<td>厦门市市监局</td>
+<td>厦门</td>
+<td>JH4814</td>
+<td>过充不合格</td>
+</tr>
+<tr>
+<td>2024.10（未公示）</td>
+<td>广州白云区市监局</td>
+<td>广州</td>
+<td>S20-4824G4</td>
+<td>短路保护不合格</td>
+</tr>
+</tbody>
+</table>
+<p><strong>技术根因分析（定性推断，置信度：★★★☆☆）</strong>：</p>
+<p>过充电保护失效的可能根因层次：</p>
+<ol>
+<li><strong>BMS设计/参数设置层面</strong>（最可能）：过充电保护阈值设置不当，或BMS对异常充电电流的响应速度不够</li>
+<li><strong>电芯一致性层面</strong>（可能与固相法工艺有关）：电芯批次内一致性不足→某些电芯在充电末端的行为异常→BMS无法准确判断截止点</li>
+<li><strong>PACK热管理层面</strong>：充电过程中局部过热未得到有效管控→触发热失控前无有效预警</li>
+<li><strong>供应商质量管理层面</strong>：BMS供应商的品控问题未被星恒有效识别</li>
+</ol>
+<h3>2.3 未决诉讼时间线</h3>
+<p>基于未决诉讼清单202605.xlsx [B/管理层提供]：</p>
+<table>
+<thead>
+<tr>
+<th>事故</th>
+<th>发生时间</th>
+<th>立案时间</th>
+<th>当前状态</th>
+<th>案件数</th>
+<th>预估总损失</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>联动天翼买卖合同纠纷(#22)</td>
+<td>2022</td>
+<td>2022-08</td>
+<td>破产重整(预计回收22万)</td>
+<td>1</td>
+<td>净损失~1,432万</td>
+</tr>
+<tr>
+<td>加拿大Fantuan火灾(#30)</td>
+<td>2024前</td>
+<td>2024/</td>
+<td>人保代抗辩中</td>
+<td>1</td>
+<td>80万加元（约400万RMB）</td>
+</tr>
+<tr>
+<td>长沙地下车库火灾(#47,51-55)</td>
+<td>2024.7</td>
+<td>2025.9-11</td>
+<td>审理中</td>
+<td><strong>7</strong>（同一事故）</td>
+<td>~200万（含1保险代位求偿52.96万）</td>
+</tr>
+<tr>
+<td>柳州火灾(#31.1)</td>
+<td>2025前</td>
+<td>2025.7</td>
+<td>财产评估中（2026.6评估33.04万）</td>
+<td>1(4案合并)</td>
+<td>33万</td>
+</tr>
+<tr>
+<td>佛山早餐店火灾(#42)</td>
+<td>2025前</td>
+<td>暂未正式立案</td>
+<td>调解中</td>
+<td>1</td>
+<td>17万</td>
+</tr>
+<tr>
+<td>滨州火灾(#43)</td>
+<td>2025前</td>
+<td>2025</td>
+<td>二审中(一审驳回原告诉请)</td>
+<td>1</td>
+<td>84万</td>
+</tr>
+<tr>
+<td>北京丰台火灾(#58)</td>
+<td>2025.8</td>
+<td>2025.11</td>
+<td>审理中（含60万字画损失）</td>
+<td>1</td>
+<td>79.4万</td>
+</tr>
+<tr>
+<td>都昌县电动车行火灾(#57)</td>
+<td>2025.9</td>
+<td>2026.1</td>
+<td>2026.5达成30万调解</td>
+<td>1</td>
+<td>30万（调解）</td>
+</tr>
+<tr>
+<td>日照电动车火灾(#56)</td>
+<td>2020</td>
+<td>2026.1</td>
+<td>审理中</td>
+<td>1</td>
+<td>~12.9万+烧毁物品</td>
+</tr>
+<tr>
+<td>都昌电动车店火灾(#57)</td>
+<td>2025.9</td>
+<td>2026.1</td>
+<td><strong>已30万调解</strong></td>
+<td>1</td>
+<td>实际损失远超57万</td>
+</tr>
+<tr>
+<td>日照火灾(#56)</td>
+<td>2020(旧案)</td>
+<td>2026.1</td>
+<td>审理中</td>
+<td>1</td>
+<td>12.9万</td>
+</tr>
+</tbody>
+</table>
+<p><strong>火灾案件的时间集中度分析</strong>（置信度：★★★★☆）：</p>
+<ul>
+<li><strong>2024-2025年火灾案件明显增多</strong>——至少7起独立火灾事故（长沙、柳州、佛山、滨州、北京、都昌、日照）</li>
+<li>都昌案（#57）的调解记录揭示了星恒的赔偿策略——&quot;实际损失预测评估远超57万&quot;但以30万调解结案，表明星恒倾向于以较低金额快速了结</li>
+<li>长沙案（6案）是最具判例效应的——若判决对星恒不利，将鼓励其他类似案件原告起诉</li>
+</ul>
+<hr />
+<h2>三、横向分析——行业质量对标</h2>
+<h3>3.1 行业质量事件对比</h3>
+<p>基于akshare公开数据搜索和行业推断（置信度：★★★☆☆，受限于非上市公司数据可得性）：</p>
+<table>
+<thead>
+<tr>
+<th>企业</th>
+<th>已知质量处罚/召回</th>
+<th>火灾相关公开报道</th>
+<th>质量体系认证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>星恒电源</td>
+<td>10+起（2023-2025）</td>
+<td>至少7起独立火灾事故诉讼</td>
+<td>中天运审计（国内中型所）</td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td>少量召回（2021宝马PHEV电池召回，涉及6,926辆）；无频繁行政处罚报道</td>
+<td>极少数（汽车级安全标准远高于两轮车）</td>
+<td>IATF 16949汽车级 + 四大审计</td>
+</tr>
+<tr>
+<td>博力威</td>
+<td>未查到频繁行政处罚</td>
+<td>未查到大规模火灾诉讼</td>
+<td>未公开</td>
+</tr>
+<tr>
+<td>天能动力</td>
+<td>铅酸电池为主，质量风险类型不同（漏液/容量衰减等，非起火风险）</td>
+<td>铅酸电池火灾风险远低于锂电</td>
+<td>未公开</td>
+</tr>
+<tr>
+<td>超威动力</td>
+<td>同天能，铅酸为主</td>
+<td>同天能</td>
+<td>未公开</td>
+</tr>
+</tbody>
+</table>
+<p><strong>行业背景——电动自行车火灾全国官方数据</strong>（来源：[A] 应急管理部/国家消防救援局官方发布会，置信度：★★★★★）：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>2023年</th>
+<th>2024年</th>
+<th>变化</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每百万辆电动自行车火灾数</td>
+<td>5.6起</td>
+<td><strong>3起</strong></td>
+<td>↓42.2%</td>
+<td>应急管理部2025.1.15发布会</td>
+</tr>
+<tr>
+<td>伤亡人数同比</td>
+<td>—</td>
+<td>↓超90%</td>
+<td>—</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>2025年Q1火灾</td>
+<td>—</td>
+<td>1,863起（Q1）</td>
+<td>—</td>
+<td>国家消防救援局2025.4.3发布会</td>
+</tr>
+<tr>
+<td>2025年H1火灾</td>
+<td>—</td>
+<td>7,048起</td>
+<td>↓44.7%（同比）</td>
+<td>国家消防救援局2025.7.17发布</td>
+</tr>
+<tr>
+<td>全国保有量</td>
+<td>~3.5亿辆</td>
+<td><strong>超3.8亿辆</strong></td>
+<td>—</td>
+<td>官方统计</td>
+</tr>
+</tbody>
+</table>
+<p><strong>上海消防2024年11月品牌级火灾数据</strong>（来源：[A] 上海消防官方发布，置信度：★★★★★）：</p>
+<blockquote>
+<p>2024年11月上海全市45起电动自行车火灾中，23起为电池故障或热失控引发。<strong>星恒电池品牌占2起，天能同样占2起，超威、威能、卓能、国动换电各1起。</strong></p>
+</blockquote>
+<p><strong>关键判断</strong>：</p>
+<ol>
+<li>星恒在上海市场的火灾占比（2/45=4.4%）<strong>低于</strong>其全国市占率（72.5%）——但这不代表安全水平优于行业，更可能是因为上海市场星恒装车量占比低于全国</li>
+<li>全国层面，2024年每百万辆火灾从5.6起降至3起（↓42.2%），2025年进一步降至约2起——行业整体安全水平在改善，但新国标GB 43854-2024的强制实施是主要驱动力</li>
+<li><strong>品牌级火灾统计在公开渠道仍然缺失</strong>——无法判断星恒电池的火灾发生率是否高于或低于行业平均水平</li>
+</ol>
+<p><strong>公开报道的星恒电池相关火灾事故</strong>（来源：[A] 公开报道整理，置信度：★★★★☆）：</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>地点</th>
+<th>涉事品牌</th>
+<th>电池品牌</th>
+<th>起火原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2024.11.17</td>
+<td>上海黄浦区</td>
+<td>嘉陵小行星</td>
+<td><strong>星恒</strong></td>
+<td>锂电池热失控</td>
+</tr>
+<tr>
+<td>2024.12.17</td>
+<td>厦门集美区</td>
+<td>众星</td>
+<td><strong>星恒</strong></td>
+<td>蓄电池电气故障</td>
+</tr>
+<tr>
+<td>2025.8初</td>
+<td>上海长宁</td>
+<td>非法改装车</td>
+<td>不明</td>
+<td>60V锂电池热失控自燃（未充电状态）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2024年国家监督抽查结果</strong>（来源：[A] 市场监管总局通报2025年4月发布，置信度：★★★★★）：</p>
+<blockquote>
+<p>抽查14个省份152家生产单位172批次电动自行车锂电池产品，<strong>不合格17批次</strong>。其中安全项目<strong>燃烧喷射不合格7批次</strong>。过充电保护不合格是主要问题类型之一。</p>
+</blockquote>
+<p><strong>电动自行车全链条整治召回数据</strong>（来源：[A] 国家消防救援局2025.4.3发布会，置信度：★★★★★）：</p>
+<ul>
+<li>整治行动以来（2024年启动至2025年4月）：召回电动自行车及其零部件<strong>308次</strong>，涉及产品<strong>30余万件</strong></li>
+<li>2025年上半年：质量监督抽查1,583批次，召回缺陷产品974批次、11.9万件</li>
+</ul>
+<h3>3.2 新国标合规压力对比</h3>
+<table>
+<thead>
+<tr>
+<th>标准</th>
+<th>要求</th>
+<th>星恒当前状态</th>
+<th>合规风险</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GB 43854-2024 锂电池安全技术规范</td>
+<td>过充电、过放电、短路、挤压、热滥用等安全测试</td>
+<td><strong>2023-2025年过充电保护多次不合格</strong></td>
+<td>🔴 高——在旧标准下已多次不合格，新标准（2024.11实施）要求更严</td>
+</tr>
+<tr>
+<td>GB 17761-2024 电动自行车安全技术规范</td>
+<td>整车限重55kg、电池组限5kg</td>
+<td>锰酸锂电池能量密度较低→可能需更大电池组满足续航→重量挑战</td>
+<td>🟡 中</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>四、横纵交叉——对投资决策的影响评估</h2>
+<h3>4.1 市场声誉——不可量化的最大风险</h3>
+<p>星恒72.5%市占率的核心支柱之一是**&quot;最安全的锰酸锂电池&quot;的消费者/客户认知**。产品安全风险对这一认知的侵蚀是渐进的但可能不可逆的：</p>
+<ul>
+<li><strong>B2B客户（共享出行）</strong>：哈啰/滴滴等共享运营商对安全事故极度敏感——一次重大火灾可能导致运营商暂停采购甚至终止合同</li>
+<li><strong>OEM客户（雅迪/爱玛）</strong>：整车品牌对其供应链的质量事故有追溯权——行政处罚记录将被纳入OEM的供应商评估体系</li>
+<li><strong>海外客户</strong>：欧洲/东南亚市场对锂电池安全标准更高（如UN 38.3、IEC 62133），国内质量问题将影响海外认证和客户信任</li>
+<li><strong>终端消费者</strong>：火灾事故的社会新闻报道将直接影响终端消费者对星恒电池的安全认知</li>
+</ul>
+<h3>4.2 财务影响量化（粗略估计，置信度：★★★☆☆）</h3>
+<table>
+<thead>
+<tr>
+<th>影响类型</th>
+<th>已量化（保守）</th>
+<th>潜在（合理预计）</th>
+<th>极端情景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行政处罚（2023-2025累计）</td>
+<td>~127万元</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>联动天翼损失</td>
+<td>净~1,432万元</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>已知未决诉讼（as of 2026-05）</td>
+<td>~400万元（不含联动天翼）</td>
+<td>—</td>
+<td>含判例效应：~1,000-2,000万（FY2026E-FY2027E）</td>
+</tr>
+<tr>
+<td>产品召回（1%出货量）</td>
+<td>—</td>
+<td>~5,000万元</td>
+<td>3%出货量：~1.5亿</td>
+</tr>
+<tr>
+<td>保险费用上升</td>
+<td>—</td>
+<td>年增100-300万元（FY2026E起）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>新国标合规改造成本</td>
+<td>—</td>
+<td>500-1,000万元（GB 43854-2024已于2024.11实施，预计FY2026-FY2027完成改造）</td>
+<td>如涉及产线改造：3,000万元+（FY2026E-FY2027E）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>综合财务影响估计</strong>（评估基准：FY2025年报数据，影响覆盖FY2026E-FY2028E）：</p>
+<ul>
+<li>保守：2,000-3,000万元（已量化+合理预计）</li>
+<li>中等：5,000-8,000万元（含召回风险）</li>
+<li>极端：2-3亿元+（大规模召回+市场份额丧失）</li>
+</ul>
+<h3>4.3 估值影响</h3>
+<blockquote>
+<p>[!NOTE] 💡
+<strong>PS基线</strong>：小牛电动PS为0.30x（FY2025净亏损-0.39亿）。两轮车直接可比PS区间为0.30-0.86x，经利润率+去铅酸化调整后的综合合理PS区间为0.30-0.70x（详见04主报告3.3节）。</p>
+</blockquote>
+<p>当前天保PS 1.0x和以上可比公司PS区间<strong>均未考虑产品安全风险折价</strong>。建议：</p>
+<ul>
+<li><strong>产品安全风险折价</strong>：基于中等情景（5,000-8,000万潜在财务影响+品牌价值损失），建议PS折价**-15%至-25%**</li>
+<li><strong>调整后PS区间</strong>：0.30-0.60x（经客户结构分析折价后，详见附件F1）× (1-15% ~ 1-25%) → <strong>0.23-0.51x</strong></li>
+<li><strong>对应估值区间</strong>：以FY2025营收36.36亿计算 → <strong>8.4-18.5亿元</strong>（vs 天保当前收购价对应估值36.4亿）</li>
+</ul>
+<hr />
+<h2>五、来源与可靠性</h2>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>来源</th>
+<th>可靠性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行政处罚清单（10+起，含时间/产品/机构/金额）</td>
+<td>行政处罚清单202510.xlsx [B/管理层提供] + openclaw交叉验证 [A]</td>
+<td>B级→A级（部分）</td>
+</tr>
+<tr>
+<td>未决诉讼清单（14起产品安全相关+2起商业纠纷，含案号/法院/标的/状态）</td>
+<td>未决诉讼清单202605.xlsx [B/管理层提供]</td>
+<td>A级</td>
+</tr>
+<tr>
+<td>2024-2025年全国电动自行车火灾官方统计</td>
+<td>应急管理部/国家消防救援局发布会实录 [A]</td>
+<td>A级</td>
+</tr>
+<tr>
+<td>上海2024.11品牌级火灾数据</td>
+<td>上海消防官方发布 [A]</td>
+<td>A级</td>
+</tr>
+<tr>
+<td>2024年国家监督抽查（172批次/17批不合格）</td>
+<td>市场监管总局通报 [A]</td>
+<td>A级</td>
+</tr>
+<tr>
+<td>召回数据（308次/30余万件）</td>
+<td>国家消防救援局发布会 [A]</td>
+<td>A级</td>
+</tr>
+<tr>
+<td>公开报道星恒关联火灾事故（3起具体案例）</td>
+<td>公开报道整理 [A]</td>
+<td><strong>B级</strong></td>
+</tr>
+<tr>
+<td>博力威/天能等可比公司质量记录</td>
+<td>[C] 公开检索</td>
+<td>C级</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+</body>
+</html>
