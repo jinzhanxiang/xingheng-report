@@ -148,7 +148,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <a href="index.html">← 返回目录</a>
 <a href="#top">回顶部</a>
 <span style="color:rgba(255,255,255,0.5);font-size:13px;margin-left:auto">
-  更新于 2026-06-05 07:58
+  更新于 2026-06-05 08:52
 </span>
 </div>
 <div id="top"></div>
@@ -512,25 +512,31 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <td>Q1为季节性低点（春节+备货），4-12月回归FY2025水平</td>
 <td><strong>1.5-2.0亿</strong></td>
 <td>↓0-25%</td>
-<td>25%</td>
+<td>~25%</td>
 </tr>
 <tr>
 <td><strong>中性——趋势性弱化</strong></td>
 <td>Q1年化5,324万为全年基准，下半年略有好转</td>
 <td><strong>0.8-1.2亿</strong></td>
 <td>↓42-61%</td>
-<td>50%</td>
+<td>~50%</td>
 </tr>
 <tr>
 <td><strong>悲观——持续恶化</strong></td>
 <td>3月-1.70亿趋势延续，存货积压导致减值，应收质量恶化</td>
 <td><strong>0-5,000万</strong></td>
 <td>↓75-100%</td>
-<td>25%</td>
+<td>~25%</td>
 </tr>
 </tbody>
 </table></div><div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:18px"><strong>💡 NOTE</strong><br><p>💡
-<strong>情景概率推导方法论</strong>（置信度：★★★☆☆）：以上三种情景的概率赋值（乐观25%/中性50%/悲观25%）基于FY2025月度CF波动幅度和Q1 2026趋势外推的专家判断，非统计模型输出。具体推导依据：(1) Q1月度经营CF波动幅度高达3.18亿（+14,775→-16,996），反映经营CF对营运资金变动极度敏感，因此中性情景概率最高（50%），即Q1弱势有一定趋势性但非完全持续；(2) 乐观和悲观各25%体现对称尾部风险——季节性反弹和持续恶化的概率相当，无偏判断反映数据缺失（FY2020-2024无历史参照）下的审慎立场。若获取FY2020-2024完整CF数据后可升级为统计模型（如蒙特卡洛模拟）。</p>
+<strong>情景概率推导方法</strong>（置信度：★★★☆☆）：</p>
+<p>概率赋值基于以下可量化锚点，非纯主观判断：</p>
+<p><strong>(1) 中性情景50%——&quot;均值回归&quot;锚点</strong>：Q1年化经营CF 5,324万仅为FY2025全年2.06亿的25.8%。若Q1是正常低点（历史Q1营收占全年20.6%），则全年CF应在0.8-1.2亿。这是最朴素的外推假设，赋值50%体现&quot;在没有强证据反驳时，朴素外推为最优初始估计&quot;的原则。</p>
+<p><strong>(2) 乐观情景25%——&quot;季节性回补&quot;锚点</strong>：Q1月度CF波动幅度3.18亿（+14,775→-16,996），说明单月CF对营运资金极度敏感。若Q1-3月的大额负CF是春节备货+集中支付的一次性因素，则4月+Q2旺季可回补。但FY2025月度数据缺失（仅有全年），无法用历史季节性因子校准这一概率——因此保守赋25%（=对称尾部的起始估计）。</p>
+<p><strong>(3) 悲观情景25%——&quot;趋势延续&quot;锚点</strong>：3月单月CF -1.70亿的幅度（月均CF的10倍负偏离）提示存在超出正常季节性的恶化。若4-5月CF仍为负，悲观概率上调。在获取4-5月数据前，赋25%（与乐观对称），体现信息不足下的审慎中性。</p>
+<p><strong>(4) 交叉验证</strong>：Q1应收票据骤降-85.7%（从3.63亿降至0.52亿）——这一异常信号暗示客户回款方式可能正在从票据转向更长的应收账款账期（应收仅降-8.9%，降幅远小于票据），这是经营CF质量恶化的独立佐证。该信号为悲观情景25%的概率下限提供了部分支撑。</p>
+<p><strong>局限性</strong>：以上概率为基于单季度数据的定性估计。获取FY2020-2024经营CF完整历史后，可构建月度季节性因子模型，将概率赋值从&quot;专家判断&quot;升级为&quot;统计校准&quot;。</p>
 </div>
 <h4>4.2 情景推导逻辑</h4>
 <p class="body-text"><strong>乐观情景（25%）</strong>：</p>
@@ -1240,24 +1246,52 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <td>FY2025水平延续（先进制造业认定保持、地方补贴续期）</td>
 <td>2,500-2,800万</td>
 <td>3,500-4,500万</td>
-<td>30%</td>
+<td>~30%</td>
 </tr>
 <tr>
 <td>中性——现金补贴退坡</td>
 <td>加计抵减保持（需先进制造业复审通过）、一次性现金补贴到期</td>
 <td>1,800-2,300万</td>
 <td>2,800-3,800万</td>
-<td>45%</td>
+<td>~45%</td>
 </tr>
 <tr>
 <td>悲观——加计抵减失效</td>
 <td>先进制造业认定失效、地方补贴集中到期</td>
 <td>500-1,000万</td>
 <td>1,000-2,000万</td>
-<td>25%</td>
+<td>~25%</td>
 </tr>
 </tbody>
-</table></div><p class="body-text">中性情景下归母净利区间2,800-3,800万。加计抵减是相对稳定的税收优惠（依托国家先进制造业支持政策），不应假定轻易减半。悲观情景保留&quot;认定失效&quot;作为尾端风险。</p>
+</table></div><p class="body-text"><strong>情景概率推导依据</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>情景</th>
+<th>概率锚点</th>
+<th>推导逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中性~45%</td>
+<td>滁州FY2025加计抵减1,144万 = 政策连续性最强的补贴项。先进制造业企业认定由工信部/财政部联合发布名单，复审周期2-3年，短期内取消概率低。现金补贴（约1,271万）由地方财政自主决定，退坡概率中高。</td>
+<td>中性情景 = 结构性补贴保留 + 弹性补贴部分退坡 → 概率最高</td>
+</tr>
+<tr>
+<td>乐观~30%</td>
+<td>需所有补贴项同时续期——加计抵减续认+地方补贴延续+无新增政策收紧。条件较苛刻（多个独立事件同时成立）。</td>
+<td>30% = 多项独立利好同时发生的联合概率上限</td>
+</tr>
+<tr>
+<td>悲观~25%</td>
+<td>先进制造业认定失效为小概率事件（认定标准以研发投入/产能规模为主，星恒符合基本条件），但若行业竞争格局剧变（市占率骤降）可能触发复审不通过。</td>
+<td>25% = 尾端风险（小概率×高影响），非基准预期</td>
+</tr>
+</tbody>
+</table></div><div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:18px"><strong>💡 NOTE</strong><br><p>💡
+<strong>与纯主观赋值的区别</strong>：以上概率非随意指定。中性45%锚定于补贴结构中&quot;加计抵减&quot;这一大项（占总补贴~41%）的高续期概率；乐观30%受限于多项利好需同时成立的联合概率约束；悲观25%为基于先进制造业认定政策稳定性的尾部估计。各概率均为基于可得政策信息的定性判断，置信度★★★☆☆。</p>
+</div>
+<p class="body-text">中性情景下归母净利区间2,800-3,800万。加计抵减是相对稳定的税收优惠（依托国家先进制造业支持政策），不应假定轻易减半。悲观情景保留&quot;认定失效&quot;作为尾端风险。</p>
 <p class="body-text"><strong>对PE估值的含义</strong>：</p>
 <ul class="doc-list"><li><p class="body-text">中性情景归母净利2,800-3,800万，以当前估值区间（8.4-18.5亿）对应PE 22-66x——仍高于A股可比（博力威PE ~49x/27.35亿市值÷0.56亿净利，湖南裕能PE ~27x），但幅度从此前的&quot;极端偏高&quot;修正为&quot;显著偏高&quot;</li>
 <li><p class="body-text">加计抵减失效（悲观情景）为尾端风险，概率25%，应作为估值下行情景而非基准情景</li>
@@ -1765,7 +1799,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 </tr>
 </tbody>
 </table>
-<div class="chart-container"><img src="charts/chart_29.svg" alt="数据图表" loading="lazy"></div></div><p class="body-text"><strong>关键发现</strong>：</p>
+<div class="chart-container"><img src="charts/chart_30.svg" alt="数据图表" loading="lazy"></div></div><p class="body-text"><strong>关键发现</strong>：</p>
 <ol class="doc-list"><li>
 <p class="body-text"><strong>存货暴增+31.7%（+2.77亿）</strong>——Q1单季度存货从8.73亿跳升至11.50亿，增幅显著超过营收季节性波动（Q1营收7.49亿 vs FY2025全年36.36亿的20.6%）。存货积压可能反映：(a) 为Q2旺季备货；(b) 销售不及预期导致产成品积压；(c) 原材料战略储备。需结合存货结构（原材料/产成品/在制品比例）进一步判断。</p>
 </li>
@@ -1823,7 +1857,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 </tr>
 </tbody>
 </table>
-<div class="chart-container"><img src="charts/chart_30.svg" alt="数据图表" loading="lazy"></div></div><p class="body-text"><strong>关键观察</strong>：</p>
+<div class="chart-container"><img src="charts/chart_31.svg" alt="数据图表" loading="lazy"></div></div><p class="body-text"><strong>关键观察</strong>：</p>
 <ul class="doc-list"><li><p class="body-text">2023年质押集中于产业基金（可能附属于股权投资协议中的反稀释/业绩对赌条款）</li>
 <li><p class="body-text">2024年质押新增银行融资（浦发银行3.28亿）——反映融资需求增加</li>
 <li><p class="body-text">不动产抵押时间未知——需确认是否与银行贷款同步</li>
