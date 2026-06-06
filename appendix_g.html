@@ -42,19 +42,30 @@ p.key-finding{
 strong{color:#1a365d}
 
 /* ── 表格 ── */
+/* 列宽优化规则：
+   - table-layout:auto 让浏览器根据内容智能分配列宽
+   - th white-space设为normal允许长表头换行，避免单列过宽
+   - td设置word-break防止超长连续字符串(如URL)撑破列宽
+   - min-width 80px防止窄列(如阶段/时间列)被挤压到每行仅2-3字
+   - 配合markdown预处理(_optimize_table_columns)对→连锁值自动插入<br>换行
+*/
 .table-wrapper{overflow-x:auto;margin:20px 0;}
 table.doc-table{
     width:100%;border-collapse:collapse;margin:0;
     font-size:16px;line-height:1.7;
+    table-layout:auto;
 }
 table.doc-table thead{background:#1a365d;}
 table.doc-table th{
-    color:#fff;padding:12px 14px;text-align:left;
-    font-size:15px;font-weight:600;white-space:nowrap;
+    color:#fff;padding:10px 12px;text-align:left;
+    font-size:14px;font-weight:600;white-space:normal;
+    word-wrap:break-word;overflow-wrap:break-word;
 }
 table.doc-table td{
-    padding:10px 14px;border-bottom:1px solid #e2e8f0;
+    padding:10px 12px;border-bottom:1px solid #e2e8f0;
     font-size:15px;vertical-align:top;
+    word-wrap:break-word;overflow-wrap:break-word;word-break:break-word;
+    min-width:80px;
 }
 table.doc-table tbody tr:nth-child(even){background:#f7fafc}
 table.doc-table tbody tr:hover{background:#edf2f7}
@@ -148,7 +159,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <a href="index.html">← 返回目录</a>
 <a href="#top">回顶部</a>
 <span style="color:rgba(255,255,255,0.5);font-size:13px;margin-left:auto">
-  更新于 2026-06-07 00:22
+  更新于 2026-06-07 00:40
 </span>
 </div>
 <div id="top"></div>
@@ -392,35 +403,35 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <tr>
 <td>设立与早期技术入股</td>
 <td>2003-2008</td>
-<td>8200万</td>
+<td>8,200万</td>
 <td>北京星恒（中科院物理所孵化）以技术+专利作价4000万出资；联想投资3400万+百利宏800万现金</td>
 <td>⚠️ 出资资产评估增值78.41%，约定&quot;不论评估值按4000万作价&quot;——可能构成出资不实</td>
 </tr>
 <tr>
 <td>联想系主导+员工持股</td>
 <td>2008-2011</td>
-<td>8200→19021→11412.6万</td>
-<td>联想控股9300万入局（C轮，估值3.39亿）；设立员工持股平台；减资7608万弥补亏损</td>
+<td>8,200万<br><br>→19,021万<br><br>→11,412.6万</td>
+<td>联想控股9300万入局（C轮，估值3.39亿）；设立员工持股平台（苏州星都）；减资7608万弥补亏损</td>
 <td>⚠️ 减资程序合规性——债权人通知是否完整</td>
 </tr>
 <tr>
 <td>Pre-IPO密集融资</td>
 <td>2014-2019</td>
-<td>11412.6→30406.25万</td>
+<td>11,412.6万<br><br>→30,406.25万</td>
 <td>股改变更为股份公司；建银国际/西藏达孜等入局（含业绩对赌）；2017年启源纳川入主；2019年约35家PE入局（估值约25亿，含IPO对赌）</td>
 <td>🔴 业绩对赌（2016-2018承诺净利1.1/1.5/2.4亿）完成情况未核查</td>
 </tr>
 <tr>
 <td>IPO失败+纠纷爆发</td>
 <td>2020-2023</td>
-<td>30406.25→32157.51万</td>
-<td>FY2022-2023连续亏损（-3.03/-5.75亿）→IPO无望；建银国际等退出；多起回购诉讼→启源纳川/陈志江全部败诉</td>
+<td>30,406.25万<br><br>→32,157.51万</td>
+<td>FY2022-2023连续亏损（-3.03/-5.75亿）<br>→IPO无望；建银国际等退出；多起回购诉讼<br>→启源纳川/陈志江全部败诉</td>
 <td>🔴 启源纳川失信+限高，持股面临司法处置</td>
 </tr>
 <tr>
 <td>当前僵局</td>
 <td>2024-2026</td>
-<td>32157.51万</td>
+<td>32,157.51万</td>
 <td>50名股东；无实控人；初期股东全部退出；港股IPO筹备中但法律障碍未清</td>
 <td>🔴 实控人缺位+第一大股东失信=IPO实质性障碍</td>
 </tr>
@@ -533,7 +544,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 </tr>
 <tr>
 <td>对天保收购的影响</td>
-<td>持股17.73%可能被司法拍卖→交易对手方不确定；但《合伙企业法》第67/68条决定了纳川股份的破产不穿透影响启源纳川持有的星恒股权</td>
+<td>持股17.73%可能被司法拍卖<br>→交易对手方不确定；但《合伙企业法》第67/68条决定了纳川股份的破产不穿透影响启源纳川持有的星恒股权</td>
 </tr>
 </tbody>
 </table></div><h4>第二层：陈志江（自然人）——对赌回购义务人（已违约）</h4>
@@ -567,7 +578,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <tbody>
 <tr>
 <td>背景</td>
-<td>原为星恒滁州股东→IPO失败后回购→债权→2022年12月债转股成为星恒电源股东</td>
+<td>原为星恒滁州股东<br>→IPO失败后回购<br>→债权<br>→2022年12月债转股成为星恒电源股东</td>
 </tr>
 <tr>
 <td>出资</td>
@@ -575,7 +586,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 </tr>
 <tr>
 <td>对赌条款</td>
-<td>增资交割日起48个月内（约至2026年12月）未提交IPO申请或被否决→星恒电源及星恒滁州连带回购全部股份</td>
+<td>增资交割日起48个月内（约至2026年12月）未提交IPO申请或被否决<br>→星恒电源及星恒滁州连带回购全部股份</td>
 </tr>
 <tr>
 <td>法律风险</td>
@@ -624,7 +635,234 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <td>行使时点和置换比例均不可控，将稀释星恒电源股权</td>
 </tr>
 </tbody>
-</table></div><hr />
+</table></div><h3>四、员工持股平台合规性分析——对照启源芯动力案例</h3>
+<h4>（一）历史员工持股平台 vs 当前员工持股平台</h4>
+<p class="body-text">星恒历史上存在<strong>两个不同的员工持股平台</strong>，分属不同时期、不同主体：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>对比维度</th>
+<th>苏州星都（历史平台）</th>
+<th>苏州袍泽（当前平台）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>设立时期</td>
+<td>2008-2011年（联想系主导时期）</td>
+<td>2014年</td>
+</tr>
+<tr>
+<td>全称</td>
+<td>苏州星都企业管理合伙企业</td>
+<td>苏州袍泽锂想企业管理合伙企业（有限合伙）</td>
+</tr>
+<tr>
+<td>当前状态</td>
+<td><strong>已注销/退出</strong>（联想2014年9月退出星恒）</td>
+<td><strong>存续</strong>，持股星恒6.26%（2,011.9万股）</td>
+</tr>
+<tr>
+<td>GP</td>
+<td>联想系控制</td>
+<td><strong>冯笑</strong>（星恒董事长兼总经理，持股39.66%）</td>
+</tr>
+<tr>
+<td>设立背景</td>
+<td>联想控股作为国资股东主导的员工激励</td>
+<td>星恒变更为股份公司后的管理层/核心员工激励</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>结论：两个平台完全不同。</strong> 联想时期的苏州星都已随联想2014年退出而终止；当前苏州袍泽与联想无直接法律关系。</p>
+<h4>（二）联想控股的国资属性——兼论星恒历史上的国资控股时期</h4>
+<p class="body-text"><strong>联想控股的国资属性：</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>时期</th>
+<th>联想控股属性</th>
+<th>对星恒的控制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2003-2014年</td>
+<td><strong>国资控股</strong>（中国科学院控股）</td>
+<td>2008年C轮后联想控股27.45%；2015年A轮时联想控股40.44%+君联资本16.90%=<strong>57.34%绝对控股</strong></td>
+</tr>
+<tr>
+<td>2014年9月16日</td>
+<td>联想控股<strong>退出星恒</strong></td>
+<td>全部清仓，为启源纳川进入铺路</td>
+</tr>
+<tr>
+<td>2014年至今</td>
+<td>星恒变为<strong>民营企业</strong></td>
+<td>无国资股东</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>关键时间节点：2008-2014年期间，星恒电源是国资控股企业（联想控股为中科院控股的国有控股企业）。</strong> 这意味着：</p>
+<ul class="doc-list"><li><p class="body-text">该时期设立的员工持股平台（苏州星都）理论上应适用国资监管框架</li>
+<li><p class="body-text">但联想已于2014年完全退出，苏州星都已终止</li>
+<li><p class="body-text">当前苏州袍泽（2014年设立）设立时星恒已是民企，<strong>不适用133号文的国资备案要求</strong></li>
+</ul>
+<h4>（三）启源芯动力员工持股平台的法律风险——对照分析</h4>
+<p class="body-text">启源芯动力（国家电投旗下央企二级企业）的员工持股平台经锦天城律所核查，存在以下核心法律瑕疵。以下逐项对照星恒苏州袍泽：</p>
+<p class="body-text"><strong>风险1：员工持股平台含外部人员（🔴 启源芯最核心问题）</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>维度</th>
+<th>启源芯动力（上海融芯）</th>
+<th>星恒电源（苏州袍泽）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>问题</td>
+<td>上海融芯上层286人中含外部人员（股东方人员+其他外部人员）</td>
+<td><strong>待核查</strong>：苏州袍泽LP是否全部为星恒员工</td>
+</tr>
+<tr>
+<td>法规依据</td>
+<td>不符合《关于上市公司实施员工持股计划试点的指导意见》<br>→不认定为合规ESOP</td>
+<td>同左</td>
+</tr>
+<tr>
+<td>后果</td>
+<td>需穿透计算股东人数<br>→349人，超过港交所300人警戒线</td>
+<td>若含外部人员，同样不能认定为ESOP，LP层全部穿透</td>
+</tr>
+<tr>
+<td>律师建议</td>
+<td>清理持股平台中的外部人员</td>
+<td>同左——获取LP名单是第一优先级</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>风险2：跟投方案与员工持股计划混淆（🟡）</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>维度</th>
+<th>启源芯动力</th>
+<th>星恒电源（苏州袍泽）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>问题</td>
+<td>跟投方案预留份额归属存在争议（归原股东稀释股权 vs 归员工需国资委豁免）</td>
+<td><strong>不适用</strong>——星恒为民企设立，无跟投/ESOP混淆问题</td>
+</tr>
+<tr>
+<td>法规</td>
+<td>国资改办[2019]302号</td>
+<td>不适用国资审批</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>风险3：国资审批程序缺失（🟡，仅对启源芯）</strong></p>
+<p class="body-text">启源芯的跟投方案未经国资委豁免审批。但星恒苏州袍泽在民企时期设立，<strong>无需国资审批</strong>，此项风险不适用。</p>
+<p class="body-text"><strong>风险4：代持问题（🟡）</strong></p>
+<p class="body-text">启源芯存在员工持股平台GP受让代持。星恒苏州袍泽的GP冯笑直接持有39.66%，无代持迹象（待核查合伙协议确认）。</p>
+<h4>（四）星恒苏州袍泽合规性评估</h4>
+<p class="body-text"><strong>当前已知情况（正面）：</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>项目</th>
+<th>状态</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GP身份</td>
+<td>冯笑（星恒董事长兼总经理）</td>
+<td>✅ 核心员工控制，符合ESOP特征</td>
+</tr>
+<tr>
+<td>持股比例</td>
+<td>6.26%（≤30%上限）</td>
+<td>✅ 符合133号文比例要求</td>
+</tr>
+<tr>
+<td>设立时企业属性</td>
+<td>民营企业</td>
+<td>✅ 无需133号文备案</td>
+</tr>
+<tr>
+<td>平台数量</td>
+<td>1个（非多层嵌套）</td>
+<td>✅ 结构简洁，优于启源芯9层嵌套</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>待核查关键事项（影响收购决策）：</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>优先级</th>
+<th>待核查项</th>
+<th>风险</th>
+<th>对收购的影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴 P0</td>
+<td>苏州袍泽<strong>LP完整名册</strong>——是否全部为星恒在职员工</td>
+<td>若含外部人员<br>→不认定为ESOP<br>→需穿透计算股东<br>→可能触发港交所300人上限</td>
+<td>收购后上市退出路径受阻</td>
+</tr>
+<tr>
+<td>🔴 P0</td>
+<td>苏州袍泽是否在<strong>中基协备案</strong></td>
+<td>若未备案<br>→可能被认定为&quot;专为投资发行人设立的主体&quot;<br>→需穿透</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>🟡 P1</td>
+<td>天保收购后是否需向<strong>天津国资追加认定</strong></td>
+<td>现有法规无明确规定（监管灰区）</td>
+<td>需直接咨询天津国资</td>
+</tr>
+<tr>
+<td>🟡 P1</td>
+<td>苏州袍泽<strong>合伙协议</strong>中的锁定期/流转/退出条款</td>
+<td>影响港交所审核中的股权稳定性判断</td>
+<td>影响上市时间表</td>
+</tr>
+</tbody>
+</table></div><h4>（五）天保收购后的员工持股平台处理路径</h4>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>路径</th>
+<th>描述</th>
+<th>适用条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. 维持现状</td>
+<td>保持苏州袍泽不变，纳入天保管理体系</td>
+<td>天津国资认可现有结构合规</td>
+</tr>
+<tr>
+<td>B. 内部追加认定</td>
+<td>向天津国资报备苏州袍泽合规性</td>
+<td>LP全部为星恒员工+中基协已备案</td>
+</tr>
+<tr>
+<td>C. 规范整改</td>
+<td>清理体系外人员后重新认定</td>
+<td>发现外部人员但可清理</td>
+</tr>
+<tr>
+<td>D. 注销/转让</td>
+<td>无法通过认定，转为直接持股</td>
+<td>最不理想，税务+人数穿透均不利</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>与启源芯动力的核心差异——对星恒有利的方面：</strong></p>
+<ol class="doc-list"><li><p class="body-text">星恒苏州袍泽设立时为民企，不存在&quot;央企二级企业不开展133号文试点&quot;的限制</li>
+<li><p class="body-text">苏州袍泽仅1层、1个平台，结构远简单于启源芯的9个嵌套平台</li>
+<li><p class="body-text">苏州袍泽GP冯笑是星恒核心管理层，不是外部GP</li>
+<li><p class="body-text">持股比例6.26%，远低于启源芯跟投平台合计持股比例</li>
+</ol>
+<hr />
 <h2>第四部分：对赌协议核心条款完整梳理</h2>
 <p class="body-text">基于对启源纳川85份法律文件的提取（32份已提取关键条款），以下为对赌协议体系的完整法律分析。</p>
 <h3>一、35家PE的IPO对赌——标准条款模式</h3>
@@ -728,7 +966,91 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <td>同上（待补充）</td>
 </tr>
 </tbody>
-</table></div><p class="body-text"><strong>法律分析</strong>：承诺三年累计净利≥15亿，实际FY2020净利3.76亿+FY2021 0.12亿+FY2019数据缺失。即使FY2019实现4-5亿净利，三年合计也远低于15亿承诺——业绩补偿条件极大概率已触发。需核查补偿是否已履行。</p>
+</table></div><p class="body-text"><strong>法律分析——业绩达成情况闭环核查</strong>：</p>
+<p class="body-text">基于项目材料中的审计数据，对2019-2021三年业绩承诺的达成情况进行逐项核查：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>年度</th>
+<th>归母净利润</th>
+<th>数据来源</th>
+<th>可靠性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FY2019</td>
+<td><strong>数据缺失</strong>（尽调材料未提供）</td>
+<td>—</td>
+<td>❌ 关键缺口</td>
+</tr>
+<tr>
+<td>FY2020</td>
+<td><strong>约3.76亿</strong></td>
+<td>中天运审计报告</td>
+<td>A级</td>
+</tr>
+<tr>
+<td>FY2021</td>
+<td><strong>约0.12亿</strong></td>
+<td>中天运审计报告</td>
+<td>A级</td>
+</tr>
+<tr>
+<td><strong>2019-2021合计</strong></td>
+<td><strong>已知2年仅3.88亿</strong></td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<div class="chart-container"><img src="charts/chart_20.svg" alt="数据图表" loading="lazy"></div></div><p class="body-text"><strong>情景分析——补偿条件是否触发：</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>情景</th>
+<th>FY2019假设</th>
+<th>三年合计</th>
+<th>占承诺15亿比例</th>
+<th>是否触发补偿（&lt;80%=12亿）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>乐观</td>
+<td>5.0亿</td>
+<td>8.88亿</td>
+<td>59.2%</td>
+<td><strong>是——触发</strong></td>
+</tr>
+<tr>
+<td>中性</td>
+<td>4.0亿</td>
+<td>7.88亿</td>
+<td>52.5%</td>
+<td><strong>是——触发</strong></td>
+</tr>
+<tr>
+<td>保守</td>
+<td>3.0亿</td>
+<td>6.88亿</td>
+<td>45.9%</td>
+<td><strong>是——触发</strong></td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>闭环分析结论</strong>：</p>
+<ol class="doc-list"><li>
+<p class="body-text"><strong>补偿条件已触发（确定）</strong>：即使在最乐观的FY2019=5亿假设下，三年合计也仅为承诺的59.2%，远低于80%触发线。FY2019数据的缺失<strong>不影响</strong>&quot;补偿条件已触发&quot;这一结论——即使FY2019=5亿，结果不变。</p>
+</li>
+<li>
+<p class="body-text"><strong>补偿是否已实际履行（待核查）</strong>：法律尽调报告明确标注为&quot;需核查补偿是否已履行&quot;。截至尽调基准日（2026年3月31日），项目材料中<strong>未找到任何补偿已实际支付的证据</strong>。涉及三家投资方（辽宁海通7000万/湖州谟通1300万/海通创新3000万），合计投资额1.13亿元。</p>
+</li>
+<li>
+<p class="body-text"><strong>补偿方式</strong>：股份补偿——补偿股份数=交易金额/调整后公司估值×26,250万股-目标股份数-已补偿股份数，回购价含8%年单利。</p>
+</li>
+<li>
+<p class="body-text"><strong>无法形成完整闭环的原因</strong>：FY2019审计数据缺失+补偿履行情况未披露+海通创新协议条款待补充。这三个信息缺口导致无法给出&quot;已履行/未履行&quot;的确定性结论，但不影响&quot;补偿条件已触发&quot;的判断。</p>
+</li>
+</ol>
+<p class="body-text"><strong>数据缺口影响评估</strong>：FY2019数据缺失属于<strong>可接受的信息缺口</strong>——不影响补偿触发的定性结论。但补偿履行状态缺失属于<strong>不可接受的信息缺口</strong>——直接影响或有负债的量化估计。建议在尽调终稿中P0优先闭合此事项。</p>
 <h3>三、安徽金通/高新基金债转股——二次IPO对赌</h3>
 <p class="body-text">这是尽调报告中风险级别最高的待化解事项之一：</p>
 <div class="table-wrapper"><table class="doc-table"><thead>
@@ -752,7 +1074,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 </tr>
 <tr>
 <td>IPO对赌</td>
-<td>增资交割日起48个月内（约至2026年12月）未提交IPO申请或被否决→星恒电源及星恒滁州连带回购全部股份</td>
+<td>增资交割日起48个月内（约至2026年12月）未提交IPO申请或被否决<br>→星恒电源及星恒滁州连带回购全部股份</td>
 </tr>
 <tr>
 <td>法律风险</td>
