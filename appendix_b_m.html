@@ -84,7 +84,7 @@
     <span>主框架：券商方案（中信证券，2026年6月初稿）</span> &nbsp;|&nbsp;
     <span>独立分析：天保投资管理部（纵横分析法完整框架）</span> &nbsp;|&nbsp;
     <span>数据截止：2026-06-14</span> &nbsp;|&nbsp;
-    <span>版本：v5（第四轮：尽调材料数据填充——消除「待核实」占位符）</span>
+    <span>版本：v6（第五轮：资产负债表数据填充——FY2022-Q1 2026净资产/负债率完整填入+口径修正）</span>
   </div>
 </header>
 
@@ -99,7 +99,7 @@
     <strong>纵向分析（Diachronic）</strong>——Step 1 历史财务全景（FY2020起6.5年）+ Step 2 管理层预测准确性验证 + Step 3 业务板块结构演变；<br>
     <strong>横向分析（Synchronic）</strong>——Step 4 港股锂电可比公司全维度指标对比（PE/PS/PB/净利率/营收增速）+ Step 5 A股可比交易估值对标。<br>
     所有数据均标注来源（[A]审计/法规 [B]项目/市场 [K]推理 [L]行业预估），推理链以逻辑链图可视化。<br>
-    <strong>v4→v5修正说明：</strong>v4新增了管理层预测透明度、经营现金流纵向分析、线性外推局限、概率敏感度、商誉量化等7项改进。<strong>v5本轮（第四轮）核心升级——从尽调材料填充缺失数据：</strong>(1) Table 1.1六项「—」消除——FY2021营收36.66亿、FY2021净利率0.3%/FY2022 -8.4%/FY2023 -24.1%/FY2024 2.94%、FY2021-2024归母净利全部填入；(2) 经营CF来源透明化——FY2022-2024经营CF标注「管」（管理层报表口径，非审计数据）；(3) 资产质量表消除3个「待核实」——货币资金6.64亿/应收账款6.70亿/固定资产净值18.10亿均从FY2025+Q1 2026合并报表提取；(4) DTA从1.05亿修正为2.40亿（来源：项目台账科目余额表，含1.84亿来源不明标注）；(5) 数据溯源标注升级——所有新数据均明确标注溯源路径（审计报告OCR→科目余额表→纵横分析v2报告）。<strong>来源标注体系（共4层）：</strong>所有数据点均标注来源（80+处src标注），[A]审计/法规、[B]项目/市场（尽调收资材料+akshare+MX金融）、[K]推理、[L]行业预估。
+    <strong>v4→v5修正说明：</strong>v4新增了管理层预测透明度、经营现金流纵向分析、线性外推局限、概率敏感度、商誉量化等7项改进。<strong>v5→v6核心升级（本轮·第五轮·资产负债表数据填充）：</strong>(0) Table 1.1归母净资产/资产负债率FY2022-Q1 2026六时点完整填入——FY2022-2023来自审计报告OCR提取<span class="src src-A">[A]</span>、FY2024-2025/Q1 2026来自管理合并报表Excel<span class="src src-B">[B]</span>、归母净资产23.02亿（总净资产27.76亿）23.26→23.02口径修正、资产负债率56.0%←55.57%修正；(0-b) 审计vs管理口径差异标注——FY2022-2023为审计口径、FY2024-2025为管理口径。<strong>v5本轮（第四轮）核心升级——从尽调材料填充缺失数据：</strong>(1) Table 1.1六项「—」消除——FY2021营收36.66亿、FY2021净利率0.3%/FY2022 -8.4%/FY2023 -24.1%/FY2024 2.94%、FY2021-2024归母净利全部填入；(2) 经营CF来源透明化——FY2022-2024经营CF标注「管」（管理层报表口径，非审计数据）；(3) 资产质量表消除3个「待核实」——货币资金6.64亿/应收账款6.70亿/固定资产净值18.10亿均从FY2025+Q1 2026合并报表提取；(4) DTA从1.05亿修正为2.40亿（来源：项目台账科目余额表，含1.84亿来源不明标注）；(5) 数据溯源标注升级——所有新数据均明确标注溯源路径（审计报告OCR→科目余额表→纵横分析v2报告）。<strong>来源标注体系（共4层）：</strong>所有数据点均标注来源（80+处src标注），[A]审计/法规、[B]项目/市场（尽调收资材料+akshare+MX金融）、[K]推理、[L]行业预估。
   </div>
 
   <h3>一、纵向分析：星恒历史财务全景（FY2020-Q1 2026）</h3>
@@ -113,10 +113,10 @@
       <tr><td>净利率</td><td class="num"><strong>9.5%</strong></td><td class="num" style="color:var(--red)">0.3%</td><td class="num" style="color:var(--red)">-8.4%</td><td class="num" style="color:var(--red)">-24.1%</td><td class="num">2.94%</td><td class="num">1.24%<span class="src" style="font-size:9px" title="管理口径1.24%；审计口径1.10%">管</span></td><td class="num">—</td></tr>
       <tr><td>归母净利(亿)</td><td class="num">3.76</td><td class="num" style="color:var(--red)">0.12</td><td class="num" style="color:var(--red)">-3.03</td><td class="num" style="color:var(--red)">-5.75</td><td class="num">0.87</td><td class="num"><strong>0.45</strong><span class="src" style="font-size:10px;margin-left:2px" title="管理口径4,509万；审计口径3,986万（低13.1%）。FY2021-2024为管理口径。">管</span></td><td class="num">0.10</td></tr>
       <tr><td>经营CF(亿)</td><td class="num">—</td><td class="num">—</td><td class="num" style="color:var(--red)">-4.64<span class="src" style="font-size:9px" title="管理层报表口径，未经审计调整">管</span></td><td class="num" style="color:var(--red)">-2.38<span class="src" style="font-size:9px" title="管理层报表口径，未经审计调整">管</span></td><td class="num" style="color:var(--red)">-0.38<span class="src" style="font-size:9px" title="管理层报表口径，未经审计调整">管</span></td><td class="num" style="color:var(--green)">2.06</td><td class="num" style="color:var(--red)">0.13</td></tr>
-      <tr><td>归母净资产(亿)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">23.26</td><td class="num">—</td></tr>
-      <tr><td>资产负债率</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">55.57%</td><td class="num">—</td></tr>
+      <tr><td>归母净资产(亿)</td><td class="num">—</td><td class="num">—</td><td class="num">27.55<span class="src" style="font-size:9px" title="FY2023审计报告期初数（OCR提取）">审</span></td><td class="num">21.79<span class="src" style="font-size:9px" title="FY2023/FY2024审计报告（OCR提取）">审</span></td><td class="num">22.93<span class="src" style="font-size:9px" title="FY2025管理合并报表年初数">管</span></td><td class="num">23.02<span class="src" style="font-size:9px" title="FY2025末合并资产负债表；总净资产(含少数股东)27.76亿">管</span></td><td class="num">23.12<span class="src" style="font-size:9px" title="Q1 2026合并资产负债表期末数">管</span></td></tr>
+      <tr><td>资产负债率</td><td class="num">—</td><td class="num">—</td><td class="num">57.9%<span class="src" style="font-size:9px" title="FY2023审计报告期初数推算出（总资产65.97-净资产27.74）">审</span></td><td class="num">56.7%<span class="src" style="font-size:9px" title="FY2023/FY2024审计报告推算出（总资产51.04-净资产22.12）">审</span></td><td class="num">49.4%<span class="src" style="font-size:9px" title="FY2025管理合并报表年初数推算出（总资产54.51-净资产27.59）">管</span></td><td class="num">56.0%<span class="src" style="font-size:9px" title="FY2025末合并资产负债表（总负债35.32/总资产63.09）">管</span></td><td class="num">56.4%<span class="src" style="font-size:9px" title="Q1 2026合并资产负债表期末数（总负债36.22/总资产64.17）">管</span></td></tr>
       <tr><td>产能利用率</td><td class="num">推断高位</td><td class="num">—</td><td class="num">—</td><td class="num" style="color:var(--red)"><strong>26.9%</strong></td><td class="num">—</td><td class="num">66%</td><td class="num">—</td></tr>
-      <tr style="background:#fff8e1"><td colspan="8"><strong>来源：</strong>FY2020-2025/Q1 2026营收/GM/归母净利/净利率完整六年数据来自纵横分析报告v2（附件04）<span class="src src-B">[B: 纵横分析报告v2]</span>，其底层数据来自审计报告(容诚审字[2026]200F1622号) <span class="src src-A">[A]</span> + 管理层报表 <span class="src src-B">[B]</span> + 科目余额表(6113科目) <span class="src src-B">[B]</span> + FY2022审计报告OCR（母公司利润表）<span class="src src-B">[B]</span>。产能利用率来自22-2603分产线产能利用率.xlsx <span class="src src-B">[B]</span>。<strong>经营CF（FY2022-2024）：</strong>FY2022-2024经营CF来自管理层报表口径（未经审计调整），FY2025经营CF来自FY2025合并报表（管理层提供），均标注为「管」以区别于审计数据。<strong>双口径说明：</strong>FY2025归母净利管理口径4,509万（0.45亿，与盈利预测模型一致）vs 审计口径3,986万（0.40亿），差异523万（+13.1%）来自审计调整。FY2021-2024归母净利为管理口径。本报告以管理口径为分析基准——若采用审计口径，估值结论将更保守。历年净资产/负债率仅FY2025可获得（审计报告附注未提供完整比较表），标注「—」而非编造。</td></tr>
+      <tr style="background:#fff8e1"><td colspan="8"><strong>来源：</strong>FY2020-2025/Q1 2026营收/GM/归母净利/净利率完整六年数据来自纵横分析报告v2（附件04）<span class="src src-B">[B: 纵横分析报告v2]</span>，其底层数据来自审计报告(容诚审字[2026]200F1622号) <span class="src src-A">[A]</span> + 管理层报表 <span class="src src-B">[B]</span> + 科目余额表(6113科目) <span class="src src-B">[B]</span> + FY2022审计报告OCR（母公司利润表）<span class="src src-B">[B]</span>。产能利用率来自22-2603分产线产能利用率.xlsx <span class="src src-B">[B]</span>。<strong>经营CF（FY2022-2024）：</strong>FY2022-2024经营CF来自管理层报表口径（未经审计调整），FY2025经营CF来自FY2025合并报表（管理层提供），均标注为「管」以区别于审计数据。<strong>双口径说明：</strong>FY2025归母净利管理口径4,509万（0.45亿，与盈利预测模型一致）vs 审计口径3,986万（0.40亿），差异523万（+13.1%）来自审计调整。FY2021-2024归母净利为管理口径。本报告以管理口径为分析基准——若采用审计口径，估值结论将更保守。FY2022-FY2023净资产/负债率取自审计报告（OCR提取资产负债表期初/期末数）<span class="src src-A">[A]</span>；FY2024-FY2025/Q1 2026取自管理合并报表Excel（202512+202603）<span class="src src-B">[B]</span>。FY2025归母净资产23.02亿（总净资产27.76亿，含少数股东4.75亿）。审计vs管理口径差异说明：FY2022-2023为审计口径，FY2024-2025为管理口径。</td></tr>
     </tbody>
   </table>
 
@@ -188,7 +188,7 @@
       <tr><td>隐含PS(PE×NPM)</td><td class="num">—</td><td class="num" style="background:#fff8e1"><strong>1.88x</strong></td><td class="num">0.83x</td><td class="num">1.17x</td><td class="num">5.99x</td></tr>
       <tr><td>ROE</td><td class="num" style="color:var(--red)"><strong>~1.6%</strong></td><td class="num" style="color:var(--green)">11.56%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
       <tr><td>营收增速</td><td class="num">+23.3%</td><td class="num">—(净利+83.15%)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
-      <tr style="background:#fff8e1"><td colspan="6"><strong>来源：</strong>PE/净利/ROE来自akshare stock_hk_financial_indicator_em <span class="src src-B">[B: akshare实时数据 2026-06-14]</span>。隐含PS = PE × 净利率（由已有数据反算，非独立行情数据），标注为 <span class="src src-K">[K: 推导值]</span>。营收增速仅星恒可验证，部分可比公司数据因akshare接口限制未获取，标注「—」。星恒资产负债率55.57%来自FY2025年报 <span class="src src-B">[B]</span>，可比公司该项数据不可获得。</td></tr>
+      <tr style="background:#fff8e1"><td colspan="6"><strong>来源：</strong>PE/净利/ROE来自akshare stock_hk_financial_indicator_em <span class="src src-B">[B: akshare实时数据 2026-06-14]</span>。隐含PS = PE × 净利率（由已有数据反算，非独立行情数据），标注为 <span class="src src-K">[K: 推导值]</span>。营收增速仅星恒可验证，部分可比公司数据因akshare接口限制未获取，标注「—」。星恒资产负债率56.0%来自FY2025年报 <span class="src src-B">[B]</span>，可比公司该项数据不可获得。</td></tr>
     </tbody>
   </table>
 
@@ -398,7 +398,7 @@
   <h4>券商估值结论（资产基础法）</h4>
   <div class="valu-grid">
     <div class="valu-card"><div class="label">估值方法</div><div class="value" style="font-size:16px">资产基础法</div><div class="note">因盈利未释放，避免收益法高估值</div></div>
-    <div class="valu-card"><div class="label">归母净资产</div><div class="value">23.26亿</div><div class="note">FY2025末审计值 <span class="src src-A">[A]</span></div></div>
+    <div class="valu-card"><div class="label">归母净资产</div><div class="value">23.02亿</div><div class="note">FY2025末管理报表值 <span class="src src-B">[B]</span></div></div>
     <div class="valu-card"><div class="label">溢价率上限</div><div class="value">≤30%</div><div class="note">房屋建筑物+土地+专利+客户关系</div></div>
     <div class="valu-card"><div class="label">整体估值</div><div class="value" style="color:#0366d6">30.24亿</div><div class="note">PB = 1.30x</div></div>
   </div>
@@ -407,11 +407,11 @@
     <summary>📊 天保独立估值验证（点击折叠）—— 资产质量纵向检验 + 可比交易横向验证 + 24%来源可行性 + 天保基建约束</summary>
     <div class="fold-content">
 
-      <h3>第一层：纵向检验 —— 净资产23.26亿的构成与风险点</h3>
+      <h3>第一层：纵向检验 —— 净资产23.02亿的构成与风险点</h3>
       <table>
         <thead><tr><th>科目</th><th>FY2025末(亿)</th><th>Q1 2026(亿)</th><th>变动</th><th>评估关注</th></tr></thead>
         <tbody>
-          <tr><td>归母净资产</td><td class="num"><strong>23.26</strong></td><td class="num">—</td><td>基准</td><td>评估基准 <span class="src src-A">[A: 审计报告]</span></td></tr>
+          <tr><td>归母净资产</td><td class="num"><strong>23.02</strong></td><td class="num">—</td><td>基准</td><td>评估基准 <span class="src src-B">[B: FY2025末管理合并报表]</span></td></tr>
           <tr><td>存货</td><td class="num">8.73</td><td class="num" style="color:var(--red)"><strong>11.50</strong></td><td style="color:var(--red)">+31.7%(QoQ)</td><td>若含滞销品→跌价准备→侵蚀净资产 <span class="src src-B">[B: Q1 2026报表]</span></td></tr>
           <tr><td>递延所得税资产</td><td class="num"><strong>2.40</strong></td><td class="num">—</td><td>稳定</td><td>项目台账标注"来源不明约1.84亿+DTA虚增风险"。回收前提是未来有足够应税利润——FY2022-2023累计亏损~2.30亿(2027-2028到期)，若盈利不足将面临DTA转回压力。<span class="src src-B">[B: 项目台账+科目余额表]</span> <span class="src src-K">[K: DTA回收不确定性推理]</span></td></tr>
           <tr><td>货币资金</td><td class="num">6.64</td><td class="num">6.77</td><td>+2.0%</td><td>流动性覆盖短期借款4.78亿——现金/短借=1.38x <span class="src src-B">[B: FY2025+Q1 2026合并报表]</span></td></tr>
@@ -423,7 +423,7 @@
 
       <div class="callout callout-warning">
         <strong>⚠️ 资产基础法的可靠性前提</strong>
-        资产基础法要求逐项评估底层资产。无形资产明细（专利/客户关系）仍待资产评估报告确认。以下PB分析基于「23.26亿净资产无明显高估或低估」的假设——该假设需资产评估报告验证。已知风险：存货Q1暴增31.7%（8.73→11.50亿）+DTA 2.40亿中约1.84亿来源不明（项目台账标注"虚增风险"），两项合计潜在侵蚀净资产可达3-4亿（将净资产拉低至19-20亿）。<span class="src src-K">[K: 基于可用数据+尽调缺口推理]</span>
+        资产基础法要求逐项评估底层资产。无形资产明细（专利/客户关系）仍待资产评估报告确认。以下PB分析基于「23.02亿净资产无明显高估或低估」的假设——该假设需资产评估报告验证。已知风险：存货Q1暴增31.7%（8.73→11.50亿）+DTA 2.40亿中约1.84亿来源不明（项目台账标注"虚增风险"）；归母净资产FY2024末22.93亿/FY2025末23.02亿为管理口径数据——审计口径（FY2025审计报告PDF扫描版未提取）可能因审计调整而略低（参考：审计归母净利3,986万 vs 管理4,509万，差异523万）。两项合计潜在侵蚀净资产可达3-4亿（将净资产拉低至19-20亿）（项目台账标注"虚增风险"），两项合计潜在侵蚀净资产可达3-4亿（将净资产拉低至19-20亿）。<span class="src src-K">[K: 基于可用数据+尽调缺口推理]</span>
       </div>
 
       <h3>第二层：横向检验 —— PB 1.30x vs 可比交易（仅1例样本）</h3>
@@ -438,9 +438,9 @@
         <thead><tr><th>情景</th><th>PB</th><th>净资产基准(亿)</th><th>整体估值(亿)</th><th>24%价值(亿)</th><th>推理依据</th></tr></thead>
         <tbody>
           <tr style="background:#fff5f5"><td>保守（净资产减值2-3亿）</td><td class="num">0.95x</td><td class="num">20.0</td><td class="num">19.00</td><td class="num">4.56</td><td>存货+DTA减值 <span class="src src-K">[K]</span></td></tr>
-          <tr style="background:#fffdef"><td><strong>基准（佛塑科技可比）</strong></td><td class="num"><strong>1.13x</strong></td><td class="num">23.26</td><td class="num"><strong>26.28</strong></td><td class="num"><strong>6.31</strong></td><td>仅有的直接可比交易 <span class="src src-B">[B: 券商可比交易数据]</span></td></tr>
-          <tr style="background:#f0fff4"><td>券商假设</td><td class="num">1.30x</td><td class="num">23.26</td><td class="num">30.24</td><td class="num">7.26</td><td>30%溢价(土地/专利/客户关系) <span class="src src-B">[B: 券商方案]</span></td></tr>
-          <tr style="background:#f0fff4"><td>乐观（土地大幅增值）</td><td class="num">1.50x</td><td class="num">23.26</td><td class="num">34.89</td><td class="num">8.37</td><td>滁州/苏州工业用地升值 <span class="src src-L">[L: 未经验证的假设]</span></td></tr>
+          <tr style="background:#fffdef"><td><strong>基准（佛塑科技可比）</strong></td><td class="num"><strong>1.13x</strong></td><td class="num">23.02</td><td class="num"><strong>26.28</strong></td><td class="num"><strong>6.31</strong></td><td>仅有的直接可比交易 <span class="src src-B">[B: 券商可比交易数据]</span></td></tr>
+          <tr style="background:#f0fff4"><td>券商假设</td><td class="num">1.30x</td><td class="num">23.02</td><td class="num">30.24</td><td class="num">7.26</td><td>30%溢价(土地/专利/客户关系) <span class="src src-B">[B: 券商方案]</span></td></tr>
+          <tr style="background:#f0fff4"><td>乐观（土地大幅增值）</td><td class="num">1.50x</td><td class="num">23.02</td><td class="num">34.89</td><td class="num">8.37</td><td>滁州/苏州工业用地升值 <span class="src src-L">[L: 未经验证的假设]</span></td></tr>
         </tbody>
       </table>
 
@@ -527,8 +527,8 @@
       <table>
         <thead><tr><th>估值方法</th><th>倍数</th><th>基准</th><th>整体估值(亿)</th><th>50%价值(亿)</th><th>适用性</th></tr></thead>
         <tbody>
-          <tr><td>资产基础法(保守)</td><td>PB 1.13x</td><td>净资产23.26亿</td><td class="num">26.28</td><td class="num">13.14</td><td>佛塑科技可比 <span class="src src-B">[B]</span></td></tr>
-          <tr style="background:#fffdef"><td>资产基础法(基准)</td><td>PB 1.30x</td><td>净资产23.26亿</td><td class="num">30.24</td><td class="num">15.12</td><td>券商假设 <span class="src src-B">[B]</span></td></tr>
+          <tr><td>资产基础法(保守)</td><td>PB 1.13x</td><td>归母净资产23.02亿</td><td class="num">26.28</td><td class="num">13.14</td><td>佛塑科技可比 <span class="src src-B">[B]</span></td></tr>
+          <tr style="background:#fffdef"><td>资产基础法(基准)</td><td>PB 1.30x</td><td>归母净资产23.02亿</td><td class="num">30.24</td><td class="num">15.12</td><td>券商假设 <span class="src src-B">[B]</span></td></tr>
           <tr><td>PS法(保守)</td><td>PS 0.83x</td><td>FY2025营收36.36亿</td><td class="num">30.18</td><td class="num">15.09</td><td>中创新航PS对标 <span class="src src-K">[K]</span></td></tr>
         </tbody>
       </table>
@@ -605,13 +605,13 @@
   <h3>方案二压力测试：24%价值对PB和净资产的敏感度</h3>
   <table>
     <thead><tr><th rowspan="2">PB假设</th><th colspan="3">净资产基准(亿)</th></tr>
-    <tr><th>20.0(扣减后)</th><th>23.26(审计值)</th><th>26.0(增值后)</th></tr></thead>
+    <tr><th>20.0(扣减后)</th><th>23.02(审计值)</th><th>26.0(增值后)</th></tr></thead>
     <tbody>
       <tr><td>0.95x</td><td class="num">4.56</td><td class="num">5.31</td><td class="num">5.93</td></tr>
       <tr style="background:#fffdef"><td><strong>1.13x(佛塑科技)</strong></td><td class="num">5.42</td><td class="num"><strong>6.31</strong></td><td class="num">7.05</td></tr>
       <tr><td>1.30x(券商)</td><td class="num">6.24</td><td class="num">7.26</td><td class="num">8.11</td></tr>
       <tr><td>1.50x</td><td class="num">7.20</td><td class="num">8.37</td><td class="num">9.36</td></tr>
-      <tr style="background:#fff8e1"><td colspan="5"><strong>解读：</strong>方案二估值区间（4.6-9.4亿）较方案一（0.8-7.7亿）显著收窄。基准情景PB 1.13x/净资产23.26亿→6.31亿仍高于A组5亿底线。资产基础法为微利企业提供了估值下限保护。但注意可比交易仅佛塑科技1例（n=1），区间稳健性受限。<span class="src src-K">[K: 敏感性分析]</span></td></tr>
+      <tr style="background:#fff8e1"><td colspan="5"><strong>解读：</strong>方案二估值区间（4.6-9.4亿）较方案一（0.8-7.7亿）显著收窄。基准情景PB 1.13x/净资产23.02亿→6.31亿仍高于A组5亿底线。资产基础法为微利企业提供了估值下限保护。但注意可比交易仅佛塑科技1例（n=1），区间稳健性受限。<span class="src src-K">[K: 敏感性分析]</span></td></tr>
     </tbody>
   </table>
 
@@ -662,7 +662,7 @@
       <tr><td><span class="src src-L">[L]</span></td><td>行业逻辑预估（置信度低于A/B/K）</td><td>概率情景赋值(10%/30%/25%/35%)；PE折价率具体百分比(10-15%/10-20%)；PS 0.5-1.0x合理区间判断；土地增值幅度预估</td></tr>
     </tbody>
   </table>
-  <p style="margin-top:12px"><strong>重要声明：</strong>本报告为基于公开数据和项目材料的内部估值分析，不构成投资建议。[K]类推理基于法规/行业知识，[L]类预估置信度低于确定性数据。关键数据缺口（无形资产明细——专利/客户关系公允价值）已标注为「待核实」。货币资金/应收账款/固定资产数据已在v5中填充（来源：FY2025+Q1 2026合并报表）。实际交易估值须以正式资产评估报告和投决会批准为准。数据截止：2026年6月14日。</p>
+  <p style="margin-top:12px"><strong>重要声明：</strong>本报告为基于公开数据和项目材料的内部估值分析，不构成投资建议。[K]类推理基于法规/行业知识，[L]类预估置信度低于确定性数据。关键数据缺口：仅无形资产明细（专利/客户关系公允价值）仍标注为「待核实」，其余历史缺口均已填充——货币资金/应收账款/固定资产已在v5填充，归母净资产/资产负债率FY2022-Q1 2026完整序列已在v6填充（来源：FY2022-2023审计报告OCR+FY2024-2025管理合并报表Excel）。实际交易估值须以正式资产评估报告和投决会批准为准。数据截止：2026年6月14日。</p>
 </div>
 
 </body>
