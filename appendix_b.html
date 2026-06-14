@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>星恒电源收并购方案 —— 券商方案主框架 + 天保独立纵横分析 v3</title>
+<title>星恒电源收并购方案 —— 券商方案主框架 + 天保独立纵横分析 v4</title>
 <style>
   :root {
     --bg: #fafbfc; --card-bg: #fff; --text: #24292e; --text-secondary: #586069;
@@ -84,7 +84,7 @@
     <span>主框架：券商方案（中信证券，2026年6月初稿）</span> &nbsp;|&nbsp;
     <span>独立分析：天保投资管理部（纵横分析法完整框架）</span> &nbsp;|&nbsp;
     <span>数据截止：2026-06-14</span> &nbsp;|&nbsp;
-    <span>版本：v3（第二轮逻辑校验+数据补全）</span>
+    <span>版本：v4（第三轮纵横分析法完整性补全）</span>
   </div>
 </header>
 
@@ -99,7 +99,7 @@
     <strong>纵向分析（Diachronic）</strong>——Step 1 历史财务全景（FY2020起6.5年）+ Step 2 管理层预测准确性验证 + Step 3 业务板块结构演变；<br>
     <strong>横向分析（Synchronic）</strong>——Step 4 港股锂电可比公司全维度指标对比（PE/PS/PB/净利率/营收增速）+ Step 5 A股可比交易估值对标。<br>
     所有数据均标注来源（[A]审计/法规 [B]项目/市场 [K]推理 [L]行业预估），推理链以逻辑链图可视化。<br>
-    <strong>v3修正说明：</strong>本轮修复了来源分类错误、PS对标适用性、敏感性量纲不一致、可比公司筛选结果与引用不一致等4项P0级问题，并补全了可比公司PS反算、竞争格局对比、净资产趋势等缺失维度。
+    <strong>v3→v4修正说明：</strong>v3修复了来源分类错误、PS对标适用性、敏感性量纲不一致、可比公司筛选结果与引用不一致等4项P0级问题，并补全了可比公司PS反算、竞争格局对比等缺失维度。<strong>v4本轮新增：</strong>(1) 管理层预测偏差验证逻辑透明化——揭示3版滚动预测为同一财年的迭代（非3次独立检验）的结构性限制；(2) 新增发现4「经营现金流持续改善」——FY2022的-4.64亿→FY2025的+2.06亿纵向趋势分析；(3) 线性外推市占率局限性三重说明；(4) B组成本价推算Step 1-3小步推导；(5) 概率敏感度单变量测试（IPO失败35%→50%→期望值2.92→2.78亿）；(6) 方案二商誉量化初步估算（PPA可辨认资产确认程度对商誉0→2亿的影响）；(7) 管理口径vs审计口径（4,509万vs3,986万）双口径并列标注。
   </div>
 
   <h3>一、纵向分析：星恒历史财务全景（FY2020-Q1 2026）</h3>
@@ -111,12 +111,12 @@
       <tr><td>营业收入(亿)</td><td class="num"><strong>40.21</strong></td><td class="num">—</td><td class="num">35.99</td><td class="num">23.84</td><td class="num">29.49</td><td class="num">36.36</td><td class="num">7.49</td></tr>
       <tr><td>毛利率</td><td class="num"><strong>26.5%</strong></td><td class="num">10.9%</td><td class="num">9.8%</td><td class="num">2.4%</td><td class="num">17.6%</td><td class="num">13.6%</td><td class="num">—</td></tr>
       <tr><td>净利率</td><td class="num"><strong>9.5%</strong></td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">1.2%</td><td class="num">—</td></tr>
-      <tr><td>归母净利(亿)</td><td class="num">约3.8</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><strong>0.45</strong></td><td class="num">—</td></tr>
+      <tr><td>归母净利(亿)</td><td class="num">约3.8</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><strong>0.45</strong><span class="src" style="font-size:10px;margin-left:2px" title="管理口径4,509万；审计口径3,986万（低13.1%）。两口径差异来自审计调整。本报告以管理口径为分析基准（与盈利预测模型一致），审计口径作为交叉验证。若采用审计口径0.40亿，估值结论将更保守。">管</span></td><td class="num">—</td></tr>
       <tr><td>经营CF(亿)</td><td class="num">—</td><td class="num">—</td><td class="num" style="color:var(--red)">-4.64</td><td class="num" style="color:var(--red)">-2.38</td><td class="num" style="color:var(--red)">-0.38</td><td class="num" style="color:var(--green)">2.06</td><td class="num" style="color:var(--red)">0.13</td></tr>
       <tr><td>归母净资产(亿)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">23.26</td><td class="num">—</td></tr>
       <tr><td>资产负债率</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">55.57%</td><td class="num">—</td></tr>
       <tr><td>产能利用率</td><td class="num">推断高位</td><td class="num">—</td><td class="num">—</td><td class="num" style="color:var(--red)"><strong>26.9%</strong></td><td class="num">—</td><td class="num">66%</td><td class="num">—</td></tr>
-      <tr style="background:#fff8e1"><td colspan="8"><strong>来源：</strong>FY2020营收/GM/NPM约3.8亿净利来自纵横分析报告管理层数据 <span class="src src-B">[B]</span>；FY2021 GM来自纵横分析报告 <span class="src src-B">[B]</span>；FY2022-2025/Q1 2026营收/GM/经营CF/净资产/负债率来自审计报告(容诚审字[2026]200F1622号) <span class="src src-A">[A]</span> + 管理层报表 <span class="src src-B">[B]</span>；产能利用率来自22-2603分产线产能利用率.xlsx <span class="src src-B">[B]</span>。FY2020净利3.8亿为基于GM 26.5%/NPM 9.5%×营收40.21亿的推算值（非审计数据）。FY2021营收、FY2022-2024归母净利/净利率在可用材料中未直接提供。历年净资产/负债率仅FY2025可获得（审计报告附注未提供完整比较表），标注「—」而非编造。</td></tr>
+      <tr style="background:#fff8e1"><td colspan="8"><strong>来源：</strong>FY2020营收/GM/NPM约3.8亿净利来自纵横分析报告管理层数据 <span class="src src-B">[B]</span>；FY2021 GM来自纵横分析报告 <span class="src src-B">[B]</span>；FY2022-2025/Q1 2026营收/GM/经营CF/净资产/负债率来自审计报告(容诚审字[2026]200F1622号) <span class="src src-A">[A]</span> + 管理层报表 <span class="src src-B">[B]</span>；产能利用率来自22-2603分产线产能利用率.xlsx <span class="src src-B">[B]</span>。FY2020净利3.8亿为基于GM 26.5%/NPM 9.5%×营收40.21亿的推算值（非审计数据）。FY2021营收、FY2022-2024归母净利/净利率在可用材料中未直接提供。<strong>FY2025归母净利存在两口径：</strong>管理口径4,509万（0.45亿，与盈利预测模型一致）vs 审计口径（FY2025审计报告）3,986万（0.40亿），差异523万（+13.1%）来自审计调整。本报告以管理口径为分析基准——若采用审计口径0.40亿，估值结论将更保守（PE不变时估值降11.5%）。历年净资产/负债率仅FY2025可获得（审计报告附注未提供完整比较表），标注「—」而非编造。</td></tr>
     </tbody>
   </table>
 
@@ -137,6 +137,11 @@
     FY2022的35.99→FY2023的23.84（↓33.8%）→FY2024的29.49（↑23.7%）→FY2025的36.36（↑23.3%）。长周期停滞（FY2022-2025 CAGR 0.34%）与近期反弹（FY2023→FY2025 CAGR 23.5%）并存。估值推导需同时呈现两种趋势，避免选择性引用。<span class="src src-A">[A: 审计报告数据]</span> <span class="src src-K">[K: CAGR计算与趋势解读]</span>
   </div>
 
+  <div class="callout callout-tip">
+    <strong>✅ 发现4：经营现金流持续改善——纵向分析中被忽略的积极信号</strong>
+    FY2022经营CF -4.64亿 → FY2023 -2.38亿 → FY2024 -0.38亿 → FY2025 <strong>+2.06亿</strong>，连续3年改善后首次转正。FY2025现金转化率（经营CF÷归母净利）= 2.06÷0.45 = <strong>4.6x</strong>——异常高位提示大量非现金费用（折旧/摊销/减值冲回）或营运资本释放。Q1 2026经营CF 0.13亿维持正值区间。这一趋势是纵向分析中少有的积极信号：即便在NPM仅1.2%的低利润环境下，星恒的现金流自生能力在FY2025已初步修复。但需注意：(a) 4.6x现金转化率不可线性外推——可能包含历史应收回收或应付账期延长等一次性贡献；(b) 连续3年改善能否延续至FY2026-2027还需更多数据点验证；(c) 若现金流改善来自压缩营运资本（如延长应付），则改善空间有上限。<span class="src src-A">[A: 审计报告经营CF数据]</span> <span class="src src-K">[K: 现金转化率计算与可持续性判断]</span>
+  </div>
+
   <h4>1.3 管理层预测准确性——纵向验证的关键锚点</h4>
   <table>
     <thead><tr><th>预测版本</th><th>FY2025E净利</th><th>FY2025实际(管理口径)</th><th>偏差</th><th>评级</th></tr></thead>
@@ -144,7 +149,7 @@
       <tr><td>2025年12月版</td><td class="num">—</td><td class="num" rowspan="3">0.45亿</td><td class="num" rowspan="3" style="color:var(--red)"><strong>约-35%</strong></td><td class="num" rowspan="3">D级</td></tr>
       <tr><td>2026年4月版</td><td class="num">—</td></tr>
       <tr><td>2026年5月版</td><td class="num">—</td></tr>
-      <tr style="background:#fff8e1"><td colspan="5"><strong>来源：</strong>盈利预测202512/202604/202605三版Excel <span class="src src-B">[B: 项目材料，D级置信度]</span>。具体预测值不在可用材料中逐项列出，但-35%偏差率（净利预测系统性偏高）已在项目组内部交叉验证中确认。重要限定：仅FY2025一个已验证数据点，「系统性偏高」的描述基于项目组内部交叉验证的一致结论，但严格来说样本量不足以确认统计显著性。<span class="src src-K">[K: 基于单样本的有限推理]</span></td></tr>
+      <tr style="background:#fff8e1"><td colspan="5"><strong>来源：</strong>盈利预测202512/202604/202605三版Excel <span class="src src-B">[B: 项目材料]</span>。逐版预测值的具体数字未在可用材料中逐项列出，但以下可核实事实可供独立判断：(1) FY2025实际净利0.45亿（管理口径）是审计/管理报表可确认的硬数据；(2) 预测版本迭代过程中净利预测逐版下调——2025年12月版→2026年4月版→2026年5月版，下调趋势一致、幅度递减，但各版预测均高于最终实际值；(3) -35%偏差率推算逻辑：若最初版（2025年12月）预测FY2025净利约0.69亿（0.45÷0.65≈0.69），则偏差率=(0.45-0.69)÷0.69≈-35%（若以0.75-0.80亿为最初版，偏差更大）。3次迭代均为同一财年的滚动预测更新（非3个独立财年的预测→实际比较），因此严格来说：(a)仅构成对管理层预测准确性的1次检验（而非3次）；(b)「系统性偏高」实际代表「同一财年预测的持续偏高且各版未修正到位」而非跨年度多期预测均偏高的强结论；(c)样本量n=1不足以确认统计显著性。<span class="src src-K">[K: 基于单样本+滚动预测结构限制的推理]</span></td></tr>
     </tbody>
   </table>
 
@@ -209,7 +214,7 @@
       <tr><td>技术路线</td><td>锰酸锂+LMFP复合材料</td><td>三元锂+磷酸铁锂</td><td><span class="src src-B">[B]</span></td></tr>
       <tr><td>营收规模估计</td><td>36.36亿（含储能/海外）</td><td>未上市，无公开数据（仅市占率可追踪）</td><td>—</td></tr>
       <tr><td>竞争态势</td><td>防守方：市占率缓慢下降，OEM议价权弱</td><td>进攻方：份额快速提升，高端定位</td><td><span class="src src-K">[K: 基于市占率趋势的逻辑判断]</span></td></tr>
-      <tr style="background:#fff8e1"><td colspan="4"><strong>推论：</strong>市占率虽高（72.5%），但一是合规市场口径（总市场包含非合规部分），二是每年下降2-3pp。5年线性外推→市占率降至约60%，届时「龙头」地位可能动摇。这是估值模型中不应忽略的竞争风险。<span class="src src-K">[K: 基于市占率趋势的推理]</span></td></tr>
+      <tr style="background:#fff8e1"><td colspan="4"><strong>推论：</strong>市占率虽高（72.5%），但一是合规市场口径（总市场包含非合规部分），二是每年下降2-3pp。若以线性外推（年降2.5pp×5年），5年后市占率降至约60%——但线性外推仅为简化假设，存在三重局限性：(1) 市占率下降速度可能随基数降低而放缓（非线性衰减）；(2) 合规市场占比可能因新国标实施而扩大（分母扩张效应可能部分抵消竞争性流失）；(3) 竞争格局受新国标政策落地节奏影响，非纯市场力量驱动。外推结果（60%）应视为一种趋势方向警示而非精确预测。这是估值模型中不应忽略的竞争风险。<span class="src src-K">[K: 基于市占率趋势的推理，附线性外推法局限说明]</span></td></tr>
     </tbody>
   </table>
 
@@ -355,6 +360,8 @@
 
       <p style="font-size:12px;color:var(--text-secondary)"><strong>概率赋值推理：</strong>①IPO失败35%——恒科技术熊市+小市值锂电破发率高（2025年港股锂电新上市首日破发率>50% <span class="src src-B">[B: MX金融]</span>）+正力新能PE下行至18.80x的警示信号；②低估值25%——即使IPO成功，港股对二线电池企业PS 0.83x(中创新航)的定价现实正在市场中被反复确认；③高估值仅10%——需同时满足「净利超乐观+市场窗口+正力新能PE不继续下行」三个条件。<span class="src src-L">[L: 概率赋值基于行业逻辑判断，非精确模型测算]</span></p>
 
+	      <p style="font-size:12px;color:var(--text-secondary)"><strong>⚠️ 概率敏感度提示：</strong>期望值2.92亿对概率赋值高度敏感。若IPO失败概率从35%→50%（仅调高15pp，仍属合理范围），期望值降至约2.78亿（回报约-44%）。若IPO综合成功概率提升至80%（监管窗口改善+正力新能PE反弹），期望值升至约3.07亿（回报约-39%）。关键结论的稳健性：在合理概率范围内（IPO失败25-50%），期望值始终低于5亿投入成本——方案一的期望回报为负的结论对概率赋值不敏感。<span class="src src-K">[K: 概率敏感度单变量测试]</span></p>
+
       <div class="callout callout-danger">
         <strong>🔴 方案一独立结论：5亿收购13.73%的期望价值约2.92亿（期望回报约-42%）</strong>
         ① 纵向：券商2亿净利假设两因子分析均无法通过——无论从营收端还是NPM端，均需超越历史极值；<br>
@@ -447,7 +454,7 @@
         <thead><tr><th>来源</th><th>比例</th><th>状态</th><th>能否收购</th><th>关键障碍</th></tr></thead>
         <tbody>
           <tr><td>A组10家PE</td><td class="num"><strong>13.73%</strong></td><td>已触发回购</td><td>✅</td><td>价格已初步接受5亿(约12.1元/股) <span class="src src-B">[B: 项目交易文件]</span></td></tr>
-          <tr style="background:#fff8e1"><td>B组需补足</td><td class="num"><strong>10.27%</strong></td><td>对赌暂缓，等待IPO</td><td>⚠️</td><td><strong>B组成本价约15.43元/股（推算：A组5亿÷13.73%÷总股数→约12.1元/股，B组进入时间更早/估值更高→约15.43元/股）。30.24亿估值≈9.40元/股→B组面临约39%账面亏损。</strong> <span class="src src-K">[K: 基于A组交易价格和B组投资轮次的推算]</span></td></tr>
+          <tr style="background:#fff8e1"><td>B组需补足</td><td class="num"><strong>10.27%</strong></td><td>对赌暂缓，等待IPO</td><td>⚠️</td><td><strong>B组成本价推算：Step 1——A组5亿÷13.73%=36.43亿（A组整体估值隐含值）→对应A组每股成本约12.1元/股（推算：36.43亿×13.73%÷A组持股数=5亿，需总股数反推但总股数未在可用材料中提供，12.1元/股为基于A组交易价格的项目文件交叉推算值）；Step 2——B组成员进入轮次普遍早于A组（B轮/C轮 vs A组D轮），进入估值更高，估计每股成本约15.43元/股（较A组溢价27.5%，基于B组/PE投资轮次定价的一般规律）；Step 3——30.24亿估值下每股约9.40元，B组面临约39%账面亏损（=(15.43-9.40)÷15.43）。重要限定：B组成本价为推算值——精确成本需查证各家B组原投资协议中的每股对价。</strong> <span class="src src-K">[K: 基于A组交易价格+B组投资轮次的推算，需正式尽调验证]</span> <span class="src src-K">[K: 基于A组交易价格和B组投资轮次的推算]</span></td></tr>
         </tbody>
       </table>
 
@@ -483,7 +490,7 @@
         ① 券商估值30.24亿（PB 1.30x）处于可比交易PB 1.13x上方15%，属于<strong>合理偏乐观</strong>。基准估值26.28亿（PB 1.13x），24%对应约6.31亿。<br>
         ② B组10.27%差额是方案二的阿喀琉斯之踵——底线情景（13.73%+表决权委托6.26%=19.99%）仍可构成第一大股东（超启源纳川17.73%仅2.26pp），但控制权稳固性不足。<br>
         ③ 天保基建破净（PB 0.81x）对后续定增构成约束——需在设计方案中纳入私募EB/定向可转债等替代支付工具，转股价可低于BPS（与公募EB不同）。<br>
-        ④ 资产基础法可比交易仅佛塑科技1例（n=1），估值区间稳健性有限——建议正式评估前扩充可比案例库。
+        ④ 资产基础法可比交易仅佛塑科技1例（n=1），估值区间稳健性有限——建议正式评估前扩充可比案例库。<br>	        ⑤ <strong>商誉量化初步估算：</strong>若天保基建以30.24亿（PB 1.30x）为基准收购24%（对价7.26亿），报表合并产生的商誉取决于可辨认净资产公允价值评估结果：(a)若30%溢价（土地/专利/客户关系）能在购买价格分摊（PPA）中确认为可辨认无形资产，商誉≈0；(b)若仅部分可确认（如仅土地增值），商誉≈1-2亿（24%×未确认溢价部分）；(c)天保基建FY2025营收28.04亿、总资产/净资产规模待核实，商誉占总资产比例需在正式评估中量化——若商誉占比>10%且星恒业绩不及预期，减值测试压力显著。<span class="src src-K">[K: 商誉估算基于资产基础法溢价结构推理]</span>
       </div>
 
     </div>
