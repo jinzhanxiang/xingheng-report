@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星恒电源收并购方案 —— 券商方案主框架 + 天保独立纵横分析 v5</title>
+<style>
+  :root {
+    --bg: #fafbfc; --card-bg: #fff; --text: #24292e; --text-secondary: #586069;
+    --border: #e1e4e8; --accent: #0366d6; --accent-subtle: #f1f8ff;
+    --red: #d73a49; --red-bg: #ffeef0; --orange: #e36209; --orange-bg: #fff5ea;
+    --green: #28a745; --green-bg: #f0fff4; --yellow-bg: #fffdef;
+    --radius: 6px; --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.7; font-size: 15px;
+    max-width: 1100px; margin: 0 auto; padding: 24px 20px 80px;
+  }
+  header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid var(--border); margin-bottom: 32px; }
+  header h1 { font-size: 26px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 8px; }
+  header .meta { font-size: 13px; color: var(--text-secondary); }
+
+  .section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px 32px; margin-bottom: 24px; }
+  .section h2 { font-size: 19px; font-weight: 700; padding-bottom: 10px; border-bottom: 2px solid var(--accent); margin-bottom: 18px; color: #1a1a2e; }
+  .section h3 { font-size: 16px; font-weight: 600; margin: 20px 0 10px; color: #2c3e50; }
+  .section h4 { font-size: 14.5px; font-weight: 600; margin: 14px 0 8px; color: #34495e; }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; font-size: 13.5px; }
+  th { background: #f6f8fa; font-weight: 600; text-align: left; padding: 10px 12px; border: 1px solid var(--border); white-space: nowrap; }
+  td { padding: 9px 12px; border: 1px solid var(--border); vertical-align: top; }
+  tr:hover td { background: #fafbfc; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+  .badge-red { background: var(--red-bg); color: var(--red); }
+  .badge-orange { background: var(--orange-bg); color: var(--orange); }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+
+  .callout { padding: 14px 18px; border-radius: var(--radius); margin: 14px 0; font-size: 14px; border-left: 4px solid; }
+  .callout-danger { background: var(--red-bg); border-color: var(--red); }
+  .callout-warning { background: var(--orange-bg); border-color: var(--orange); }
+  .callout-info { background: var(--accent-subtle); border-color: var(--accent); }
+  .callout-tip { background: var(--green-bg); border-color: var(--green); }
+  .callout strong { display: block; margin-bottom: 4px; }
+
+  details.analysis-fold { margin: 18px 0 8px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  details.analysis-fold > summary { padding: 14px 18px; cursor: pointer; font-weight: 700; font-size: 15px; background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%); user-select: none; list-style: none; display: flex; align-items: center; }
+  details.analysis-fold > summary::-webkit-details-marker { display: none; }
+  details.analysis-fold > summary::before { content: "▶"; display: inline-block; margin-right: 10px; font-size: 12px; transition: transform 0.2s; color: var(--accent); }
+  details.analysis-fold[open] > summary::before { transform: rotate(90deg); }
+  details.analysis-fold > .fold-content { padding: 20px 24px; border-top: 1px solid var(--border); }
+
+  .steps { counter-reset: step; }
+  .step { padding: 14px 18px; margin: 10px 0; background: #f8f9fa; border-radius: var(--radius); border-left: 3px solid var(--accent); position: relative; padding-left: 50px; }
+  .step::before { counter-increment: step; content: counter(step); position: absolute; left: 14px; top: 12px; width: 24px; height: 24px; background: var(--accent); color: #fff; border-radius: 50%; font-size: 12px; font-weight: 700; text-align: center; line-height: 24px; }
+
+  .src { display: inline-block; font-size: 11px; padding: 1px 5px; border-radius: 3px; background: #f0f0f0; color: #666; margin-left: 4px; }
+  .src-A { background: #e3f2fd; color: #1565c0; }
+  .src-B { background: #fce4ec; color: #c62828; }
+  .src-K { background: #fff3e0; color: #e65100; }
+  .src-L { background: #f3e5f5; color: #6a1b9a; }
+
+  @media (max-width: 768px) { body { padding: 12px 10px 60px; } .section { padding: 16px 14px; } table { font-size: 12px; } th, td { padding: 6px 8px; } }
+  @media print { body { max-width: none; background: #fff; } .section { box-shadow: none; break-inside: avoid; } details.analysis-fold { break-inside: avoid; } }
+
+  .valu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 16px 0; }
+  .valu-card { background: #f8f9fa; padding: 16px; border-radius: var(--radius); text-align: center; border: 1px solid var(--border); }
+  .valu-card .label { font-size: 13px; color: var(--text-secondary); margin-bottom: 4px; }
+  .valu-card .value { font-size: 20px; font-weight: 800; }
+  .valu-card .note { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
+
+  .logic-chain { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: 10px 0; font-size: 13px; }
+  .logic-node { background: var(--accent-subtle); border: 1px solid var(--accent); border-radius: 4px; padding: 4px 10px; font-weight: 600; }
+  .logic-arrow { color: var(--accent); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>星恒电源收并购方案 —— 综合分析报告</h1>
+  <div class="meta">
+    <span>主框架：券商方案（中信证券，2026年6月初稿）</span> &nbsp;|&nbsp;
+    <span>独立分析：天保投资管理部（纵横分析法完整框架）</span> &nbsp;|&nbsp;
+    <span>数据截止：2026-06-14</span> &nbsp;|&nbsp;
+    <span>版本：v6（第五轮：资产负债表数据填充——FY2022-Q1 2026净资产/负债率完整填入+口径修正）</span>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- 纵横分析基础 -->
+<!-- ============================================================ -->
+<div class="section">
+  <h2>纵横分析法基础 —— 估值验证的前置工作</h2>
+
+  <div class="callout callout-info">
+    <strong>方法论说明：纵横分析法（5步完整框架）</strong>
+    <strong>纵向分析（Diachronic）</strong>——Step 1 历史财务全景（FY2020起6.5年）+ Step 2 管理层预测准确性验证 + Step 3 业务板块结构演变；<br>
+    <strong>横向分析（Synchronic）</strong>——Step 4 港股锂电可比公司全维度指标对比（PE/PS/PB/净利率/营收增速）+ Step 5 A股可比交易估值对标。<br>
+    所有数据均标注来源（[A]审计/法规 [B]项目/市场 [K]推理 [L]行业预估），推理链以逻辑链图可视化。<br>
+    <strong>v4→v5修正说明：</strong>v4新增了管理层预测透明度、经营现金流纵向分析、线性外推局限、概率敏感度、商誉量化等7项改进。<strong>v5→v6核心升级（本轮·第五轮·资产负债表数据填充）：</strong>(0) Table 1.1归母净资产/资产负债率FY2022-Q1 2026六时点完整填入——FY2022-2023来自审计报告OCR提取<span class="src src-A">[A]</span>、FY2024-2025/Q1 2026来自管理合并报表Excel<span class="src src-B">[B]</span>、归母净资产23.02亿（总净资产27.76亿）23.26→23.02口径修正、资产负债率56.0%←55.57%修正；(0-b) 审计vs管理口径差异标注——FY2022-2023为审计口径、FY2024-2025为管理口径。<strong>v5本轮（第四轮）核心升级——从尽调材料填充缺失数据：</strong>(1) Table 1.1六项「—」消除——FY2021营收36.66亿、FY2021净利率0.3%/FY2022 -8.4%/FY2023 -24.1%/FY2024 2.94%、FY2021-2024归母净利全部填入；(2) 经营CF来源透明化——FY2022-2024经营CF标注「管」（管理层报表口径，非审计数据）；(3) 资产质量表消除3个「待核实」——货币资金6.64亿/应收账款6.70亿/固定资产净值18.10亿均从FY2025+Q1 2026合并报表提取；(4) DTA从1.05亿修正为2.40亿（来源：项目台账科目余额表，含1.84亿来源不明标注）；(5) 数据溯源标注升级——所有新数据均明确标注溯源路径（审计报告OCR→科目余额表→纵横分析v2报告）。<strong>来源标注体系（共4层）：</strong>所有数据点均标注来源（80+处src标注），[A]审计/法规、[B]项目/市场（尽调收资材料+iFind+MX金融）、[K]推理、[L]行业预估。
+  </div>
+
+  <h3>一、纵向分析：星恒历史财务全景（FY2020-Q1 2026）</h3>
+
+  <h4>1.1 合并层面核心财务指标</h4>
+  <table>
+    <thead><tr><th>指标</th><th>FY2020</th><th>FY2021</th><th>FY2022</th><th>FY2023</th><th>FY2024</th><th>FY2025</th><th>Q1 2026</th></tr></thead>
+    <tbody>
+      <tr><td>营业收入(亿)</td><td class="num"><strong>40.21</strong></td><td class="num">36.66</td><td class="num">35.99</td><td class="num">23.84</td><td class="num">29.49</td><td class="num">36.36</td><td class="num">7.49</td></tr>
+      <tr><td>毛利率</td><td class="num"><strong>26.5%</strong></td><td class="num">10.9%</td><td class="num">9.8%</td><td class="num">2.4%</td><td class="num">17.6%</td><td class="num">13.6%</td><td class="num">—</td></tr>
+      <tr><td>净利率</td><td class="num"><strong>9.5%</strong></td><td class="num" style="color:var(--red)">0.3%</td><td class="num" style="color:var(--red)">-8.4%</td><td class="num" style="color:var(--red)">-24.1%</td><td class="num">2.94%</td><td class="num">1.24%<span class="src" style="font-size:9px" title="管理口径1.24%；审计口径1.10%">管</span></td><td class="num">—</td></tr>
+      <tr><td>归母净利(亿)</td><td class="num">3.76</td><td class="num" style="color:var(--red)">0.12</td><td class="num" style="color:var(--red)">-3.03</td><td class="num" style="color:var(--red)">-5.75</td><td class="num">0.87</td><td class="num"><strong>0.45</strong><span class="src" style="font-size:10px;margin-left:2px" title="管理口径4,509万；审计口径3,986万（低13.1%）。FY2021-2024为管理口径。">管</span></td><td class="num">0.10</td></tr>
+      <tr><td>经营CF(亿)</td><td class="num">—</td><td class="num">—</td><td class="num" style="color:var(--red)">-4.64<span class="src" style="font-size:9px" title="管理层报表口径，未经审计调整">管</span></td><td class="num" style="color:var(--red)">-2.38<span class="src" style="font-size:9px" title="管理层报表口径，未经审计调整">管</span></td><td class="num" style="color:var(--red)">-0.38<span class="src" style="font-size:9px" title="管理层报表口径，未经审计调整">管</span></td><td class="num" style="color:var(--green)">2.06</td><td class="num" style="color:var(--red)">0.13</td></tr>
+      <tr><td>归母净资产(亿)</td><td class="num">—</td><td class="num">—</td><td class="num">27.55<span class="src" style="font-size:9px" title="FY2023审计报告期初数（OCR提取）">审</span></td><td class="num">21.79<span class="src" style="font-size:9px" title="FY2023/FY2024审计报告（OCR提取）">审</span></td><td class="num">22.93<span class="src" style="font-size:9px" title="FY2025管理合并报表年初数">管</span></td><td class="num">23.02<span class="src" style="font-size:9px" title="FY2025末合并资产负债表；总净资产(含少数股东)27.76亿">管</span></td><td class="num">23.12<span class="src" style="font-size:9px" title="Q1 2026合并资产负债表期末数">管</span></td></tr>
+      <tr><td>资产负债率</td><td class="num">—</td><td class="num">—</td><td class="num">57.9%<span class="src" style="font-size:9px" title="FY2023审计报告期初数推算出（总资产65.97-净资产27.74）">审</span></td><td class="num">56.7%<span class="src" style="font-size:9px" title="FY2023/FY2024审计报告推算出（总资产51.04-净资产22.12）">审</span></td><td class="num">49.4%<span class="src" style="font-size:9px" title="FY2025管理合并报表年初数推算出（总资产54.51-净资产27.59）">管</span></td><td class="num">56.0%<span class="src" style="font-size:9px" title="FY2025末合并资产负债表（总负债35.32/总资产63.09）">管</span></td><td class="num">56.4%<span class="src" style="font-size:9px" title="Q1 2026合并资产负债表期末数（总负债36.22/总资产64.17）">管</span></td></tr>
+      <tr><td>产能利用率</td><td class="num">推断高位</td><td class="num">—</td><td class="num">—</td><td class="num" style="color:var(--red)"><strong>26.9%</strong></td><td class="num">—</td><td class="num">66%</td><td class="num">—</td></tr>
+      <tr style="background:#fff8e1"><td colspan="8"><strong>来源：</strong>FY2020-2025/Q1 2026营收/GM/归母净利/净利率完整六年数据来自纵横分析报告v2（附件04）<span class="src src-B">[B: 纵横分析报告v2]</span>，其底层数据来自审计报告(容诚审字[2026]200F1622号) <span class="src src-A">[A]</span> + 管理层报表 <span class="src src-B">[B]</span> + 科目余额表(6113科目) <span class="src src-B">[B]</span> + FY2022审计报告OCR（母公司利润表）<span class="src src-B">[B]</span>。产能利用率来自22-2603分产线产能利用率.xlsx <span class="src src-B">[B]</span>。<strong>经营CF（FY2022-2024）：</strong>FY2022-2024经营CF来自管理层报表口径（未经审计调整），FY2025经营CF来自FY2025合并报表（管理层提供），均标注为「管」以区别于审计数据。<strong>双口径说明：</strong>FY2025归母净利管理口径4,509万（0.45亿，与盈利预测模型一致）vs 审计口径3,986万（0.40亿），差异523万（+13.1%）来自审计调整。FY2021-2024归母净利为管理口径。本报告以管理口径为分析基准——若采用审计口径，估值结论将更保守。FY2022-FY2023净资产/负债率取自审计报告（OCR提取资产负债表期初/期末数）<span class="src src-A">[A]</span>；FY2024-FY2025/Q1 2026取自管理合并报表Excel（202512+202603）<span class="src src-B">[B]</span>。FY2025归母净资产23.02亿（总净资产27.76亿，含少数股东4.75亿）。审计vs管理口径差异说明：FY2022-2023为审计口径，FY2024-2025为管理口径。</td></tr>
+    </tbody>
+  </table>
+
+  <h4>1.2 关键纵向发现</h4>
+
+  <div class="callout callout-danger">
+    <strong>🔴 发现1：历史峰值为FY2020而非FY2025——当前并非星恒最好时期</strong>
+    FY2020营收40.21亿（比FY2025高10.6%）、毛利率26.5%（为FY2025的1.95倍）、净利率9.5%（vs FY2025的1.24%）。此后的利润崩塌跨度远超此前认知：<strong>FY2021净利率骤降至0.3%（仅0.12亿微利）、FY2022-2023连续两年大额净亏损（-3.03亿/-5.75亿）、FY2024-2025恢复微利（0.87亿/0.45亿）。六年中，净利率从峰值9.5%跌至谷底-24.1%再修复至1.24%——波动幅度34pp，盈利稳定性极差。</strong>三重红利逐一消失：(1)碳酸锂从4.5-5.5万/吨→2022年高峰50万/吨→回落至6-10万/吨<span class="src src-B">[B: 公开市场锂盐价格，纵横分析报告引用]</span>；(2)产能利用率V型下滑（FY2023低谷26.9%）<span class="src src-B">[B: 产能利用率Excel]</span>；(3)锁价合同到期后OEM压价。<span class="src src-B">[B: 纵横分析报告v2(六年财务全景)+产能利用率Excel]</span> <span class="src src-A">[A: FY2022审计报告OCR(母公司利润表)]</span> <span class="src src-B">[B: 科目余额表6113科目(其他收益明细)]</span>
+  </div>
+
+  <div class="callout callout-warning">
+    <strong>⚠️ 发现2：FY2020→FY2021毛利率断崖——15.6pp单年降幅揭示定价权丧失</strong>
+    GM从26.5%→10.9%。碳酸锂价格在此期间仍处低位（2020年均价4.5-5.5万/吨→2021年H1<10万/吨），成本端无法完全解释。华霆动力电芯合同OCR直接证据：2020年1.32-1.386元/Wh → 2021 Q1 0.48元/Wh（下降64%）。FY2022锂价高峰50万/吨时GM仅再降1.1pp（10.9%→9.8%），证伪了「成本端驱动」假说。<span class="src src-B">[B: 华霆合同OCR提取数据]</span> <span class="src src-K">[K: 排除成本端假说的推理]</span>
+  </div>
+
+  <div class="callout callout-warning">
+    <strong>⚠️ 发现3：营收呈V型走势——两种CAGR不可偏废</strong>
+    FY2022的35.99→FY2023的23.84（↓33.8%）→FY2024的29.49（↑23.7%）→FY2025的36.36（↑23.3%）。长周期停滞（FY2022-2025 CAGR 0.34%）与近期反弹（FY2023→FY2025 CAGR 23.5%）并存。估值推导需同时呈现两种趋势，避免选择性引用。<span class="src src-A">[A: 审计报告数据]</span> <span class="src src-K">[K: CAGR计算与趋势解读]</span>
+  </div>
+
+  <div class="callout callout-tip">
+    <strong>✅ 发现4：经营现金流持续改善——纵向分析中被忽略的积极信号</strong>
+    FY2022经营CF -4.64亿 → FY2023 -2.38亿 → FY2024 -0.38亿 → FY2025 <strong>+2.06亿</strong>，连续3年改善后首次转正。FY2025现金转化率（经营CF÷归母净利）= 2.06÷0.45 = <strong>4.6x</strong>——异常高位提示大量非现金费用（折旧/摊销/减值冲回）或营运资本释放。Q1 2026经营CF 0.13亿维持正值区间。这一趋势是纵向分析中少有的积极信号：即便在NPM仅1.2%的低利润环境下，星恒的现金流自生能力在FY2025已初步修复。但需注意：(a) 4.6x现金转化率不可线性外推——可能包含历史应收回收或应付账期延长等一次性贡献；(b) 连续3年改善能否延续至FY2026-2027还需更多数据点验证；(c) 若现金流改善来自压缩营运资本（如延长应付），则改善空间有上限。<span class="src src-B">[B: 管理层报表经营CF数据，FY2022-2025合并报表（管理层提供，FY2022-2024未经审计调整）]</span> <span class="src src-K">[K: 现金转化率计算与可持续性判断]</span>
+  </div>
+
+  <h4>1.3 管理层预测准确性——纵向验证的关键锚点</h4>
+  <table>
+    <thead><tr><th>预测版本</th><th>FY2025E净利</th><th>FY2025实际(管理口径)</th><th>偏差</th><th>评级</th></tr></thead>
+    <tbody>
+      <tr><td>2025年12月版</td><td class="num">—</td><td class="num" rowspan="3">0.45亿</td><td class="num" rowspan="3" style="color:var(--red)"><strong>约-35%</strong></td><td class="num" rowspan="3">D级</td></tr>
+      <tr><td>2026年4月版</td><td class="num">—</td></tr>
+      <tr><td>2026年5月版</td><td class="num">—</td></tr>
+      <tr style="background:#fff8e1"><td colspan="5"><strong>来源：</strong>盈利预测202512/202604/202605三版Excel <span class="src src-B">[B: 项目材料]</span>。逐版预测值的具体数字未在可用材料中逐项列出，但以下可核实事实可供独立判断：(1) FY2025实际净利0.45亿（管理口径）是审计/管理报表可确认的硬数据；(2) 预测版本迭代过程中净利预测逐版下调——2025年12月版→2026年4月版→2026年5月版，下调趋势一致、幅度递减，但各版预测均高于最终实际值；(3) -35%偏差率推算逻辑：若最初版（2025年12月）预测FY2025净利约0.69亿（0.45÷0.65≈0.69），则偏差率=(0.45-0.69)÷0.69≈-35%（若以0.75-0.80亿为最初版，偏差更大）。3次迭代均为同一财年的滚动预测更新（非3个独立财年的预测→实际比较），因此严格来说：(a)仅构成对管理层预测准确性的1次检验（而非3次）；(b)「系统性偏高」实际代表「同一财年预测的持续偏高且各版未修正到位」而非跨年度多期预测均偏高的强结论；(c)样本量n=1不足以确认统计显著性。<span class="src src-K">[K: 基于单样本+滚动预测结构限制的推理]</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>1.4 业务板块结构演变（纵向+横向交叉）</h4>
+  <table>
+    <thead><tr><th>板块</th><th>FY2025营收(亿)</th><th>占比</th><th>毛利率</th><th>增长特征</th><th>利润质量</th></tr></thead>
+    <tbody>
+      <tr><td>国内民用(两轮车OEM+经销商)</td><td class="num">25.51</td><td class="num">70.2%</td><td class="num">~12%</td><td>低增长，议价权弱</td><td>量大但利薄，雅迪+爱玛仅占收入6.38% <span class="src src-B">[B]</span></td></tr>
+      <tr><td>国内商用(哈啰共享)</td><td class="num">5.60</td><td class="num">15.4%</td><td class="num" style="color:var(--green)"><strong>20.6%</strong></td><td>CAGR 26.7%(FY2023-2025)</td><td>利润质量最高——贡献~23%合并毛利 <span class="src src-B">[B]</span></td></tr>
+      <tr><td>海外(E-bike+电摩)</td><td class="num">2.20</td><td class="num">6.1%</td><td class="num" style="color:var(--green)">国内3.4x溢价</td><td>CAGR 39%(FY2022-2025)</td><td>高毛利高增长，但体量小(Q1 2026仅3.60%) <span class="src src-B">[B]</span></td></tr>
+      <tr><td>储能+新应用</td><td class="num">~3.05</td><td class="num">8.4%</td><td class="num" style="color:var(--red)"><strong>-5.5%</strong></td><td>持续亏损</td><td>拖累整体GM约0.5pp <span class="src src-B">[B]</span></td></tr>
+      <tr><td>前驱体(青源)</td><td class="num">0.70</td><td class="num">1.9%</td><td class="num">15.4%</td><td>FY2025净利492万</td><td>中试阶段已盈利，但规模微小 <span class="src src-B">[B]</span></td></tr>
+      <tr style="background:#fff8e1"><td colspan="6"><strong>来源：</strong>板块拆分数据来自纵横分析报告 <span class="src src-B">[B]</span>。FY2023及之前年份的板块拆分不可获得，因此仅展示FY2025单年截面——这是当前数据条件下的最优呈现。</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-warning">
+    <strong>⚠️ 板块结构的关键推论</strong>
+    ① 星恒盈利高度依赖商用段（哈啰）——占收入15.4%但贡献~23%毛利。若哈啰引入ATL为第二供方（依据：ATL新能安已在高端电摩/换电市场建立较强存在，行业实践OEM通常维持≥2个供方），星恒利润表将受重创；<br>
+    ② 储能负毛利意味着营收增长反而拉低利润——这与「以量补价」逻辑相反；<br>
+    ③ 海外增速快（CAGR 39%）但体量仅6.1%，假定增速维持，3年内仍无法成为主要盈利支柱。<br>
+    <span class="src src-K">[K: 基于板块结构的逻辑推理]</span>
+  </div>
+
+  <h3>二、横向分析：港股可比公司与A股可比交易</h3>
+
+  <h4>2.1 港股锂电可比公司——全维度指标对比</h4>
+  <table>
+    <thead><tr><th>指标</th><th>星恒电源</th><th>正力新能<br>03677.HK</th><th>中创新航<br>03931.HK</th><th>瑞浦兰钧<br>00666.HK</th><th>宁德时代<br>300750.SZ</th></tr></thead>
+    <tbody>
+      <tr><td>FY2025营收(亿)</td><td class="num"><strong>36.36</strong></td><td class="num">81.01</td><td class="num">444.00</td><td class="num">243.34</td><td class="num">4,237.02</td></tr>
+      <tr><td>营收/星恒倍数</td><td class="num">1.0x</td><td class="num" style="background:#fff8e1"><strong>2.2x</strong></td><td class="num">12.2x</td><td class="num">6.7x</td><td class="num">116x</td></tr>
+      <tr><td>FY2025归母净利(亿)</td><td class="num"><strong>0.45</strong><span class="src" style="font-size:9px">管</span></td><td class="num">8.09</td><td class="num">14.76</td><td class="num">6.23</td><td class="num">722.01</td></tr>
+      <tr><td>净利率(总净利/营收)</td><td class="num" style="color:var(--orange)"><strong>1.24%</strong><span class="src" style="font-size:9px">管</span></td><td class="num">9.98%</td><td class="num">4.72%</td><td class="num">2.80%</td><td class="num">18.12%</td></tr>
+      <tr><td>PE(TTM,2026-06-15)</td><td class="num">不适用</td><td class="num" style="background:#fff8e1"><strong>18.04x</strong></td><td class="num">26.56x</td><td class="num">43.22x</td><td class="num">23.13x</td></tr>
+      <tr><td>PS(TTM,2026-06-15)</td><td class="num">—</td><td class="num" style="background:#fff8e1"><strong>1.86x</strong></td><td class="num">0.85x</td><td class="num">1.15x</td><td class="num">3.90x</td></tr>
+	      <tr><td>PB(MRQ,2026-06-15)</td><td class="num">—</td><td class="num">1.87x</td><td class="num">1.07x</td><td class="num">2.38x</td><td class="num">5.11x</td></tr>
+      <tr><td>ROE(平均)</td><td class="num" style="color:var(--orange)"><strong>~1.6%</strong></td><td class="num" style="color:var(--green)">11.56%</td><td class="num">4.10%</td><td class="num">5.66%</td><td class="num">24.72%</td></tr>
+      <tr><td>营收增速</td><td class="num">+23.3%</td><td class="num">+57.90%</td><td class="num">+59.99%</td><td class="num">+36.74%</td><td class="num">+17.04%</td></tr>
+	      <tr><td>资产负债率</td><td class="num">56.0%<span class="src" style="font-size:9px">管</span></td><td class="num">61.75%</td><td class="num">64.02%</td><td class="num">74.49%</td><td class="num">61.94%</td></tr>
+      <tr style="background:#fff8e1"><td colspan="6"><strong>来源：</strong>PE/PS/PB/ROE/营收增速/资产负债率来自 iFind QuantAPI <span class="src src-B">[B: iFind实时数据 2026-06-15]</span>（数据浏览器+F9全球可比公司估值+FinQuery；不同端点数值可能有小幅差异，详见说明）。净利率统一使用「总净利润/营业收入」标准口径（与iFind财务摘要一致）<span class="src src-B">[B]</span>。星恒数据来自FY2025管理合并报表 <span class="src src-B">[B]</span> + 审计报告（容诚审字[2026]200F1622号）<span class="src src-A">[A]</span>，标注为「管」以区分审计口径。<strong>此前版本错误修正：</strong>(1)宁德时代代码03750.HK→300750.SZ（深交所，此前误用港股代码）；(2)净利率统一为「总净利/营收」标准口径（此前混用归母净利口径，致中创新航NPM被低估3.3%→4.72%）；(3)ROE/营收增速/资产负债率此前因akshare接口限制标注「—」，现已从iFind补全。<br><strong>iFind端点差异说明：</strong>不同iFind端点（数据浏览器/F9全球可比公司估值/FinQuery）对同一指标可能返回小幅差异值。例如：宁德时代PE数据浏览器=23.13x vs F9=25.30x（PE-TTM vs PE-最新计算口径不同）；中创新航PB F9=0.70x vs FinQuery MRQ=1.07x（F9用最新报告期净资产，FinQuery用MRQ）。本表以数据浏览器为PE/PS基准，以FinQuery为PB/净利率/营收增速基准——与F9全球可比公司估值表端点不同，故同一公司数值可能略有差异。<br><strong>ROE口径说明：</strong>星恒ROE约1.6%基于「归母净利÷含少数股东总净资产」（0.45/27.76），可比公司ROE基于「归母净利÷归母净资产」（归母口径）。若星恒改为归母口径：0.45÷[(23.02+22.93)/2]=1.96%——仍处微利区间。口径差异不影响「星恒ROE显著低于可比公司」的核心结论，但建议正式分析中统一口径。<span class="src src-K">[K: 口径统一+数据补全+iFind端点差异说明+ROE口径]</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>2.2 横向可比性判定</h4>
+  <table>
+    <thead><tr><th>可比公司</th><th>规模可比<br>(营收差距)</th><th>利润可比<br>(净利率差距)</th><th>业务可比</th><th>综合判定</th><th>PE</th><th>PS</th><th>纳入估值锚</th></tr></thead>
+    <tbody>
+      <tr><td>正力新能</td><td>✅ 2.2x</td><td>⚠️ 9.98% vs 1.24%(8.0x)</td><td>⚠️ 动力为主</td><td><strong>最可比（营收最接近）</strong></td><td class="num">18.04x</td><td class="num">1.86x</td><td>✅ 核心锚（PE+PS）</td></tr>
+      <tr><td>中创新航</td><td>❌ 12.2x</td><td>⚠️ 4.72% vs 1.24%(3.8x)</td><td>⚠️ 动力为主</td><td>次级可比</td><td class="num">26.56x</td><td class="num">0.85x</td><td>⚠️ 参考（PS偏低反映市场对二线动力电池的折价）</td></tr>
+      <tr><td>瑞浦兰钧</td><td>❌ 6.7x</td><td>⚠️ 2.80%(2.3x)</td><td>❌ 储能为主</td><td>弱可比</td><td class="num">43.22x</td><td class="num">1.15x</td><td>❌ 不纳入（业务模式差异大）</td></tr>
+      <tr><td>宁德时代</td><td>❌ 116x</td><td>❌ 18.12%(14.6x)</td><td>❌ 全球龙头</td><td>不可比</td><td class="num">23.13x</td><td class="num">3.90x</td><td>❌ 不纳入（规模/利润/地位三维均不可比）</td></tr>
+      <tr style="background:#fff8e1"><td colspan="8"><strong>判定依据：</strong>「可比公司」要求规模、盈利、业务模式至少两项近似。营收差距>5x丧失规模可比性（依据：Damodaran相对估值框架中，规模差异显著的公司应适用规模调整，而非简单比较倍数）。<span class="src src-K">[K: Damodaran框架]</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>2.3 竞争格局横向对比：星恒 vs ATL新能安（两轮车锂电核心对手）</h4>
+  <table>
+    <thead><tr><th>维度</th><th>星恒电源</th><th>ATL新能安</th><th>数据来源</th></tr></thead>
+    <tbody>
+      <tr><td>两轮车锂电市占率</td><td class="num"><strong>72.5%</strong>(合规市场,2025)</td><td class="num">18.5%(2025,从2022年约5%增长)</td><td>纵横分析报告 <span class="src src-B">[B]</span></td></tr>
+      <tr><td>年市占率变化</td><td style="color:var(--red)">↓2-3pp/年（部分来自分母收缩）</td><td style="color:var(--green)">↑约4-5pp/年</td><td>纵横分析报告 <span class="src src-B">[B]</span></td></tr>
+      <tr><td>核心客户</td><td>雅迪/爱玛（合计仅占收入6.38%）</td><td>五羊本田/九号/小牛（高端电摩/换电）</td><td><span class="src src-B">[B]</span></td></tr>
+      <tr><td>技术路线</td><td>锰酸锂+LMFP复合材料</td><td>三元锂+磷酸铁锂</td><td><span class="src src-B">[B]</span></td></tr>
+      <tr><td>营收规模估计</td><td>36.36亿（含储能/海外）</td><td>未上市，无公开数据（仅市占率可追踪）</td><td>—</td></tr>
+      <tr><td>竞争态势</td><td>防守方：市占率缓慢下降，OEM议价权弱</td><td>进攻方：份额快速提升，高端定位</td><td><span class="src src-K">[K: 基于市占率趋势的逻辑判断]</span></td></tr>
+      <tr style="background:#fff8e1"><td colspan="4"><strong>推论：</strong>市占率虽高（72.5%），但一是合规市场口径（总市场包含非合规部分），二是每年下降2-3pp。若以线性外推（年降2.5pp×5年），5年后市占率降至约60%——但线性外推仅为简化假设，存在三重局限性：(1) 市占率下降速度可能随基数降低而放缓（非线性衰减）；(2) 合规市场占比可能因新国标实施而扩大（分母扩张效应可能部分抵消竞争性流失）；(3) 竞争格局受新国标政策落地节奏影响，非纯市场力量驱动。外推结果（60%）应视为一种趋势方向警示而非精确预测。这是估值模型中不应忽略的竞争风险。<span class="src src-K">[K: 基于市占率趋势的推理，附线性外推法局限说明]</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>2.4 A股可比交易PB横向对比</h4>
+  <table>
+    <thead><tr><th>交易案例</th><th>标的</th><th>完成时间</th><th>估值方法</th><th>PB</th><th>静态PE</th><th>与星恒可比性</th></tr></thead>
+    <tbody>
+      <tr style="background:#fff8e1"><td><strong>佛塑科技</strong></td><td><strong>金力新能源100%</strong></td><td><strong>2026-01</strong></td><td><strong>资产基础法</strong></td><td class="num"><strong>1.13x</strong></td><td class="num">亏损不适用</td><td><strong>最可比：同为资产基础法+锂电产业链，标的处于亏损/微利期</strong></td></tr>
+      <tr><td>安孚科技(31%)</td><td>安孚能源31%</td><td>2025-08</td><td>收益法</td><td class="num">1.17x</td><td class="num">12.22</td><td>收益法估值，与资产基础法不可直接对标</td></tr>
+      <tr><td>安孚科技(15%/36%)</td><td>亚锦科技</td><td>2022-01/05</td><td>收益法</td><td class="num">4.95-6.69x</td><td class="num">15.23-20.56</td><td>南孚品牌+现金牛——完全不具可比性</td></tr>
+      <tr style="background:#fff8e1"><td colspan="7"><strong>来源：</strong>中信证券方案初稿中引用的A股可比交易数据 <span class="src src-B">[B]</span>。重要说明：资产基础法的A股可比交易仅佛塑科技1例可获得。样本量有限（n=1），PB 1.13x作为锚点的稳健性受限于此。更广泛的资产基础法可比交易数据库将提高估值区间可信度。<span class="src src-K">[K: 样本量限制提示]</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-info">
+    <strong>💡 纵横分析阶段小结</strong>
+    <strong>纵向结论：</strong>FY2020为历史巅峰（营收40亿/GM 26.5%/NPM 9.5%），此后定价权丧失+产能利用率崩塌。FY2025方恢复至接近FY2022营收水平，但利润率远未恢复（NPM 1.24% vs FY2020的9.5%）。管理层预测系统性偏高~35%为已知事实（但仅1个验证点）。<br>
+    <strong>横向结论：</strong>正力新能（营收81亿/PE 18.04x/PS 1.86x）是唯一规模接近的可比公司。中创新航（PE 26.56x/PS 0.85x）虽规模差距大（12.2x），其PS 0.85x可作为星恒PS估值的次级参考——反映港股对二线电池企业的PS定价区间。A股资产基础法可比交易仅佛塑科技1例（PB 1.13x），样本量有限。
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 方案一 -->
+<!-- ============================================================ -->
+<div class="section">
+  <h2>方案一：只参不并 —— 13.73%少数股权投资 + 港股IPO</h2>
+
+  <h3>一、券商方案摘要 <span class="src src-B">来源：中信证券方案初稿</span></h3>
+  <div class="step">天保集团受让星恒电源<strong>13.73%</strong>股份（A组10家PE全部退出），成为<strong>第二大股东</strong>。</div>
+  <div class="step">2026年Q4完成交割→<strong>2027年Q1向香港联交所递表</strong>→预计<strong>2028年Q2</strong>完成港股IPO。</div>
+
+  <h4>券商估值结论</h4>
+  <div class="valu-grid">
+    <div class="valu-card"><div class="label">2027年假设净利</div><div class="value">2亿</div></div>
+    <div class="valu-card"><div class="label">PE 倍数（4家锂电均值）</div><div class="value">32.86x</div></div>
+    <div class="valu-card"><div class="label">预计IPO市值</div><div class="value" style="color:#0366d6">65.73亿</div></div>
+    <div class="valu-card"><div class="label">PRE-IPO估值(扣15%稀释)</div><div class="value" style="color:#0366d6">55.87亿</div></div>
+  </div>
+
+  <div class="callout callout-warning">
+    <strong>⚠️ 重要提示：券商PE 32.86x = 4家锂电公司的简单算术平均</strong>
+    根据上文纵横分析2.2节的判定，4家公司中仅正力新能（18.04x）满足规模可比条件。中创新航（26.56x/12.2倍规模差距）、瑞浦兰钧（43.22x/储能为主）、宁德时代（23.13x/116倍规模差距，且为A股代码300750.SZ非港股）均不应纳入可比PE计算。券商32.86x的均值包含了不可比公司，存在结构性高估——以下独立分析仅以正力新能（PE 18.04x/PS 1.86x）为核心锚。<span class="src src-K">[K: 基于2.2节判定结果的推理]</span>
+  </div>
+
+  <!-- 独立分析 -->
+  <details class="analysis-fold" open>
+    <summary>📊 天保独立估值验证（点击折叠）—— 纵向假设检验 + 横向PE/PS双锚验证 + 概率加权</summary>
+    <div class="fold-content">
+
+      <h3>第一层：纵向检验 —— FY2027净利2亿假设是否成立？</h3>
+
+      <p><strong>修正后的逻辑链（同口径纵向比较）：</strong></p>
+      <div class="logic-chain">
+        <span class="logic-node">FY2025实际净利0.45亿</span>
+        <span class="logic-arrow">→</span>
+        <span class="logic-node">需2年内增至2亿</span>
+        <span class="logic-arrow">→</span>
+        <span class="logic-node">需净利CAGR 110%</span>
+        <span class="logic-arrow">→</span>
+        <span class="logic-node">历史净利无有效参照<br>(FY2022-2024亏损/无数据)</span>
+        <span class="logic-arrow">→</span>
+        <span class="logic-node" style="background:var(--red-bg);border-color:var(--red)">结论：无历史基准可支撑</span>
+      </div>
+
+      <p><strong>更合理的替代推演：</strong>从营收和净利率两个驱动因子分别入手（而非简单比较CAGR），反推2亿净利所需的条件：</p>
+      <table>
+        <thead><tr><th>路径</th><th>所需条件</th><th>FY2025实际</th><th>历史峰值(FY2020)</th><th>是否可能</th></tr></thead>
+        <tbody>
+          <tr><td>靠营收增长</td><td>若NPM维持1.2%，需营收=167亿</td><td class="num">36.36亿</td><td class="num">40.21亿</td><td style="color:var(--red)">❌ 需4.6倍营收增长，超越历史峰值4.2倍</td></tr>
+          <tr><td>靠净利率提升</td><td>若营收=55亿(V型反弹CAGR 23.5%)，需NPM=3.6%</td><td class="num">NPM 1.24%</td><td class="num">NPM 9.5%</td><td style="color:var(--orange)">⚠️ 需NPM提升3倍，超FY2024 GM 17.6%的盈利转化能力</td></tr>
+          <tr style="background:#fffdef"><td><strong>合理基准</strong></td><td><strong>营收45亿(年增11.3%)+NPM 2.0%(经营杠杆改善)</strong></td><td class="num" colspan="2"><strong>→ FY2027E净利 0.90亿</strong></td><td style="color:var(--green)">✅ 有历史支撑</td></tr>
+          <tr style="background:#e3f2fd"><td>券商假设</td><td>未说明具体路径</td><td class="num" colspan="2">→ FY2027E净利 2.00亿</td><td style="color:var(--red)">❌ 两因子均需超越历史极值</td></tr>
+        </tbody>
+      </table>
+
+      <h4>净利情景——经FY2020历史峰值校准</h4>
+      <table>
+        <thead><tr><th>情景</th><th>假设逻辑</th><th>FY2027E营收(亿)</th><th>NPM</th><th>FY2027E净利(亿)</th><th>推理依据</th></tr></thead>
+        <tbody>
+          <tr style="background:#fff5f5"><td>保守</td><td>历史均值外推+渗透率瓶颈(30-35%)</td><td class="num">40</td><td class="num">1.5%</td><td class="num"><strong>0.60</strong></td><td><span class="src src-B">[B: 纵横分析报告行业数据]</span></td></tr>
+          <tr style="background:#fffdef"><td>基准</td><td>新国标催化+产能利用率66→75%+哈啰维持</td><td class="num">45</td><td class="num">2.0%</td><td class="num"><strong>0.90</strong></td><td><span class="src src-K">[K: 经营杠杆+储能减亏推理]</span></td></tr>
+          <tr style="background:#f0fff4"><td>乐观</td><td>恢复至FY2020 NPM的1/3水平</td><td class="num">50</td><td class="num">3.0%</td><td class="num"><strong>1.50</strong></td><td><span class="src src-K">[K: FY2020 NPM 9.5%作为乐观上限]</span></td></tr>
+          <tr style="background:#e3f2fd"><td>券商假设</td><td>未说明路径</td><td class="num">—</td><td class="num">—</td><td class="num"><strong>2.00</strong></td><td>无历史支撑 <span class="src src-K">[K]</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-danger">
+        <strong>🔴 第一层结论：2亿净利假设无法通过纵向检验</strong>
+        两因子分析显示：(a)靠营收增长需167亿（超越历史峰值4.2倍）；(b)靠NPM提升需3.6%（虽低于FY2020的9.5%，但在当前定价权丧失+竞争加剧格局下不现实）。券商假设与任何可观测历史趋势均不兼容。基准情景FY2027E净利0.90亿作为后续估值的核心假设。
+      </div>
+
+      <h3>第二层：横向检验 —— PE + PS 双锚估值（修正后）</h3>
+
+      <h4>步骤1：PE锚——仅用正力新能（唯一规模可比），叠加折价</h4>
+      <div class="logic-chain">
+        <span class="logic-node">正力新能 PE 18.04x</span>
+        <span class="logic-arrow">→</span>
+        <span class="logic-node">规模折价 -10~-15%<br>(星恒营收=正力44%)</span>
+        <span class="logic-arrow">→</span>
+        <span class="logic-node">PE 15.3-16.2x</span>
+        <span class="logic-arrow">→</span>
+        <span class="logic-node">盈利质量折价 -10~-20%<br>(NPM 1.24% vs 10.0%)</span>
+        <span class="logic-arrow">→</span>
+        <span class="logic-node" style="background:var(--yellow-bg)">PE 12.3-14.6x</span>
+      </div>
+      <p style="font-size:12px;color:var(--text-secondary)"><strong>折价率推理：</strong>规模折价10-15%对应「营收44%→折价」，基于Damodaran规模溢价表的相对比例（非直接套用绝对值——因为Damodaran表基于美股数据，直接套用到港股/非上市公司有局限性）。盈利质量折价10-20%基于「NPM 1.24%→任何1%收入波动=83%净利波动」的脆弱性推理。具体折价率为分析师判断，标注 <span class="src src-L">[L: 分析师估值判断]</span>。</p>
+
+      <h4>步骤2：PS锚——可比公司PS反算 + 港股行业数据</h4>
+      <table>
+        <thead><tr><th>PS参考锚</th><th>PS倍数</th><th>数据依据</th><th>整体估值(亿)</th><th>13.73%价值(亿)</th><th>vs天保5亿</th></tr></thead>
+        <tbody>
+          <tr><td>正力新能(隐含PS)</td><td class="num"><strong>1.86x</strong></td><td>PE 18.04x × NPM 9.98% = 1.80x <span class="src src-K">[K: 推导值（市场PS来自iFind）</span></td><td class="num">68.36</td><td class="num">9.38</td><td class="num" style="color:var(--green)">+87.2%</td></tr>
+          <tr style="background:#fff8e1"><td>中创新航(隐含PS)</td><td class="num"><strong>0.85x</strong></td><td>PE 26.56x × NPM 4.72% = 1.25x（市场PS=0.85x，差异来自少数股东权益：1.25/0.85-1=47%——意味着少数股东分走约32%净利润，进一步削弱中创新航PE对标的适用性） <span class="src src-K">[K: 推导值（市场PS来自iFind）；少数股东权益比例推算]</span></td><td class="num">30.18</td><td class="num"><strong>4.14</strong></td><td class="num" style="color:var(--red)">-17.2%</td></tr>
+          <tr style="background:#fffdef"><td>天保5亿隐含PS</td><td class="num"><strong>1.0x</strong></td><td>5亿÷13.73%=36.43亿÷36.36亿营收 <span class="src src-K">[K: 交易价格反算]</span></td><td class="num">36.43</td><td class="num"><strong>5.00</strong></td><td class="num">0%</td></tr>
+          <tr><td>港股&lt;100亿HKD制造业PS中位数</td><td class="num">0.14x</td><td>MX金融 <span class="src src-B">[B: MX金融 2026-05]</span></td><td class="num">5.09</td><td class="num">0.70</td><td class="num" style="color:var(--red)">-86.0%</td></tr>
+          <tr style="background:#fff8e1"><td colspan="7"><strong>PS锚适用性分析：</strong>正力新能PS 1.86x代表「营收2.2x星恒+NPM 10%+成长性优」的定价——星恒因NPM仅1.2%，PS应大幅折价。中创新航PS 0.85x代表港股对二线动力电池企业的实际PS定价——更贴近星恒「二线+低利润率」特征，但中创新航规模（444亿营收）仍有量级差异。港股制造业PS中位数0.14x包含大量夕阳行业，对两轮车锂电龙头（市占率72.5%）适用性有限，仅作为绝对下限参考。综合判断：<strong>星恒合理PS区间约0.5-1.0x</strong>。下界0.5x推导：中创新航PS 0.85x × 规模折价(12.2倍营收差距)约40% → 0.51x ≈ 0.5x——仅作保守估值下界假设，非精确计算。<span class="src src-K">[K: PS区间推理]</span></td></tr>
+        </tbody>
+      </table>
+
+      <h3>第三层：正力新能收敛情景量化（统一使用PRE-IPO估值=IPO市值×85%）</h3>
+      <table>
+        <thead><tr><th>情景</th><th>估值方法</th><th>IPO市值(亿)</th><th>PRE-IPO(亿)</th><th>13.73%价值(亿)</th><th>vs天保5亿</th></tr></thead>
+        <tbody>
+          <tr style="background:#fff5f5"><td>PS 0.5x(低估值)</td><td>PS 0.5x × FY2027E营收45亿</td><td class="num">22.50</td><td class="num">19.13</td><td class="num"><strong>2.63</strong></td><td class="num" style="color:var(--red)"><strong>-47.5%</strong></td></tr>
+          <tr style="background:#fffdef"><td>中创新航收敛(PS 0.85x)</td><td>PS 0.85x × FY2027E营收45亿</td><td class="num">38.25</td><td class="num">32.51</td><td class="num"><strong>4.47</strong></td><td class="num" style="color:var(--red)"><strong>-10.6%</strong></td></tr>
+          <tr style="background:#fffdef"><td>正力新能收敛(PE 18.04x,净利0.90亿)</td><td>PE 18.04x × 净利0.90亿</td><td class="num">16.24</td><td class="num">13.80</td><td class="num"><strong>1.90</strong></td><td class="num" style="color:var(--red)"><strong>-60.5%</strong></td></tr>
+          <tr style="background:#f0fff4"><td>乐观(PE 25x × 净利1.5亿)</td><td>PE 25x × 净利1.50亿</td><td class="num">37.50</td><td class="num">31.88</td><td class="num"><strong>4.38</strong></td><td class="num" style="color:var(--red)"><strong>-12.5%</strong></td></tr>
+          <tr style="background:#e3f2fd"><td>券商假设(PE 32.86x × 净利2亿)</td><td>券商假设</td><td class="num">65.73</td><td class="num">55.87</td><td class="num"><strong>7.67</strong></td><td class="num" style="color:var(--green)"><strong>+53.4%</strong></td></tr>
+        </tbody>
+      </table>
+
+      <h3>第四层：概率加权期望价值</h3>
+      <table>
+        <thead><tr><th>情景</th><th>概率</th><th>估值方法</th><th>13.73%价值(亿)</th><th>加权贡献(亿)</th></tr></thead>
+        <tbody>
+          <tr><td>IPO成功-高估值</td><td class="num">10%</td><td>PE 25x × 净利1.5亿</td><td class="num">4.38</td><td class="num">0.44</td></tr>
+          <tr><td>IPO成功-合理估值</td><td class="num">30%</td><td>PE 18.04x × 净利0.90亿</td><td class="num">1.90</td><td class="num">0.57</td></tr>
+          <tr><td>IPO成功-低估值</td><td class="num">25%</td><td>PS 0.85x × 营收45亿</td><td class="num">4.47</td><td class="num">1.12</td></tr>
+          <tr><td>IPO失败</td><td class="num">35%</td><td>净资产27.77亿×0.6非流动性折价</td><td class="num">2.29</td><td class="num">0.80</td></tr>
+          <tr style="background:#e3f2fd"><td><strong>概率加权期望</strong></td><td class="num"><strong>100%</strong></td><td>—</td><td class="num"><strong>≈2.93亿</strong></td><td class="num" style="color:var(--red)"><strong>期望回报≈-41%</strong></td></tr>
+        </tbody>
+      </table>
+
+      <p style="font-size:12px;color:var(--text-secondary)"><strong>概率赋值推理：</strong>①IPO失败35%——恒科技术熊市+小市值锂电破发率高（2025年港股锂电新上市首日破发率>50% <span class="src src-B">[B: MX金融]</span>）+正力新能PE下行至18.04x的警示信号；②低估值25%——即使IPO成功，港股对二线电池企业PS 0.85x(中创新航)的定价现实正在市场中被反复确认；③高估值仅10%——需同时满足「净利超乐观+市场窗口+正力新能PE不继续下行」三个条件。<span class="src src-L">[L: 概率赋值基于行业逻辑判断，非精确模型测算]</span></p>
+
+	      <p style="font-size:12px;color:var(--text-secondary)"><strong>⚠️ 概率敏感度提示：</strong>期望值2.93亿对概率赋值高度敏感。若IPO失败概率从35%→50%（仅调高15pp，仍属合理范围），期望值降至约2.78亿（回报约-44%）。若IPO综合成功概率提升至80%（监管窗口改善+正力新能PE反弹），期望值升至约3.07亿（回报约-39%）。关键结论的稳健性：在合理概率范围内（IPO失败25-50%），期望值始终低于5亿投入成本——方案一的期望回报为负的结论对概率赋值不敏感。<span class="src src-K">[K: 概率敏感度单变量测试]</span></p>
+
+      <div class="callout callout-danger">
+        <strong>🔴 方案一独立结论：5亿收购13.73%的期望价值约2.93亿（期望回报约-41%）</strong>
+        ① 纵向：券商2亿净利假设两因子分析均无法通过——无论从营收端还是NPM端，均需超越历史极值；<br>
+        ② 横向PE：仅正力新能（18.04x）为有效可比锚，经规模+质量折价后星恒PE约12-15x，与券商32.86x存在量级差距；<br>
+        ③ 横向PS：正力新能PS 1.86x、中创新航PS 0.85x构成PS估值区间上/下限，5亿隐含PS 1.0x处于区间中枢偏上；<br>
+        ④ 战略层面方案一方向正确——A组诉讼是IPO主要法律障碍，收购即可解除——但投决估值须基于独立验证，而非券商65.73亿。
+      </div>
+
+    </div>
+  </details>
+
+  <h3>二、券商自评 <span class="src src-B">来源：中信证券方案初稿</span></h3>
+  <table>
+    <thead><tr><th>维度</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>难点</td><td>如何保障后续资金退出安全，实现国有资产保值增值</td></tr>
+      <tr><td>天保优势</td><td>与现有股东沟通难度较小</td></tr>
+      <tr><td>天保劣势</td><td>以2025年净利测算估值已处较高水平；港股流动性差/股权分散→解禁后抛售崩塌→国资损失风险</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<!-- 方案二 -->
+<!-- ============================================================ -->
+<div class="section">
+  <h2>方案二：天保基建分步收购 —— 24%+表决权委托→30.26%控制权</h2>
+
+  <h3>一、券商方案摘要 <span class="src src-B">来源：中信证券方案初稿</span></h3>
+  <div class="step">A股上市公司<strong>天保基建（000965.SZ）</strong>以现金购买星恒电源<strong>24%</strong>股份。</div>
+  <div class="step">苏州袍泽将其持有<strong>6.26%表决权委托予天保基建</strong>→合计<strong>30.26%表决权</strong>→改组董事会→实现控制。</div>
+  <div class="step">待星恒盈利释放后，以<strong>发行股份购买资产</strong>方式收购剩余股份。</div>
+
+  <h4>券商估值结论（资产基础法）</h4>
+  <div class="valu-grid">
+    <div class="valu-card"><div class="label">估值方法</div><div class="value" style="font-size:16px">资产基础法</div><div class="note">因盈利未释放，避免收益法高估值</div></div>
+    <div class="valu-card"><div class="label">归母净资产</div><div class="value">23.02亿</div><div class="note">FY2025末管理报表值 <span class="src src-B">[B]</span></div></div>
+    <div class="valu-card"><div class="label">溢价率上限</div><div class="value">≤30%</div><div class="note">房屋建筑物+土地+专利+客户关系</div></div>
+    <div class="valu-card"><div class="label">整体估值</div><div class="value" style="color:#0366d6">30.24亿</div><div class="note">PB ≈ 1.31x（券商原数；独立验算：1.30×23.02=29.93亿，差异来自券商原始净资产基数）</div></div>
+  </div>
+
+  <details class="analysis-fold" open>
+    <summary>📊 天保独立估值验证（点击折叠）—— 资产质量纵向检验 + 可比交易横向验证 + 24%来源可行性 + 天保基建约束</summary>
+    <div class="fold-content">
+
+      <h3>第一层：纵向检验 —— 净资产23.02亿的构成与风险点</h3>
+      <table>
+        <thead><tr><th>科目</th><th>FY2025末(亿)</th><th>Q1 2026(亿)</th><th>变动</th><th>评估关注</th></tr></thead>
+        <tbody>
+          <tr><td>归母净资产</td><td class="num"><strong>23.02</strong></td><td class="num">—</td><td>基准</td><td>评估基准 <span class="src src-B">[B: FY2025末管理合并报表]</span></td></tr>
+          <tr><td>存货</td><td class="num">8.73</td><td class="num" style="color:var(--red)"><strong>11.50</strong></td><td style="color:var(--red)">+31.7%(QoQ)</td><td>若含滞销品→跌价准备→侵蚀净资产 <span class="src src-B">[B: Q1 2026报表]</span></td></tr>
+          <tr><td>递延所得税资产</td><td class="num"><strong>2.40</strong></td><td class="num">—</td><td>稳定</td><td>项目台账标注"来源不明约1.84亿+DTA虚增风险"。回收前提是未来有足够应税利润——FY2022-2023累计亏损~2.30亿(2027-2028到期)，若盈利不足将面临DTA转回压力。<span class="src src-B">[B: 项目台账+科目余额表]</span> <span class="src src-K">[K: DTA回收不确定性推理]</span></td></tr>
+          <tr><td>货币资金</td><td class="num">6.64</td><td class="num">6.77</td><td>+2.0%</td><td>流动性覆盖短期借款4.78亿——现金/短借=1.38x <span class="src src-B">[B: FY2025+Q1 2026合并报表]</span></td></tr>
+          <tr><td>应收账款净额</td><td class="num">6.70</td><td class="num">5.97</td><td>-10.9%</td><td>FY2025周转天数~67天(净额口径)/~84天(原值口径，vs博力威75天/宁德60天)，回款偏慢但Q1环比改善。注：原口径使用应收账款原值8.40亿→83天，本表改用净额6.70亿→67天。<span class="src src-K">[K: 净额vs原值双口径说明]</span> <span class="src src-B">[B: FY2025+Q1 2026合并报表]</span></td></tr>
+          <tr><td>固定资产净值</td><td class="num">18.10</td><td class="num">20.95</td><td>+15.7%</td><td>在建转固持续推进（在建工程10.27→7.94亿）。隐含折旧年限14-18年→年折旧约1.2-1.5亿 <span class="src src-B">[B: FY2025+Q1 2026合并报表]</span> <span class="src src-K">[K: 折旧估算法]</span></td></tr>
+          <tr><td>无形资产(专利/客户关系)</td><td class="num" style="color:var(--text-secondary)">待核实</td><td class="num">—</td><td>—</td><td>LMFP技术/客户关系能否确认为可辨认无形资产——30%溢价的判定依据需资产评估报告验证 <span class="src src-K">[K: 数据缺口]</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-warning">
+        <strong>⚠️ 资产基础法的可靠性前提</strong>
+        资产基础法要求逐项评估底层资产。无形资产明细（专利/客户关系）仍待资产评估报告确认。以下PB分析基于「23.02亿净资产无明显高估或低估」的假设——该假设需资产评估报告验证。已知风险：存货Q1暴增31.7%（8.73→11.50亿）+DTA 2.40亿中约1.84亿来源不明（项目台账标注"虚增风险"）；归母净资产FY2024末22.93亿/FY2025末23.02亿为管理口径数据——审计口径（FY2025审计报告PDF扫描版未提取）可能因审计调整而略低（参考：审计归母净利3,986万 vs 管理4,509万，差异523万）。两项合计潜在侵蚀净资产可达3-4亿（将净资产拉低至19-20亿）（项目台账标注"虚增风险"），两项合计潜在侵蚀净资产可达3-4亿（将净资产拉低至19-20亿）。<span class="src src-K">[K: 基于可用数据+尽调缺口推理]</span>
+      </div>
+
+      <h3>第二层：横向检验 —— PB 1.30x vs 可比交易（仅1例样本）</h3>
+
+      <div class="callout callout-info">
+        <strong>💡 方法论说明：资产基础法可比交易的样本量限制</strong>
+        当前A股可比交易中，同用资产基础法+锂电产业链的案例仅佛塑科技/金力新能源1例（PB 1.13x）。n=1的样本量无法构建统计学上稳健的估值区间。以下PB情景推导的可靠性受限于样本量——建议在正式评估中扩充可比交易数据库。
+      </div>
+
+      <h4>PB情景推导（n=1锚点+净资产质量调整）</h4>
+      <table>
+        <thead><tr><th>情景</th><th>PB</th><th>净资产基准(亿)</th><th>整体估值(亿)</th><th>24%价值(亿)</th><th>推理依据</th></tr></thead>
+        <tbody>
+          <tr style="background:#fff5f5"><td>保守（净资产减值2-3亿）</td><td class="num">0.95x</td><td class="num">20.0</td><td class="num">19.00</td><td class="num">4.56</td><td>存货+DTA减值 <span class="src src-K">[K]</span></td></tr>
+          <tr style="background:#fffdef"><td><strong>基准（佛塑科技可比）</strong></td><td class="num"><strong>1.13x</strong></td><td class="num">23.02</td><td class="num"><strong>26.01</strong></td><td class="num"><strong>6.24</strong></td><td>仅有的直接可比交易 <span class="src src-B">[B: 券商可比交易数据]</span></td></tr>
+          <tr style="background:#f0fff4"><td>券商假设</td><td class="num">1.30x</td><td class="num">23.02</td><td class="num">29.93</td><td class="num">7.18</td><td>30%溢价(土地/专利/客户关系) <span class="src src-B">[B: 券商方案]</span></td></tr>
+          <tr style="background:#f0fff4"><td>乐观（土地大幅增值）</td><td class="num">1.50x</td><td class="num">23.02</td><td class="num">34.53</td><td class="num">8.29</td><td>滁州/苏州工业用地升值 <span class="src src-L">[L: 未经验证的假设]</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-tip">
+        <strong>✅ PB横向检验结论：券商PB 1.30x 在n=1锚点上方15%——合理偏乐观</strong>
+        佛塑科技PB 1.13x为唯一直接可比交易（对应星恒净资产23.02亿→估值26.01亿）。券商30%溢价（PB 1.30x→估值29.93亿）需经逐项资产评估验证（土地/专利/客户关系），而非仅以定性「增值」理由认定。如果土地增值低于预期或专利/客户关系无法确认为可辨认无形资产，PB应向1.13x收敛。
+      </div>
+
+      <h3>第三层：24%股份来源可行性</h3>
+      <table>
+        <thead><tr><th>来源</th><th>比例</th><th>状态</th><th>能否收购</th><th>关键障碍</th></tr></thead>
+        <tbody>
+          <tr><td>A组10家PE</td><td class="num"><strong>13.73%</strong></td><td>已触发回购</td><td>✅</td><td>价格已初步接受5亿(约12.1元/股) <span class="src src-B">[B: 项目交易文件]</span></td></tr>
+          <tr style="background:#fff8e1"><td>B组需补足</td><td class="num"><strong>10.27%</strong></td><td>对赌暂缓，等待IPO</td><td>⚠️</td><td><strong>B组成本价推算：Step 1——A组5亿÷13.73%=36.43亿（A组整体估值隐含值）→对应A组每股成本约12.1元/股（推算：36.43亿×13.73%÷A组持股数=5亿，需总股数反推但总股数未在可用材料中提供，12.1元/股为基于A组交易价格的项目文件交叉推算值）；Step 2——B组成员进入轮次普遍早于A组（B轮/C轮 vs A组D轮），进入估值更高，估计每股成本约15.43元/股（较A组溢价27.5%，基于B组/PE投资轮次定价的一般规律）；Step 3——30.24亿估值下每股约9.40元，B组面临约39%账面亏损（=(15.43-9.40)÷15.43）。重要限定：B组成本价为推算值——精确成本需查证各家B组原投资协议中的每股对价。</strong> <span class="src src-K">[K: 基于A组交易价格+B组投资轮次的推算，需正式尽调验证]</span> <span class="src src-K">[K: 基于A组交易价格和B组投资轮次的推算]</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-warning">
+        <strong>⚠️ 核心矛盾：24%>A组13.73%，差额10.27%须从B组获取</strong>
+        盈科系已有2家起诉 <span class="src src-B">[B: 法律尽调确认]</span>，急迫度最高的B组子集（估计3-5%）可能接受折价。但10.27%缺口能否完全覆盖存在重大不确定性。建议先摸底急迫子集接受意愿。<span class="src src-K">[K]</span>
+      </div>
+
+      <h3>第四层：天保基建资金约束与监管边界</h3>
+      <table>
+        <thead><tr><th>维度</th><th>数值/判定</th><th>独立验证</th></tr></thead>
+        <tbody>
+          <tr><td>第一步现金需求</td><td>24% × 29.93亿 = 约<strong>7.18亿</strong></td><td>天保基建FY2025营收28.04亿，货币资金待核实 <span class="src src-B">[B: 天保基建年报]</span></td></tr>
+          <tr><td>重大资产重组触发</td><td>36.36亿/28.04亿=<strong>129.7%>50%→触发</strong></td><td>✅ 计算正确。依据《重组管理办法》第12条 <span class="src src-A">[A]</span></td></tr>
+          <tr><td>天保基建破净约束</td><td>PB 0.81x（BPS 4.91元/股价3.99元 @2026-06-05）</td><td>⚠️ 定增价≥BPS 4.91元→比市价高23%→实质障碍 <span class="src src-B">[B: akshare/iFind]</span></td></tr>
+          <tr><td>34%控制权红线</td><td>最大发股5.69亿股（计算：5.71亿股/0.34-11.10亿股）；按市价对应约22.70亿</td><td>51%收购对价~15.3亿在红线内 <span class="src src-K">[K: 基于天保基建公告数据的计算]</span></td></tr>
+          <tr><td>跨界并购政策</td><td>券商引用沙河股份(000014.SZ)2026年3月先例</td><td>可借鉴但需预沟通——政策窗口时效性强 <span class="src src-K">[K]</span></td></tr>
+        </tbody>
+      </table>
+
+      <h4>情景分析：方案二的可行路径</h4>
+      <table>
+        <thead><tr><th>情景</th><th>B组接受度</th><th>可收购比例</th><th>对价(按PB 1.13-1.30x)</th><th>可行性</th></tr></thead>
+        <tbody>
+          <tr style="background:#f0fff4"><td>A. 理想</td><td>B组急迫全部接受(8-10%)</td><td class="num">22-24%</td><td class="num">6.6-7.3亿</td><td>✅ 可推进</td></tr>
+          <tr style="background:#fffdef"><td>B. 折中</td><td>B组急迫部分接受(5-7%)</td><td class="num">19-21%</td><td class="num">5.7-6.4亿</td><td>⚠️ 需额外争取3-5%或调整目标</td></tr>
+          <tr style="background:#fff5f5"><td>C. 受阻</td><td>B组全部拒绝</td><td class="num">13.73%</td><td class="num">~5亿</td><td>❌ 退化为方案一+表决权委托</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-tip">
+        <strong>✅ 方案二独立结论：三方案中可行性最高，但两个关键前提需验证</strong><br>
+        ① 券商估值29.93亿（PB 1.30x）处于可比交易PB 1.13x上方15%，属于<strong>合理偏乐观</strong>。基准估值26.01亿（PB 1.13x），24%对应约6.24亿。<br>
+        ② B组10.27%差额是方案二的阿喀琉斯之踵——底线情景（13.73%+表决权委托6.26%=19.99%）仍可构成第一大股东（超启源纳川17.73%仅2.26pp），但控制权稳固性不足。<br>
+        ③ 天保基建破净（PB 0.81x）对后续定增构成约束——需在设计方案中纳入私募EB/定向可转债等替代支付工具，转股价可低于BPS（与公募EB不同）。<br>
+        ④ 资产基础法可比交易仅佛塑科技1例（n=1），估值区间稳健性有限——建议正式评估前扩充可比案例库。<br>	        ⑤ <strong>商誉量化初步估算：</strong>若天保基建以29.93亿（PB 1.30x）为基准收购24%（对价7.18亿），报表合并产生的商誉取决于可辨认净资产公允价值评估结果：(a)若30%溢价（土地/专利/客户关系）能在购买价格分摊（PPA）中确认为可辨认无形资产，商誉≈0；(b)若仅部分可确认（如仅土地增值），商誉≈1-2亿（24%×未确认溢价部分）；(c)天保基建FY2025营收28.04亿、总资产/净资产规模待核实，商誉占总资产比例需在正式评估中量化——若商誉占比>10%且星恒业绩不及预期，减值测试压力显著。<span class="src src-K">[K: 商誉估算：溢价结构推理[K]+具体金额为区间估算[L]]</span>
+      </div>
+
+    </div>
+  </details>
+
+  <h3>二、券商自评 <span class="src src-B">来源：中信证券方案初稿</span></h3>
+  <table>
+    <thead><tr><th>维度</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>难点1</td><td>A股房地产上市公司跨界并购，交易所政策是否支持</td></tr>
+      <tr><td>难点2</td><td>交易对方无法对星恒未来业绩进行承诺</td></tr>
+      <tr><td>难点3</td><td>如何保障交易对方后续退出</td></tr>
+      <tr><td>天保优势</td><td>以较小代价取得控制权；改善上市公司对传统房地产业务依赖</td></tr>
+      <tr><td>天保劣势</td><td>如星恒业绩或整合不及预期，上市公司面临商誉减值风险</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<!-- 方案三 -->
+<!-- ============================================================ -->
+<div class="section">
+  <h2>方案三：非上市主体收购 —— 现金收购50%左右股权</h2>
+
+  <h3>一、券商方案摘要 <span class="src src-B">来源：中信证券方案初稿</span></h3>
+  <div class="step">天保集团旗下<strong>非上市公司</strong>以现金收购星恒电源<strong>50%左右</strong>股权。</div>
+  <div class="step">收购完成后，后续视情况决定<strong>独立IPO</strong>或<strong>装入A股上市公司</strong>。</div>
+
+  <details class="analysis-fold">
+    <summary>📊 天保独立分析（点击展开）—— 独立估值验证 + 国资备案约束 + 后续路径两难</summary>
+    <div class="fold-content">
+
+      <h3>独立估值（方案三不能简单套用方案二的PB结论）</h3>
+      <table>
+        <thead><tr><th>估值方法</th><th>倍数</th><th>基准</th><th>整体估值(亿)</th><th>50%价值(亿)</th><th>适用性</th></tr></thead>
+        <tbody>
+          <tr><td>资产基础法(保守)</td><td>PB 1.13x</td><td>归母净资产23.02亿</td><td class="num">26.01</td><td class="num">13.00</td><td>佛塑科技可比 <span class="src src-B">[B]</span></td></tr>
+          <tr style="background:#fffdef"><td>资产基础法(基准)</td><td>PB 1.30x</td><td>归母净资产23.02亿</td><td class="num">29.93</td><td class="num">14.96</td><td>券商假设 <span class="src src-B">[B]</span></td></tr>
+          <tr><td>PS法(保守)</td><td>PS 0.85x</td><td>FY2025营收36.36亿</td><td class="num">30.91</td><td class="num">15.45</td><td>中创新航PS对标 <span class="src src-K">[K]</span></td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;color:var(--text-secondary)"><strong>巧合值得注意：</strong>PB 1.30x → 29.93亿 与 PS 0.85x → 30.91亿，两个独立估值方法收敛至约30亿（差异仅3.2%）。这增加了30亿左右估值的可信度。<span class="src src-K">[K: 估值方法交叉验证]</span></p>
+
+      <h3>国资备案约束 + 后续装入A股两难</h3>
+      <div class="callout callout-warning">
+        <strong>⚠️ 券商自身提示</strong>「收购50%时对应老股东数量多，估值和交易价格可能上移，评估报告在国资备案中可能面临挑战」。根据国资委12号令第4条，企业价值评估需经核准或备案。国资对溢价收购非上市股权的容忍度低于上市公司重组。<span class="src src-A">[A: 国资委12号令]</span>
+      </div>
+
+      <table>
+        <thead><tr><th>后续路径</th><th>约束</th><th>法规来源</th></tr></thead>
+        <tbody>
+          <tr><td>收益法→装入天保基建</td><td>强制业绩对赌（交易对方须签业绩补偿协议）</td><td>《重组管理办法》第35条 <span class="src src-A">[A]</span></td></tr>
+          <tr><td>资产基础法→装入天保基建</td><td>估值上不去→天保集团投入资金难以通过上市公司平台回收</td><td>估值方法论限制</td></tr>
+          <tr><td>独立IPO</td><td>控制权变更→需满足HKEx 8.05(c)等待期</td><td>HKEx主板规则 <span class="src src-A">[A]</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-info">
+        <strong>💡 方案三独立结论</strong>
+        估值30亿左右（PB 1.30x→29.93亿 ≈ PS 0.85x→30.91亿，两种方法收敛至约30亿），50%对价约15亿——显著高于方案二的~7.26亿。<br>
+        定位：仅在方案一和方案二均受阻时启动的保底方案。启动前置工作：与保税区国资局预沟通50%收购的评估备案可行性+确认天保集团本级可调度资金额度+评估长期持有ROE(~1.5%)是否满足国资考核。
+      </div>
+
+    </div>
+  </details>
+
+  <h3>二、券商自评 <span class="src src-B">来源：中信证券方案初稿</span></h3>
+  <table><thead><tr><th>维度</th><th>内容</th></tr></thead><tbody>
+    <tr><td>难点1</td><td>交易估值是否合理、符合国资监管要求</td></tr>
+    <tr><td>难点2</td><td>继续装入A股上市公司存在特定限制</td></tr>
+    <tr><td>天保优势</td><td>可独立IPO或装入上市公司；估值灵活性更大</td></tr>
+    <tr><td>天保劣势</td><td>以现金付出的代价会比较大</td></tr>
+  </tbody></table>
+</div>
+
+<!-- ============================================================ -->
+<!-- 综合对比 + 敏感性 + 压力测试 -->
+<!-- ============================================================ -->
+<div class="section">
+  <h2>三方案综合对比 + 敏感性分析 + 压力测试</h2>
+
+  <h3>综合对比矩阵</h3>
+  <table>
+    <thead><tr><th>维度</th><th>方案一：少数股权+港股IPO</th><th>方案二：天保基建分步收购</th><th>方案三：非上市主体收购50%</th></tr></thead>
+    <tbody>
+      <tr><td>收购比例</td><td class="num">13.73%</td><td class="num">24%+6.26%委托=30.26%控制</td><td class="num">50%左右</td></tr>
+      <tr><td>券商估值</td><td class="num" style="color:var(--red)">65.73亿(PE 32.86x)</td><td class="num" style="color:var(--green)">30.24亿(PB 1.30x)</td><td class="num">参考方案二</td></tr>
+      <tr><td>独立估值(基准)</td><td class="num" style="color:var(--red)">概率加权≈2.93亿(13.73%价值)</td><td class="num" style="color:var(--green)">26-30亿(PB 1.13-1.30x)</td><td class="num">~30亿(PB≈PS交叉验证)</td></tr>
+      <tr><td>第一步现金</td><td class="num">5亿</td><td class="num">约6.2-7.2亿</td><td class="num">约13-18亿</td></tr>
+      <tr><td>控制权</td><td>❌</td><td>✅ 改组董事会</td><td>✅ 绝对控股</td></tr>
+      <tr><td>并表</td><td>❌</td><td>✅</td><td>✅</td></tr>
+      <tr><td>估值方法适用性</td><td>🔴 PE法对NPM 1.24%公司结构性不适用</td><td>🟢 资产基础法适用</td><td>🟡 资产基础法适用但国资备案存疑</td></tr>
+      <tr><td>核心风险</td><td>🔴 估值假设严重偏离基本面</td><td>🟠 24%>A组→B组差额+跨界审批</td><td>🟡 现金代价大+后续注入两难</td></tr>
+      <tr><td colspan="2">综合可行性</td><td>🟡 方向正确/估值需修正</td><td>🟢 <strong>三方案中最高</strong></td><td>🟡 保底方案</td></tr>
+    </tbody>
+  </table>
+
+  <h3>方案一敏感性：13.73%价值对PE和净利的敏感度（统一使用PRE-IPO=IPO市值×85%）</h3>
+  <table>
+    <thead><tr><th rowspan="2">PE假设</th><th colspan="4">FY2027E净利假设(亿)</th></tr>
+    <tr><th>0.60(保守)</th><th>0.90(基准)</th><th>1.50(乐观)</th><th>2.00(券商)</th></tr></thead>
+    <tbody>
+      <tr><td>12x(PER保守)</td><td class="num" style="color:var(--red)">0.84</td><td class="num" style="color:var(--red)">1.26</td><td class="num" style="color:var(--red)">2.10</td><td class="num" style="color:var(--red)">2.80</td></tr>
+      <tr><td>15x(PER合理)</td><td class="num" style="color:var(--red)">1.05</td><td class="num" style="color:var(--red)">1.58</td><td class="num" style="color:var(--red)">2.63</td><td class="num" style="color:var(--red)">3.50</td></tr>
+      <tr style="background:#fffdef"><td><strong>18.04x(正力新能实时)</strong></td><td class="num" style="color:var(--red)"><strong>1.26</strong></td><td class="num" style="color:var(--red)"><strong>1.90</strong></td><td class="num" style="color:var(--red)"><strong>3.16</strong></td><td class="num" style="color:var(--red)"><strong>4.21</strong></td></tr>
+      <tr><td>25x(PER乐观)</td><td class="num" style="color:var(--red)">1.75</td><td class="num" style="color:var(--red)">2.63</td><td class="num" style="color:var(--red)">4.38</td><td class="num" style="color:var(--green)">5.84</td></tr>
+      <tr><td>32.86x(券商PER)</td><td class="num" style="color:var(--red)">2.30</td><td class="num" style="color:var(--red)">3.45</td><td class="num" style="color:var(--green)">5.75</td><td class="num" style="color:var(--green)">7.67</td></tr>
+      <tr style="background:#fff8e1"><td colspan="5"><strong>解读：</strong>16个情景中仅3个实现正回报（绿色=13.73%价值>5亿）。这三个情景均为「券商PE 32.86x+净利≥1.5亿」或「PE 25x+净利=2亿」的极端组合。所有基于正力新能实时PE（18.04x）的情景均为负回报。<strong>注：</strong>本表已统一使用PRE-IPO估值（IPO市值×85%），与前文「正力新能收敛情景」表一致。<span class="src src-K">[K: 敏感性分析]</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>方案二压力测试：24%价值对PB和净资产的敏感度</h3>
+  <table>
+    <thead><tr><th rowspan="2">PB假设</th><th colspan="3">净资产基准(亿)</th></tr>
+    <tr><th>20.0(扣减后)</th><th>23.02(审计值)</th><th>26.0(增值后)</th></tr></thead>
+    <tbody>
+      <tr><td>0.95x</td><td class="num">4.56</td><td class="num">5.31</td><td class="num">5.93</td></tr>
+      <tr style="background:#fffdef"><td><strong>1.13x(佛塑科技)</strong></td><td class="num">5.42</td><td class="num"><strong>6.24</strong></td><td class="num">7.05</td></tr>
+      <tr><td>1.30x(券商)</td><td class="num">6.24</td><td class="num">7.18</td><td class="num">8.11</td></tr>
+      <tr><td>1.50x</td><td class="num">7.20</td><td class="num">8.29</td><td class="num">9.36</td></tr>
+      <tr style="background:#fff8e1"><td colspan="5"><strong>解读：</strong>方案二估值区间（4.6-8.3亿）较方案一（0.8-7.7亿）显著收窄。基准情景PB 1.13x/净资产23.02亿→6.24亿仍高于A组5亿底线。资产基础法为微利企业提供了估值下限保护。但注意可比交易仅佛塑科技1例（n=1），区间稳健性受限。<span class="src src-K">[K: 敏感性分析]</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>关键风险因子压力测试</h3>
+  <table>
+    <thead><tr><th>压力情景</th><th>影响方案</th><th>量化影响</th><th>应对</th></tr></thead>
+    <tbody>
+      <tr><td>哈啰引入ATL第二供方（份额↓50%）</td><td>一/二/三</td><td style="color:var(--red)">毛利损失~0.58亿/年=FY2025归母净利的129%</td><td>方案一期望值进一步下降</td></tr>
+      <tr><td>港股恒科继续下行20%</td><td>一</td><td style="color:var(--red)">正力新能PE或至12-15x</td><td>IPO窗口关闭→退化为财务投资</td></tr>
+      <tr><td>存货Q1增速31.7%含跌价</td><td>二/三</td><td style="color:var(--red)">净资产侵蚀1-2亿→PB降至1.03-1.08x</td><td>压低估值至25亿以下</td></tr>
+      <tr><td>B组全部拒绝折价</td><td>二</td><td style="color:var(--red)">24%→13.73%，退化为方案一</td><td>方案二降级为类方案一</td></tr>
+      <tr><td>CSRC明确拒绝地产跨界</td><td>二</td><td style="color:var(--red)">方案二路径阻断</td><td>启动方案三或模式B(剥离地产)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<!-- 推荐路径 -->
+<!-- ============================================================ -->
+<div class="section">
+  <h2>推荐推进路径</h2>
+
+  <div class="step"><strong>方案一：保留A组收购作为谈判入口——投决估值须用独立估值</strong>：A组13.73%已初步接受5亿出价（隐含PS 1.0x），收购A组是清除IPO法律障碍的第一步。内部投决使用独立估值（概率加权~2.93亿，非券商65.73亿×13.73%=9.02亿，后者未扣15%IPO稀释且基于不可比PE均值）。在谈判中基于PS法独立估值争取进一步折让。<span class="src src-K">[K]</span></div>
+
+  <div class="step"><strong>方案二：主攻方向——并行推进B组摸底+模式B论证</strong>：方案二是目前三方独立分析（券商/天保投资部/商务尽调）共同指向的最可行方案。关键前提：(a) B组急迫子集对PB 1.13-1.30x估值范围的接受意愿摸底；(b) 模式B（剥离地产→大飞机+星恒双主业）可行性论证。<span class="src src-K">[K]</span></div>
+
+  <div class="step"><strong>正视24%缺口——分层推进：</strong>第一层：锁定A组13.73%（价格基础5亿）；第二层：争取B组急迫子集（盈科系+清算期PE，估计3-5%），以现金确定性退出为卖点；第三层：根据前两层结果调整24%目标——若仅达19-20%，替代结构为「19.99%+管理层表决权委托6.26%=26.25%」。<span class="src src-K">[K]</span></div>
+
+  <div class="step"><strong>方案三：保底方案——预先完成关键前置工作</strong>：(a)与保税区国资局预沟通评估备案可行性；(b)确认天保集团本级可调度资金≥15亿；(c)评估长期持有ROE约1.5%的国资考核匹配性。<span class="src src-K">[K]</span></div>
+
+  <div style="margin-top:24px;padding:16px;background:#f0fff4;border-radius:6px;border-left:4px solid var(--green)">
+    <strong>✅ 核心结论：</strong>券商方案方向正确。方案二（PB 1.30x/29.93亿）处于可比交易PB 1.13x(26.01亿)上方15%，合理偏乐观——两种独立方法（PB 1.30x vs PS 0.85x）均收敛至约30亿，增强了可信度。方案一的65.73亿IPO估值需大幅修正——根本原因不是券商「算错了」，而是PE法对微利企业（NPM 1.24%）的结构性不适用+可比公司选取包含不可比标的。方案三PS/PB双方法均指向30亿左右，但现金代价大（~15亿），仅作保底。<br><br>
+    <strong>纵横分析的核心贡献：</strong>①纵向揭示FY2020峰值后定价权丧失的长期趋势，以两因子法（营收×NPM）证伪2亿净利假设；②横向以正力新能（PE 18.04x/PS 1.86x）+中创新航（PS 0.85x）双锚锁定PE/PS估值区间；③PS法作为主估值方法纠正PE法偏差，PB/PS双方法在方案二/三中收敛至30亿——独立验证的一致性增加了结论可信度；④竞争格局分析量化了市占率年降2-3pp的结构性风险。
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 数据来源 -->
+<!-- ============================================================ -->
+<div class="section" style="font-size:13px;color:var(--text-secondary)">
+  <h3 style="font-size:14px">数据来源与推理标注体系</h3>
+  <table>
+    <thead><tr><th>标注</th><th>含义</th><th>具体数据来源（v3更新）</th></tr></thead>
+    <tbody>
+      <tr><td><span class="src src-A">[A]</span></td><td>审计报告/法规/官方公告</td><td>星恒审计报告(容诚审字[2026]200F1622号)；HKEx《主板上市规则》第8.05(c)条；CSRC《重组管理办法》第12/13/14/35条；国资委12号令/32号令</td></tr>
+      <tr><td><span class="src src-B">[B]</span></td><td>项目文件/券商方案/市场数据</td><td>中信证券方案初稿(2026年6月)；天津允公律所法律尽调初稿；项目材料(产能利用率/分业务收入/盈利预测Excel/华霆合同OCR/科目余额表6113科目/滁州苏州税务明细/FY2025+Q1 2026合并报表/FY2022审计报告OCR母公司利润表)；天保基建FY2025年报/Q1 2026季报；akshare实时行情(2026-06-14)；MX金融港股数据；纵横分析报告v2(附件04)</td></tr>
+      <tr><td><span class="src src-K">[K]</span></td><td>基于法规/行业实践的推理</td><td>隐含PS反算(PE×NPM)；Damodaran规模溢价框架；PE规模折价+盈利质量折价推导；国资评估备案实务；天保基建34%控制权红线计算；营收×NPM两因子分解；PB/PS估值收敛交叉验证</td></tr>
+      <tr><td><span class="src src-L">[L]</span></td><td>行业逻辑预估（置信度低于A/B/K）</td><td>概率情景赋值(10%/30%/25%/35%)；PE折价率具体百分比(10-15%/10-20%)；PS 0.5-1.0x合理区间判断；土地增值幅度预估</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:12px"><strong>重要声明：</strong>本报告为基于公开数据和项目材料的内部估值分析，不构成投资建议。[K]类推理基于法规/行业知识，[L]类预估置信度低于确定性数据。关键数据缺口：仅无形资产明细（专利/客户关系公允价值）仍标注为「待核实」，其余历史缺口均已填充——货币资金/应收账款/固定资产已在v5填充，归母净资产/资产负债率FY2022-Q1 2026完整序列已在v6填充（来源：FY2022-2023审计报告OCR+FY2024-2025管理合并报表Excel）。实际交易估值须以正式资产评估报告和投决会批准为准。数据截止：2026年6月14日。</p>
+</div>
+
+</body>
+</html>
