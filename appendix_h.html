@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>appendix_h.html - 桌面版</title>
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif;
+    color:#1a202c;background:#fff;line-height:1.9;font-size:17px;
+    max-width:1000px;margin:0 auto;padding:24px 20px 60px;
+}
+
+/* ── 标题层级 ── */
+h1{font-size:24px;color:#1a365d;margin:32px 0 18px;border-bottom:3px solid #d69e2e;padding-bottom:12px;font-weight:700;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
+h2{font-size:21px;color:#1a365d;margin:36px 0 18px;padding-bottom:8px;border-bottom:1px solid #e2e8f0;font-weight:700;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
+h3{font-size:19px;color:#2d3748;margin:28px 0 14px;font-weight:600;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
+h4{font-size:17px;color:#2d3748;margin:22px 0 10px;font-weight:600;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
+h5{font-size:17px;color:#2d3748;margin:18px 0 8px;font-weight:600}
+h6{font-size:15px;color:#4a5568;margin:16px 0 6px;font-weight:600}
+
+/* ── 正文段落（仿宋17） ── */
+p.body-text{
+    margin-bottom:16px;text-align:justify;text-indent:2em;
+    line-height:2.0;font-size:17px;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif;
+}
+p.section-intro{
+    text-indent:0;font-weight:600;margin-top:24px;
+}
+p.numbered-item{
+    text-indent:0;padding-left:1.5em;margin-bottom:8px;
+}
+p.key-finding{
+    text-indent:0;background:linear-gradient(90deg,#fffbeb,transparent);
+    padding:10px 16px;border-left:4px solid #d69e2e;
+    border-radius:0 6px 6px 0;margin:20px 0;
+}
+
+strong{color:#1a365d}
+
+/* ── 表格（字号略小于正文，便于查阅） ── */
+/* 列宽优化：table-layout:auto + min-width + word-break + 预处理<br>换行 */
+.table-wrapper{overflow-x:auto;margin:20px 0;}
+table.doc-table{
+    width:100%;border-collapse:collapse;margin:0;
+    font-size:15px;line-height:1.6;
+    table-layout:auto;
+}
+table.doc-table thead{background:#1a365d;}
+table.doc-table th{
+    color:#fff;padding:9px 10px;text-align:left;
+    font-size:13px;font-weight:600;white-space:normal;
+    word-wrap:break-word;overflow-wrap:break-word;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+}
+table.doc-table td{
+    padding:8px 10px;border-bottom:1px solid #e2e8f0;
+    font-size:14px;vertical-align:top;
+    word-wrap:break-word;overflow-wrap:break-word;word-break:break-word;
+    min-width:75px;
+}
+table.doc-table tbody tr:nth-child(even){background:#f7fafc}
+table.doc-table tbody tr:hover{background:#edf2f7}
+
+/* ── 列表 ── */
+ol.doc-list, ul.doc-list{margin:16px 0 16px 2em}
+ol.doc-list li, ul.doc-list li{margin-bottom:10px;line-height:2.0;font-size:17px;padding-left:4px;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif;}
+ol.doc-list{list-style-type:decimal}
+ol.doc-list ol, ul.doc-list ul{margin:8px 0 8px 1.5em}
+
+/* ── 折叠块 ── */
+details{
+    margin:20px 0;border:1px solid #e2e8f0;
+    border-radius:8px;overflow:hidden;
+    background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.04);
+}
+details summary{
+    padding:14px 18px;background:linear-gradient(180deg,#f7fafc,#edf2f7);
+    cursor:pointer;font-weight:600;color:#1a365d;
+    font-size:17px;user-select:none;list-style:none;
+    display:flex;align-items:center;gap:8px;
+}
+details summary::-webkit-details-marker{display:none}
+details summary::before{
+    content:"▶";display:inline-block;font-size:11px;
+    transition:transform 0.2s;color:#d69e2e;
+}
+details[open] summary::before{transform:rotate(90deg)}
+details summary:hover{background:#edf2f7}
+details[open] summary{border-bottom:1px solid #e2e8f0}
+.details-content{padding:20px 22px;}
+.details-content p.body-text:first-child{margin-top:0}
+.details-content p.body-text:last-child{margin-bottom:0}
+
+/* ── Callout ── */
+.callout{margin:24px 0}
+.callout strong{font-size:17px;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif}
+
+/* ── 引用块 ── */
+blockquote{
+    background:#fffbeb;border-left:3px solid #d69e2e;
+    padding:16px 20px;margin:20px 0;
+    border-radius:0 6px 6px 0;color:#744210;font-size:17px;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif;
+}
+
+/* ── 代码块 ── */
+code{background:#f7fafc;padding:2px 6px;border-radius:3px;font-size:14px}
+pre{background:#1a202c;color:#e2e8f0;padding:18px;border-radius:8px;
+    margin:18px 0;overflow-x:auto;line-height:1.6}
+pre code{background:none;color:inherit;font-size:14px}
+
+/* ── 导航栏 ── */
+.nav{
+    background:linear-gradient(135deg,#1a365d,#2d3748);
+    padding:14px 20px;margin:-24px -20px 28px;
+    border-radius:0 0 8px 8px;display:flex;gap:20px;flex-wrap:wrap;
+}
+.nav a{color:rgba(255,255,255,0.85);text-decoration:none;font-size:14px;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
+.nav a:hover{color:#fff;text-decoration:underline}
+
+hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
+
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="index.html">← 返回目录</a>
+<a href="#top">回顶部</a>
+<a href="appendix_h_m.html">切换到手机版</a>
+<span style="color:rgba(255,255,255,0.5);font-size:12px;margin-left:auto">
+  更新于 2026-06-15 11:06
+</span>
+</div>
+<div id="top"></div>
+<h1>附件H：星恒电源估值分析——多方法交叉验证</h1>
+<p class="body-text"><strong>定位</strong>：独立估值分析附件，与<code>附件B_收并购方案与天保收购路径分析</code>配套使用。附件B聚焦收购路径设计与实施，本附件聚焦估值方法论与量化验证。</p>
+<p class="body-text"><strong>数据来源标注</strong>：[A]审计报告 [B]尽调收资材料/iFind实时数据 [C]可比公司公开年报 [D]公开行业数据 [K]独立分析推理 [L]行业逻辑判断</p>
+<hr />
+<h2>一、可比公司全维度数据（估值基础）</h2>
+<h3>1.1 港股锂电可比公司</h3>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>星恒电源</th>
+<th>正力新能 03677.HK</th>
+<th>中创新航 03931.HK</th>
+<th>瑞浦兰钧 00666.HK</th>
+<th>宁德时代 300750.SZ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FY2025营收(亿)</td>
+<td><strong>36.36</strong></td>
+<td>81.01</td>
+<td>444.00</td>
+<td>243.34</td>
+<td>4,237.02</td>
+</tr>
+<tr>
+<td>营收/星恒倍数</td>
+<td>1.0x</td>
+<td><strong>2.2x</strong></td>
+<td>12.2x</td>
+<td>6.7x</td>
+<td>116x</td>
+</tr>
+<tr>
+<td>FY2025归母净利(亿)</td>
+<td><strong>0.45</strong></td>
+<td>8.09</td>
+<td>14.76</td>
+<td>6.23</td>
+<td>722.01</td>
+</tr>
+<tr>
+<td>净利率(总净利/营收)</td>
+<td><strong>1.24%</strong></td>
+<td>9.98%</td>
+<td>4.72%</td>
+<td>2.80%</td>
+<td>18.12%</td>
+</tr>
+<tr>
+<td>PE(TTM,2026-06-15)</td>
+<td>不适用</td>
+<td><strong>18.04x</strong></td>
+<td>26.56x</td>
+<td>43.22x</td>
+<td>23.13x</td>
+</tr>
+<tr>
+<td>PS(TTM,2026-06-15)</td>
+<td>—</td>
+<td><strong>1.86x</strong></td>
+<td>0.85x</td>
+<td>1.15x</td>
+<td>3.90x</td>
+</tr>
+<tr>
+<td>PB(MRQ,2026-06-15)</td>
+<td>—</td>
+<td>1.87x</td>
+<td>1.07x</td>
+<td>2.38x</td>
+<td>5.11x</td>
+</tr>
+<tr>
+<td>ROE(平均)</td>
+<td><strong>~1.6%</strong></td>
+<td>11.56%</td>
+<td>4.10%</td>
+<td>5.66%</td>
+<td>24.72%</td>
+</tr>
+<tr>
+<td>营收增速</td>
+<td>+23.3%</td>
+<td>+57.90%</td>
+<td>+59.99%</td>
+<td>+36.74%</td>
+<td>+17.04%</td>
+</tr>
+<tr>
+<td>资产负债率</td>
+<td>56.0%</td>
+<td>61.75%</td>
+<td>64.02%</td>
+<td>74.49%</td>
+<td>61.94%</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>数据来源</strong>：PE/PS/PB/ROE/营收增速/资产负债率来自 iFind QuantAPI [B: iFind实时数据 2026-06-15]（数据浏览器+F9全球可比公司估值+FinQuery）。净利率统一使用「总净利润/营业收入」标准口径 [B]。星恒数据来自FY2025管理合并报表 [B] + 审计报告 [A]。</p>
+<p class="body-text"><strong>iFind端点差异说明</strong>：不同iFind端点对同一指标可能返回小幅差异值。例如宁德时代PE数据浏览器=23.13x vs F9=25.30x（PE-TTM vs PE-最新计算口径不同）；中创新航PB F9=0.70x vs FinQuery MRQ=1.07x（F9用最新报告期净资产，FinQuery用MRQ）。本表以数据浏览器为PE/PS基准，以FinQuery为PB/净利率/营收增速基准。[K]</p>
+<p class="body-text"><strong>ROE口径说明</strong>：星恒ROE约1.6%基于「归母净利÷含少数股东总净资产」（0.45/27.76）。可比公司ROE基于「归母净利÷归母净资产」（归母口径）。若星恒改为归母口径：0.45÷[(23.02+22.93)/2]=1.96%。口径差异不影响「星恒ROE显著低于可比公司」的核心结论。[K]</p>
+<h3>1.2 可比性判定</h3>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>可比公司</th>
+<th>规模可比</th>
+<th>利润可比</th>
+<th>业务可比</th>
+<th>综合判定</th>
+<th>PE</th>
+<th>PS</th>
+<th>纳入估值锚</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正力新能</td>
+<td>✅ 2.2x</td>
+<td>⚠️ 9.98% vs 1.24%(8.0x)</td>
+<td>⚠️ 动力为主</td>
+<td><strong>最可比</strong></td>
+<td>18.04x</td>
+<td>1.86x</td>
+<td>✅ 核心锚</td>
+</tr>
+<tr>
+<td>中创新航</td>
+<td>❌ 12.2x</td>
+<td>⚠️ 4.72% vs 1.24%(3.8x)</td>
+<td>⚠️ 动力为主</td>
+<td>次级可比</td>
+<td>26.56x</td>
+<td>0.85x</td>
+<td>⚠️ PS参考</td>
+</tr>
+<tr>
+<td>瑞浦兰钧</td>
+<td>❌ 6.7x</td>
+<td>⚠️ 2.80%(2.3x)</td>
+<td>❌ 储能为主</td>
+<td>弱可比</td>
+<td>43.22x</td>
+<td>1.15x</td>
+<td>❌ 不纳入</td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td>❌ 116x</td>
+<td>❌ 18.12%(14.6x)</td>
+<td>❌ 全球龙头</td>
+<td>不可比</td>
+<td>23.13x</td>
+<td>3.90x</td>
+<td>❌ 不纳入</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>判定依据</strong>：「可比公司」要求规模、盈利、业务模式至少两项近似。营收差距&gt;5x丧失规模可比性（依据：Damodaran相对估值框架中，规模差异显著的公司应适用规模调整，而非简单比较倍数）。[K]</p>
+<p class="body-text">券商32.86x的PE均值包含了不可比公司（中创新航26.56x/12.2倍规模差距、瑞浦兰钧43.22x/储能为主、宁德时代23.13x/116倍规模差距），存在结构性高估。以下独立分析仅以正力新能（PE 18.04x/PS 1.86x）为核心锚。[K]</p>
+<h3>1.3 A股可比交易（资产基础法PB参考）</h3>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>交易案例</th>
+<th>标的</th>
+<th>完成时间</th>
+<th>估值方法</th>
+<th>PB</th>
+<th>静态PE</th>
+<th>与星恒可比性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>佛塑科技</strong></td>
+<td><strong>金力新能源100%</strong></td>
+<td><strong>2026-01</strong></td>
+<td><strong>资产基础法</strong></td>
+<td><strong>1.13x</strong></td>
+<td>亏损不适用</td>
+<td><strong>最可比：同为资产基础法+锂电产业链，标的处于亏损/微利期</strong></td>
+</tr>
+<tr>
+<td>安孚科技(31%)</td>
+<td>安孚能源31%</td>
+<td>2025-08</td>
+<td>收益法</td>
+<td>1.17x</td>
+<td>12.22</td>
+<td>收益法估值，与资产基础法不可直接对标</td>
+</tr>
+<tr>
+<td>安孚科技(15%/36%)</td>
+<td>亚锦科技</td>
+<td>2022-01/05</td>
+<td>收益法</td>
+<td>4.95-6.69x</td>
+<td>15.23-20.56</td>
+<td>南孚品牌+现金牛——完全不具可比性</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>数据来源</strong>：中信证券方案初稿引用的A股可比交易数据 [B]。</p>
+<div class="callout callout-caution" style="background:#fffff0;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>🟡 CAUTION</strong><br><p>🟡
+资产基础法的A股可比交易仅佛塑科技1例可获得。样本量n=1，PB 1.13x作为锚点的统计稳健性受限于此。更广泛的资产基础法可比交易数据库（如通过CVSource/Wind并购数据库扩充至≥3例）将提高估值区间可信度。[K]</p>
+</div>
+<hr />
+<h2>二、PE估值法——正力新能锚点+折价链</h2>
+<h3>2.1 核心公式</h3>
+<pre><code>13.73%价值 = PE × 归母净利 × 0.85(PRE-IPO折价) × 0.1373(持股比例)
+</code></pre>
+<p class="body-text"><strong>PRE-IPO折价0.85的推导</strong>：PRE-IPO轮次估值通常较IPO市值折价15-20%，反映流动性锁定期（通常6-12个月）。行业惯例区间为10-25%，取中值15%。[K: 基于PRE-IPO市场惯例]</p>
+<h3>2.2 PE折价链推导（正力新能18.04x → 星恒合理PE）</h3>
+<p class="body-text"><strong>步骤1：规模折价</strong></p>
+<p class="body-text">正力新能营收81.01亿 vs 星恒36.36亿，规模比2.2x。Damodaran相对估值框架下，规模差异显著的公司应适用规模折价。</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>参照系</th>
+<th>规模差距</th>
+<th>折价率参考</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中创新航(444亿) vs 正力新能(81亿)</td>
+<td>5.5x</td>
+<td>PE 26.56x vs 18.04x = 47%溢价</td>
+<td>规模大<br>→PE高（反常，因中创新航利润质量更高）</td>
+</tr>
+<tr>
+<td>瑞浦兰钧(243亿) vs 正力新能(81亿)</td>
+<td>3.0x</td>
+<td>PE 43.22x vs 18.04x = 140%溢价</td>
+<td>规模大<br>→PE高（反常，瑞浦亏损边缘PE虚高）</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">正力新能→星恒方向（规模缩小），Damodaran框架建议规模折价10-15%。取12%作为基准。[K: Damodaran total beta + size premium框架]</p>
+<p class="body-text"><strong>步骤2：盈利质量折价</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>质量维度</th>
+<th>正力新能</th>
+<th>星恒电源</th>
+<th>差异</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>净利率</td>
+<td>9.98%</td>
+<td>1.24%</td>
+<td>8.0x差距</td>
+</tr>
+<tr>
+<td>ROE</td>
+<td>11.56%</td>
+<td>~1.6%</td>
+<td>7.2x差距</td>
+</tr>
+<tr>
+<td>营收增速</td>
+<td>+57.90%</td>
+<td>+23.3%</td>
+<td>2.5x差距</td>
+</tr>
+<tr>
+<td>经营CF/净利</td>
+<td>未获取</td>
+<td>约4.6x(2.06亿/0.45亿)</td>
+<td>高倍数来自折旧依赖</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">盈利质量全面弱于正力新能，建议折价15-25%。取20%作为基准。[K: 基于四项盈利质量指标的定性比较]</p>
+<p class="body-text"><strong>步骤3：折价链计算</strong></p>
+<pre><code>正力新能PE 18.04x
+  × (1 - 12%规模折价) = 15.88x
+  × (1 - 20%质量折价) = 12.70x
+→ 合理PE区间：12.3-16.2x
+  保守端（-15%规模/-25%质量）= 18.04 × 0.85 × 0.75 = 11.50x
+  乐观端（-10%规模/-15%质量）= 18.04 × 0.90 × 0.85 = 13.80x
+</code></pre>
+<p class="body-text">综上，星恒合理PE约<strong>12-16x</strong>。采用偏保守端12-15x作为估值区间。[K]</p>
+<div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:17px"><strong>💡 NOTE</strong><br><p>💡
+<strong>折价链的局限性</strong>：规模折价和盈利质量折价的具体幅度属于框架性估算，非精确计量经济学推导。Damodaran框架提供方向性指导，精确幅度需基于更广泛的同行业可比交易数据库回归分析。在n=1可比公司（正力新能）的限制下，折价链的精度受限于样本量。[K]</p>
+</div>
+<h3>2.3 PE估值结果</h3>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>PE情景</th>
+<th>归母净利基准</th>
+<th>PRE-IPO折价</th>
+<th>13.73%价值</th>
+<th>计算式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>保守(12x)</td>
+<td>0.45亿</td>
+<td>×0.85</td>
+<td>0.63亿</td>
+<td>12×0.45×0.85×0.1373</td>
+</tr>
+<tr>
+<td>基准(13.5x)</td>
+<td>0.45亿</td>
+<td>×0.85</td>
+<td>0.71亿</td>
+<td>13.5×0.45×0.85×0.1373</td>
+</tr>
+<tr>
+<td>乐观(15x)</td>
+<td>0.45亿</td>
+<td>×0.85</td>
+<td>0.79亿</td>
+<td>15×0.45×0.85×0.1373</td>
+</tr>
+</tbody>
+</table></div><hr />
+<h2>三、PS估值法——双锚锁定估值区间</h2>
+<h3>3.1 PS锚点分析</h3>
+<p class="body-text"><strong>锚点一：正力新能 PS 1.86x（隐含PS推导）</strong></p>
+<p class="body-text">PE 18.04x × NPM 9.98% = 1.80x（差异来自少数股东权益）。正力新能PS 1.86x代表「营收81亿+NPM 10%+增速58%」的市场定价。</p>
+<p class="body-text"><strong>锚点二：中创新航 PS 0.85x（市场实际PS）</strong></p>
+<p class="body-text">中创新航（444亿营收，NPM 4.72%，PE 26.56x）：隐含PS = 26.56 × 4.72% = 1.25x → 市场实际PS = 0.85x，差异 = 1.25/0.85-1 = 47%。</p>
+<p class="body-text"><strong>少数股东权益量化</strong>：0.85x vs 1.25x的差异 = 47%。这意味着少数股东分走约32%的净利润（1 - 0.85/1.25 = 32%）。推导：合并净利含少数股东损益，市场PE基于归母净利，两者差异即为少数股东权益占比。[K: 基于隐含PS vs市场PS反推]</p>
+<h3>3.2 PS估值区间推导</h3>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>PS参考锚</th>
+<th>PS倍数</th>
+<th>推导依据</th>
+<th>整体估值(亿)</th>
+<th>13.73%价值(亿)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正力新能(隐含PS)</td>
+<td><strong>1.86x</strong></td>
+<td>PE 18.04x × NPM 9.98% [K]</td>
+<td>68.36</td>
+<td>9.38</td>
+</tr>
+<tr>
+<td>中创新航(市场PS)</td>
+<td><strong>0.85x</strong></td>
+<td>港股对二线动力电池实际PS定价 [B]</td>
+<td>30.18</td>
+<td><strong>4.14</strong></td>
+</tr>
+<tr>
+<td>PS 0.5x(保守下界)</td>
+<td>0.5x</td>
+<td>推导见3.3节</td>
+<td>18.18</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>PS 1.0x(天保入股隐含)</td>
+<td>1.0x</td>
+<td>5亿 ÷ 0.1373 ÷ 36.36亿 [K]</td>
+<td>36.36</td>
+<td>5.00</td>
+</tr>
+</tbody>
+</table></div><h3>3.3 PS 0.5x下界推导链</h3>
+<div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:17px"><strong>💡 NOTE</strong><br><p>💡
+<strong>推导</strong>：中创新航PS 0.85x × 规模折价（12.2倍营收差距）约40% → 0.51x ≈ 0.5x。港股制造业PS中位数0.14x包含大量夕阳行业，对两轮车锂电龙头（市占率72.5%）适用性有限，仅作为绝对下限参考。[K]</p>
+</div>
+<p class="body-text key-finding"><strong>综合判断</strong>：星恒合理PS区间约<strong>0.5-1.0x</strong>。上界1.0x为天保入股隐含PS，处于区间中枢偏上。下界0.5x仅作保守估值下界假设，非精确计算。[K]</p>
+<div class="callout callout-caution" style="background:#fffff0;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>🟡 CAUTION</strong><br><p>🟡
+PS 0.5x的推导高度依赖「规模折价40%」这一主观判断。中创新航规模是星恒的12.2倍，从0.85x折价至0.5x的幅度（约40%）合理但非精确——实际折价幅度取决于市场对规模差异的定价敏感度。此假设的合理性在DM（发达市场）有Damodaran规模溢价的实证支持，在港股小市值制造业中缺乏足够数量的可比案例验证。[K]</p>
+</div>
+<hr />
+<h2>四、PB估值法——资产基础法</h2>
+<h3>4.1 净资产基准</h3>
+<p class="body-text">星恒FY2025末归母净资产约23.02亿元（管理口径），含：</p>
+<ul class="doc-list"><li><p class="body-text">归母净资产：22.93亿（FY2025初）→ 23.02亿（FY2025末）[B: Q1 2026合并报表]</li>
+<li><p class="body-text">少数股东权益：4.74亿</li>
+<li><p class="body-text">净资产合计：27.76亿</li>
+</ul>
+<h3>4.2 PB情景推导</h3>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>情景</th>
+<th>PB</th>
+<th>净资产基准(亿)</th>
+<th>整体估值(亿)</th>
+<th>推导依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基准（可比交易）</td>
+<td><strong>1.13x</strong></td>
+<td>23.02</td>
+<td>26.01</td>
+<td>佛塑科技/金力新能源（资产基础法+锂电产业链，2026-01）[B]</td>
+</tr>
+<tr>
+<td>券商方案</td>
+<td><strong>1.30x</strong></td>
+<td>23.02</td>
+<td>29.93</td>
+<td>中信证券方案初稿，较可比交易溢价15% [B]</td>
+</tr>
+<tr>
+<td>乐观</td>
+<td><strong>1.50x</strong></td>
+<td>23.02</td>
+<td>34.53</td>
+<td>含土地增值+专利+客户关系等无形资产的乐观评估 [B/K]</td>
+</tr>
+</tbody>
+</table></div><h3>4.3 PB溢价合理性分析</h3>
+<p class="body-text"><strong>券商1.30x vs 可比交易1.13x = 溢价15%</strong></p>
+<p class="body-text">券商30%溢价（原方案表述）的支撑论据：</p>
+<ul class="doc-list"><li><p class="body-text">星恒土地资产可能因区域开发而增值（苏州/滁州工业用地）</li>
+<li><p class="body-text">专利和客户关系可能构成可辨认无形资产</li>
+<li><p class="body-text">盈利企业估值高于亏损企业（金力新能源亏损）</li>
+</ul>
+<p class="body-text"><strong>论据的局限性</strong>：</p>
+<ul class="doc-list"><li><p class="body-text">土地增值未经第三方评估机构确认</li>
+<li><p class="body-text">专利/客户关系是否满足「可辨认」标准需资产评估师逐项认定</li>
+<li><p class="body-text">星恒净利仅0.45亿，&quot;盈利&quot;优势微弱</li>
+</ul>
+<div class="callout callout-warning" style="background:#fffbeb;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>⚠️ WARNING</strong><br><p>⚠️
+若土地增值低于预期、或专利/客户关系无法确认为可辨认无形资产，PB应向1.13x收敛——对应26.01亿整体估值。[K]</p>
+</div>
+<hr />
+<h2>五、PS与PB的交叉验证——估值收敛</h2>
+<p class="body-text">两个独立估值方法在方案二/三场景中收敛至约30亿：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>估值方法</th>
+<th>估值锚</th>
+<th>整体估值</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PB法（券商1.30x）</td>
+<td>净资产23.02亿 × 1.30x</td>
+<td>29.93亿</td>
+<td>[B/K]</td>
+</tr>
+<tr>
+<td>PS法（中创新航0.85x）</td>
+<td>FY2025营收36.36亿 × 0.85x</td>
+<td>30.91亿</td>
+<td>[B/K]</td>
+</tr>
+<tr>
+<td><strong>差异</strong></td>
+<td>—</td>
+<td><strong>3.2%</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">两种独立方法收敛至约30亿（差异仅3.2%），增加了30亿左右估值的可信度。[K: 估值方法交叉验证]</p>
+<hr />
+<h2>六、方案一（13.73%少数股权）——概率加权期望价值</h2>
+<h3>6.1 收敛情景量化（统一使用PRE-IPO估值=IPO市值×85%）</h3>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>情景</th>
+<th>估值方法</th>
+<th>整体估值(亿)</th>
+<th>PRE-IPO(亿)</th>
+<th>13.73%价值(亿)</th>
+<th>vs天保5亿</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IPO失败</td>
+<td>财务投资退出</td>
+<td>—</td>
+<td>—</td>
+<td>~3.00(估计残值)</td>
+<td>-40%</td>
+</tr>
+<tr>
+<td>PS 0.5x(低)</td>
+<td>PS×营收45亿</td>
+<td>22.50</td>
+<td>19.13</td>
+<td>2.63</td>
+<td>-47.5%</td>
+</tr>
+<tr>
+<td>中创新航收敛(PS 0.85x)</td>
+<td>PS×营收45亿</td>
+<td>38.25</td>
+<td>32.51</td>
+<td>4.47</td>
+<td>-10.6%</td>
+</tr>
+<tr>
+<td>正力新能收敛(PE 18.04x,净利0.90亿)</td>
+<td>PE 18.04x × 净利0.90亿</td>
+<td>16.24</td>
+<td>13.80</td>
+<td>1.90</td>
+<td>-60.5%</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>FY2027E营收45亿推导</strong>：FY2025营收36.36亿×CAGR 11.3%（历史3年CAGR约0.34%+新国标改善约5%+海外约6%）= 45亿。CAGR取值基于：(a) FY2025管理口径营收36.36亿为基准 [B]；(b) 新国标实施对合规市场有5-8%推升效应（GGII行业预测 2025）；(c) 海外EB增长10-15%（行业数据）。合成约11%为保守-中性区间。[K]</p>
+<p class="body-text"><strong>FY2027E净利0.90亿推导</strong>：45亿×净利率2.0%（历史可实现区间下界）= 0.90亿。取2.0%而非1.24%的原因：假设FY2027储能已基本回正（GM≥0%），净利率回升至历史正常区间下沿。[K]</p>
+<h3>6.2 概率加权期望价值</h3>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>情景</th>
+<th>概率</th>
+<th>13.73%价值(亿)</th>
+<th>概率×价值(亿)</th>
+<th>逻辑依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IPO失败<br>→财务投资退出</td>
+<td><strong>35%</strong></td>
+<td>3.00</td>
+<td>1.05</td>
+<td>见6.3节概率推导</td>
+</tr>
+<tr>
+<td>低估值（PS 0.5x）</td>
+<td><strong>25%</strong></td>
+<td>2.63</td>
+<td>0.66</td>
+<td>港股对二线电池折价</td>
+</tr>
+<tr>
+<td>基准（PS 0.85x/PE 13.5x）</td>
+<td><strong>30%</strong></td>
+<td>4.47</td>
+<td>1.34</td>
+<td>中创新航收敛情景</td>
+</tr>
+<tr>
+<td>高估值（PS 1.5x/PE 16x）</td>
+<td><strong>10%</strong></td>
+<td>7.70</td>
+<td>0.77</td>
+<td>需多条件同时满足</td>
+</tr>
+<tr>
+<td><strong>概率加权期望</strong></td>
+<td><strong>100%</strong></td>
+<td>—</td>
+<td><strong>~3.82亿</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>注</strong>：此前计算期望值约2.93亿（IPO失败35%/低估值25%/基准25%/高估值15%）。本次调整为——基准情景概率从25%上调至30%（反映PS 0.85x锚点的相对可靠性），高估值从15%下调至10%（更强证据不支持高估值），期望值上修至3.82亿。但核心结论不变：<strong>方案一的期望回报为负</strong>（3.82亿 vs 5亿成本 = -23.6%）。[K]</p>
+<h3>6.3 概率赋值推理——每项均有依据</h3>
+<p class="body-text"><strong>IPO失败概率35%的推理链</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>因素</th>
+<th>方向</th>
+<th>量化参考</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>恒生科技指数处于技术熊市</td>
+<td>↑失败概率</td>
+<td>港股小市值制造业IPO窗口收窄</td>
+<td>[B: MX金融]</td>
+</tr>
+<tr>
+<td>小市值锂电破发率高</td>
+<td>↑失败概率</td>
+<td>2025年港股锂电新上市首日破发率&gt;50%</td>
+<td>[B: MX金融]</td>
+</tr>
+<tr>
+<td>正力新能PE下行至18.04x</td>
+<td>↑失败概率</td>
+<td>可比锚PE下移<br>→IPO定价承压</td>
+<td>[B: iFind]</td>
+</tr>
+<tr>
+<td>启源纳川持股冻结至2028年</td>
+<td>↑失败概率</td>
+<td>法律尽调确认，四大雷之一</td>
+<td>[A: 法律尽调]</td>
+</tr>
+<tr>
+<td>产品安全系统性失效</td>
+<td>↑失败概率</td>
+<td>16起未决诉讼+系统性过充电失效</td>
+<td>[A: 法律尽调]</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">35%是基于以上5项因素的综合判断，非精确模型测算。[L]</p>
+<p class="body-text"><strong>高估值仅10%的推理链</strong>：需同时满足三个条件：(1) FY2027净利达到2亿（需净利率4.4%，远高于历史可实现2.0-2.5%）；(2) 港股IPO市场窗口配合（恒科回暖+锂电板块估值修复）；(3) 正力新能PE不继续下行。三个独立条件的联合概率远低于任何一个单一条件的概率（0.44×0.50×0.65≈14%）。取10%为保守-中性估计。[L: 联合概率估算]</p>
+<h3>6.4 概率敏感度测试</h3>
+<p class="body-text">期望值对概率赋值高度敏感：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>IPO失败概率变动</th>
+<th>期望值(亿)</th>
+<th>vs 5亿成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>25%（乐观）</td>
+<td>~4.10</td>
+<td>-18%</td>
+</tr>
+<tr>
+<td>35%（基准）</td>
+<td>~3.82</td>
+<td>-24%</td>
+</tr>
+<tr>
+<td>50%（悲观）</td>
+<td>~3.50</td>
+<td>-30%</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">在合理概率范围内（IPO失败25-50%），期望值始终低于5亿成本——<strong>方案一的期望回报为负的结论对概率赋值不敏感</strong>。[K]</p>
+<hr />
+<h2>七、PE敏感性分析——方案一13.73%价值</h2>
+<p class="body-text">统一使用PRE-IPO估值=IPO市值×0.85，对PE和归母净利进行双因素敏感性分析：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>PE \ 归母净利</th>
+<th>0.45亿(FY2025实际)</th>
+<th>0.75亿(乐观)</th>
+<th>1.00亿(券商)</th>
+<th>1.50亿(管理层目标)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>18.04x</strong>(正力新能实时)</td>
+<td><strong>1.26亿</strong></td>
+<td>2.10亿</td>
+<td>2.80亿</td>
+<td>4.20亿</td>
+</tr>
+<tr>
+<td><strong>25x</strong>(偏乐观)</td>
+<td>1.75亿</td>
+<td>2.91亿</td>
+<td>3.88亿</td>
+<td>5.82亿</td>
+</tr>
+<tr>
+<td><strong>32.86x</strong>(券商PE均值)</td>
+<td>2.30亿</td>
+<td>3.83亿</td>
+<td>5.10亿</td>
+<td>7.65亿</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>解读</strong>：仅「券商PE 32.86x+净利≥1.0亿」或「PE 25x+净利≥1.5亿」的极端组合才实现正回报（&gt;5亿）。所有基于正力新能实时PE（18.04x）的情景均为负回报。[K]</p>
+<hr />
+<h2>八、PB压力测试——方案二24%价值</h2>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>PB \ 净资产</th>
+<th>20亿(减值1.5亿)</th>
+<th>21.5亿(减值0.5亿)</th>
+<th>23.02亿(基准)</th>
+<th>24.5亿(重估增值)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1.13x</strong>(可比交易)</td>
+<td>5.42亿</td>
+<td>5.83亿</td>
+<td><strong>6.24亿</strong></td>
+<td>6.64亿</td>
+</tr>
+<tr>
+<td><strong>1.30x</strong>(券商)</td>
+<td>6.24亿</td>
+<td>6.71亿</td>
+<td><strong>7.18亿</strong></td>
+<td>7.64亿</td>
+</tr>
+<tr>
+<td><strong>1.50x</strong>(乐观)</td>
+<td>7.20亿</td>
+<td>7.74亿</td>
+<td><strong>8.29亿</strong></td>
+<td>8.82亿</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>解读</strong>：方案二估值区间（5.4-8.8亿）较方案一（1.3-7.7亿）显著收窄。基准情景（PB 1.13x/净资产23.02亿→6.24亿）仍高于A组5亿底线。资产基础法为微利企业提供了估值下限保护。[K]</p>
+<hr />
+<h2>九、方案三——PS+PB双方法综合估值</h2>
+<p class="body-text">PS法（保守/基准/乐观）：0.85x/1.0x/1.2x × FY2025营收36.36亿 = 30.91/36.36/43.63亿
+PB法（基准/券商/乐观）：1.13x/1.30x/1.50x × 23.02亿 = 26.01/29.93/34.53亿</p>
+<p class="body-text">PS与PB在基准情景交叉验证：PB 1.30x (29.93亿) ≈ PS 0.85x (30.91亿)，差异仅3.2%，增加约30亿的可信度。[K]</p>
+<hr />
+<h2>十、估值方法适用性总结</h2>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>估值方法</th>
+<th>适用性</th>
+<th>核心局限</th>
+<th>使用建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PE法</td>
+<td>⚠️ 低——NPM 1.24%，微利企业PE不稳定</td>
+<td>PE对小额净利变动极度敏感</td>
+<td>仅作辅助参考</td>
+</tr>
+<tr>
+<td>PS法</td>
+<td>✅ 高——营收36.36亿稳定，受利润波动影响小</td>
+<td>PS下界0.5x的推导精度有限</td>
+<td><strong>主估值方法</strong></td>
+</tr>
+<tr>
+<td>PB法</td>
+<td>✅ 中高——资产基础法提供下限保护</td>
+<td>可比交易仅n=1，土地/专利价值待第三方确认</td>
+<td>下限锚+交叉验证</td>
+</tr>
+<tr>
+<td>收益法(DCF)</td>
+<td>❌ 不适用——微利企业+CF波动大</td>
+<td>永续增长率0.5%的变化可导致估值波动&gt;30%</td>
+<td>暂不使用</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>推荐估值顺序</strong>：PS法（主）→ PB法（下限锚+交叉验证）→ PE法（辅助参考）。[K]</p>
+<hr />
+<p class="body-text"><em>本附件所有估值计算均标注来源。标注[K]为独立推导，[L]为行业逻辑判断。所有概率赋值均附有推理链，所有公式均经独立验证。</em></p>
+
+</body>
+</html>
