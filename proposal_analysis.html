@@ -213,7 +213,7 @@
       <tr><td>ROE(平均)</td><td class="num" style="color:var(--orange)"><strong>~1.6%</strong></td><td class="num" style="color:var(--green)">11.56%</td><td class="num">4.10%</td><td class="num">5.66%</td><td class="num">24.72%</td></tr>
       <tr><td>营收增速</td><td class="num">+23.3%</td><td class="num">+57.90%</td><td class="num">+59.99%</td><td class="num">+36.74%</td><td class="num">+17.04%</td></tr>
 	      <tr><td>资产负债率</td><td class="num">56.0%<span class="src" style="font-size:9px">管</span></td><td class="num">61.75%</td><td class="num">64.02%</td><td class="num">74.49%</td><td class="num">61.94%</td></tr>
-      <tr style="background:#fff8e1"><td colspan="6"><strong>来源：</strong>PE/PS/PB/ROE/营收增速/资产负债率来自 iFind QuantAPI <span class="src src-B">[B: iFind实时数据 2026-06-15]</span>（数据浏览器+F9全球可比公司估值+FinQuery；不同端点数值可能有小幅差异，详见说明）。净利率统一使用「总净利润/营业收入」标准口径（与iFind财务摘要一致）<span class="src src-B">[B]</span>。星恒数据来自FY2025管理合并报表 <span class="src src-B">[B]</span> + 审计报告（容诚审字[2026]200F1622号）<span class="src src-A">[A]</span>，标注为「管」以区分审计口径。<strong>此前版本错误修正：</strong>(1)宁德时代为A+H双重上市公司（A股300750.SZ+H股03750.HK）。iFind返回A股PE=22.22x（2026-06-15实测），H股03750.HK收盘价704.50 HKD隐含PE约36.3x。CATL FY2025营收4,237亿是星恒36.36亿的116倍——无论取A股或H股PE，116x规模差距均使其不可作为星恒的估值可比锚。正确做法是排除宁德时代、不纳入港股可比锚推导；(2)净利率统一为「总净利/营收」标准口径（此前混用归母净利口径，致中创新航NPM被低估3.3%→4.72%）；(3)ROE/营收增速/资产负债率此前因akshare接口限制标注「—」，现已从iFind补全。<br><strong>iFind端点差异说明：</strong>不同iFind端点（数据浏览器/F9全球可比公司估值/FinQuery）对同一指标可能返回小幅差异值。例如：宁德时代PE数据浏览器=23.13x vs F9=25.30x（PE-TTM vs PE-最新计算口径不同）；中创新航PB F9=0.70x vs FinQuery MRQ=1.07x（F9用最新报告期净资产，FinQuery用MRQ）。本表以数据浏览器为PE/PS基准，以FinQuery为PB/净利率/营收增速基准——与F9全球可比公司估值表端点不同，故同一公司数值可能略有差异。<br><strong>ROE口径说明：</strong>星恒ROE约1.6%基于「归母净利÷含少数股东总净资产」（0.45/27.76），可比公司ROE基于「归母净利÷归母净资产」（归母口径）。若星恒改为归母口径：0.45÷[(23.02+22.93)/2]=1.96%——仍处微利区间。口径差异不影响「星恒ROE显著低于可比公司」的核心结论，但建议正式分析中统一口径。<span class="src src-K">[K: 口径统一+数据补全+iFind端点差异说明+ROE口径]</span></td></tr>
+      <tr style="background:#fff8e1"><td colspan="6"><strong>来源：</strong>PE/PS/PB/ROE/营收增速/资产负债率来自 iFind QuantAPI <span class="src src-B">[B: iFind实时数据 2026-06-15]</span>（数据浏览器+F9全球可比公司估值+FinQuery；不同端点数值可能有小幅差异，详见说明）。净利率统一使用「总净利润/营业收入」标准口径（与iFind财务摘要一致）<span class="src src-B">[B]</span>。星恒数据来自FY2025管理合并报表 <span class="src src-B">[B]</span> + 审计报告（容诚审字[2026]200F1622号）<span class="src src-A">[A]</span>，标注为「管」以区分审计口径。<strong>此前版本错误修正：</strong>(1)宁德时代为A+H双重上市公司（A股300750.SZ+H股03750.HK）。iFind返回A股PE=22.22x（2026-06-15实测），H股03750.HK收盘价704.50 HKD隐含PE约36.3x。CATL FY2025营收4,237亿是星恒36.36亿的116倍——无论取A股或H股PE，116x规模差距均使其不可作为星恒的估值可比锚。正确做法是排除宁德时代、不纳入港股可比锚推导；(2)净利率统一为「总净利/营收」标准口径（此前混用归母净利口径，致中创新航NPM被低估3.3%→4.72%）；(3)ROE/营收增速/资产负债率此前因akshare接口限制标注「—」，现已从iFind补全。<br><strong>⚠️ PS数据时间偏差提示（本版新增）：</strong>表中PS来自iFind数据浏览器快照，其对应的市值时点较早（可能为数日/数周前）。2026-06-15腾讯实时行情反算的PS为：正力新能~1.11x（市值98.9亿HKD/营收）vs iFind 1.86x（偏差-40%）、中创新航~0.42x（市值205.8亿HKD）vs iFind 0.85x（偏差-51%）、瑞浦兰钧~0.47x（市值126.2亿HKD）vs iFind 1.15x（偏差-59%）。PE/PB实时与iFind基本一致（±5%）——差异全部来自股价变动导致的市值缩水。正力新能从52w高13.01 HKD跌至6.66 HKD（回撤-48.8%），中创新航从39.30跌至27.02（回撤-31.2%），瑞浦兰钧从18.87跌至13.51（回撤-28.4%）。这意味着：若以实时市值计算，表中PS锚点将系统性下移40-60%。估值推导中的PS锚（正力新能1.86x、中创新航0.85x）反映的是较早时点的市场定价——当前市场的锂电板块定价已更为悲观。这一时间偏差对基于PS的估值结论有实质性影响。<br><strong>iFind端点差异说明：</strong>不同iFind端点（数据浏览器/F9全球可比公司估值/FinQuery）对同一指标可能返回小幅差异值。例如：宁德时代PE数据浏览器=23.13x vs F9=25.30x（PE-TTM vs PE-最新计算口径不同）；中创新航PB F9=0.70x vs FinQuery MRQ=1.07x（F9用最新报告期净资产，FinQuery用MRQ）。本表以数据浏览器为PE/PS基准，以FinQuery为PB/净利率/营收增速基准——与F9全球可比公司估值表端点不同，故同一公司数值可能略有差异。<br><strong>ROE口径说明：</strong>星恒ROE约1.6%基于「归母净利÷含少数股东总净资产」（0.45/27.76），可比公司ROE基于「归母净利÷归母净资产」（归母口径）。若星恒改为归母口径：0.45÷[(23.02+22.93)/2]=1.96%——仍处微利区间。口径差异不影响「星恒ROE显著低于可比公司」的核心结论，但建议正式分析中统一口径。<span class="src src-K">[K: 口径统一+数据补全+iFind端点差异说明+ROE口径]</span></td></tr>
     </tbody>
   </table>
 
@@ -359,16 +359,27 @@
         </tbody>
       </table>
 
-      <h3>第三层：正力新能收敛情景量化（统一使用PRE-IPO估值=IPO市值×85%）</h3>
+      <h3>第三层：收敛情景量化 —— 为什么需要多个收敛目标？</h3>
+
+      <h4>3.1 收敛逻辑：两个锚，两个维度</h4>
+      <div class="callout callout-info">
+        <strong>方法论问题：为什么同时使用正力新能和中创新航作为收敛目标？</strong>
+        正力新能（03677.HK）是营收最接近的可比公司（81亿 vs 星恒36亿，2.2x），但其PE 18.04x和PS 1.86x反映的是<strong>NPM 10%/营收增速58%/ROE 11.6%</strong>的优质电池企业定价——星恒（NPM 1.24%/ROE 1.6%/市占率下滑）在盈利质量和增长确定性上存在量级差距。直接套用正力新能PE/PS会高估，因此需要折价。<br><br>
+        中创新航（03931.HK）PS 0.85x则代表<strong>港股市场对二线动力电池企业的实际支付价格</strong>——其NPM 4.72%虽优于星恒但远逊正力新能，PS 0.85x是市场对「非顶尖锂电企业」的真实定价信号。中创新航虽然营收444亿（12.2x星恒），但PS作为营收倍数天然包含规模信息——市场对其0.85x的PS定价本身已经反映了其规模/利润率组合。<br><br>
+        <strong>两个收敛锚的本质区别：</strong>正力新能锚→「最可比公司给星恒什么估值」（需折价）；中创新航锚→「市场给二线电池企业什么PS」（直接参考）。两者共同构成星恒估值的上界（正力新能折价后PS）和下界（中创新航PS经规模调整），取交集后PS 0.5-0.85x为合理收敛区间。<br><br>
+        <strong>⚠️ 正力新能自身估值坍塌：</strong>正力新能从52w高13.01 HKD跌至6.66 HKD（-48.8%），其当前PE 18.04x本身已处于历史低位。若正力新能自身仍在杀估值，以其为锚对星恒的估值「折价再折价」是否合理？这是一个方法论上的两难：锚的崩塌意味着板块整体估值中枢下移——星恒应跟随下移——而非在已腰斩的锚上再加折价。<span class="src src-K">[K: 多锚收敛方法论分析]</span>
+      </div>
+
+      <h4>3.2 量化情景（统一使用PRE-IPO估值=IPO市值×85%）</h4>
       <table>
-        <thead><tr><th>情景</th><th>估值方法</th><th>IPO市值(亿)</th><th>PRE-IPO(亿)</th><th>13.73%价值(亿)</th><th>vs天保5亿</th></tr></thead>
+        <thead><tr><th>情景</th><th>估值方法</th><th>收敛逻辑</th><th>IPO市值(亿)</th><th>PRE-IPO(亿)</th><th>13.73%价值(亿)</th><th>vs天保5亿</th></tr></thead>
         <tbody>
-          <tr style="background:#fff5f5"><td>PS 0.5x(低估值)</td><td>PS 0.5x × FY2027E营收45亿</td><td class="num">22.50</td><td class="num">19.13</td><td class="num"><strong>2.63</strong></td><td class="num" style="color:var(--red)"><strong>-47.5%</strong></td></tr>
-          <tr style="background:#fffdef"><td>中创新航收敛(PS 0.85x)</td><td>PS 0.85x × FY2027E营收45亿</td><td class="num">38.25</td><td class="num">32.51</td><td class="num"><strong>4.47</strong></td><td class="num" style="color:var(--red)"><strong>-10.6%</strong></td></tr>
-          <tr style="background:#fffdef"><td>正力新能收敛(PE 18.04x,净利0.90亿)</td><td>PE 18.04x × 净利0.90亿</td><td class="num">16.24</td><td class="num">13.80</td><td class="num"><strong>1.90</strong></td><td class="num" style="color:var(--red)"><strong>-60.5%</strong></td></tr>
-          <tr style="background:#fff8e1"><td colspan="7"><strong>⚠️ PE/PS方法论差异提示：</strong>正力新能收敛（PE法→1.90亿）与中创新航收敛（PS法→4.47亿）估值差距达2.35倍——根本原因在于两种方法的估值锚不同：PE法以FY2027E净利0.90亿为锚（受NPM 1.24%制约），PS法以FY2027E营收45亿为锚（产能支撑）。对于NPM 1.24%的微利企业，PS法是更稳健的主估值方法，PE法结果仅作为参考下界。以下第四层概率加权以PS法为核心估值锚。<span class="src src-K">[K: PE/PS方法论差异分析]</span></td></tr>
-          <tr style="background:#f0fff4"><td>乐观(PE 25x × 净利1.5亿)</td><td>PE 25x × 净利1.50亿</td><td class="num">37.50</td><td class="num">31.88</td><td class="num"><strong>4.38</strong></td><td class="num" style="color:var(--red)"><strong>-12.5%</strong></td></tr>
-          <tr style="background:#e3f2fd"><td>券商假设(PE 32.86x × 净利2亿)</td><td>券商假设</td><td class="num">65.73</td><td class="num">55.87</td><td class="num"><strong>7.67</strong></td><td class="num" style="color:var(--green)"><strong>+53.4%</strong></td></tr>
+          <tr style="background:#fff5f5"><td>PS 0.5x（低估值）</td><td>PS 0.5x × FY2027E 营收45亿</td><td>中创新航实时PS 0.42x + 星恒规模折价补偿→0.5x</td><td class="num">22.50</td><td class="num">19.13</td><td class="num"><strong>2.63</strong></td><td class="num" style="color:var(--red)"><strong>-47.5%</strong></td></tr>
+          <tr style="background:#fffdef"><td>中创新航收敛（PS 0.85x）</td><td>PS 0.85x × FY2027E 营收45亿</td><td>iFind PS 0.85x —— 港股二线电池企业实际定价锚。注意：实时PS仅0.42x，0.85x为iFind快照值（市值时点较早），假设市场回暖后PS向iFind锚修复</td><td class="num">38.25</td><td class="num">32.51</td><td class="num"><strong>4.47</strong></td><td class="num" style="color:var(--red)"><strong>-10.6%</strong></td></tr>
+          <tr style="background:#fffdef"><td>正力新能PE收敛（PE 18.04x × 净利0.90亿）</td><td>PE 18.04x × FY2027E净利0.90亿</td><td>正力新能当前PE 18.04x直接套用——PE法天然受星恒NPM 1.24%制约（0.90亿净利 vs 正力新能8.09亿），结果即为PE估值下界</td><td class="num">16.24</td><td class="num">13.80</td><td class="num"><strong>1.90</strong></td><td class="num" style="color:var(--red)"><strong>-60.5%</strong></td></tr>
+          <tr style="background:#fff8e1"><td colspan="8"><strong>⚠️ PE/PS方法论差异提示：</strong>正力新能收敛（PE法→1.90亿）与中创新航收敛（PS法→4.47亿）估值差距达2.35倍——根本原因在于PE法以净利为锚（0.90亿，受NPM 1.24%制约），PS法以营收为锚（45亿，产能可支撑）。对于NPM 1.24%的微利企业，PS法是更稳健的主估值方法，PE法结果仅作为参考下界。以下第四层概率加权以PS法为核心估值锚。<span class="src src-K">[K: PE/PS方法论差异分析]</span></td></tr>
+          <tr style="background:#f0fff4"><td>乐观（PE 25x × 净利1.5亿）</td><td>PE 25x × FY2027E净利1.50亿</td><td>正力新能PE 18.04x + 盈利改善溢价（NPM修复至3%）→PE 25x</td><td class="num">37.50</td><td class="num">31.88</td><td class="num"><strong>4.38</strong></td><td class="num" style="color:var(--red)"><strong>-12.5%</strong></td></tr>
+          <tr style="background:#e3f2fd"><td>券商假设（PE 32.86x × 净利2亿）</td><td>券商4家锂电均值PE + 2亿净利</td><td>无历史支撑+纳入不可比公司→结构性高估</td><td class="num">65.73</td><td class="num">55.87</td><td class="num"><strong>7.67</strong></td><td class="num" style="color:var(--green)"><strong>+53.4%</strong></td></tr>
         </tbody>
       </table>
 
@@ -385,8 +396,8 @@
       </table>
 
       <p style="font-size:12px;color:var(--text-secondary)"><strong>概率赋值推理（基于2026-06-15实时市场数据）：</strong><br>
-①<strong>IPO失败35%：</strong>核心驱动为锂电板块深度回撤+小市值流动性枯竭，而非大盘熊市——(a) 中创新航(03931)距52w高回撤31.3%，瑞浦兰钧(00666)回撤28.8%，均远超恒科(-9.7%)和恒指(-7.6%) <span class="src src-B">[B: 腾讯行情 2026-06-15]</span>；(b) 瑞浦兰钧市值仅23亿HKD/PS 0.13x——微市值锂电股几无流动性，IPO退出路径名存实亡；(c) 恒指24,817/恒科4,747均未入技术熊市（距高点<20%），但调整区间对IPO窗口不利；(d) 星恒自身NPM 1.24%、哈啰客户集中度15.41%、市占率年降2-3pp——基本面叙事薄弱 <span class="src src-B">[B: 纵横分析报告v2]</span>；(e) 启源纳川持股冻结至2028年+16起未决诉讼——构成HKEx「适合上市」审查障碍 <span class="src src-A">[A: 法律尽调]</span>。35%为5项因素综合判断。<br>
-②<strong>低估值25%：</strong>即使IPO成功但市场窗口差，参照瑞浦兰钧PS 0.13x、中创新航PS下行趋势，港股对星恒级别微利企业可能给出PS 0.5x的极端保守定价。<br>
+①<strong>IPO失败35%：</strong>核心驱动为锂电板块深度回撤+板块估值系统性下行，而非大盘熊市——(a) 中创新航(03931)距52w高回撤31.2%，瑞浦兰钧(00666)回撤28.4%，正力新能(03677)回撤48.8%——三家锂电可比公司均深度回撤，远超恒科(-9.7%)和恒指(-7.6%) <span class="src src-B">[B: 腾讯行情 2026-06-15]</span>；(b) 瑞浦兰钧(00666)实时市值约126亿HKD/PS约0.47x（非此前版本中的23亿HKD/PS 0.13x错误数据——该数据为腾讯字段解析异常所致，已于本版修正），虽非「微市值」但PS仅0.47x反映市场对二线锂电的极低定价；(c) 恒指24,817/恒科4,747均未入技术熊市（距高点<20%），但锂电板块内部已出现超越大盘的结构性杀估值——正力新能从52w高13.01 HKD跌至6.66 HKD（-48.8%），自身即为板块深度回调的缩影；(d) 星恒自身NPM 1.24%、哈啰客户集中度15.41%、市占率年降2-3pp——基本面叙事薄弱 <span class="src src-B">[B: 纵横分析报告v2]</span>；(e) 启源纳川持股冻结至2028年+16起未决诉讼——构成HKEx「适合上市」审查障碍 <span class="src src-A">[A: 法律尽调]</span>。35%为5项因素综合判断。<br>
+②<strong>低估值25%：</strong>即使IPO成功但市场窗口差，参照瑞浦兰钧实时PS 0.47x（腾讯实时市值126亿HKD/营收折算267亿HKD）、中创新航实时PS 0.42x的下行趋势，港股对星恒级别微利企业可能给出PS 0.5x的极端保守定价。<br>
 ③<strong>高估值仅10%：</strong>需同时满足「FY2027净利≥1.0亿(NPM修复至2.2%)+恒科回暖至5,200+锂电板块估值修复」三个条件，联合概率约10%。<br>
 ④<strong>IPO失败残值修正：</strong>从原口径「净资产27.77亿×0.6」修正为「归母净资产23.02亿×13.73%×0.80非流动性折价≈2.50亿」，因13.73%少数股权缺乏控制权溢价，非流动性折价应取0.80（原0.60过度悲观）。<br>
 <span class="src src-K">[K: 概率赋值基于上述多因子综合判断；概率敏感度测试见附件H 6.4]</span></p>
@@ -677,6 +688,154 @@
     <strong>✅ 核心结论：</strong>券商方案方向正确。方案二（PB 1.30x/29.93亿）处于可比交易PB 1.13x(26.01亿)上方15%，合理偏乐观——两种独立方法（PB 1.30x vs PS 0.85x）均收敛至约30亿，增强了可信度。方案一的65.73亿IPO估值需大幅修正——根本原因不是券商「算错了」，而是PE法对微利企业（NPM 1.24%）的结构性不适用+可比公司选取包含不可比标的。方案三PS/PB双方法均指向30亿左右，但现金代价大（~15亿），仅作保底。<br><br>
     <strong>纵横分析的核心贡献：</strong>①纵向揭示FY2020峰值后定价权丧失的长期趋势，以两因子法（营收×NPM）证伪2亿净利假设；②横向以正力新能（PE 18.04x/PS 1.86x）+中创新航（PS 0.85x）双锚锁定PE/PS估值区间；③PS法作为主估值方法纠正PE法偏差，PB/PS双方法在方案二/三中收敛至30亿——独立验证的一致性增加了结论可信度；④竞争格局分析量化了市占率年降2-3pp的结构性风险。
   </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 资金退出安全与国有资产保值增值机制 -->
+<!-- ============================================================ -->
+<div class="section">
+  <h2>资金退出安全保障与国有资产保值增值机制</h2>
+
+  <div class="callout callout-warning">
+    <strong>问题缘起：券商方案确认了退出风险，但未提供保障机制</strong>
+    三个方案的券商自评均将「退出安全」列为难点——方案一「如何保障后续资金退出安全，实现国有资产保值增值」，方案二「如何保障交易对方后续退出」，方案三「国资备案中估值合理性存疑」。但券商报告仅提出问题，未就<strong>如何设计</strong>退出保障机制给出具体方案。以下基于法规框架、交易实践和国企考核要求，系统构建跨方案的退出安全机制。
+  </div>
+
+  <h3>一、退出安全的三个维度</h3>
+  <table>
+    <thead><tr><th>维度</th><th>核心问题</th><th>评估标准</th></tr></thead>
+    <tbody>
+      <tr><td><strong>价格安全</strong></td><td>退出时能否以不低于投入成本的价格变现？</td><td>年化回报率 ≥ 国资考核底线（通常5-8%）</td></tr>
+      <tr><td><strong>路径安全</strong></td><td>退出通道是否在法律和监管上可行？</td><td>退出路径不依赖单一假设（IPO/并购/回购至少两条）</td></tr>
+      <tr><td><strong>时间安全</strong></td><td>退出节奏是否可控？是否会因流动性枯竭被迫长期持有？</td><td>3-5年内可实现有序退出，最长不超过7年</td></tr>
+    </tbody>
+  </table>
+
+  <h3>二、方案一分部机制：少数股权IPO退出的安全保障</h3>
+  <p style="font-size:14px">方案一的核心风险是IPO失败或IPO估值低于投入成本。以下机制设计旨在<strong>无论IPO成败，均保障退出底线</strong>。</p>
+
+  <h4>2.1 交易文件层面的保护条款（SPA必备）</h4>
+  <table>
+    <thead><tr><th>条款</th><th>设计要点</th><th>保护逻辑</th><th>法规/实践依据</th></tr></thead>
+    <tbody>
+      <tr><td><strong>IPO对赌+回购权</strong></td><td>若2029年6月30日前未完成合格IPO（定义：IPO市值≥30亿RMB+融资额≥5亿），天保有权要求原股东（启源纳川/苏州袍泽等）按「投入成本×(1+5%年化单利)」回购全部股份</td><td>IPO失败→回购退出，保底年化5%</td><td>HKEx允许以公司为义务方的对赌在IPO前终止，但股东间对赌不在此限；《公司法》第74条有限责任公司回购权 <span class="src src-A">[A]</span></td></tr>
+      <tr><td><strong>优先清算/退出权</strong></td><td>天保作为领投方享有「优先退出权」——任一股东方出售股份时，天保有权按同等条件优先出售（Tag-Along Right的反向应用）或按不低于「投入成本+年化5%」的价格要求出售方收购天保持股</td><td>防止被其他股东「甩在身后」——老股东套现时天保同步退出</td><td>PE/VC行业标准条款，SPA中可定制 <span class="src src-B">[B: 行业实践]</span></td></tr>
+      <tr><td><strong>反稀释保护</strong></td><td>若IPO前进行低于天保入股价（按13.73%→5亿→隐含PS 1.0x→约12.1元/股推算）的新一轮融资，天保持股比例自动调整以维持股权价值</td><td>防止IPO前折价融资稀释天保持仓价值</td><td>标准加权平均反稀释条款（Weighted Average Anti-dilution）<span class="src src-B">[B]</span></td></tr>
+      <tr><td><strong>信息权+观察权</strong></td><td>IPO前享有月度经营数据+季度董事会观察员席位；IPO后若天保持股≥5%，保留董事会席位提名权</td><td>投后监控——及时发现经营恶化并触发保护机制</td><td>《证券法》第80条重大事件披露义务（上市公司）/SPA信息权条款（非上市）<span class="src src-A">[A]</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>2.2 IPO阶段的退出安全设计</h4>
+  <table>
+    <thead><tr><th>机制</th><th>具体安排</th><th>量化底线</th></tr></thead>
+    <tbody>
+      <tr><td><strong>IPO估值底线否决权</strong></td><td>SPA中约定：若IPO发行估值低于30亿RMB（对应PS约0.67x FY2027E营收45亿），天保有权否决IPO——转向行使回购权</td><td>IPO市值≥30亿→13.73%价值≥4.12亿；低于此线→退出不经济，触发回购</td></tr>
+      <tr><td><strong>基石投资者锚定</strong></td><td>上市前引入1-2家产业基石投资者（如锂电上下游企业），锁定发行价下限——基石订单提供定价底线</td><td>基石认购≥发行量30%，锁定期6个月 <span class="src src-B">[B: HKEx基石投资者惯例]</span></td></tr>
+      <tr><td><strong>分批减持计划</strong></td><td>解禁后（通常IPO后6个月）分3-4批减持：第一批解禁后30天内减持≤30%；第二批解禁后90天内减持≤30%；第三批解禁后180天内减持剩余40%。大宗交易优先于二级市场减持</td><td>避免集中抛售导致的自我实现的估值崩塌——港股小盘股日均成交常<500万HKD，13.73%市值可能需数月才能有序消化</td></tr>
+      <tr><td><strong>绿鞋机制利用</strong></td><td>若IPO超额配售，争取将天保部分持股纳入绿鞋篮子——既可提前部分退出又不会对二级市场股价形成压力</td><td>超额配售≤发行量15% <span class="src src-A">[A: HKEx主板规则第7章]</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>2.3 投资回报率底线测算</h4>
+  <table>
+    <thead><tr><th>退出情景</th><th>退出时点</th><th>预期回报(亿)</th><th>年化回报率</th><th>vs国资考核底线(5%)</th></tr></thead>
+    <tbody>
+      <tr><td>IPO成功-基准（PS 0.85x）</td><td>2028 H2（解禁后减持均价）</td><td class="num">4.47</td><td class="num" style="color:var(--red)">-2.8%</td><td style="color:var(--red)">不达标</td></tr>
+      <tr><td>IPO成功-乐观（PS回暖+基石溢价）</td><td>2028 H2</td><td class="num">6.30</td><td class="num" style="color:var(--green)">5.9%</td><td style="color:var(--green)">达标</td></tr>
+      <tr><td>IPO失败-行使回购权</td><td>2029 H1（回购）</td><td class="num">5.75（投入5亿×1.05³）</td><td class="num">5.0%</td><td style="color:var(--green)">达标（恰好）</td></tr>
+      <tr style="background:#fff8e1"><td colspan="5"><strong>关键推论：</strong>在基准情景下（PS 0.85x→13.73%价值4.47亿），<strong>方案一无法通过国资保值增值考核</strong>（年化-2.8%）。回购权（保底5%年化）是方案一唯一的退出安全网——但回购权能否执行取决于原股东的偿付能力（启源纳川持股已冻结至2028年）。因此方案一的退出安全高度依赖IPO估值≥42亿（对应PS>0.93x，13.73%=5.77亿→年化5%）——从当前正力新能PE 18.04x/PS iFind 1.86x（实时PS仅1.11x）和板块回撤趋势看，这一前提存在重大不确定性。<span class="src src-K">[K: 年化回报率测算]</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>三、方案二分部机制：控制权收购的退出安全保障</h3>
+  <p style="font-size:14px">方案二的核心优势在于<strong>控制权带来退出主动权</strong>——天保基建作为控股股东，可以通过资产注入、分拆上市、引入战略投资者等多种路径实现价值变现。以下机制聚焦于<strong>将控制权优势转化为退出安全</strong>。</p>
+
+  <h4>3.1 控制权层面的保护机制</h4>
+  <table>
+    <thead><tr><th>机制</th><th>设计要点</th><th>与国资保值增值的关联</th></tr></thead>
+    <tbody>
+      <tr><td><strong>董事会控制+关键事项否决权</strong></td><td>30.26%表决权→改组5/7董事会席位→控制经营决策。在章程中嵌入「重大事项天保一票否决」：变更主营业务、处置核心资产（>净资产20%）、对外担保（>净资产10%）、引入新投资人（稀释天保>5%）</td><td>防止管理层/其他股东在并表后通过资产转移或不当扩张侵蚀星恒价值</td></tr>
+      <tr><td><strong>业绩对赌（《重组管理办法》第35条）</strong></td><td>若后续通过发行股份购买资产方式收购剩余股份，交易对方须签署业绩补偿协议。对赌期3年，以FY2025净利0.45亿为基数，承诺FY2026-2028净利CAGR≥30%（FY2028约0.99亿）——低于此线触发股份补偿</td><td>业绩对赌为并表后利润提供底线保护——避免「花钱买了控制权却发现利润继续恶化」</td></tr>
+      <tr><td><strong>商誉减值隔离</strong></td><td>收购协议中约定：若因收购前已存在的表外负债/隐形担保在收购后暴露导致商誉减值，原股东（启源纳川/管理层）须以现金或等值资产补偿天保基建——补偿上限不超过收购对价</td><td>保护天保基建上市公司层面的利润表——避免商誉减值冲击导致股价下跌（天保基建自身PB仅0.81x，市值脆弱）</td></tr>
+      <tr><td><strong>后续资产注入定价保护</strong></td><td>后续收购剩余股份时：若采用收益法估值→对赌触发业绩补偿（上述）；若采用资产基础法→PB上限锁定1.30x（即当前收购价对应的PB基准），不得因管理层预测而上浮</td><td>防止后续收购时估值被管理层预测人为抬高——避免「第一次低价买入、第二次高价接盘」</td></tr>
+    </tbody>
+  </table>
+
+  <h4>3.2 退出路径的多元化设计</h4>
+  <table>
+    <thead><tr><th>退出路径</th><th>时间窗口</th><th>预期回报</th><th>可行性</th></tr></thead>
+    <tbody>
+      <tr><td><strong>路径A：控股运营→利润改善→市值增长</strong></td><td>2028-2030</td><td>若通过经营改善将星恒净利提升至2亿/年（NPM 3-4%），天保基建合并报表EPS增厚→市值提升→天保集团通过上市公司减持/分红实现退出</td><td>依赖经营改善成效——NPM 1.24%→3%需要3-5年，不确定性大</td></tr>
+      <tr><td><strong>路径B：分拆星恒独立上市（A+H）</strong></td><td>2029-2031</td><td>同方案一IPO退出逻辑，但天保基建作为控股股东在IPO定价/时机上有决定权——可等待最优窗口而非被动接受</td><td>⚠️ A股分拆上市（《分拆规则》2022）存在独立性/同业竞争/关联交易三重审查；港股分拆相对灵活</td></tr>
+      <tr><td><strong>路径C：引入战略投资者部分退出</strong></td><td>2027-2029</td><td>引入锂电产业链企业（如电池材料/下游车厂）作为战略投资者受让部分股权——对价参考最近一期经审计净资产+合理溢价（PB 1.2-1.5x）</td><td>产业投资者比财务投资者更有动力支付控制权溢价——但需防范竞争格局变化（如引入竞争对手）</td></tr>
+      <tr><td><strong>路径D：资产重组→与上市平台协同</strong></td><td>2027-2030</td><td>天保基建向「大飞机+新能源双主业」转型——星恒并表后，天保基建市值逻辑从纯地产转向工业+新能源，估值中枢上移（地产PB 0.8x→工业PB 2-3x）</td><td>依赖CSRC对跨界并购的政策窗口——沙河股份先例（2026年3月）证明可行但时效性不确定</td></tr>
+    </tbody>
+  </table>
+
+  <h4>3.3 方案二的退出安全底线测算</h4>
+  <div class="callout callout-tip">
+    <strong>方案二的退出安全优势：PB估值下限 + 控制权退出主动权</strong><br>
+    与方案一不同，方案二因控制权+资产基础法估值，具备天然的「退出下限」：(a) 最差情景——星恒经营改善失败——24%股权对应的净资产约5.52亿（23.02亿×24%），即使零溢价清算也能回收约4.4亿（×0.8非流动折价），相对6.24亿投入（PB 1.13x→基准）的亏损约29%；(b) 中等情景——通过经营改善+资产注入提升天保基建市值——天保集团通过上市公司平台实现间接退出；(c) 乐观情景——产业投资者接盘——可回收8亿+。方案二的退出安全<strong>不依赖单一IPO假设</strong>，这是其相对于方案一的根本优势。<br><br>
+    <strong>年化回报基准测算（基准情景：PB 1.13x→24%=6.24亿投入，2028年以PB 1.30x退出→24%≈7.18亿）：</strong>投入6.24亿，2028年回收7.18亿，年化回报率≈4.8%（3年期）——接近但未达5%底线。若持有至2030年（5年期），需退出估值达到7.90亿（年化5%）——对应PB 1.43x（7.90/(23.02×24%)），即在佛塑科技1.13x基础上溢价26%——有一定难度但非不可能。<span class="src src-K">[K: 退出安全底线测算]</span>
+  </div>
+
+  <h3>四、方案三分部机制：50%控股收购的退出安排</h3>
+  <table>
+    <thead><tr><th>机制</th><th>设计要点</th><th>与方案二的差异</th></tr></thead>
+    <tbody>
+      <tr><td><strong>国资备案作为价格锚</strong></td><td>收购前取得保税区国资局对估值的备案批复——备案估值（预计PB 1.13-1.30x/29.93亿）成为后续退出的基准参照价，任何低于备案估值的退出均需国资审批</td><td>备案制度自动为退出价格设置下限——这是方案三相对于方案一的独特保障</td></tr>
+      <tr><td><strong>后续装入上市公司的路径锁定</strong></td><td>收购协议中预先约定：满足条件后（星恒连续2年净利>1.5亿+天保基建市值>50亿），天保集团应以不高于「最近一期经审计净资产+20%溢价」的价格将星恒50%股权注入天保基建——上市公司以发行股份方式支付</td><td>将方案三与方案二的路径打通——非上市主体收购作为「过渡载体」，最终目标仍是装入上市公司实现证券化退出</td></tr>
+      <tr><td><strong>独立IPO作为备选</strong></td><td>若4年内装入上市公司因政策原因无法推进（如CSRC持续限制地产跨界），启动独立IPO流程——但因收购后控制权变更，需满足HKEx 8.05(c)规定的「控制权变更后至少1个完整财年」等待期</td><td>IPO不是主退出路径而是兜底路径——与方案一将IPO作为唯一路径有本质区别</td></tr>
+      <tr><td><strong>长期持有的回报要求</strong></td><td>若退出路径均受阻——天保集团需评估长期持有星恒50%股权的投资回报：ROE 1.6%→年化回报约0.8%（按50%×ROE→天保集团本级口径），远低于国资考核底线。因此方案三<strong>不可作为长期被动持有方案</strong>——必须明确退出时间表（建议5年内完成退出或启动退出程序）</td><td>方案三的退出紧迫性最高——50%投入约15亿却年化回报<1%，长期持有将严重拖累国资考核指标</td></tr>
+    </tbody>
+  </table>
+
+  <h3>五、跨方案通用保障机制</h3>
+
+  <h4>5.1 投后管理架构（适用于所有方案）</h4>
+  <table>
+    <thead><tr><th>机制</th><th>方案一（少数股权）</th><th>方案二（控制权）</th><th>方案三（50%控股）</th></tr></thead>
+    <tbody>
+      <tr><td>董事会席位</td><td>1/7（观察员→持股≥10%后为正式）</td><td>5/7（控制）</td><td>3-4/7（过半）</td></tr>
+      <tr><td>一票否决权事项</td><td>IPO时机/估值底线否定+关联交易>500万+对外担保>净资产5%</td><td>全部重大事项（已有董事会控制）</td><td>变更主营业务+处置核心资产+引入新投资人</td></tr>
+      <tr><td>季度经营数据权</td><td>✅</td><td>✅（直接通过并表获取）</td><td>✅（直接通过并表获取）</td></tr>
+      <tr><td>年度审计权</td><td>有权指定审计师进行专项审计（年1次）</td><td>✅（控股股东审计权）</td><td>✅（控股股东审计权）</td></tr>
+    </tbody>
+  </table>
+
+  <h4>5.2 退出时机的定期评估机制</h4>
+  <div class="callout callout-info">
+    <strong>建议在投后管理中建立「退出窗口季度评估」制度：</strong><br>
+    每季度由天保投资管理部出具《星恒投资退出窗口评估简报》，跟踪以下先行指标：(a) 正力新能/中创新航PE/PS变化（港股锂电板块估值温度计）；(b) 恒生科技指数趋势+HKEx IPO窗口状态（上市时机判断）；(c) 星恒自身季度经营数据vs预测偏差（基本面预警）；(d) 可比交易/可比公司估值倍数变动（估值锚漂移监控）。<br>
+    当以下任一条件触发时启动退出程序：①持股满3年且估值达投入成本的1.3倍（年化>9%）→启动减持；②锂电可比PE跌破15x（正力新能当前18x→再跌17%）→紧急评估退出必要性；③星恒连续2季经营CF为负且净利低于预测50%→启动止损评估。<br>
+    <span class="src src-K">[K: 退出窗口评估机制设计]</span>
+  </div>
+
+  <h4>5.3 国有资产保值增值的量化考核框架</h4>
+  <table>
+    <thead><tr><th>考核指标</th><th>计算方式</th><th>达标线</th><th>适用方案</th></tr></thead>
+    <tbody>
+      <tr><td><strong>年化投资回报率（IRR）</strong></td><td>以投入金额为PV，退出回收额为FV，持有年限为N，计算IRR</td><td>≥5%（国资委一般要求）</td><td>方案一/二/三</td></tr>
+      <tr><td><strong>投入资本保值率</strong></td><td>退出回收额 ÷ 原始投入成本</td><td>≥1.0（即不亏损）为底线；≥1.15（持有3年）为基本要求</td><td>方案一/二/三</td></tr>
+      <tr><td><strong>最大回撤控制</strong></td><td>持有期间账面价值最低点 ÷ 投入成本 - 1</td><td>不低于-30%（即任何时点账面价值不低于投入的70%）</td><td>方案二/三（并表后可按季跟踪）</td></tr>
+      <tr><td><strong>退出确定性</strong></td><td>是否在预定时间窗口内完成≥50%本金的回收</td><td>投入后第5年完成首次回收≥50%本金；第7年完成全部退出</td><td>方案一/二/三</td></tr>
+      <tr style="background:#fff8e1"><td colspan="4"><strong>各方案达标预判：</strong>方案一基准情景年化-2.8%→<strong>不达标</strong>（需乐观情景才达标）；方案二基准情景年化~4.8%→<strong>接近达标</strong>（若持有5年可达标）；方案三长期被动持有ROE 1.6%→<strong>不达标</strong>（须主动推进装入上市公司或引入战投实现退出）。方案二是唯一在基准情景下接近达标的方案。<span class="src src-K">[K: 国资考核预判]</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>六、小结：退出安全的方案间比较</h3>
+  <table>
+    <thead><tr><th>维度</th><th>方案一</th><th>方案二</th><th>方案三</th></tr></thead>
+    <tbody>
+      <tr><td>退出路径数</td><td>2（IPO/回购）</td><td class="num" style="color:var(--green)"><strong>4</strong>（经营改善市值/分拆上市/引入战投/资产重组）</td><td>3（装入上市/独立IPO/战投）</td></tr>
+      <tr><td>退出安全性</td><td style="color:var(--red)">低——高度依赖单一IPO假设</td><td style="color:var(--green)"><strong>中等——PB底线+控制权提供多重保护</strong></td><td style="color:var(--orange)">中等偏低——代价大+长期持有ROE低</td></tr>
+      <tr><td>国资保值增值达标</td><td style="color:var(--red)">仅乐观情景达标</td><td style="color:var(--green)"><strong>基准情景接近达标</strong></td><td style="color:var(--red)">被动持有不达标</td></tr>
+      <tr><td>最坏情景损失下限</td><td style="color:var(--red)">-47.5%（PS 0.5x）~ -60.5%（PE 18.04x）</td><td style="color:var(--orange)">-29%（清算→4.4亿 vs投入6.24亿）</td><td style="color:var(--red)">-33%（PB 1.13x→净资产减值至20亿→50%=10亿 vs投入15亿）</td></tr>
+      <tr><td>退出主动权</td><td style="color:var(--red)">低——IPO窗口由市场决定</td><td style="color:var(--green)"><strong>高——控股方决定退出时机和方式</strong></td><td style="color:var(--green)">高——但受到国资备案约束</td></tr>
+      <tr><td>关键保障条款</td><td>回购权+IPO估值底线否决+基石锚定</td><td>业绩对赌+商誉隔离+后续注入定价保护+多元退出路径</td><td>国资备案锚定+装入上市路径锁定+IPO备选</td></tr>
+      <tr style="background:#e3f2fd"><td><strong>综合评分</strong></td><td style="color:var(--red)"><strong>退出安全：低</strong></td><td style="color:var(--green)"><strong>退出安全：最高</strong></td><td style="color:var(--orange)"><strong>退出安全：中等</strong></td></tr>
+    </tbody>
+  </table>
 </div>
 
 <!-- ============================================================ -->
