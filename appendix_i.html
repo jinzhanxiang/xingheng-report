@@ -110,6 +110,44 @@ pre{background:#1a202c;color:#e2e8f0;padding:18px;border-radius:8px;
     margin:18px 0;overflow-x:auto;line-height:1.6}
 pre code{background:none;color:inherit;font-size:14px}
 
+/* ── 推论卡片 ── */
+.corollary-card{
+    margin:24px 0;border-radius:10px;overflow:hidden;
+    box-shadow:0 2px 12px rgba(180,140,50,0.12);
+    border:1px solid #e8d5a0;
+}
+.corollary-header{
+    background:linear-gradient(135deg,#fef9e7,#fdf0d5);
+    padding:12px 20px;font-size:17px;font-weight:700;
+    color:#8b6914;border-bottom:2px solid #e8d5a0;
+    display:flex;align-items:center;gap:12px;
+}
+.corollary-header::before{
+    content:"📌";font-size:15px;
+}
+.corollary-confidence{
+    margin-left:auto;font-size:13px;background:#fff;
+    padding:3px 10px;border-radius:12px;color:#8b6914;
+    border:1px solid #e8d5a0;white-space:nowrap;
+}
+.corollary-body{
+    background:#fffef9;padding:16px 20px;
+}
+.corollary-body pre{
+    background:none;color:#5d4e37;margin:0;padding:0;
+    font-size:15px;line-height:1.9;
+    white-space:pre-wrap;word-wrap:break-word;
+    border:none;overflow-x:visible;
+}
+
+/* ── 指标徽章 ── */
+.metric-badge{
+    display:inline-block;background:linear-gradient(135deg,#1a365d,#2d3748);
+    color:#fff;padding:6px 16px;border-radius:20px;
+    font-size:17px;font-weight:700;margin:4px 6px;
+    letter-spacing:0.5px;
+}
+
 /* ── 导航栏 ── */
 .nav{
     background:linear-gradient(135deg,#1a365d,#2d3748);
@@ -129,7 +167,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <a href="#top">回顶部</a>
 <a href="appendix_i_m.html">切换到手机版</a>
 <span style="color:rgba(255,255,255,0.5);font-size:12px;margin-left:auto">
-  更新于 2026-06-21 15:42
+  更新于 2026-06-21 15:48
 </span>
 </div>
 <div id="top"></div>
