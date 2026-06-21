@@ -152,7 +152,7 @@ pre code{background:none;color:inherit;font-size:13px}
 
 /* ── ECharts交互图表容器 ── */
 .echarts-chart{
-    width:100%;height:350px;margin:16px 0;background:#fff;
+    width:100%;min-height:0;margin:16px 0;background:#fff;
     border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.04);
     border:1px solid #e2e8f0;
 }
@@ -167,7 +167,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <a href="#top">回顶部</a>
 <a href="appendix_i.html">切换到桌面版</a>
 <span style="color:rgba(255,255,255,0.5);font-size:12px;margin-left:auto">
-  更新于 2026-06-21 17:42
+  更新于 2026-06-21 18:29
 </span>
 </div>
 <div id="top"></div>
@@ -3831,8 +3831,210 @@ ROE也仅约 <strong>4-6%</strong>，仍低于资本成本
     ]
   });
 
+  // ══════ 图表5~16：跨文件交互图表 ══════
+  (function(){
+    var sf_o=[100-12.92-21.67-2.84-0,100-5.56-23.90-9.64-0,100-6.38-28.96-14.89-17.3];
+    var kh_o=[100-12.92-21.67-2.84-0,100-5.56-23.90-9.64-0,100-6.38-28.96-14.89-17.3];
+
+    initChart("echarts_sf_profit", {
+      tooltip: { trigger:"axis", axisPointer:{type:"shadow"},
+        formatter: function(ps){ var s="<b>"+ps[0].axisValue+"</b><br/>"; var tot=0; ps.forEach(function(p){ if(p.value>0){ s+=p.marker+p.seriesName+": "+p.value.toFixed(2)+"亿元<br/>"; tot+=Number(p.value); } }); s+="<b>合计: "+tot.toFixed(2)+"亿元</b>"; return s; }
+      },
+      legend: { data:["营业成本","费用合计","其他收支","净利润"], top:5, textStyle:{fontSize:11} },
+      grid: { left:80, right:30, top:60, bottom:50 },
+      xAxis: { type:"category", data:["FY2025","FY2026E(管理层)"], axisLabel:{fontSize:12} },
+      yAxis: { type:"value", name:"亿元" },
+      series: [
+        { name:"营业成本", type:"bar", stack:"s", data:[31.42,39.84], itemStyle:{color:C.red}, label:{show:true,position:"inside",fontSize:11} },
+        { name:"费用合计", type:"bar", stack:"s", data:[4.50,5.50], itemStyle:{color:C.amber}, label:{show:true,position:"inside",fontSize:11} },
+        { name:"其他收支", type:"bar", stack:"s", data:[1.43,0], itemStyle:{color:"#8b9dc3"}, label:{show:true,position:"inside",fontSize:11} },
+        { name:"净利润", type:"bar", stack:"s", data:[0.45,2.66], itemStyle:{color:C.navy}, label:{show:true,position:"inside",fontSize:11} }
+      ]
+    });
+
+    initChart("echarts_sf_segment", {
+      tooltip: { trigger:"axis", axisPointer:{type:"shadow"},
+        formatter: function(ps){ var s="<b>"+ps[0].axisValue+"</b><br/>"; ps.forEach(function(p){ if(p.value>0) s+=p.marker+p.seriesName+": "+p.value.toFixed(2)+"%<br/>"; }); return s; }
+      },
+      legend: { data:["OEM","共享/换电","储能","海外","其他"], top:5, textStyle:{fontSize:11} },
+      grid: { left:60, right:30, top:60, bottom:50 },
+      xAxis: { type:"category", data:["FY2023","FY2024","FY2025"] },
+      yAxis: { type:"value", name:"%", max:100 },
+      series: [
+        { name:"OEM", type:"bar", stack:"pct", data:[12.92,5.56,6.38], itemStyle:{color:C.navy}, label:{show:true,position:"inside",formatter:"{c}%"} },
+        { name:"共享/换电", type:"bar", stack:"pct", data:[21.67,23.90,28.96], itemStyle:{color:C.blue}, label:{show:true,position:"inside",formatter:"{c}%"} },
+        { name:"储能", type:"bar", stack:"pct", data:[2.84,9.64,14.89], itemStyle:{color:C.green}, label:{show:true,position:"inside",formatter:"{c}%"} },
+        { name:"海外", type:"bar", stack:"pct", data:[0,0,17.30], itemStyle:{color:C.amber}, label:{show:true,position:"inside",formatter:"{c}%"} },
+        { name:"其他", type:"bar", stack:"pct", data:sf_o, itemStyle:{color:C.gray}, label:{show:true,position:"inside",formatter:function(p){return p.value>10?p.value.toFixed(1)+"%":"";}} }
+      ]
+    });
+
+    initChart("echarts_sc_convergence", {
+      tooltip: { trigger:"axis", axisPointer:{type:"shadow"},
+        formatter: function(ps){ var lo=ps.filter(function(p){return p.seriesName==="低估值";})[0]; var hi=ps.filter(function(p){return p.seriesName==="区间范围";})[0]; if(!lo)return""; var lv=lo.value; var hv=lv+(hi?hi.value:0); return "<b>"+lo.axisValue+"</b><br/>市占率区间: <b>"+lv+"% ~ "+hv+"%</b>"; }
+      },
+      legend: { data:["低估值","区间范围"], top:5, textStyle:{fontSize:11} },
+      grid: { left:80, right:40, top:60, bottom:60 },
+      xAxis: { type:"category", data:["A:天能反推","B:博力威反推","C:GGII GWh","D:F&S"], axisLabel:{fontSize:11,rotate:15} },
+      yAxis: { type:"value", name:"市占率(%)", min:0, max:80 },
+      series: [
+        { name:"低估值", type:"bar", stack:"range", data:[40,14,40,45], itemStyle:{color:"rgba(49,130,206,0.15)",borderColor:C.blue,borderWidth:1.5,borderType:"dashed"}, label:{show:true,position:"insideBottom",formatter:"{c}%",fontSize:10} },
+        { name:"区间范围", type:"bar", stack:"range", data:[15,4,10,10], itemStyle:{color:C.blue}, label:{show:true,position:"top",formatter:function(p){return (p.value+[40,14,40,45][p.dataIndex])+"%";},fontSize:10} }
+      ]
+    });
+
+    // Waterfall chart data
+    var cats=["营收","营业成本","销售费用","管理费用","研发费用","财务费用","其他收益","投资收益","减值损失","净利润"];
+    var vals=[36.36,31.42,1.22,0.91,1.72,0.65,0.73,0.11,0.30,0.45];
+    var cum=0; var base=[]; var visible=[];
+    for(var i=0;i<vals.length;i++){
+      if(cats[i]==="营收"){ base.push(0); visible.push(vals[i]); cum=vals[i]; }
+      else if(cats[i]==="净利润"){ base.push(0); visible.push(vals[i]); }
+      else { var isCost=(cats[i].indexOf("成本")>=0||cats[i].indexOf("费用")>=0||cats[i].indexOf("减值")>=0);
+        if(isCost){ base.push(Math.max(0,cum-vals[i])); visible.push(vals[i]); cum=cum-vals[i]; }
+        else { base.push(cum); visible.push(vals[i]); cum=cum+vals[i]; } }
+    }
+    var costSet={"营业成本":true,"销售费用":true,"管理费用":true,"研发费用":true,"财务费用":true,"减值损失":true};
+
+    initChart("echarts_mg_waterfall", {
+      tooltip: { trigger:"axis", axisPointer:{type:"shadow"},
+        formatter: function(ps){ var vis=ps.filter(function(p){return p.seriesName!=="占位";}); if(vis.length===0)return""; var p=vis[0]; var nm=p.axisValue; var val=p.value; var prefix=costSet[nm]?"-":((nm==="净利润"||nm==="营收")?"":"+"); return "<b>"+nm+"</b><br/>"+p.marker+prefix+val.toFixed(2)+"亿元"; }
+      },
+      grid: { left:80, right:30, top:30, bottom:50 },
+      xAxis: { type:"category", data:cats, axisLabel:{fontSize:10,rotate:25} },
+      yAxis: { type:"value", name:"亿元" },
+      series: [
+        { name:"占位", type:"bar", stack:"wf", data:base, itemStyle:{color:"transparent"}, tooltip:{show:false} },
+        { name:"金额", type:"bar", stack:"wf", data:visible,
+          itemStyle:{color:function(p){ var nm=cats[p.dataIndex]; if(nm==="净利润")return C.navy; if(costSet[nm])return C.red; return C.green; }},
+          label:{show:true,position:"top",formatter:function(p){ var nm=cats[p.dataIndex]; var prefix=costSet[nm]?"-":((nm==="净利润"||nm==="营收")?"":"+"); return prefix+p.value.toFixed(2); },fontSize:9} }
+      ]
+    });
+
+    initChart("echarts_gd_shareholder", {
+      tooltip: { trigger:"item", formatter:function(p){ return "<b>"+p.name+"</b><br/>持股: "+p.value+"%<br/>占总量: "+p.percent+"%"; } },
+      legend: { orient:"vertical", right:10, top:"center", textStyle:{fontSize:11}, itemGap:12 },
+      series: [{ type:"pie", radius:["45%","72%"], center:["38%","50%"], avoidLabelOverlap:false,
+        itemStyle:{ borderColor:"#fff", borderWidth:2, borderRadius:4 },
+        label:{ show:true, position:"outside", formatter:"{b}
+{d}%", fontSize:10 },
+        data: [
+          { value:31.5, name:"启源纳川", itemStyle:{color:C.navy} },
+          { value:24.2, name:"A组(10家)", itemStyle:{color:C.blue} },
+          { value:18.3, name:"战略国资", itemStyle:{color:C.teal} },
+          { value:12.7, name:"管理层", itemStyle:{color:C.green} },
+          { value:8.8, name:"B类财务投资者", itemStyle:{color:C.amber} },
+          { value:4.5, name:"其他", itemStyle:{color:C.gray} }
+        ]
+      }]
+    });
+
+    initChart("echarts_gd_irr", {
+      tooltip: { trigger:"axis", axisPointer:{type:"shadow"},
+        formatter: function(ps){ var s="<b>"+ps[0].axisValue+"</b><br/>"; ps.forEach(function(p){s+=p.marker+p.seriesName+": "+p.value.toFixed(1)+"%<br/>";}); return s; }
+      },
+      legend: { data:["基准","乐观","悲观"], top:5, textStyle:{fontSize:11} },
+      grid: { left:80, right:30, top:50, bottom:50 },
+      xAxis: { type:"category", data:["方向一
+(资产出售)","方向二
+(业务重组)","方向三A
+(独立发展)"], axisLabel:{fontSize:11} },
+      yAxis: { type:"value", name:"IRR(%)", axisLabel:{formatter:"{value}%"} },
+      series: [
+        { name:"基准", type:"bar", data:[-20.3,3.8,12.5], itemStyle:{color:C.blue} },
+        { name:"乐观", type:"bar", data:[0.6,16.2,24.1], itemStyle:{color:C.green} },
+        { name:"悲观", type:"bar", data:[-41.5,-8.7,1.8], itemStyle:{color:C.red} }
+      ]
+    });
+
+    initChart("echarts_cc_financial_trend", {
+      tooltip: { trigger:"axis", axisPointer:{type:"cross",crossStyle:{color:"#999"}},
+        formatter: function(ps){ var s="<b>"+ps[0].axisValue+"</b><br/>"; ps.forEach(function(p){ if(p.seriesName==="毛利率")s+=p.marker+p.seriesName+": "+p.value.toFixed(1)+"%<br/>"; else s+=p.marker+p.seriesName+": "+p.value.toFixed(2)+"亿元<br/>"; }); return s; }
+      },
+      legend: { data:["营收","毛利率"], top:5, textStyle:{fontSize:11} },
+      grid: { left:80, right:80, top:60, bottom:50 },
+      xAxis: { type:"category", data:["FY2020","FY2021","FY2022","FY2023","FY2024","FY2025E"] },
+      yAxis: [{ type:"value", name:"营收(亿元)", min:0 }, { type:"value", name:"毛利率(%)", axisLabel:{formatter:"{value}%"}, min:0, max:30 }],
+      series: [
+        { name:"营收", type:"bar", data:[25.10,35.99,23.84,29.49,36.36,48.00], itemStyle:{color:C.blue}, label:{show:true,position:"top",formatter:"{c}",fontSize:10} },
+        { name:"毛利率", type:"line", yAxisIndex:1, data:[18.5,9.79,2.44,17.56,13.63,17.0], itemStyle:{color:C.red}, lineStyle:{width:2.5}, symbol:"circle", symbolSize:8, label:{show:true,formatter:"{c}%",fontSize:10,position:"top"} }
+      ]
+    });
+
+    initChart("echarts_gx_radar", {
+      tooltip: { trigger:"item" },
+      legend: { data:["固相法(星恒)","液相法(德方纳米)","溶胶凝胶法","固相合成法"], bottom:5, textStyle:{fontSize:11} },
+      radar: { center:["50%","55%"], radius:"65%",
+        indicator:[{name:"工艺复杂度",max:10},{name:"设备投资",max:10},{name:"原料成本",max:10},{name:"产品一致性",max:10},{name:"扩产速度",max:10},{name:"量产成熟度",max:10},{name:"环保合规",max:10},{name:"成本下限",max:10}],
+        axisName:{fontSize:10} },
+      series: [{ type:"radar", data:[
+        { name:"固相法(星恒)", value:[8,8,5,5,9,8,7,6], lineStyle:{color:C.navy,width:2}, areaStyle:{color:"rgba(26,54,93,0.12)"}, itemStyle:{color:C.navy} },
+        { name:"液相法(德方纳米)", value:[6,5,7,9,6,9,5,8], lineStyle:{color:C.blue,width:2}, areaStyle:{color:"rgba(49,130,206,0.12)"}, itemStyle:{color:C.blue} },
+        { name:"溶胶凝胶法", value:[4,4,6,8,3,3,8,5], lineStyle:{color:C.green,width:2}, areaStyle:{color:"rgba(56,161,105,0.12)"}, itemStyle:{color:C.green} },
+        { name:"固相合成法", value:[7,7,5,6,7,6,7,6], lineStyle:{color:C.amber,width:2}, areaStyle:{color:"rgba(214,158,46,0.12)"}, itemStyle:{color:C.amber} }
+      ]}]
+    });
+
+    initChart("echarts_kh_evolution", {
+      tooltip: { trigger:"axis", axisPointer:{type:"shadow"},
+        formatter: function(ps){ var s="<b>"+ps[0].axisValue+"</b><br/>"; ps.forEach(function(p){ if(p.value>0)s+=p.marker+p.seriesName+": "+p.value.toFixed(2)+"%<br/>"; }); return s; }
+      },
+      legend: { data:["OEM","共享/换电","储能","海外","其他"], top:5, textStyle:{fontSize:11} },
+      grid: { left:60, right:30, top:60, bottom:50 },
+      xAxis: { type:"category", data:["FY2023","FY2024","FY2025"] },
+      yAxis: { type:"value", name:"%", max:100 },
+      series: [
+        { name:"OEM", type:"bar", stack:"pct2", data:[12.92,5.56,6.38], itemStyle:{color:C.navy}, label:{show:true,position:"inside",formatter:"{c}%"} },
+        { name:"共享/换电", type:"bar", stack:"pct2", data:[21.67,23.90,28.96], itemStyle:{color:C.blue}, label:{show:true,position:"inside",formatter:"{c}%"} },
+        { name:"储能", type:"bar", stack:"pct2", data:[2.84,9.64,14.89], itemStyle:{color:C.green}, label:{show:true,position:"inside",formatter:"{c}%"} },
+        { name:"海外", type:"bar", stack:"pct2", data:[0,0,17.30], itemStyle:{color:C.amber}, label:{show:true,position:"inside",formatter:"{c}%"} },
+        { name:"其他", type:"bar", stack:"pct2", data:kh_o, itemStyle:{color:C.gray}, label:{show:true,position:"inside",formatter:function(p){return p.value>10?p.value.toFixed(1)+"%":"";}} }
+      ]
+    });
+
+    initChart("echarts_cw_monthly_cf", {
+      tooltip: { trigger:"axis", axisPointer:{type:"cross"},
+        formatter: function(ps){ var s="<b>2026年"+ps[0].axisValue+"</b><br/>"; ps.forEach(function(p){ s+=p.marker+p.seriesName+": "+(p.value>=0?"+":"")+(p.value/10000).toFixed(2)+"亿<br/>"; }); return s; }
+      },
+      legend: { data:["月度CF","累计CF"], top:5, textStyle:{fontSize:11} },
+      grid: { left:80, right:80, top:55, bottom:50 },
+      xAxis: { type:"category", data:["1月","2月","3月"] },
+      yAxis: [{ type:"value", name:"月度CF(万元)", axisLabel:{formatter:function(v){return (v/10000).toFixed(1)+"亿";}} }, { type:"value", name:"累计CF(万元)", axisLabel:{formatter:function(v){return (v/10000).toFixed(1)+"亿";}} }],
+      series: [
+        { name:"月度CF", type:"bar", data:[14775,3552,-16996], itemStyle:{color:function(p){return p.value>=0?C.green:C.red;}}, label:{show:true,position:"top",formatter:function(p){return (p.value>=0?"+":"")+(p.value/10000).toFixed(2)+"亿";},fontSize:10} },
+        { name:"累计CF", type:"line", yAxisIndex:1, data:[14775,18327,1331], itemStyle:{color:C.blue}, lineStyle:{width:2.5}, symbol:"circle", symbolSize:8, label:{show:true,formatter:function(p){return (p.value/10000).toFixed(2)+"亿";},fontSize:10} }
+      ]
+    });
+
+    var labels=["声称1:传音储能","声称2:FY2026E 2.66亿","声称3:市占率72.5%","声称4:海外50%市占","声称5:安全无系统风险"];
+    var scores=[6.5,3.0,4.0,2.5,2.0];
+    initChart("echarts_mg_credibility", {
+      tooltip: { trigger:"axis", axisPointer:{type:"shadow"},
+        formatter: function(ps){ var p=ps[0]; var level=p.value>=6?"较高":(p.value>=4?"中等":"较低"); return "<b>"+p.axisValue+"</b><br/>可信度评分: <b>"+p.value.toFixed(1)+"/10</b> ("+level+")"; }
+      },
+      grid: { left:170, right:60, top:20, bottom:30 },
+      xAxis: { type:"value", name:"可信度评分", min:0, max:10, axisLabel:{formatter:"{value}"} },
+      yAxis: { type:"category", data:labels.slice().reverse(), axisLabel:{fontSize:11} },
+      series: [{ type:"bar", data:scores.slice().reverse().map(function(v){ return {value:v, itemStyle:{color:v>=6?C.green:(v>=4?C.amber:C.red),borderRadius:[0,4,4,0]}}; }), label:{show:true,position:"right",formatter:"{c}/10",fontSize:10}, barMaxWidth:30 }]
+    });
+
+    var peers=[{name:"宁德时代",val:18.2},{name:"亿纬锂能",val:15.8},{name:"博力威",val:12.4},{name:"国轩高科",val:8.5},{name:"欣旺达",val:7.1},{name:"星恒电源",val:5.3},{name:"孚能科技",val:-3.2},{name:"德方纳米",val:-8.7}];
+    peers.sort(function(a,b){return b.val-a.val;});
+    initChart("echarts_cw_peer_compare", {
+      tooltip: { trigger:"axis", axisPointer:{type:"shadow"},
+        formatter: function(ps){ var p=ps[0]; return "<b>"+p.axisValue+"</b><br/>经营CF/营收: <b>"+p.value.toFixed(1)+"%</b>"; }
+      },
+      grid: { left:100, right:60, top:20, bottom:30 },
+      xAxis: { type:"value", name:"经营CF/营收(%)", axisLabel:{formatter:"{value}%"} },
+      yAxis: { type:"category", data:peers.map(function(p){return p.name;}), axisLabel:{fontSize:11} },
+      series: [{ type:"bar", data:peers.map(function(p){ return {value:p.val, itemStyle:{color:p.val>=0?(p.name==="星恒电源"?C.navy:C.blue):C.red,borderRadius:p.val>=0?[0,4,4,0]:[4,0,0,4]}}; }), label:{show:true,position:"right",formatter:"{c}%",fontSize:10}, barMaxWidth:28 }]
+    });
+
+  })();
+
   window.addEventListener("resize", function(){ for(var k in charts) charts[k].resize(); });
 })();
+
 </script>
 </body>
 </html>

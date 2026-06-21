@@ -152,7 +152,7 @@ pre code{background:none;color:inherit;font-size:13px}
 
 /* ── ECharts交互图表容器 ── */
 .echarts-chart{
-    width:100%;height:350px;margin:16px 0;background:#fff;
+    width:100%;min-height:0;margin:16px 0;background:#fff;
     border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.04);
     border:1px solid #e2e8f0;
 }
@@ -167,7 +167,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <a href="#top">回顶部</a>
 <a href="appendix_d.html">切换到桌面版</a>
 <span style="color:rgba(255,255,255,0.5);font-size:12px;margin-left:auto">
-  更新于 2026-06-21 17:42
+  更新于 2026-06-21 18:29
 </span>
 </div>
 <div id="top"></div>
@@ -261,7 +261,11 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <td>🔴 大规模备货（存货+2.77亿）+应付账款支付</td>
 </tr>
 </tbody>
-</table></div><p class="body-text"><strong>Q1月度CF波动幅度异常大</strong>：1月到3月的CF波动幅度高达3.18亿（+14,775→-16,996），波动幅度远超季度营收规模（Q1营收7.49亿）。这反映星恒的经营CF对营运资金变动极度敏感。</p>
+</table></div><div class="echarts-chart" id="echarts_cw_monthly_cf"></div>
+<p class="body-text"><strong>Q1月度CF波动幅度异常大</strong>：1月到3月的CF波动幅度高达3.18亿（+14,775→-16,996），波动幅度远超季度营收规模（Q1营收7.49亿）。这反映星恒的经营CF对营运资金变动极度敏感。</p>
+<details>
+<summary>经营CF的核心驱动因素拆解（详细分析）</summary>
+<div class="details-content">
 <h4>2.3 经营CF的核心驱动因素拆解</h4>
 <h5>2.3.1 FY2025经营CF = 2.06亿的驱动因素</h5>
 <div class="table-wrapper"><table class="doc-table"><thead>
@@ -304,9 +308,11 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <td>待CF表验证</td>
 </tr>
 </tbody>
-</table></div><div class="callout callout-warning" style="background:#fffbeb;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>⚠️ WARNING</strong><br><p>⚠️
+</table></div><div class="echarts-chart" id="echarts_cw_cf_drivers"></div>
+<blockquote>
+<p class="body-text">[!WARNING] ⚠️
 <strong>重要数据缺口</strong>：FY2025经营CF 2.06亿远高于归母净利4,509万，差异的主要来源应是折旧摊销（非现金支出）+营运资金变动。但由于缺乏完整的现金流量表，无法精确拆解各项目的贡献。若2.06亿中营运资金正面贡献较大（如应付账款增加、预收账款增加），则其可持续性弱于主要由折旧驱动的CF。</p>
-</div>
+</blockquote>
 <h5>2.3.2 Q1 2026经营CF = 1,331万的驱动因素</h5>
 <div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
@@ -355,6 +361,8 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 </tr>
 </tbody>
 </table></div><p class="body-text"><strong>结论</strong>：Q1经营CF仅1,331万的主要原因是<strong>存货大幅增加（占用约2.77亿现金流）</strong>，被应收票据减少（释放约3.13亿现金流）和应收减少（释放约0.75亿）部分抵消。存货激增是最大不确定性——区分主动备货和被动积压至关重要。</p>
+</div>
+</details>
 <hr />
 <h3>三、横向分析——行业经营CF对标</h3>
 <h4>3.1 行业可比公司经营CF/营收比</h4>
@@ -426,7 +434,8 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <td>[A] MX/iFind FY2025年报</td>
 </tr>
 </tbody>
-</table></div><h4>3.2 存货周转对标</h4>
+</table></div><div class="echarts-chart" id="echarts_cw_peer_compare"></div>
+<h4>3.2 存货周转对标</h4>
 <div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
 <th>公司</th>
@@ -508,8 +517,12 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 </tr>
 </tbody>
 </table></div><p class="body-text">星恒应收账款周转天数约83-92天（2.77-3.06个月），对于B2B业务属于正常偏高水平。博力威74.89天、宁德59.70天均优于星恒，反映星恒对下游客户（共享出行运营商）的议价权较弱。</p>
+<div class="echarts-chart" id="echarts_cw_turnover"></div>
 <hr />
 <h3>四、横纵交叉——经营CF可持续性对投资决策的影响</h3>
+<details>
+<summary>经营CF情景预测与DCF估值影响（详细分析）</summary>
+<div class="details-content">
 <h4>4.1 三种情景的经营CF预测</h4>
 <p class="body-text">基于Q1 2026趋势和行业对标，构建三种经营CF情景：</p>
 <div class="table-wrapper"><table class="doc-table"><thead>
@@ -544,15 +557,17 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <td>~25%</td>
 </tr>
 </tbody>
-</table></div><div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:17px"><strong>💡 NOTE</strong><br><p>💡
+</table></div><div class="echarts-chart" id="echarts_cw_scenarios"></div>
+<blockquote>
+<p class="body-text">[!NOTE] 💡
 <strong>情景概率推导方法</strong>（置信度：★★★☆☆）：</p>
-<p>概率赋值基于以下可量化锚点，非纯主观判断：</p>
-<p><strong>(1) 中性情景50%——&quot;均值回归&quot;锚点</strong>：Q1年化经营CF 5,324万仅为FY2025全年2.06亿的25.8%。若Q1是正常低点（历史Q1营收占全年20.6%），则全年CF应在0.8-1.2亿。这是最朴素的外推假设，赋值50%体现&quot;在没有强证据反驳时，朴素外推为最优初始估计&quot;的原则。</p>
-<p><strong>(2) 乐观情景25%——&quot;季节性回补&quot;锚点</strong>：Q1月度CF波动幅度3.18亿（+14,775→-16,996），说明单月CF对营运资金极度敏感。若Q1-3月的大额负CF是春节备货+集中支付的一次性因素，则4月+Q2旺季可回补。但FY2025月度数据缺失（仅有全年），无法用历史季节性因子校准这一概率——因此保守赋25%（=对称尾部的起始估计）。</p>
-<p><strong>(3) 悲观情景25%——&quot;趋势延续&quot;锚点</strong>：3月单月CF -1.70亿的幅度（月均CF的10倍负偏离）提示存在超出正常季节性的恶化。若4-5月CF仍为负，悲观概率上调。在获取4-5月数据前，赋25%（与乐观对称），体现信息不足下的审慎中性。</p>
-<p><strong>(4) 交叉验证</strong>：Q1应收票据骤降-85.7%（从3.63亿降至0.52亿）——这一异常信号暗示客户回款方式可能正在从票据转向更长的应收账款账期（应收仅降-8.9%，降幅远小于票据），这是经营CF质量恶化的独立佐证。该信号为悲观情景25%的概率下限提供了部分支撑。</p>
-<p><strong>局限性</strong>：以上概率为基于单季度数据的定性估计。获取FY2020-2024经营CF完整历史后，可构建月度季节性因子模型，将概率赋值从&quot;专家判断&quot;升级为&quot;统计校准&quot;。</p>
-</div>
+<p class="body-text">概率赋值基于以下可量化锚点，非纯主观判断：</p>
+<p class="body-text"><strong>(1) 中性情景50%——&quot;均值回归&quot;锚点</strong>：Q1年化经营CF 5,324万仅为FY2025全年2.06亿的25.8%。若Q1是正常低点（历史Q1营收占全年20.6%），则全年CF应在0.8-1.2亿。这是最朴素的外推假设，赋值50%体现&quot;在没有强证据反驳时，朴素外推为最优初始估计&quot;的原则。</p>
+<p class="body-text"><strong>(2) 乐观情景25%——&quot;季节性回补&quot;锚点</strong>：Q1月度CF波动幅度3.18亿（+14,775→-16,996），说明单月CF对营运资金极度敏感。若Q1-3月的大额负CF是春节备货+集中支付的一次性因素，则4月+Q2旺季可回补。但FY2025月度数据缺失（仅有全年），无法用历史季节性因子校准这一概率——因此保守赋25%（=对称尾部的起始估计）。</p>
+<p class="body-text"><strong>(3) 悲观情景25%——&quot;趋势延续&quot;锚点</strong>：3月单月CF -1.70亿的幅度（月均CF的10倍负偏离）提示存在超出正常季节性的恶化。若4-5月CF仍为负，悲观概率上调。在获取4-5月数据前，赋25%（与乐观对称），体现信息不足下的审慎中性。</p>
+<p class="body-text"><strong>(4) 交叉验证</strong>：Q1应收票据骤降-85.7%（从3.63亿降至0.52亿）——这一异常信号暗示客户回款方式可能正在从票据转向更长的应收账款账期（应收仅降-8.9%，降幅远小于票据），这是经营CF质量恶化的独立佐证。该信号为悲观情景25%的概率下限提供了部分支撑。</p>
+<p class="body-text"><strong>局限性</strong>：以上概率为基于单季度数据的定性估计。获取FY2020-2024经营CF完整历史后，可构建月度季节性因子模型，将概率赋值从&quot;专家判断&quot;升级为&quot;统计校准&quot;。</p>
+</blockquote>
 <h4>4.2 情景推导逻辑</h4>
 <p class="body-text"><strong>乐观情景（25%）</strong>：</p>
 <ul class="doc-list"><li><p class="body-text">Q1经营CF疲弱是季节性备货（为Q2旺季准备库存）</li>
@@ -641,7 +656,10 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <td>Q1筹资活动净流入6,827万，不可长期持续</td>
 </tr>
 </tbody>
-</table></div><hr />
+</table></div>
+</div>
+</details>
+<hr />
 <h3>五、来源与可靠性</h3>
 <div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
@@ -1641,6 +1659,9 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 </tbody>
 </table></div><h4>2.2 负债结构与关键科目演变</h4>
 <p class="body-text">基于Q1 2026合并报表（[B] 202603-星恒电源合并报表.xlsx，置信度：★★★★☆）：</p>
+<details>
+<summary>Q1 2026资产负债关键科目变动明细表（点击展开）</summary>
+<div class="details-content">
 <div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
 <th>指标</th>
@@ -1855,7 +1876,10 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <td>—</td>
 </tr>
 </tbody>
-</table></div><p class="body-text"><strong>关键发现</strong>：</p>
+</table></div>
+</div>
+</details>
+<p class="body-text"><strong>关键发现</strong>：</p>
 <ol class="doc-list"><li>
 <p class="body-text"><strong>存货暴增+31.7%（+2.77亿）</strong>——Q1单季度存货从8.73亿跳升至11.50亿，增幅显著超过营收季节性波动（Q1营收7.49亿 vs FY2025全年36.36亿的20.6%）。存货积压可能反映：(a) 为Q2旺季备货；(b) 销售不及预期导致产成品积压；(c) 原材料战略储备。需结合存货结构（原材料/产成品/在制品比例）进一步判断。</p>
 </li>

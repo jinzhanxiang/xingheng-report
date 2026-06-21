@@ -174,7 +174,7 @@ pre code{background:none;color:inherit;font-size:14px}
 
 /* ── ECharts交互图表容器 ── */
 .echarts-chart{
-    width:100%;height:450px;margin:20px 0;background:#fff;
+    width:100%;min-height:0;margin:20px 0;background:#fff;
     border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);
     border:1px solid #e2e8f0;
 }
@@ -189,7 +189,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <a href="#top">回顶部</a>
 <a href="appendix_f_m.html">切换到手机版</a>
 <span style="color:rgba(255,255,255,0.5);font-size:12px;margin-left:auto">
-  更新于 2026-06-21 17:42
+  更新于 2026-06-21 18:29
 </span>
 </div>
 <div id="top"></div>
@@ -303,13 +303,23 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <h3>2.3 星恒入场与技术突破阶段（2019-2022）——固相法磷酸锰铁锂的产业化先行者</h3>
 <p class="body-text"><strong>星恒入场的技术逻辑</strong>：</p>
 <p class="body-text">星恒选择固相法不是偶然的，而是由以下技术沿革路径决定：</p>
-<pre><code>中科院物理所（星恒技术源头）
-  ↓ 20年锰酸锂固相法积累
-星恒电源（锰酸锂两轮车电芯，全球最大锰酸锂电芯制造商）
-  ↓ 锰酸锂与磷酸锰铁锂同为锰基体系
-星恒青源（固相法磷酸锰铁锂前驱体）
-  ↓ 固相法在锰酸锂→磷酸锰铁锂的&quot;同系迁移&quot;
-</code></pre>
+<div class="tech-tree" style="border-left: 4px solid #1a365d; padding: 12px 16px; margin: 16px 0; background: #f8fafc; border-radius: 0 8px 8px 0;">
+<p class="body-text"><strong>星恒技术沿革链</strong></p>
+<div style="display: flex; flex-direction: column; gap: 4px; margin: 8px 0;">
+<div style="padding: 8px 12px; background: #e6f0fa; border-radius: 4px;">
+<p class="body-text"><strong>中科院物理所</strong>（星恒技术源头）</p>
+<div style="color: #1a365d; font-size: 0.9em; margin-top: 2px;">&#8595; 20年锰酸锂固相法积累</div>
+</div>
+<div style="padding: 8px 12px; background: #d4e6fa; border-radius: 4px;">
+<p class="body-text"><strong>星恒电源</strong>（锰酸锂两轮车电芯，全球最大锰酸锂电芯制造商）</p>
+<div style="color: #1a365d; font-size: 0.9em; margin-top: 2px;">&#8595; 锰酸锂与磷酸锰铁锂同为锰基体系</div>
+</div>
+<div style="padding: 8px 12px; background: #c2ddf8; border-radius: 4px;">
+<p class="body-text"><strong>星恒青源</strong>（固相法磷酸锰铁锂前驱体）</p>
+<div style="color: #1a365d; font-size: 0.9em; margin-top: 2px;">&#8595; 固相法在锰酸锂&#8594;磷酸锰铁锂的"同系迁移"</div>
+</div>
+</div>
+</div>
 <p class="body-text"><strong>关键里程碑</strong>：</p>
 <div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
@@ -397,19 +407,26 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <h2>三、横向分析——磷酸锰铁锂前驱体四大技术路线竞争格局</h2>
 <h3>3.1 四大技术路线全景对比</h3>
 <p class="body-text">磷酸锰铁锂前驱体的合成路线可以分为四大类：</p>
-<pre><code>磷酸锰铁锂前驱体合成方法
-├── 固相法（Solid-State）        ← 星恒路线
-│   ├── 高温固相法（主流）
-│   └── 机械化学法（辅助）
-├── 共沉淀法（Co-precipitation） ← 行业主流
-│   ├── 草酸盐共沉淀
-│   ├── 碳酸盐共沉淀
-│   └── 氢氧化物共沉淀
-├── 液相法（Solution-based）     ← 德方纳米/裕能磷酸铁锂延伸
-│   ├── 水热/溶剂热法
-│   └── 溶胶-凝胶法（Sol-Gel）
-└── 喷雾热解法（Spray Pyrolysis） ← 前沿探索
-</code></pre>
+<div class="tech-tree" style="border-left: 4px solid #3182ce; padding: 12px 16px; margin: 16px 0; background: #f8fafc; border-radius: 0 8px 8px 0;">
+<p class="body-text"><strong>磷酸锰铁锂前驱体合成方法——四路线分类体系</strong></p>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0;">
+<div style="padding: 10px 12px; border-left: 3px solid #38a169; background: #f0fff4; border-radius: 0 4px 4px 0;">
+<p class="body-text"><strong>固相法（Solid-State）</strong> <span style="color: #38a169;">← 星恒路线</span></p>
+<div style="font-size: 0.9em; color: #555; margin-top: 4px;">&#9500; 高温固相法（主流）<br>&#9492; 机械化学法（辅助）</div>
+</div>
+<div style="padding: 10px 12px; border-left: 3px solid #d69e2e; background: #fffdf5; border-radius: 0 4px 4px 0;">
+<p class="body-text"><strong>共沉淀法（Co-precipitation）</strong> <span style="color: #d69e2e;">← 行业主流</span></p>
+<div style="font-size: 0.9em; color: #555; margin-top: 4px;">&#9500; 草酸盐共沉淀<br>&#9500; 碳酸盐共沉淀<br>&#9492; 氢氧化物共沉淀</div>
+</div>
+<div style="padding: 10px 12px; border-left: 3px solid #e53e3e; background: #fff5f5; border-radius: 0 4px 4px 0;">
+<p class="body-text"><strong>液相法（Solution-based）</strong> <span style="color: #e53e3e;">← 德方纳米/裕能磷酸铁锂延伸</span></p>
+<div style="font-size: 0.9em; color: #555; margin-top: 4px;">&#9500; 水热/溶剂热法<br>&#9492; 溶胶-凝胶法（Sol-Gel）</div>
+</div>
+<div style="padding: 10px 12px; border-left: 3px solid #3182ce; background: #f0f7ff; border-radius: 0 4px 4px 0;">
+<p class="body-text"><strong>喷雾热解法（Spray Pyrolysis）</strong> <span style="color: #3182ce;">← 前沿探索</span></p>
+</div>
+</div>
+</div>
 <h3>3.2 四路线多维度技术竞争矩阵</h3>
 <div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
@@ -528,6 +545,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 </tr>
 </tbody>
 </table></div><p class="body-text"><strong>来源</strong>：[C] MX搜索/起点研究院/GGII行业技术文献；[B] 星恒管理层自述；[A] 上市公司公告；[C] 行业技术报告（D50偏差数据）；[C] 学术文献（共沉淀法工艺敏感性）；[A] 企业公开披露（BTR/德方纳米）</p>
+<div class="echarts-chart" id="echarts_gx_radar"></div>
 <blockquote>
 <h4>批次一致性评级的关键修正——区分&quot;理论潜力&quot;与&quot;工业可实现&quot;</h4>
 <p class="body-text">批次一致性是技术竞争矩阵中争议最大的维度。此前版本将批次一致性视为单一维度（固相法★★★☆☆、共沉淀法★★★★★），但这一评级混淆了两个不同的概念：<strong>理论潜力</strong>（由原子级混合机制决定的上限）与<strong>工业可实现</strong>（由过程控制成熟度决定的实际水平）。基于行业技术报告、学术文献和企业公开披露的多源证据，进行以下修正：</p>
@@ -620,25 +638,23 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 </ol>
 <h3>3.4 技术路线选择的产业经济学分析</h3>
 <p class="body-text">为什么行业主流选择共沉淀法/液相法而非固相法？这背后是产业经济学的路径依赖：</p>
-<pre><code>正极材料行业的技术路径依赖逻辑：
-
-三元/镍钴铝三元正极
-  → 共沉淀法是三元前驱体的标准工艺（原子级混合是刚性要求）
-  → 企业积累了大量共沉淀法的工程经验+设备投资+人才储备
-  → 当磷酸锰铁锂作为新品类出现时，企业自然倾向将共沉淀法延伸至磷酸锰铁锂
-  → 这是&quot;技术路径依赖&quot;——不是固相法不好，而是共沉淀法&quot;已经在手&quot;
-
-磷酸铁锂正极
-  → 德方纳米液相法/湖南裕能固相法在磷酸铁锂领域已大规模验证
-  → 企业积累的是磷酸铁锂体系的工艺经验
-  → 当磷酸锰铁锂出现时，将磷酸铁锂工艺延伸至磷酸锰铁锂（仅多锰源）是自然选择
-  → 这是&quot;材料体系延伸&quot;——不是最优工艺，而是&quot;最近工艺&quot;
-
-星恒的特殊之处：
-  → 星恒没有三元/磷酸铁锂的工艺包袱——它本来就用固相法做锰酸锂
-  → 从锰酸锂固相法延伸到磷酸锰铁锂固相法是&quot;同系迁移&quot;
-  → 这是&quot;后来者优势&quot;——没有存量资产包袱，可以按新材料选择最优工艺
-</code></pre>
+<div class="tech-tree" style="border-left: 4px solid #d69e2e; padding: 12px 16px; margin: 16px 0; background: #fffdf5; border-radius: 0 8px 8px 0;">
+<p class="body-text"><strong>正极材料行业的技术路径依赖逻辑</strong></p>
+<div style="display: flex; flex-direction: column; gap: 8px; margin: 8px 0;">
+<div style="padding: 10px 14px; border-left: 3px solid #e53e3e; background: #fff5f5; border-radius: 0 4px 4px 0;">
+<p class="body-text"><strong>三元/镍钴铝三元正极 → 共沉淀法路径依赖</strong></p>
+<p class="body-text">共沉淀法是三元前驱体的标准工艺（原子级混合是刚性要求）→ 企业积累了大量共沉淀法的工程经验+设备投资+人才储备 → 当磷酸锰铁锂作为新品类出现时，企业自然倾向将共沉淀法延伸至磷酸锰铁锂 → 这是**&quot;技术路径依赖&quot;**——不是固相法不好，而是共沉淀法&quot;已经在手&quot;</p>
+</div>
+<div style="padding: 10px 14px; border-left: 3px solid #3182ce; background: #f0f7ff; border-radius: 0 4px 4px 0;">
+<p class="body-text"><strong>磷酸铁锂正极 → 体系延伸路径</strong></p>
+<p class="body-text">德方纳米液相法/湖南裕能固相法在磷酸铁锂领域已大规模验证 → 企业积累的是磷酸铁锂体系的工艺经验 → 当磷酸锰铁锂出现时，将磷酸铁锂工艺延伸至磷酸锰铁锂（仅多锰源）是自然选择 → 这是**&quot;材料体系延伸&quot;**——不是最优工艺，而是&quot;最近工艺&quot;</p>
+</div>
+<div style="padding: 10px 14px; border-left: 3px solid #38a169; background: #f0fff4; border-radius: 0 4px 4px 0;">
+<p class="body-text"><strong>星恒的特殊之处 → 同系迁移</strong></p>
+<p class="body-text">星恒没有三元/磷酸铁锂的工艺包袱——它本来就用固相法做锰酸锂 → 从锰酸锂固相法延伸到磷酸锰铁锂固相法是&quot;同系迁移&quot; → 这是**&quot;后来者优势&quot;**——没有存量资产包袱，可以按新材料选择最优工艺</p>
+</div>
+</div>
+</div>
 <p class="body-text"><strong>结论</strong>：固相法在磷酸锰铁锂行业中处于&quot;技术路线少数派&quot;地位，不是因为它技术上有根本缺陷，而是因为行业主流玩家存在路径依赖——它们各自沿着三元→共沉淀法→磷酸锰铁锂或磷酸铁锂→液相法→磷酸锰铁锂的路径演进。星恒是唯一从锰酸锂→固相法→磷酸锰铁锂路径走的企业。</p>
 <hr />
 <h3>3.5 固相法多维竞争优势学术分析——超越成本优势的技术论证</h3>
@@ -662,6 +678,8 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <li><p class="body-text">[L] 基于公认科学原理的逻辑推演（Logical Deduction）</li>
 </ul>
 </blockquote>
+<details open>
+<summary><strong>3.5.1 优势维度一：晶体结构完整性与相纯度（Crystal Structure Integrity & Phase Purity）</strong></summary>
 <h4>3.5.1 优势维度一：晶体结构完整性与相纯度（Crystal Structure Integrity &amp; Phase Purity）</h4>
 <p class="body-text"><strong>科学机制</strong>：</p>
 <p class="body-text">固相法的核心特征在于固-固相反应的热力学路径。前驱体（锰源/铁源/Li源固体粉末）在高温（600-800°C）下通过固相扩散实现原子重排，最终形成具有Pnma空间群的橄榄石型LiMnₓFe₁₋ₓPO₄晶相。这一过程的两个关键优势：</p>
@@ -715,6 +733,9 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <div class="callout callout-warning" style="background:#fffbeb;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>⚠️ WARNING</strong><br><p>⚠️
 以上学术论文引用基于公认的关键文献及其在学术界的广泛讨论。具体卷期页码、作者全名、实验条件等细节应通过Google Scholar或Web of Science独立核实后方可在正式学术报告中作为直接引用使用。各项技术主张的科学机制（橄榄石结构、固相扩散、化学计量比控制等）属于电化学和固体化学的公认基础知识。</p>
 </div>
+</details>
+<details open>
+<summary><strong>3.5.2 优势维度二：锰溶出抑制（Mn Dissolution Suppression）</strong></summary>
 <h4>3.5.2 优势维度二：锰溶出抑制（Mn Dissolution Suppression）</h4>
 <p class="body-text"><strong>科学机制</strong>：</p>
 <p class="body-text">锰溶出是含锰正极材料（锰酸锂/磷酸锰铁锂/三元）面临的共同挑战，也是导致高温循环容量衰减的主要机制之一。其化学路径为：</p>
@@ -758,6 +779,9 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 </blockquote>
 <p class="body-text"><strong>关键结论</strong>：固相法对锰溶出的抑制效果<strong>并非固相法本身的直接化学机制，而是通过高结晶度+干净表面+（可能的）原位掺杂协同作用实现的间接效果</strong>。需要明确的边界条件：(a) 上述效果高度依赖煅烧工艺的优化程度——温度/时间/气氛控制不当可能导致相反效果（过度烧结导致更大晶粒但更多晶界缺陷）；(b) 巴斯夫杉杉的实测数据来自锰酸锂体系（非磷酸锰铁锂体系），尽管同为锰基体系，但磷酸锰铁锂中Fe的存在引入了额外变量（Fe²⁺/Fe³⁺氧化还原对可能影响Mn的价态稳定性）。</p>
 <p class="body-text"><strong>置信度（CF）</strong>：★★★☆☆（锰溶出机制本身★★★★★，但固相法优于其他方法的专门对比实验数据有限。巴斯夫杉杉数据为单点验证，且为锰酸锂而非磷酸锰铁锂体系）</p>
+</details>
+<details open>
+<summary><strong>3.5.3 优势维度三：热稳定性与本征安全性（Thermal Stability & Intrinsic Safety）</strong></summary>
 <h4>3.5.3 优势维度三：热稳定性与本征安全性（Thermal Stability &amp; Intrinsic Safety）</h4>
 <p class="body-text"><strong>科学机制</strong>：</p>
 <p class="body-text">这是<strong>固相法与其他磷酸锰铁锂合成方法共享的优势</strong>——安全性来自锰基化学体系的选择，而非固相法工艺的选择。但固相法的高结晶度可能进一步强化这一优势。</p>
@@ -801,6 +825,9 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <strong>重要区分</strong>：上述热稳定性优势是<strong>锰基化学体系的&quot;公共品&quot;</strong>，所有三种主要合成方法（固相法/共沉淀法/液相法）的磷酸锰铁锂产物均享有此优势。星恒将&quot;锰基本征安全&quot;归因于固相法工艺，属于<strong>归因错误</strong>——安全性来自选择了锰基体系而非镍基体系，不来自选择了固相法而非共沉淀法。固相法的增量安全贡献（高结晶度效应）是真实存在但幅度有限的二级效应（估计释氧温度提升10-30°C），不应被夸大为核心差异化优势。</p>
 </div>
 <p class="body-text"><strong>置信度（CF）</strong>：★★★★★（热力学稳定性）、★★★☆☆（固相法高结晶度的额外增量效应——[L]）</p>
+</details>
+<details open>
+<summary><strong>3.5.4 优势维度四：振实密度与体积能量密度（Tap Density & Volumetric Energy Density）</strong></summary>
 <h4>3.5.4 优势维度四：振实密度与体积能量密度（Tap Density &amp; Volumetric Energy Density）</h4>
 <p class="body-text"><strong>科学机制</strong>：</p>
 <p class="body-text">振实密度直接决定正极材料的体积能量密度（Wh/L）——对于空间受限的应用（两轮车、便携设备、汽车）至关重要。</p>
@@ -844,13 +871,17 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <td>纳米颗粒比表面积大，颗粒间空隙多</td>
 </tr>
 </tbody>
-</table></div><blockquote>
+</table></div><div class="echarts-chart" id="echarts_gx_density"></div>
+<blockquote>
 <p class="body-text"><strong>[J] Dominko, R., Bele, M., Gaberscek, M., et al.</strong> &quot;Impact of the Carbon Coating Thickness on the Electrochemical Performance of LiFePO₄/C Composites.&quot; <em>Journal of the Electrochemical Society</em>, 152(3), A607-A610 (2005). ★★★★☆</p>
 <p class="body-text">Dominko等通过Sol-Gel法与固相法的对比实验，发现Sol-Gel法产物虽然一次粒子更小（有利于倍率性能），但二次团聚体的振实密度显著低于固相法产物（差异约25-35%）。研究指出&quot;致密性是固相法相对于溶液法的一个内在优势&quot;。</p>
 </blockquote>
 <p class="body-text"><strong>(3) 对星恒应用场景的意义</strong></p>
 <p class="body-text">对于两轮车电池——空间极度受限（电池仓体积固定），振实密度直接影响单次充电续航里程。这是固相法磷酸锰铁锂在两轮车场景下（相较于共沉淀法/液相法磷酸锰铁锂）的一个<strong>真实但常被忽略的差异化优势</strong>。</p>
 <p class="body-text"><strong>置信度（CF）</strong>：★★★★☆（陶瓷烧结致密化机制为成熟科学原理，磷酸锰铁锂具体振实密度对比数据来自工业经验）</p>
+</details>
+<details open>
+<summary><strong>3.5.5 优势维度五：工艺鲁棒性与控制简洁性（Process Robustness & Control Simplicity）</strong></summary>
 <h4>3.5.5 优势维度五：工艺鲁棒性与控制简洁性（Process Robustness &amp; Control Simplicity）</h4>
 <p class="body-text"><strong>科学机制</strong>：</p>
 <p class="body-text"><strong>(1) 更少的独立过程变量</strong></p>
@@ -912,7 +943,8 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <td><strong>5-6个</strong></td>
 </tr>
 </tbody>
-</table></div><p class="body-text"><strong>(2) 统计过程控制（SPC）的优势</strong></p>
+</table></div><div class="echarts-chart" id="echarts_gx_robustness"></div>
+<p class="body-text"><strong>(2) 统计过程控制（SPC）的优势</strong></p>
 <p class="body-text">独立变量数越少，统计过程控制（SPC）的可控性越强。共沉淀法的7-9个关键变量之间的交互作用（pH×温度×进料速率的二阶/三阶交互）使得工艺优化响应曲面极其复杂，需要DOE（实验设计）的大量实验才能确定最优参数区间。固相法的3-4个关键变量（温度×时间×球磨参数）的交互作用相对简单，工艺窗口宽、操作容错性高。</p>
 <blockquote>
 <p class="body-text"><strong>[R] Tarascon, J.M., Armand, M.</strong> &quot;Issues and challenges facing rechargeable lithium batteries.&quot; <em>Nature</em>, 414(6861), 359-367 (2001). ★★★★★</p>
@@ -921,6 +953,9 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <p class="body-text"><strong>(3) 从实验室到量产的&quot;放大损失&quot;更小</strong></p>
 <p class="body-text">共沉淀法的连续搅拌釜反应器（CSTR）在从小试（1-5L）放大到中试（50-200L）再到量产（1000-5000L）过程中，流体力学条件（雷诺数、混合时间、剪切速率）发生剧烈变化，导致沉淀产物的粒径分布和形貌偏离小试优化结果。固相法的球磨+窑炉工艺在放大过程中，混合和煅烧条件相对更容易保持相似性，放大损失更小。</p>
 <p class="body-text"><strong>置信度（CF）</strong>：★★★★☆（工艺变量计数基于公认的化学工程原理，SPC优势为逻辑推论但需要各公司内部实际CPK数据直接对比）</p>
+</details>
+<details open>
+<summary><strong>3.5.6 优势维度六：环境足迹（Environmental Footprint）</strong></summary>
 <h4>3.5.6 优势维度六：环境足迹（Environmental Footprint）</h4>
 <p class="body-text"><strong>科学机制</strong>：</p>
 <p class="body-text"><strong>(1) 零废水排放</strong></p>
@@ -971,7 +1006,8 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <td><strong>3-5%</strong></td>
 </tr>
 </tbody>
-</table></div><blockquote>
+</table></div><div class="echarts-chart" id="echarts_gx_cost"></div>
+<blockquote>
 <p class="body-text"><strong>[R] Larcher, D., Tarascon, J.M.</strong> &quot;Towards greener and more sustainable batteries for electrical energy storage.&quot; <em>Nature Chemistry</em>, 7(1), 19-29 (2015). ★★★★★</p>
 <p class="body-text">Larcher和Tarascon在Nature Chemistry的这篇综述系统探讨了电池制造全生命周期的环境影响。文中明确指出&quot;正极材料合成中的水消耗和废水处理是电池制造环境足迹的重要组成部分&quot;，固相法因不产生废水而具有天然的环境优势。</p>
 </blockquote>
@@ -980,6 +1016,9 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <p class="body-text"><strong>(3) 在中国环保政策趋严背景下的战略价值</strong></p>
 <p class="body-text">中国工业和信息化部持续提高废水排放标准（如GB 31573-2015《无机化学工业污染物排放标准》及其修订），含重金属（锰）废水的处理成本和合规风险不断上升。固相法的&quot;零废水&quot;特征使星恒免于以下风险：(a) 废水处理系统投资和运营成本；(b) 违规排放的行政处罚风险；(c) 废水排放指标限制对产能扩张的约束。</p>
 <p class="body-text"><strong>置信度（CF）</strong>：★★★★★（零废水为确定性事实）；★★★☆☆（综合碳足迹对比，需LCA确认）</p>
+</details>
+<details open>
+<summary><strong>3.5.7 优势维度七：电化学循环行为独特性（Distinctive Electrochemical Cycling Behavior）</strong></summary>
 <h4>3.5.7 优势维度七：电化学循环行为独特性（Distinctive Electrochemical Cycling Behavior）</h4>
 <p class="body-text"><strong>科学机制</strong>：</p>
 <p class="body-text"><strong>(1) 晶粒尺寸效应——固相法的&quot;大晶粒&quot;策略</strong></p>
@@ -1032,6 +1071,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 <strong>单晶vs多晶的行业趋势验证</strong>：宁德时代（CATL）在2024-2025年大规模推进高镍三元的单晶化以改善循环和安全性能。比亚迪的刀片电池磷酸铁锂也采用单晶/大晶粒路线。固相法的&quot;大晶粒天然适配性&quot;与行业单晶化趋势方向一致——这为固相法在更严格要求循环寿命的应用场景（储能、汽车级）中提供了技术合理性基础。</p>
 </div>
 <p class="body-text"><strong>置信度（CF）</strong>：★★★★☆（大晶粒vs纳米颗粒的长期循环行为差异在磷酸铁锂体系已充分验证，磷酸锰铁锂体系的直接对比数据仍在积累中）</p>
+</details>
 <h4>3.5.8 七维优势综合评估矩阵</h4>
 <div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
@@ -1170,15 +1210,20 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 </tbody>
 </table></div><h3>4.3 横纵交叉关键发现：窗口期判断</h3>
 <p class="body-text"><strong>星恒固相法磷酸锰铁锂的窗口期：约3年（2026-2029）</strong></p>
-<pre><code>窗口期逻辑：
-2026-2027：固相法是唯一经客户验证的固相法磷酸锰铁锂路线
-          + 环保政策趋严 → 差异化优势最大 → 技术溢价
-2028-2029：德方/裕能磷酸锰铁锂产能释放 → 规模效应碾压
-          + 共沉淀法/液相法一致性优势在汽车级市场体现
-          → 固相法优势收窄，进入价格/规模竞争
-2030+   ：路线分化明确，固相法在轻型动力/储能细分领域可能持续存在
-          但&quot;技术颠覆性&quot;标签褪去 → 成为普通可选路线之一
-</code></pre>
+<div class="tech-tree" style="border-left: 4px solid #1a365d; padding: 12px 16px; margin: 16px 0; background: #f8fafc; border-radius: 0 8px 8px 0;">
+<p class="body-text"><strong>星恒固相法磷酸锰铁锂窗口期逻辑（约3年，2026-2029）</strong></p>
+<div style="display: flex; flex-direction: column; gap: 6px; margin: 8px 0;">
+<div style="padding: 10px 14px; border-left: 3px solid #38a169; background: #f0fff4; border-radius: 0 4px 4px 0;">
+<p class="body-text"><strong>2026-2027：</strong> 固相法是唯一经客户验证的固相法磷酸锰铁锂路线 + 环保政策趋严 → 差异化优势最大 → 技术溢价</p>
+</div>
+<div style="padding: 10px 14px; border-left: 3px solid #d69e2e; background: #fffdf5; border-radius: 0 4px 4px 0;">
+<p class="body-text"><strong>2028-2029：</strong> 德方/裕能磷酸锰铁锂产能释放 → 规模效应碾压 + 共沉淀法/液相法一致性优势在汽车级市场体现 → 固相法优势收窄，进入价格/规模竞争</p>
+</div>
+<div style="padding: 10px 14px; border-left: 3px solid #e53e3e; background: #fff5f5; border-radius: 0 4px 4px 0;">
+<p class="body-text"><strong>2030+：</strong> 路线分化明确，固相法在轻型动力/储能细分领域可能持续存在，但&quot;技术颠覆性&quot;标签褪去 → 成为普通可选路线之一</p>
+</div>
+</div>
+</div>
 <h3>4.4 汽车动力电池重返路径分析——固相法磷酸锰铁锂能否填补华霆业务空白？</h3>
 <p class="body-text">星恒FY2020的汽车电芯业务（华霆，估计营收3-5亿，GM 30-40%）在FY2021锁价到期后结构性消失，是FY2020→FY2025净利率从9.5%降至1.24%的最大单一驱动因素（贡献约4-6pp净利率下降，详见04主报告2.4.1.1节）。一个自然的追问是：<strong>固相法磷酸锰铁锂能否成为星恒重返汽车动力电池领域的路径？</strong></p>
 <h4>4.4.1 汽车动力电池的进入壁垒</h4>
@@ -1231,11 +1276,23 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
 </table></div><p class="body-text"><strong>来源</strong>：[C] IATF 16949标准；[C] 汽车行业公开信息；[B] 管理层材料</p>
 <h4>4.4.2 三条可能的重返路径</h4>
 <p class="body-text"><strong>路径A：间接进入——通过磷酸锰铁锂前驱体供应汽车级正极材料企业</strong>（概率：★★★☆☆，30-40%）</p>
-<pre><code>星恒青源（固相法磷酸锰铁锂前驱体）
-  → 容百/斯科兰德（正极材料）
-    → 宁德时代/比亚迪/中创新航（电芯）
-      → 整车厂（宝马/特斯拉/蔚来等）
-</code></pre>
+<div class="tech-tree" style="border-left: 4px solid #3182ce; padding: 12px 16px; margin: 16px 0; background: #f8fafc; border-radius: 0 8px 8px 0;">
+<p class="body-text"><strong>路径A：间接进入汽车供应链</strong></p>
+<div style="display: flex; flex-direction: column; gap: 4px; margin: 8px 0;">
+<div style="padding: 8px 12px; background: #ebf8ff; border-radius: 4px;">
+<p class="body-text"><strong>星恒青源</strong>（固相法磷酸锰铁锂前驱体）</p>
+</div>
+<div style="margin-left: 24px; padding: 8px 12px; background: #d4e6fa; border-radius: 4px;">
+<p class="body-text"><span style="color: #3182ce;">↓</span> <strong>容百/斯科兰德</strong>（正极材料）</p>
+</div>
+<div style="margin-left: 48px; padding: 8px 12px; background: #bddbf5; border-radius: 4px;">
+<p class="body-text"><span style="color: #3182ce;">↓</span> <strong>宁德时代/比亚迪/中创新航</strong>（电芯）</p>
+</div>
+<div style="margin-left: 72px; padding: 8px 12px; background: #a6cef0; border-radius: 4px;">
+<p class="body-text"><span style="color: #3182ce;">↓</span> <strong>整车厂</strong>（宝马/特斯拉/蔚来等）</p>
+</div>
+</div>
+</div>
 <p class="body-text">这是<strong>最可能</strong>的路径，也是<strong>已有基础的路径</strong>——星恒已通过斯科兰德/容百实现了前驱体销售。逻辑链：</p>
 <ul class="doc-list"><li><p class="body-text">容百FY2025 磷酸锰铁锂正极满产满销，其中部分可能流向汽车级客户</li>
 <li><p class="body-text">如果星恒固相法磷酸锰铁锂前驱体能够证明批次一致性满足汽车级要求（Cpk ≥ 1.67），则通过容百间接进入汽车供应链是自然的延伸</li>
@@ -1599,15 +1656,26 @@ Layer 4: 战略叙事层 —— &quot;星恒讲什么故事&quot;的问题
 </ul>
 <p class="body-text">星恒2023-2025年的10+起过充电保护失效处罚，属于<strong>产品系统安全层面的BMS设计问题</strong>。批次一致性评级已基于多源证据重新评估：固相法的工业级批次一致性（★★★★☆，D50偏差±3%）与液相法（★★★★☆，±1.5%）处于同一梯队，且优于共沉淀法（★★★☆☆，工艺敏感性高）。详见3.2节&quot;批次一致性——理论潜力vs工业可实现&quot;的修正分析。在此修正后的框架下，固相法一致性偏低→间接贡献于安全风险这一因果链需要重新审视——批次一致性可能不是过充保护失效的主要贡献因素，BMS设计缺陷才是主因。</p>
 <p class="body-text"><strong>两层安全的交叉判断</strong>：</p>
-<pre><code>星恒&quot;安全可靠&quot;主张的构成拆解：
-├── 材料本征安全（锰基化学属性）→ 真实但非独家（所有磷酸锰铁锂路线共享）
-│   固相法贡献：无额外加分，也无减分
-├── 产品系统安全（BMS+一致性+制造质量）→ 存在系统性缺陷
-│   固相法贡献：批次一致性工业可实现★★★★☆，非主要风险贡献因素；BMS设计缺陷才是主因
-└── 总体结论：星恒在&quot;安全&quot;维度上的真实差异化
-     ├── 相对于三元/镍钴铝三元电芯 → 有优势（锰基本征安全）——但这是行业共同优势
-     └── 相对于其他磷酸锰铁锂电芯 → 锰基本征安全优势相同（公共品），批次一致性处于同一梯队（★★★★☆），但过充保护系统性失效构成差异化劣势
-</code></pre>
+<div class="tech-tree" style="border-left: 4px solid #1a365d; padding: 12px 16px; margin: 16px 0; background: #f8fafc; border-radius: 0 8px 8px 0;">
+<p class="body-text"><strong>星恒&quot;安全可靠&quot;主张的构成拆解</strong></p>
+<div style="display: flex; flex-direction: column; gap: 6px; margin: 8px 0;">
+<div style="padding: 10px 14px; border-left: 3px solid #38a169; background: #f0fff4; border-radius: 0 4px 4px 0;">
+<p class="body-text"><strong>● 材料本征安全（锰基化学属性）</strong> → 真实但非独家（所有磷酸锰铁锂路线共享）</p>
+<div style="font-size: 0.9em; color: #555; margin-top: 4px;">固相法贡献：无额外加分，也无减分</div>
+</div>
+<div style="padding: 10px 14px; border-left: 3px solid #e53e3e; background: #fff5f5; border-radius: 0 4px 4px 0;">
+<p class="body-text"><strong>● 产品系统安全（BMS+一致性+制造质量）</strong> → 存在系统性缺陷</p>
+<div style="font-size: 0.9em; color: #555; margin-top: 4px;">固相法贡献：批次一致性工业可实现★★★★☆，非主要风险贡献因素；BMS设计缺陷才是主因</div>
+</div>
+<div style="padding: 10px 14px; border-left: 3px solid #d69e2e; background: #fffdf5; border-radius: 0 4px 4px 0;">
+<p class="body-text"><strong>● 总体结论：星恒在&quot;安全&quot;维度上的真实差异化</strong></p>
+<div style="font-size: 0.9em; color: #555; margin-top: 4px; padding-left: 12px;">
+<p class="body-text">相对于三元/镍钴铝三元电芯 → 有优势（锰基本征安全）——但这是行业共同优势<br>
+相对于其他磷酸锰铁锂电芯 → 锰基本征安全优势相同（公共品），批次一致性处于同一梯队（★★★★☆），但过充保护系统性失效构成差异化劣势</p>
+</div>
+</div>
+</div>
+</div>
 </blockquote>
 <ul class="doc-list"><li><p class="body-text"><strong>第二重——固相法工艺控制精度可能是质量问题的潜在根源</strong>：基于3.2节批次一致性评级的重新评估，固相法的工业级批次一致性（★★★★☆，D50 ±3%）并不弱于共沉淀法（★★★☆☆），与液相法（★★★★☆）处于同一梯队。因此&quot;批次一致性不足→过充保护失效&quot;的因果链需要重新审视——过充保护失效更可能指向BMS设计缺陷而非固相法工艺特性。固相法在原子级混合均匀度（★★☆☆☆，理论潜力层面）的短板仍然存在，但这一短板在工业实践中已被成熟的过程控制所补偿（详见3.2节分析）。这需要在尽调中通过第三方电芯拆解和失效分析来确认过充保护失效的根因。</li>
 <li><p class="body-text"><strong>第三重——外购电芯线索已部分核实</strong>：DD材料中已找到三星-苏州采购合同（2023+2024年度），确认星恒与三星SDI/关联实体间存在采购关系。但合同名称为&quot;三星-苏州&quot;（非&quot;三星SDI&quot;），具体采购内容（电芯/材料/零部件）需通过合同原件确认。另，Q1 2026合并报表中&quot;外购电芯&quot;科目虽为0，但FY2025数据可能存在跨期差异。若确认外购电芯占比较高，则&quot;固相法技术优势→产品竞争力&quot;的逻辑链条将被打破。需向管理层直接确认外购电芯的品种、数量和占比，并对三星合同原件进行内容确认。</li>

@@ -1,0 +1,3614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>claims_verification.html - 桌面版</title>
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif;
+    color:#1a202c;background:#fff;line-height:1.9;font-size:17px;
+    max-width:1000px;margin:0 auto;padding:24px 20px 60px;
+}
+
+/* ── 标题层级 ── */
+h1{font-size:24px;color:#1a365d;margin:32px 0 18px;border-bottom:3px solid #d69e2e;padding-bottom:12px;font-weight:700;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
+h2{font-size:21px;color:#1a365d;margin:36px 0 18px;padding-bottom:8px;border-bottom:1px solid #e2e8f0;font-weight:700;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
+h3{font-size:19px;color:#2d3748;margin:28px 0 14px;font-weight:600;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
+h4{font-size:17px;color:#2d3748;margin:22px 0 10px;font-weight:600;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
+h5{font-size:17px;color:#2d3748;margin:18px 0 8px;font-weight:600}
+h6{font-size:15px;color:#4a5568;margin:16px 0 6px;font-weight:600}
+
+/* ── 正文段落（仿宋17） ── */
+p.body-text{
+    margin-bottom:16px;text-align:justify;text-indent:2em;
+    line-height:2.0;font-size:17px;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif;
+}
+p.section-intro{
+    text-indent:0;font-weight:600;margin-top:24px;
+}
+p.numbered-item{
+    text-indent:0;padding-left:1.5em;margin-bottom:8px;
+}
+p.key-finding{
+    text-indent:0;background:linear-gradient(90deg,#fffbeb,transparent);
+    padding:10px 16px;border-left:4px solid #d69e2e;
+    border-radius:0 6px 6px 0;margin:20px 0;
+}
+
+strong{color:#1a365d}
+
+/* ── 表格（字号略小于正文，便于查阅） ── */
+/* 列宽优化：table-layout:auto + min-width + word-break + 预处理<br>换行 */
+.table-wrapper{overflow-x:auto;margin:20px 0;}
+table.doc-table{
+    width:100%;border-collapse:collapse;margin:0;
+    font-size:15px;line-height:1.6;
+    table-layout:auto;
+}
+table.doc-table thead{background:#1a365d;}
+table.doc-table th{
+    color:#fff;padding:9px 10px;text-align:left;
+    font-size:13px;font-weight:600;white-space:normal;
+    word-wrap:break-word;overflow-wrap:break-word;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+}
+table.doc-table td{
+    padding:8px 10px;border-bottom:1px solid #e2e8f0;
+    font-size:14px;vertical-align:top;
+    word-wrap:break-word;overflow-wrap:break-word;word-break:break-word;
+    min-width:75px;
+}
+table.doc-table tbody tr:nth-child(even){background:#f7fafc}
+table.doc-table tbody tr:hover{background:#edf2f7}
+
+/* ── 列表 ── */
+ol.doc-list, ul.doc-list{margin:16px 0 16px 2em}
+ol.doc-list li, ul.doc-list li{margin-bottom:10px;line-height:2.0;font-size:17px;padding-left:4px;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif;}
+ol.doc-list{list-style-type:decimal}
+ol.doc-list ol, ul.doc-list ul{margin:8px 0 8px 1.5em}
+
+/* ── 折叠块 ── */
+details{
+    margin:20px 0;border:1px solid #e2e8f0;
+    border-radius:8px;overflow:hidden;
+    background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.04);
+}
+details summary{
+    padding:14px 18px;background:linear-gradient(180deg,#f7fafc,#edf2f7);
+    cursor:pointer;font-weight:600;color:#1a365d;
+    font-size:17px;user-select:none;list-style:none;
+    display:flex;align-items:center;gap:8px;
+}
+details summary::-webkit-details-marker{display:none}
+details summary::before{
+    content:"▶";display:inline-block;font-size:11px;
+    transition:transform 0.2s;color:#d69e2e;
+}
+details[open] summary::before{transform:rotate(90deg)}
+details summary:hover{background:#edf2f7}
+details[open] summary{border-bottom:1px solid #e2e8f0}
+.details-content{padding:20px 22px;}
+.details-content p.body-text:first-child{margin-top:0}
+.details-content p.body-text:last-child{margin-bottom:0}
+
+/* ── Callout ── */
+.callout{margin:24px 0}
+.callout strong{font-size:17px;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif}
+
+/* ── 引用块 ── */
+blockquote{
+    background:#fffbeb;border-left:3px solid #d69e2e;
+    padding:16px 20px;margin:20px 0;
+    border-radius:0 6px 6px 0;color:#744210;font-size:17px;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif;
+}
+
+/* ── 代码块 ── */
+code{background:#f7fafc;padding:2px 6px;border-radius:3px;font-size:14px}
+pre{background:#1a202c;color:#e2e8f0;padding:18px;border-radius:8px;
+    margin:18px 0;overflow-x:auto;line-height:1.6}
+pre code{background:none;color:inherit;font-size:14px}
+
+/* ── 推论卡片 ── */
+.corollary-card{
+    margin:24px 0;border-radius:10px;overflow:hidden;
+    box-shadow:0 2px 12px rgba(180,140,50,0.12);
+    border:1px solid #e8d5a0;
+}
+.corollary-header{
+    background:linear-gradient(135deg,#fef9e7,#fdf0d5);
+    padding:12px 20px;font-size:17px;font-weight:700;
+    color:#8b6914;border-bottom:2px solid #e8d5a0;
+    display:flex;align-items:center;gap:12px;
+}
+.corollary-header::before{
+    content:"📌";font-size:15px;
+}
+.corollary-confidence{
+    margin-left:auto;font-size:13px;background:#fff;
+    padding:3px 10px;border-radius:12px;color:#8b6914;
+    border:1px solid #e8d5a0;white-space:nowrap;
+}
+.corollary-body{
+    background:#fffef9;padding:16px 20px;
+}
+.corollary-text{
+    color:#5d4e37;font-size:15px;line-height:1.9;
+    white-space:pre-wrap;word-wrap:break-word;
+}
+
+/* ── 指标徽章 ── */
+.metric-badge{
+    display:inline-block;background:linear-gradient(135deg,#1a365d,#2d3748);
+    color:#fff;padding:6px 16px;border-radius:20px;
+    font-size:17px;font-weight:700;margin:4px 6px;
+    letter-spacing:0.5px;
+}
+
+/* ── 投资层级卡片 ── */
+.tier-cards{
+    display:flex;gap:16px;flex-wrap:wrap;margin:24px 0;
+}
+.tier-card{
+    flex:1;min-width:200px;border-radius:10px;padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+.tier-p0{background:linear-gradient(135deg,#fff5f5,#fed7d7);border:2px solid #e53e3e;}
+.tier-p0 .tier-label{background:#e53e3e;color:#fff;padding:3px 12px;border-radius:12px;font-size:12px;font-weight:700;display:inline-block;margin-bottom:8px;}
+.tier-p1{background:linear-gradient(135deg,#fffaf0,#feebc8);border:2px solid #d69e2e;}
+.tier-p1 .tier-label{background:#d69e2e;color:#fff;padding:3px 12px;border-radius:12px;font-size:12px;font-weight:700;display:inline-block;margin-bottom:8px;}
+.tier-p2{background:linear-gradient(135deg,#ebf8ff,#bee3f8);border:2px solid #3182ce;}
+.tier-p2 .tier-label{background:#3182ce;color:#fff;padding:3px 12px;border-radius:12px;font-size:12px;font-weight:700;display:inline-block;margin-bottom:8px;}
+.tier-card h4{margin:4px 0 6px;font-size:18px;color:#1a365d;}
+.tier-card .tier-meta{font-size:14px;color:#4a5568;line-height:1.7;}
+
+/* ── 导航栏 ── */
+.nav{
+    background:linear-gradient(135deg,#1a365d,#2d3748);
+    padding:14px 20px;margin:-24px -20px 28px;
+    border-radius:0 0 8px 8px;display:flex;gap:20px;flex-wrap:wrap;
+}
+.nav a{color:rgba(255,255,255,0.85);text-decoration:none;font-size:14px;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
+.nav a:hover{color:#fff;text-decoration:underline}
+
+/* ── ECharts交互图表容器 ── */
+.echarts-chart{
+    width:100%;min-height:0;margin:20px 0;background:#fff;
+    border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    border:1px solid #e2e8f0;
+}
+
+hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
+
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="index.html">← 返回目录</a>
+<a href="#top">回顶部</a>
+<a href="claims_verification_m.html">切换到手机版</a>
+<span style="color:rgba(255,255,255,0.5);font-size:12px;margin-left:auto">
+  更新于 2026-06-21 18:29
+</span>
+</div>
+<div id="top"></div>
+<h1>星恒三方声称交叉核实报告</h1>
+<p class="body-text"><strong>核实时间</strong>：2026-06-10
+<strong>核实目的</strong>：针对6月9日会谈中星恒方的三个关键声称，结合项目尽调资料+公开数据进行交叉验证
+<strong>数据来源标注格式</strong>：[A]合同OCR / [B]尽调Excel / [C]公开行业数据 / [D]OpenClaw SearXNG搜索 / [E]项目分析报告</p>
+<hr />
+<h2>一、传音（钛氪）合作业务实质核实</h2>
+<h3>1.1 星恒声称</h3>
+<blockquote>
+<p class="body-text">传音的合作是家用储能，而非产品涵盖手环、数据线、蓝牙耳机、充电宝的消费电子ODM。</p>
+</blockquote>
+<h3>1.2 合同原文证据</h3>
+<p class="body-text"><strong>来源</strong>：[A] OCR提取自 <code>钛氪（传音）协议 双章件.pdf</code>（合同编号 LA50-202307006，2023年7月签署，总页码≥19页）</p>
+<p class="body-text">合同第1条明确列明产品清单：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>序号</th>
+<th>产品</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>手环</td>
+<td>消费电子</td>
+</tr>
+<tr>
+<td>2</td>
+<td>数据线</td>
+<td>消费电子</td>
+</tr>
+<tr>
+<td>3</td>
+<td>蓝牙耳机</td>
+<td>消费电子</td>
+</tr>
+<tr>
+<td>4</td>
+<td>充电宝</td>
+<td>消费电子</td>
+</tr>
+<tr>
+<td>5</td>
+<td>插线板</td>
+<td>消费电子</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>储能模组</strong></td>
+<td>储能</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>合同定性</strong>：这是一份ODM采购框架协议，不是储能专项采购合同。签约主体为深圳传音控股股份有限公司（甲方）与星恒电源股份有限公司（苏州，乙方）。传音享有全球独家销售权、要求软件源代码上传至其服务器编译、安全补丁90天强制要求+300万违约金——这些条款特征均指向消费电子ODM模式。</p>
+<h3>1.3 传音公开业务结构验证</h3>
+<p class="body-text"><strong>来源</strong>：[D] OpenClaw SearXNG 搜索（2026-06-10）</p>
+<p class="body-text">传音控股（科创板688036）公开披露的业务结构：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>业务板块</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>手机主业</td>
+<td>TECNO / Itel / Infinix 三大品牌，2025年出货量约1.69亿部</td>
+</tr>
+<tr>
+<td>扩品类业务</td>
+<td>智能手表、TWS耳机、充电宝等消费电子 + <strong>itel Energy</strong> / <strong>DYQUE Energy</strong> 两大储能品牌 + Revoo两轮电动车</td>
+</tr>
+<tr>
+<td>移动互联业务</td>
+<td>非洲市场互联网服务</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">关键公开信息：</p>
+<ul class="doc-list"><li><p class="body-text">传音将储能定位为&quot;战略级业务&quot;，计划投入<strong>20亿元</strong>（来源：[D] 163.com 2025年报道）</li>
+<li><p class="body-text">itel Energy 定位大众平价储能，DYQUE Energy 定位中高端储能（来源：[D] 163.com / zcool.com.cn）</li>
+<li><p class="body-text">储能产品涵盖：小功率混合太阳能逆变器、一体化水冷储能机组等<strong>户用成套设备</strong>（来源：[D] 163.com 2026年报道）</li>
+<li><p class="body-text">2025年上半年&quot;物联网及其他产品&quot;收入25.68亿元，占营收8.8%，但<strong>储能具体贡献未单独披露</strong>（来源：[D] 163.com 报道引用传音年报数据）</li>
+</ul>
+<h3>1.4 项目尽调分业务数据验证</h3>
+<p class="body-text"><strong>来源</strong>：[B] 分业务收入表2022-2026年3月 + [E] 主报告第2.3.5节</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>FY2025</th>
+<th>Q1 2026</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>钛氪收入</td>
+<td>10,852万（#9，2.98%）</td>
+<td>7,433万（#1，9.92%）</td>
+<td>跃居第一大客户</td>
+</tr>
+<tr>
+<td>归属分类</td>
+<td>储能与新应用（合并口径）</td>
+<td>同左</td>
+<td>口径污染——无法拆分</td>
+</tr>
+<tr>
+<td>储能/新应用GM</td>
+<td>-5.51%</td>
+<td>-1.84%</td>
+<td>改善中</td>
+</tr>
+<tr>
+<td>其中新应用GM</td>
+<td>-0.40%</td>
+<td>+2.13%</td>
+<td>Q1已扭亏</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">项目分析判断（来源：[E] 主报告第2.3.5.2节）：</p>
+<blockquote>
+<p class="body-text">&quot;分业务收入表将储能与新应用合并为单一口径（4.84亿/GM -5.5%），但该口径包含钛氪（传音）的消费电子ODM收入（充电宝/手环/耳机等），其业务本质与储能电池无关。由于分业务收入表无法拆分ODM vs 储能的各自占比，以下所有基于4.84亿/GM -5.5%的分析均受到此口径污染的约束。&quot;</p>
+</blockquote>
+<p class="body-text">项目分析估计拆分（来源：[E] 主报告第2.3.5.2节）：</p>
+<ul class="doc-list"><li><p class="body-text">储能业务（家储+便携储能等）：约2.8-3.3亿，GM约-8%至-10%</li>
+<li><p class="body-text">新应用含ODM（传音消费电子+AGV+割草机等）：约1.5-2.0亿，GM约+2%至+5%</li>
+</ul>
+<h3>1.5 合同文本与业务实质的调和</h3>
+<p class="body-text"><strong>合同层面</strong>：合同列明6类产品（消费电子5项+储能1项），星恒说&quot;只是储能&quot;与合同文义不符。</p>
+<p class="body-text"><strong>修正判断</strong>：在获取PO明细之前，无法排除星恒说法（&quot;实际交付以储能模组为主&quot;）成立的可能性。传音储能业务的公开信息为星恒说法提供了支持。</p>
+<details><summary><b>业务实质层面详细分析（点击展开）</b></summary>
+<div class="details-content">
+<ul class="doc-list"><li><p class="body-text">传音公开信息确认其在大力布局户用储能（20亿投入，itel Energy/DYQUE Energy双品牌，产品涵盖逆变器+储能机组），为星恒&quot;合作是家用储能&quot;的说法提供了<strong>业务合理性</strong>——传音确实需要储能模组供应商。</li>
+<li><p class="body-text">同时，传音的&quot;扩品类业务&quot;也包括智能手表、TWS耳机等消费电子——合同覆盖这些品类也有业务合理性。</li>
+<li><p class="body-text">分业务收入表无法拆分&quot;储能&quot;与&quot;新应用（含ODM消费电子）&quot;的各自占比——这是技术性口径限制，不等于消费电子一定占据收入的大部分。</li>
+</ul>
+<p class="body-text"><strong>项目之前分析的局限性</strong>：</p>
+<p class="body-text">此前项目分析（来源：[E] 主报告第2.3.5.2节）推断&quot;消费电子品类可能贡献了9.92%收入的大部分&quot;——但该推断基于合同覆盖的产品广度，<strong>缺乏以下支撑</strong>：</p>
+<ol class="doc-list"><li><p class="body-text">未获取传音Q1 2026实际PO的产品线分解</li>
+<li><p class="body-text">未核实传音储能品牌（itel Energy/DYQUE Energy）是否由星恒供货</li>
+<li><p class="body-text">未排除以下可能性：合同中消费电子品类的实际PO交付量极低甚至为零</li>
+</ol>
+</div>
+</details>
+<h3>1.6 核实结论</h3>
+<p class="body-text"><strong>合同层面</strong>：星恒说&quot;不是消费电子ODM&quot;与合同文义矛盾——合同明确覆盖6个品类，其中5个为消费电子。</p>
+<p class="body-text"><strong>业务实质层面</strong>：传音20亿储能布局为星恒&quot;实际交付是储能&quot;的说法提供了合理性支撑。项目之前的分析可能过度强调了消费电子占比。</p>
+<div class="callout callout-tip" style="background:#f0fff4;border-left:4px solid #38a169;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#22543d;font-size:17px"><strong>✅ TIP</strong><br><p>谈判建议
+要求星恒提供Q1 2026对钛氪的分品类PO明细（储能模组 vs 消费电子的各自出货量和收入），这是唯一能解决争议的客观证据。同时，如果确认实际交付以储能为主，则项目分析中&quot;储能与新应用&quot;的口径污染程度较低，对储能业务GM的判断可以更准确地基于储能专项数据。</p>
+</div>
+<hr />
+<h2>二、盈利预测多角度核实</h2>
+<h3>2.0 分析方法说明</h3>
+<p class="body-text">本节同样采用<strong>假设星恒管理层说法成立</strong>的验证方法论，从以下四个独立角度交叉验证FY2026 1.5亿利润预测的可实现性：</p>
+<ul class="doc-list"><li><p class="body-text"><strong>角度A</strong>：历史预测偏差——管理层过去说过的话是否兑现</li>
+<li><p class="body-text"><strong>角度B</strong>：季度趋势反推——当前实际经营数据是否支撑目标</li>
+<li><p class="body-text"><strong>角度C</strong>：行业盈利基准——可比公司实现的净利率是否支持1.5亿</li>
+<li><p class="body-text"><strong>角度D</strong>：利润结构压力测试——利润的各构成部分是否正在改善</li>
+</ul>
+<p class="body-text">四个角度的结论将汇总为概率加权的合理利润区间。</p>
+<h3>2.1 星恒声称</h3>
+<blockquote>
+<p class="body-text">FY2026利润约1.5亿，FY2027利润2-3亿（会议第八章）。</p>
+</blockquote>
+<p class="body-text"><strong>关键上下文</strong>：FY2025实际归母净利约0.45亿（管理口径）/ 0.40亿（审计口径）。FY2026预测1.5亿意味着同比增长233%——这在制造业中是罕见的陡峭增长曲线。</p>
+<h3>2.2 角度A：历史预测偏差量化——管理层预测可信度基线</h3>
+<p class="body-text"><strong>来源</strong>：[E] 主报告第2.13节 + [B] 三版盈利预测Excel</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>对照指标</th>
+<th>管理层预测</th>
+<th>实际</th>
+<th>偏差率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FY2025归母净利（合并口径）</td>
+<td>7,779万</td>
+<td>5,044万</td>
+<td><strong>-35%</strong></td>
+</tr>
+<tr>
+<td>FY2025归母净利（归母口径）</td>
+<td>未单独披露</td>
+<td>3,986万（审计）/ 4,509万（管理）</td>
+<td><strong>-42%</strong>（推测）</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">三版盈利预测在5个月内（2025年12月 → 2026年4月 → 2026年5月）经历剧烈调整。产能规划同期从&quot;完整计划&quot; → &quot;删除&quot; → &quot;重写&quot;。</p>
+<p class="body-text">管理层存在系统性夸大倾向（来源：[E] 主报告第2.12节）：</p>
+<blockquote>
+<p class="body-text">&quot;管理层在公开/半公开文件中的产能和安全表述存在系统性夸大倾向。这直接影响管理层盈利预测的可信度。&quot;</p>
+</blockquote>
+<h3>2.3 Q1 2026季度数据同比验证</h3>
+<p class="body-text"><strong>来源</strong>：[B] 202603-星恒电源合并报表.xlsx + [E] 主报告第2.4.3节</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>Q1 2026</th>
+<th>年化推算</th>
+<th>FY2025全年</th>
+<th>FY2026目标</th>
+<th>年化完成率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>营业收入</td>
+<td>7.49亿</td>
+<td>~30亿</td>
+<td>36.36亿</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>归母净利润</td>
+<td>1,009万</td>
+<td>~4,036万</td>
+<td>4,509万（管理）</td>
+<td><strong>1.5亿</strong></td>
+<td><strong>27%</strong></td>
+</tr>
+<tr>
+<td>经营CF</td>
+<td>1,331万</td>
+<td>~5,324万</td>
+<td>20,558万</td>
+<td>—</td>
+<td>仅FY2025的26%</td>
+</tr>
+<tr>
+<td>3月单月经营CF</td>
+<td>-16,996万</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>剧烈反转</td>
+</tr>
+</tbody>
+</table></div><div class="callout callout-warning" style="background:#fffbeb;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>⚠️ WARNING</strong><br><p>Q1业绩与全年目标严重偏离
+Q1年化归母净利仅4,036万，为FY2026目标1.5亿的<strong>27%</strong>。即使Q2-Q4显著改善，全年达到1.5亿需要余下三季度平均每季度约4,660万，是Q1的<strong>4.6倍</strong>。</p>
+</div>
+<h3>2.4 利润结构脆弱性验证</h3>
+<p class="body-text"><strong>来源</strong>：[E] 主报告 + [B] 分业务收入表</p>
+<p class="body-text">FY2025归母净利约4,509万（管理口径）的构成拆解（来源：[E] 主报告第2.4节）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>利润构成</th>
+<th>约值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>商用毛利（换电）</td>
+<td>+2.53亿</td>
+<td>GM 20.6%</td>
+</tr>
+<tr>
+<td>民用毛利（C端+OEM）</td>
+<td>+0.74亿</td>
+<td>GM 6.6%</td>
+</tr>
+<tr>
+<td>海外毛利</td>
+<td>+0.91亿</td>
+<td>GM 22.3%</td>
+</tr>
+<tr>
+<td>东南亚毛利</td>
+<td>+0.35亿</td>
+<td>GM 16.1%</td>
+</tr>
+<tr>
+<td>储能与新应用亏损</td>
+<td>-0.27亿</td>
+<td>GM -5.5%</td>
+</tr>
+<tr>
+<td>销管费用</td>
+<td>-3.20亿</td>
+<td>—</td>
+</tr>
+<tr>
+<td>研发费用</td>
+<td>-1.30亿</td>
+<td>—</td>
+</tr>
+<tr>
+<td>财务费用</td>
+<td>-0.50亿</td>
+<td>—</td>
+</tr>
+<tr>
+<td>政府补贴等</td>
+<td>+0.30亿</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>归母净利</strong></td>
+<td><strong>+0.45亿</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div><div class="echarts-chart" id="echarts_sf_profit" style="width:100%;height:420px;margin:16px 0;"></div>
+<p class="body-text"><strong>政府补贴依赖度</strong>（来源：[E] 附件F4）：</p>
+<ul class="doc-list"><li><p class="body-text">全口径补贴占归母净利：FY2024约75-80% → FY2025约62% → Q1 2026仅17%（退坡趋势明显）</li>
+<li><p class="body-text">纯现金补贴占比：约28%（约1,271万）</li>
+<li><p class="body-text">增值税加计抵减政策存在到期风险</li>
+</ul>
+<p class="body-text">剔除纯现金补贴后经营性归母净利仅约3,238万（净利率0.89%）。</p>
+<h3>2.5 历史净利润对照</h3>
+<p class="body-text"><strong>来源</strong>：[B] 审计报告 + [E] 主报告第2.4.1节</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>年份</th>
+<th>营收</th>
+<th>归母净利</th>
+<th>净利率</th>
+<th>特殊背景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FY2020</td>
+<td>40.21亿</td>
+<td>3.76亿</td>
+<td>9.5%</td>
+<td>🔵 历史峰值——锂价4.5-5.5万/吨超低+产能高峰+汽车电芯锁价红利</td>
+</tr>
+<tr>
+<td>FY2021</td>
+<td>36.91亿</td>
+<td>0.10亿</td>
+<td>0.3%</td>
+<td>锂价暴涨开始</td>
+</tr>
+<tr>
+<td>FY2022</td>
+<td>32.28亿</td>
+<td>1.22亿</td>
+<td>3.8%</td>
+<td>转型期</td>
+</tr>
+<tr>
+<td>FY2023</td>
+<td>23.84亿</td>
+<td><strong>-5.75亿</strong></td>
+<td>-24.1%</td>
+<td>🔴 谷底——锂盐暴跌+市场调整</td>
+</tr>
+<tr>
+<td>FY2024</td>
+<td>—</td>
+<td>~0.98亿</td>
+<td>—</td>
+<td>恢复期</td>
+</tr>
+<tr>
+<td>FY2025</td>
+<td>36.36亿</td>
+<td>0.45亿（管理）</td>
+<td>1.24%</td>
+<td>增收不增利</td>
+</tr>
+<tr>
+<td><strong>FY2026E（星恒）</strong></td>
+<td>—</td>
+<td><strong>1.50亿</strong></td>
+<td><strong>~4.1%</strong>（按36亿）</td>
+<td>需要净利率翻3.3倍（vs FY2025 1.24%）</td>
+</tr>
+<tr>
+<td><strong>FY2027E（星恒）</strong></td>
+<td>—</td>
+<td><strong>2-3亿</strong></td>
+<td><strong>~5-8%</strong>（按40亿）</td>
+<td>需要净利率达到FY2020巅峰水平的53-84%</td>
+</tr>
+</tbody>
+</table></div><h3>2.6 角度C：行业盈利基准——可比公司实现了什么</h3>
+<p class="body-text"><strong>论点</strong>：FY2026 1.5亿利润对应的~4.1%净利率，在行业可比公司中能否找到对标？</p>
+<p class="body-text"><strong>论据</strong>：从公开数据获取可比公司的最新净利率。</p>
+<p class="body-text"><strong>来源</strong>：[D] OpenClaw SearXNG 搜索各公司年报数据</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>可比公司</th>
+<th>业务</th>
+<th>最新净利率</th>
+<th>数据来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>星恒电源（目标）</strong></td>
+<td>两轮车锂电+储能</td>
+<td><strong>4.1%</strong>（FY2026E）</td>
+<td>管理层预测</td>
+</tr>
+<tr>
+<td>雅迪控股（01585.HK）</td>
+<td>电动两轮车整车</td>
+<td>~11.6%（FY2025，29.12亿/估250亿）</td>
+<td>[D] 雪球引用雅迪2025年报</td>
+</tr>
+<tr>
+<td>爱玛科技（603529.SH）</td>
+<td>电动两轮车整车</td>
+<td>8.1%（FY2025，20.35亿/250.95亿）</td>
+<td>[D] 界面新闻引用2025年报</td>
+</tr>
+<tr>
+<td>传音控股（688036）</td>
+<td>手机+储能</td>
+<td>3.88%（FY2025，25.46亿/655.68亿）</td>
+<td>[D] 雪球引用业绩预告</td>
+</tr>
+<tr>
+<td>天能动力（00819.HK）</td>
+<td>铅酸+锂电两轮车</td>
+<td>~2-4%（估算）</td>
+<td>[C] 行业数据</td>
+</tr>
+<tr>
+<td>博力威</td>
+<td>两轮车锂电</td>
+<td>&lt;5%（估算）</td>
+<td>[C] 行业数据</td>
+</tr>
+<tr>
+<td><strong>两轮车锂电电芯行业中枢</strong></td>
+<td>—</td>
+<td><strong>&lt;3%（2026-2027E）</strong></td>
+<td>[E] 附件H第3.4节</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>论证</strong>：</p>
+<ol class="doc-list"><li>
+<p class="body-text"><strong>整车厂（雅迪11.6%/爱玛8.1%）vs 电芯厂（天能2-4%/博力威&lt;5%）</strong>：整车厂享有品牌溢价、渠道和规模效应，利润率远高于上游电芯供应商。星恒处于价值链底端的电芯/模组环节，利润率天然受限。</p>
+</li>
+<li>
+<p class="body-text"><strong>传音控股3.88%</strong>：作为星恒客户，传音自身净利率仅3.88%。传音ODM业务的代工费模式下，星恒从中获得的净利率大概率不超过客户自身的净利率水平。若传音ODM收入占比持续上升，将结构性拉低星恒整体净利率。</p>
+</li>
+<li>
+<p class="body-text"><strong>两轮车锂电行业中枢&lt;3%</strong>：2023-2025年锂电池产能过剩（全行业产能超2,000GWh），电芯价格从0.9元/Wh跌至0.38元/Wh（-58%），行业整体微利。星恒要在&lt;3%行业中枢中实现4.1%净利率，需要显著超越行业平均——但星恒出货量在下降（FY2021 481.71万组→FY2025 343.34万组，-28.7%），规模效应在减弱而非增强。</p>
+</li>
+<li>
+<p class="body-text"><strong>FY2020 9.5%净利率不可复制</strong>：历史峰值依赖的三重红利（锂价4.5万/吨+产能高峰+汽车电芯锁价）均已消失。当前锂价6-10万/吨（约为FY2020的1.5倍）、汽车电芯业务已退出、产能利用率仅核心产线达92%（含僵尸产能仅65.8%）。</p>
+</li>
+</ol>
+<h3>2.7 角度D：利润结构压力测试</h3>
+<p class="body-text"><strong>论点</strong>：FY2025归母净利0.45亿的各构成部分，哪些在FY2026会改善、哪些会恶化？</p>
+<p class="body-text"><strong>论据</strong>：基于FY2025利润拆解（来源：[E] 主报告第2.4节）进行情景推演。</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>利润分项</th>
+<th>FY2025贡献</th>
+<th>FY2026E方向</th>
+<th>关键驱动</th>
+<th>对1.5亿目标的影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>商用毛利（换电）</td>
+<td>+2.53亿</td>
+<td>↓ 略降</td>
+<td>哈啰引入亿纬锂能/国轩替代</td>
+<td>-0.1至-0.3亿</td>
+</tr>
+<tr>
+<td>民用毛利（含OEM）</td>
+<td>+0.74亿</td>
+<td>↓ 略降</td>
+<td>爱玛爱德邦自供+OEM继续流失</td>
+<td>-0.1至-0.2亿</td>
+</tr>
+<tr>
+<td>海外EB毛利</td>
+<td>+0.91亿</td>
+<td>↑ 增长</td>
+<td>E-bike市场扩张</td>
+<td>+0.1至+0.3亿</td>
+</tr>
+<tr>
+<td>东南亚毛利</td>
+<td>+0.35亿</td>
+<td>↑ 增长</td>
+<td>印尼工厂+泰国合资</td>
+<td>+0.1至+0.2亿</td>
+</tr>
+<tr>
+<td>储能与新应用</td>
+<td>-0.27亿</td>
+<td>↑ 改善</td>
+<td>传音放量+产品结构升级（Q1 GM已升至-1.84%）</td>
+<td>+0.1至+0.2亿</td>
+</tr>
+<tr>
+<td>销管费用</td>
+<td>-3.20亿</td>
+<td>→ 持平</td>
+<td>随营收增长</td>
+<td>0至-0.2亿</td>
+</tr>
+<tr>
+<td>研发费用</td>
+<td>-1.30亿</td>
+<td>→ 持平</td>
+<td>维持</td>
+<td>0</td>
+</tr>
+<tr>
+<td>财务费用</td>
+<td>-0.50亿</td>
+<td>→ 持平</td>
+<td>利率环境</td>
+<td>0</td>
+</tr>
+<tr>
+<td>政府补贴</td>
+<td>+0.30亿</td>
+<td>↓ 减少</td>
+<td>加计抵减到期风险+Q1仅17%依赖度</td>
+<td>-0.1至-0.2亿</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>FY2026E归母净利情景汇总</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>情景</th>
+<th>毛利变化</th>
+<th>费用变化</th>
+<th>补贴变化</th>
+<th>FY2026E归母净利</th>
+<th>vs 1.5亿目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>乐观</td>
+<td>+0.5至+0.7亿</td>
+<td>-0.1亿</td>
+<td>-0.1亿</td>
+<td><strong>0.75-0.95亿</strong></td>
+<td>缺口37-50%</td>
+</tr>
+<tr>
+<td>基准</td>
+<td>+0.2至+0.3亿</td>
+<td>-0.1亿</td>
+<td>-0.15亿</td>
+<td><strong>0.40-0.60亿</strong></td>
+<td>缺口60-73%</td>
+</tr>
+<tr>
+<td>悲观</td>
+<td>-0.2至0亿</td>
+<td>-0.2亿</td>
+<td>-0.2亿</td>
+<td><strong>0.05-0.20亿</strong></td>
+<td>缺口87-97%</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>论证</strong>：即使在乐观情景下（海外+东南亚+储能全面改善），归母净利也仅0.75-0.95亿，仅达1.5亿目标的50-63%。要达到1.5亿，还需海外EB额外增加0.5亿以上且储能全年正毛利——在当前行业环境下实现概率极低。</p>
+<h3>2.8 盈利预测综合判断</h3>
+<p class="body-text"><strong>四个角度交叉验证汇总</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>验证角度</th>
+<th>核心发现</th>
+<th>对1.5亿目标的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>角度A：历史偏差</td>
+<td>FY2025预测偏差-35%，管理层存在系统性夸大</td>
+<td>1.5亿大概率被高估≥35%，真实区间&lt;1.0亿</td>
+</tr>
+<tr>
+<td>角度B：季度趋势</td>
+<td>Q1年化仅4,036万（目标27%），3月CF单月-1.70亿</td>
+<td>剩余Q2-Q4需环比+275%才能达标</td>
+</tr>
+<tr>
+<td>角度C：行业基准</td>
+<td>两轮车锂电净利率中枢&lt;3%（2026-2027E）</td>
+<td>4.1%目标需在行业&lt;3%中枢中实现，概率低</td>
+</tr>
+<tr>
+<td>角度D：利润结构</td>
+<td>乐观情景FY2026E仅0.75-0.95亿</td>
+<td>即使最好情况也仅达标50-63%</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>概率加权合理区间</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>情景</th>
+<th>概率</th>
+<th>FY2026E归母净利</th>
+<th>净利率（按36亿营收）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>乐观</td>
+<td>25%</td>
+<td>0.75-0.95亿</td>
+<td>2.1-2.6%</td>
+</tr>
+<tr>
+<td>基准</td>
+<td>50%</td>
+<td>0.40-0.60亿</td>
+<td>1.1-1.7%</td>
+</tr>
+<tr>
+<td>悲观</td>
+<td>25%</td>
+<td>0.05-0.20亿</td>
+<td>0.1-0.6%</td>
+</tr>
+<tr>
+<td><strong>概率加权均值</strong></td>
+<td>—</td>
+<td><strong>约0.45-0.55亿</strong></td>
+<td><strong>1.3-1.5%</strong></td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>如果假设星恒管理层的说法（1.5亿可实现）是正确的</strong>，则需要同时满足：</p>
+<ol class="doc-list"><li><p class="body-text">Q2-Q4平均每季度归母净利≥4,660万（Q1的4.6倍）</li>
+<li><p class="body-text">储能全年正毛利（GM从-5.5%→≥0%）</li>
+<li><p class="body-text">海外EB和东南亚持续高速增长</li>
+<li><p class="body-text">政府补贴不进一步退坡</li>
+<li><p class="body-text">3月经营CF剧烈恶化为一次性事件</li>
+</ol>
+<p class="body-text">任何一个条件不成立，1.5亿目标即为不可实现。</p>
+<h3>2.9 产业链利润分配规律——上下游谁赚更多？星恒利润率上下限推导</h3>
+<p class="body-text"><strong>问题</strong>：此前分析隐含假设&quot;下游整车厂利润率必然高于上游电池供应商&quot;。这个假设是否成立？</p>
+<p class="body-text"><strong>方法</strong>：收集汽车（传统/新能源）、两轮车、消费电子三个行业的上游供应商 vs 下游品牌商的公开净利率，实证检验上下游利润分配规律，找出决定因素，推导星恒合理利润率区间。</p>
+<h4>2.9.1 多行业实证数据</h4>
+<p class="body-text"><strong>来源</strong>：[D] OpenClaw SearXNG 搜索各公司公开年报、行业分析</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>行业</th>
+<th>上游供应商</th>
+<th>上游净利率</th>
+<th>下游品牌商</th>
+<th>下游净利率</th>
+<th>谁更高？</th>
+<th>倍数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>新能源汽车</strong></td>
+<td>宁德时代（动力电池）</td>
+<td><strong>18.12%</strong>（FY2025）</td>
+<td>比亚迪（整车）</td>
+<td>4.1%（FY2025）</td>
+<td><strong>上游 &gt;&gt; 下游</strong></td>
+<td>4.4x</td>
+</tr>
+<tr>
+<td><strong>新能源汽车</strong></td>
+<td>宁德时代（动力电池）</td>
+<td>18.12%</td>
+<td>13家A股整车合计</td>
+<td>合计&lt;宁德一家</td>
+<td><strong>上游 &gt;&gt; 下游</strong></td>
+<td>&gt;1x</td>
+</tr>
+<tr>
+<td><strong>传统汽车</strong></td>
+<td>博世（全球#1零部件）</td>
+<td><strong>4.2%</strong>（2023）</td>
+<td>丰田（整车）</td>
+<td>~8-10%</td>
+<td>下游 &gt; 上游</td>
+<td>0.4-0.5x</td>
+</tr>
+<tr>
+<td><strong>传统汽车</strong></td>
+<td>电装（#2零部件）</td>
+<td><strong>5.6%</strong>（2023）</td>
+<td>丰田（整车）</td>
+<td>~8-10%</td>
+<td>下游 &gt; 上游</td>
+<td>0.6x</td>
+</tr>
+<tr>
+<td><strong>传统汽车</strong></td>
+<td>采埃孚（#3零部件）</td>
+<td><strong>3.2%</strong>（2023）</td>
+<td>大众（整车）</td>
+<td>~4-6%</td>
+<td>下游 &gt; 上游</td>
+<td>0.5-0.8x</td>
+</tr>
+<tr>
+<td><strong>两轮车（中国）</strong></td>
+<td>天能动力（铅酸+锂电）</td>
+<td><strong>3.09%</strong>（FY2025）</td>
+<td>雅迪控股（整车）</td>
+<td>~11.6%（FY2025）</td>
+<td><strong>下游 &gt;&gt; 上游</strong></td>
+<td>0.27x</td>
+</tr>
+<tr>
+<td><strong>两轮车（中国）</strong></td>
+<td>天能动力（铅酸+锂电）</td>
+<td>3.09%</td>
+<td>爱玛科技（整车）</td>
+<td>8.1%（FY2025）</td>
+<td><strong>下游 &gt;&gt; 上游</strong></td>
+<td>0.38x</td>
+</tr>
+<tr>
+<td><strong>两轮车（中国）</strong></td>
+<td>星恒电源（锂电）</td>
+<td>1.24%（FY2025）</td>
+<td>小牛电动（整车）</td>
+<td><strong>-0.91%</strong>（FY2025亏损）</td>
+<td>上游 &gt; 下游</td>
+<td>下游亏损</td>
+</tr>
+<tr>
+<td><strong>两轮车（中国）</strong></td>
+<td>星恒电源（锂电）</td>
+<td>9.5%（FY2020峰值）</td>
+<td>小牛电动（整车）</td>
+<td>6.1%（FY2021峰值）</td>
+<td>上游 &gt; 下游</td>
+<td>1.6x</td>
+</tr>
+<tr>
+<td><strong>消费电子</strong></td>
+<td>工业富联（代工/EMS）</td>
+<td><strong>3.91%</strong>（FY2025）</td>
+<td>Apple（品牌）</td>
+<td>~25%</td>
+<td><strong>下游 &gt;&gt; 上游</strong></td>
+<td>0.16x</td>
+</tr>
+</tbody>
+</table></div><details><summary><b>数据来源详细注释（点击展开）</b></summary>
+<div class="details-content">
+<ul class="doc-list"><li><p class="body-text">宁德时代 18.12%：[D] baijiahao 2025年12月报道 + yoojia.com</li>
+<li><p class="body-text">宁德时代动力电池GM 22%+/储能GM 25.52%：[D] yoojia.com</li>
+<li><p class="body-text">比亚迪 4.1%：[D] baijiahao/雪球 引用比亚迪2025年报</li>
+<li><p class="body-text">博世 4.2%/电装 5.6%/采埃孚 3.2%：[D] yoojia.com 2023年数据</li>
+<li><p class="body-text">天能动力 3.09%（2025，从1.69%提升）：[D] eastmoney 2026年5月报道</li>
+<li><p class="body-text">雅迪 11.6%：[D] 雪球引用雅迪2025年报（29亿/250亿）</li>
+<li><p class="body-text">爱玛 8.1%：[D] 界面新闻引用2025年报（20.35亿/250.95亿）</li>
+<li><p class="body-text">小牛电动 -0.91%：[D] finance.sina.com 2025年3月 + eastmoney 2026年3月</li>
+<li><p class="body-text">工业富联 3.91%：[D] 雪球引用2025年报（营收9,028.87亿/净利352.86亿）</li>
+</ul>
+</div>
+</details>
+<h4>2.9.2 核心规律：决定上下游利润分配的四个条件</h4>
+<p class="body-text">基于以上跨行业实证数据，&quot;下游一定比上游赚钱&quot;的假设被<strong>证伪</strong>。上下游利润分配取决于四个条件：</p>
+<div style="border: 2px solid #1a365d; border-radius: 8px; padding: 16px; margin: 12px 0; background: #f7fafc; font-family: system-ui, sans-serif;">
+<div style="border-left: 4px solid #1a365d; padding: 8px 12px; margin: 8px 0; background: #edf2f7;">
+<b>条件1：上游技术壁垒（不可替代性）</b><br>
+<span style="color:#38a169;">&#9650; 高</span> &rarr; 上游利润高（CATL 18.12%，独家/寡头技术）<br>
+<span style="color:#e53e3e;">&#9660; 低</span> &rarr; 上游利润低（天能 3.09%，铅酸电池可替代）
+</div>
+<div style="border-left: 4px solid #1a365d; padding: 8px 12px; margin: 8px 0; background: #edf2f7;">
+<b>条件2：上游集中度 vs 下游集中度</b><br>
+<span style="color:#38a169;">&#9650; 上游集中 &gt; 下游分散</span> &rarr; 上游利润高（CATL一家 vs 13家整车厂）<br>
+<span style="color:#e53e3e;">&#9660; 上游分散 &lt; 下游集中</span> &rarr; 上游利润低（多家Tier1竞标丰田/大众）
+</div>
+<div style="border-left: 4px solid #1a365d; padding: 8px 12px; margin: 8px 0; background: #edf2f7;">
+<b>条件3：产品差异化程度</b><br>
+<span style="color:#38a169;">&#9650; 高差异化</span> &rarr; 供应商利润高（CATL麒麟电池 vs 普通磷酸铁锂）<br>
+<span style="color:#e53e3e;">&#9660; 同质化/标准化</span> &rarr; 供应商利润低（天能铅酸电池、汽车标准件）
+</div>
+<div style="border-left: 4px solid #1a365d; padding: 8px 12px; margin: 8px 0; background: #edf2f7;">
+<b>条件4：下游品牌壁垒</b><br>
+<span style="color:#38a169;">&#9650; 强品牌</span> &rarr; 下游利润高（Apple 25% vs Foxconn 3.91%）<br>
+<span style="color:#e53e3e;">&#9660; 弱品牌/无品牌</span> &rarr; 下游利润低（小牛亏损 vs 星恒盈利）
+</div>
+</div>
+<h4>2.9.3 星恒在四个条件上的位置——利润率上下限推导</h4>
+<p class="body-text"><strong>概率加权均值</strong>：FY2026E归母净利约<strong>0.8-1.1亿</strong>，对应净利率<strong>2.2-3.0%</strong>，略低于天能动力3.09%（考虑储能亏损+ATL竞争）。</p>
+<details><summary><b>四条件定位与行业对标推导过程（点击展开）</b></summary>
+<div class="details-content">
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>条件</th>
+<th>星恒当前状态</th>
+<th>对利润率的影响</th>
+<th>变化趋势</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>技术壁垒</strong></td>
+<td>LMFP有3年窗口期差异化，但与CATL/ATL体系相比无根本性壁垒</td>
+<td>中等偏弱</td>
+<td>↓ 窗口期关闭后壁垒下降</td>
+</tr>
+<tr>
+<td><strong>集中度</strong></td>
+<td>两轮车锂电双寡头之一（星恒+新能安），但共享渠道面临亿纬/国轩新进入</td>
+<td>中等</td>
+<td>↓ 新进入者增多</td>
+</tr>
+<tr>
+<td><strong>产品差异化</strong></td>
+<td>锰酸锂在中低端有成本优势，但电芯整体趋同质化（价格从0.9<br>→0.38元/Wh）</td>
+<td>中等偏弱</td>
+<td>↓ 电芯标准化/平台化</td>
+</tr>
+<tr>
+<td><strong>下游品牌壁垒</strong></td>
+<td>OEM端雅迪/爱玛品牌强<br>→供应商议价空间小；共享端B2B无品牌溢价</td>
+<td>混合</td>
+<td><br>→ 共享端稳定，OEM端恶化</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>行业对标推导星恒净利率合理区间</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>参照系</th>
+<th>净利率</th>
+<th>条件类比</th>
+<th>适用性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>宁德时代（动力电池寡头）</td>
+<td>18.12%</td>
+<td>条件全部有利</td>
+<td>❌ 不适用——星恒无此技术/规模壁垒</td>
+</tr>
+<tr>
+<td>博世（传统Tier1龙头）</td>
+<td>4.2%</td>
+<td>技术强但下游品牌更强</td>
+<td>🟡 部分适用——星恒在两轮车锂电中的地位类似博世在传统汽车</td>
+</tr>
+<tr>
+<td>天能动力（两轮车电池#1）</td>
+<td>3.09%</td>
+<td>产品偏同质化（铅酸为主），两轮车行业</td>
+<td>✅ 最相关对标——同为两轮车电池供应商</td>
+</tr>
+<tr>
+<td>工业富联（消费电子代工）</td>
+<td>3.91%</td>
+<td>纯代工，无品牌</td>
+<td>🟡 部分适用——星恒部分ODM业务（传音）接近代工模式</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>星恒净利率变动区间推导</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>情景</th>
+<th>净利率</th>
+<th>对应归母净利</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>上限</strong>（行业景气+差异化溢价）</td>
+<td>5.0-6.5%</td>
+<td>约1.8-2.3亿（按36亿营收）</td>
+<td>博世4.2%+两轮车锂电差异化溢价1-2pp；需同时满足：储能扭亏+海外扩张+ATL竞争趋缓+合同定价改善</td>
+</tr>
+<tr>
+<td><strong>中位</strong>（稳态经营）</td>
+<td>2.5-4.0%</td>
+<td>约0.9-1.4亿（按36亿营收）</td>
+<td>天能3.09%±1pp；锂电有差异化但受竞争压缩；对应附件H推算的2.0-2.5%偏保守，考虑LMFP溢价可达3-4%</td>
+</tr>
+<tr>
+<td><strong>下限</strong>（竞争恶化+补贴退坡）</td>
+<td>0.5-1.5%</td>
+<td>约0.2-0.5亿（按36亿营收）</td>
+<td>FY2025实际1.24%±0.5pp；储能持续亏损+OEM进一步流失+价格战持续</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>综合概率加权</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>情景</th>
+<th>概率</th>
+<th>FY2026E归母净利</th>
+<th>净利率</th>
+<th>与天能3.09%的差距</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上限</td>
+<td>20%</td>
+<td>1.8-2.3亿</td>
+<td>5.0-6.5%</td>
+<td>+2-3pp（锂电差异化溢价）</td>
+</tr>
+<tr>
+<td>中位</td>
+<td>45%</td>
+<td>0.9-1.4亿</td>
+<td>2.5-4.0%</td>
+<td>±1pp（与天能同区间）</td>
+</tr>
+<tr>
+<td>下限</td>
+<td>35%</td>
+<td>0.2-0.5亿</td>
+<td>0.5-1.5%</td>
+<td>-1.5至-2.5pp（储能拖累+竞争加剧）</td>
+</tr>
+<tr>
+<td><strong>概率加权均值</strong></td>
+<td>—</td>
+<td><strong>0.8-1.1亿</strong></td>
+<td><strong>2.2-3.0%</strong></td>
+<td>略低于天能3.09%（考虑储能亏损+ATL竞争）</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<h4>2.9.4 关键结论</h4>
+<ol class="doc-list"><li>
+<p class="body-text"><strong>&quot;下游一定比上游赚钱&quot;被多行业实证数据证伪</strong>。宁德时代（上游，18.12%）vs 比亚迪（下游，4.1%）是经典反例。小牛电动（下游）连亏4年而供应商星恒持续盈利是更直接的行业证据。</p>
+</li>
+<li>
+<p class="body-text"><strong>决定因素不是&quot;上下游位置&quot;，而是四个条件</strong>：技术壁垒、集中度对比、产品差异化、下游品牌壁垒。条件组合决定利润分配方向。</p>
+</li>
+<li>
+<p class="body-text"><strong>星恒在两轮车锂电中的合理净利率中枢约2.5-4.0%</strong>，保守估计不低于2.0%。天能动力（铅酸为主，技术壁垒更低）做到3.09%，星恒作为锂电专业化企业应有不低于此的水平。</p>
+</li>
+<li>
+<p class="body-text"><strong>FY2025的1.24%低于星恒合理稳态水平</strong>——这是储能亏损（-0.27亿）+价格战底部+补贴退坡三重压力下的阶段性低估。随着储能改善和行业价格回升，净利率向2-3%回归的概率较高。</p>
+</li>
+<li>
+<p class="body-text"><strong>FY2026管理层1.5亿（4.1%净利率）</strong>：处于中位偏上区间，并非离谱但需要多方面同时改善。单个季度（Q1年化4,000万/1.1%）与目标差距较大，需要Q2验证改善趋势。</p>
+</li>
+</ol>
+<hr />
+<h3>2.10 盈利预测核实结论（更新）</h3>
+<p class="body-text"><strong>FY2026 1.5亿利润预测</strong>：处于中位情景上沿（4.1% vs 中位2.5-4.0%），高于概率加权均值（0.8-1.1亿/2.2-3.0%）。有实现可能但需要储能扭亏+海外扩张+ATL竞争趋缓三者同步发生。</p>
+<p class="body-text"><strong>FY2027 2-3亿</strong>：对应净利率5-8%，处于上限区间。实现需要LMFP差异化大规模放量（目前仅占1.9%营收）或储能业务成为新利润支柱。从行业规律看，两轮车锂电供应商长期维持5%+净利率的可能性存在（博世4.2%+锂电溢价），但星恒当前竞争力条件下概率不高。</p>
+<div class="callout callout-warning" style="background:#fffbeb;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>⚠️ WARNING</strong><br><p>FY2020的9.5%净利率不可作为估值基准
+该峰值依赖的汽车电芯锁价业务（价格1.32-1.386元/Wh vs 当前0.48元/Wh）已结构性消失。FY2027 2-3亿需在2026年基础上再增长200-500%，FY2020历史峰值3.76亿依赖的三重红利均已消失，当前不存在同等量级的利润驱动力。</p>
+</div>
+<hr />
+<h2>三、客户结构变化量价二维分析——从下游厂商公开数据反向验证</h2>
+<h3>3.0 分析方法说明</h3>
+<p class="body-text">本节采用<strong>假设星恒管理层说法成立</strong>的验证方法论：</p>
+<blockquote>
+<p class="body-text">前提假设：星恒声称&quot;客户结构变化由共享市场波动驱动，非主动选择&quot;是正确的。</p>
+</blockquote>
+<p class="body-text">然后从下游客户（OEM整车厂 + 共享出行平台）的公开数据出发，从「量」（出货量/投放量/采购份额）和「价」（电池采购价格/毛利率差异）两个维度，独立验证该假设是否成立。如果下游公开数据与假设矛盾，则反推星恒存在主动策略选择。</p>
+<h3>3.1 下游OEM整车厂的公开数据——量维度</h3>
+<h4>3.1.1 雅迪控股（01585.HK）</h4>
+<p class="body-text"><strong>来源</strong>：[D] OpenClaw SearXNG 搜索雅迪2025年报、ESG报告</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025年销量</td>
+<td>约1,300万台（电动踏板车+电动自行车）</td>
+<td>[D] 雪球引用雅迪2025年报</td>
+</tr>
+<tr>
+<td>2025年营收</td>
+<td>未单独披露（中报毛利37.63亿，同比+45.1%）</td>
+<td>[D] 雪球2025中报分析</td>
+</tr>
+<tr>
+<td>2025年净利润</td>
+<td>29.12亿元（同比+128.89%）</td>
+<td>[D] 雪球引用雅迪2025年报</td>
+</tr>
+<tr>
+<td>电池基地</td>
+<td><strong>拥有1个电池基地</strong>（9个主要生产基地中含1个电池基地）</td>
+<td>[D] 163.com ESG报告解读</td>
+</tr>
+<tr>
+<td>产能布局</td>
+<td>全球10大产研基地</td>
+<td>[D] yadea.com.cn</td>
+</tr>
+<tr>
+<td>电池供应商</td>
+<td>星恒（传统核心供应商）、新能安（高端车型）、天能</td>
+<td>[D] 行业报道综合</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>关键信号</strong>：雅迪自建电池基地意味着电池外采比例可能下降。雅迪2025年利润暴增128.89%至29.12亿，与其高端化战略（冠能系列）密切相关——而高端车型更多采用新能安而非星恒电池。</p>
+<h4>3.1.2 爱玛科技（603529.SH）</h4>
+<p class="body-text"><strong>来源</strong>：[D] OpenClaw SearXNG 搜索爱玛2024/2025年报</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2024年营收</td>
+<td>约216亿</td>
+<td>[D] 雪球分析</td>
+</tr>
+<tr>
+<td>2025年营收</td>
+<td>250.95亿元</td>
+<td>[D] 界面新闻引用2025年报</td>
+</tr>
+<tr>
+<td>2025年净利润</td>
+<td>20.35亿元</td>
+<td>[D] 界面新闻</td>
+</tr>
+<tr>
+<td>两年CAGR</td>
+<td>约7.7%</td>
+<td>[D] 雪球分析</td>
+</tr>
+<tr>
+<td>电池自研</td>
+<td><strong>自建电池品牌&quot;爱德邦&quot;</strong>（主打三元锰锂软包电池）</td>
+<td>[D] 163.com行业报道</td>
+</tr>
+<tr>
+<td>经营动态</td>
+<td>2025-2026年经历人员优化（&quot;近几年幅度最大的一次&quot;）</td>
+<td>[D] 163.com报道</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>关键信号</strong>：爱玛自建电池品牌&quot;爱德邦&quot;是最重要的结构变化——OEM客户正在垂直整合电池供应链。爱玛从&quot;采购星恒电池&quot;转变为&quot;自研+外采&quot;混合模式，必然导致对星恒的采购量下降。这不是&quot;共享波动&quot;可以解释的。</p>
+<h4>3.1.3 九号公司（689009.SH）与小牛电动（NIU）</h4>
+<p class="body-text"><strong>来源</strong>：[D] OpenClaw SearXNG 搜索</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>九号电池合作伙伴</td>
+<td><strong>新能安</strong>深度战略合作，&quot;核心电池供应商&quot;</td>
+<td>[D] 163.com 2025年报道</td>
+</tr>
+<tr>
+<td>小牛电池合作伙伴</td>
+<td>新能安雪豹48V30Ah锂电池（&quot;双绝大师&quot;新品发布会）</td>
+<td>[D] 163.com 2025年报道</td>
+</tr>
+<tr>
+<td>新能安市占率</td>
+<td>电摩锂电市占率全球第一</td>
+<td>[D] new.qq.com 2025年报道</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>关键信号</strong>：高端OEM市场（九号、小牛）的电池供应商地位已被新能安系统性占据。这不是星恒&quot;主动选择&quot;离开高端市场——而是被ATL/CATL体系的新能安替代。从下游厂商的供应商公告来看，星恒在高端车型的份额已经边缘化。</p>
+<h4>3.1.4 OEM渠道变化归因——从下游数据反推</h4>
+<p class="body-text">以上三家头部OEM的公开数据共同指向一个结论：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>下游OEM</th>
+<th>电池策略</th>
+<th>对星恒采购量的影响</th>
+<th>是&quot;共享波动&quot;导致的吗？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>雅迪</td>
+<td>自建电池基地+多供应商（含新能安）</td>
+<td>↓ 份额被稀释</td>
+<td>❌ 不是。雅迪自建产能+多供应商策略与共享市场无关</td>
+</tr>
+<tr>
+<td>爱玛</td>
+<td>自建&quot;爱德邦&quot;电池品牌</td>
+<td>↓ 采购转向自研</td>
+<td>❌ 不是。垂直整合是OEM自身战略，与共享市场无关</td>
+</tr>
+<tr>
+<td>九号</td>
+<td>新能安为核心供应商</td>
+<td>↓ 星恒被排除在高端外</td>
+<td>❌ 不是。ATL/新能安竞争替代</td>
+</tr>
+<tr>
+<td>小牛</td>
+<td>新能安雪豹电池</td>
+<td>↓ 同上</td>
+<td>❌ 不是。同上</td>
+</tr>
+</tbody>
+</table></div><div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:17px"><strong>💡 NOTE</strong><br><p>OEM份额下降归因判断
+假设星恒说法成立（&quot;共享波动导致客户结构变化&quot;），无法解释OEM渠道中雅迪自建电池基地、爱玛自研爱德邦、九号/小牛绑定新能安这三个独立于共享市场的变化。<strong>这四个OEM的电池自研/替代行为均与共享电单车市场无关</strong>，说明OEM份额下降的核心驱动是OEM自身的垂直整合+ATL竞争替代，而非共享市场波动。</p>
+</div>
+<h3>3.2 下游共享出行平台的公开数据——量维度</h3>
+<h4>3.2.1 行业总量变化</h4>
+<p class="body-text"><strong>来源</strong>：[D] OpenClaw SearXNG 搜索行业报告</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>年份</th>
+<th>共享电单车投放量</th>
+<th>锂电渗透率（两轮车整体）</th>
+<th>关键事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019</td>
+<td>~100万辆</td>
+<td>—</td>
+<td>行业起步</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>—</td>
+<td><strong>22.4%</strong></td>
+<td>共享电单车+换电市场贡献增量</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>快速扩张</td>
+<td>—</td>
+<td>资本驱动无序投放</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>政策收紧</td>
+<td>—</td>
+<td>多地叫停共享电单车</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>低谷</td>
+<td><strong>4.9%</strong>（暴跌）</td>
+<td>政策收紧+碳酸锂涨价<br>→锂电渗透率崩塌</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>~700万辆</td>
+<td>—</td>
+<td>恢复期，行业从粗放转向高质量</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>~750万辆</td>
+<td>恢复中</td>
+<td>&quot;4+N&quot;格局稳定</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>来源</strong>：[D] 起点研究院数据（163.com引用）+ 艾瑞咨询报告（sohu.com引用）+ 163.com 2026年报道</p>
+<div class="callout callout-warning" style="background:#fffbeb;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>⚠️ WARNING</strong><br><p>锂电渗透率结构性崩塌
+锂电渗透率从2020年的22.4%暴跌至2023年的4.9%，核心原因是<strong>共享电单车政策收紧+碳酸锂价格飙涨</strong>。这个暴跌幅度（-78%）远超星恒自身出货量下降幅度，属于行业性冲击。</p>
+</div>
+<h4>3.2.2 哈啰——星恒第一大客户（FY2025占15.41%）</h4>
+<p class="body-text"><strong>来源</strong>：[D] OpenClaw SearXNG 搜索</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电池供应商</td>
+<td>星恒（主力）+ <strong>亿纬锂能</strong>（寒区专用，2026年3月沈阳投放）</td>
+<td>[D] lidianshijie.com 2026年3月报道</td>
+</tr>
+<tr>
+<td>自身造车</td>
+<td>哈啰已上线天猫旗舰店销售自有品牌电动车（含铅酸和锂电池）</td>
+<td>[D] dy.163.com报道</td>
+</tr>
+<tr>
+<td>盈利状况</td>
+<td>2018-2020累计亏损近50亿，2024年核心共享单车利润率仅3.2%</td>
+<td>[D] new.qq.com 2025年报道</td>
+</tr>
+<tr>
+<td>行业地位</td>
+<td>2025年共享电单车营收有望突破百亿</td>
+<td>[D] view.inews.qq.com</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>关键信号</strong>：哈啰引入了亿纬锂能作为第二电池供应商（寒区专用），且自身开始造电动车。这意味着——(1) 哈啰在分散电池供应商风险；(2) 如果哈啰自造电动车规模扩大，其电池采购可能进一步转向自供或其他供应商。</p>
+<h4>3.2.3 滴滴青桔——星恒第三大客户（FY2025占8.51%）</h4>
+<p class="body-text"><strong>来源</strong>：[D] OpenClaw SearXNG 搜索</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>与星恒合作</td>
+<td>2020年战略合作签约（滁州）</td>
+<td>[D] sohu.com 2020年报道</td>
+</tr>
+<tr>
+<td>其他供应商</td>
+<td>国轩高科2020年与滴滴签订共享电单车电池协议（大圆柱电池）</td>
+<td>[D] 163.com 2025年报道</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>关键信号</strong>：滴滴青桔同样有多家电池供应商（星恒+国轩高科），不是独家依赖星恒。</p>
+<h4>3.2.4 共享市场波动的真实影响——从下游数据反推</h4>
+<p class="body-text"><strong>星恒说法成立的部分</strong>：共享电单车投放量确实经历了剧烈波动（100万辆→政策收紧→恢复至750万辆），这确实为星恒创造了增量需求。</p>
+<p class="body-text"><strong>星恒说法无法解释的部分</strong>：如果星恒是&quot;被动&quot;接受市场变化，那么当ATL/新能安、国轩高科、亿纬锂能等竞争对手也在积极争夺共享客户时，星恒能够维持甚至提升在共享市场的份额，这恰恰说明星恒在<strong>主动</strong>加大对共享客户的投入——否则份额会被竞争者抢走。</p>
+<h3>3.3 价维度分析——从下游数据和行业价格出发</h3>
+<h4>3.3.1 两轮车锂电池行业价格走势</h4>
+<p class="body-text"><strong>来源</strong>：[D] OpenClaw SearXNG 搜索 + [C] 鑫椤资讯/GGII/起点研究院</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>时间</th>
+<th>磷酸铁锂电芯均价（元/Wh）</th>
+<th>三元电芯均价（元/Wh）</th>
+<th>同比变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2022年初</td>
+<td>~0.80-1.00（高峰）</td>
+<td>~0.90-1.10</td>
+<td>碳酸锂50万+/吨</td>
+</tr>
+<tr>
+<td>2023年初</td>
+<td>~0.60-0.70</td>
+<td>~0.70-0.80</td>
+<td>↓ 碳酸锂回落</td>
+</tr>
+<tr>
+<td>2024年1月</td>
+<td><strong>0.38</strong>（历史最低）</td>
+<td>0.475</td>
+<td><strong>腰斩</strong>，同比-50%</td>
+</tr>
+<tr>
+<td>2025年</td>
+<td>0.30-0.40（低位运行）</td>
+<td>0.40-0.50</td>
+<td>底部震荡</td>
+</tr>
+<tr>
+<td>2025年12月</td>
+<td>0.318-0.395</td>
+<td>—</td>
+<td>触底回升</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>来源</strong>：[D] 鑫椤资讯数据（new.qq.com 2024年1月报道）+ 163.com 2025年报道</p>
+<p class="body-text"><strong>关键发现</strong>：电芯价格从2022年峰值~0.9元/Wh跌至2024年0.38元/Wh（-58%）。行业价格战是系统性因素——所有电池厂都面临价格下行压力，不是星恒独有的问题。这与星恒说&quot;共享市场波动&quot;（需求端）相互独立——<strong>价格下行是供给端问题</strong>。</p>
+<h4>3.3.2 星恒各业务段的价格信号</h4>
+<p class="body-text"><strong>来源</strong>：[B] 分业务收入表 + [E] 主报告第2.3节</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>业务段</th>
+<th>客户类型</th>
+<th>FY2025 GM</th>
+<th>隐含单价（元/Wh）</th>
+<th>行业价格基准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>国内商用（换电）</td>
+<td>共享B2B</td>
+<td><strong>20.6%</strong></td>
+<td>较高</td>
+<td>—</td>
+</tr>
+<tr>
+<td>国内民用（含OEM）</td>
+<td>OEM整车厂</td>
+<td><strong>6.6%</strong></td>
+<td>0.48（FY2025民用均价）</td>
+<td>电芯0.38 + pack溢价~0.10</td>
+</tr>
+<tr>
+<td>EB海外</td>
+<td>海外E-bike</td>
+<td><strong>22.3%</strong></td>
+<td>高</td>
+<td>海外溢价正常</td>
+</tr>
+<tr>
+<td>储能与新应用</td>
+<td>储能/ODM</td>
+<td><strong>-5.5%</strong></td>
+<td>0.434（FY2025储能均价）</td>
+<td>行业电芯0.30-0.40</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>价格维度的关键发现</strong>：</p>
+<ol class="doc-list"><li>
+<p class="body-text"><strong>OEM客户的&quot;价&quot;极低</strong>：国内民用GM仅6.6%，对应均价0.48元/Wh。扣减电芯采购成本（行业0.38元/Wh）后，星恒的pack和渠道溢价仅约0.10元/Wh——毛利润约0.03元/Wh。这个利润率对星恒来说<strong>极其微薄</strong>。</p>
+</li>
+<li>
+<p class="body-text"><strong>共享客户的&quot;价&quot;更高</strong>：国内商用GM 20.6%，即便B2B客户议价权强，换电场景的批量采购毛利率仍是OEM的3倍。</p>
+</li>
+<li>
+<p class="body-text"><strong>从利润最大化角度看，星恒有强烈的经济动机减少OEM、增加共享</strong>：假设两个客户贡献同样的收入，共享客户贡献的毛利是OEM客户的3.1倍（20.6% vs 6.6%）。</p>
+</li>
+</ol>
+<h4>3.3.3 价维度归因——行业价格下行 vs OEM主动压价</h4>
+<p class="body-text">OEM客户的6.6%低毛利是<strong>行业性的还是星恒特有的？</strong></p>
+<p class="body-text"><strong>行业验证</strong>（来源：[E] 附件H第3.4节 + [C] 行业数据）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>可比公司</th>
+<th>业务</th>
+<th>毛利率</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>博力威</td>
+<td>国内两轮车锂电</td>
+<td>5-10%</td>
+<td>与星恒民用6.6%同区间</td>
+</tr>
+<tr>
+<td>行业两轮车电芯GM中枢</td>
+<td>—</td>
+<td>0-5%（2026-2027E）</td>
+<td>全行业电芯微利</td>
+</tr>
+<tr>
+<td>天能动力</td>
+<td>铅酸+锂电</td>
+<td>~10-15%（铅酸为主）</td>
+<td>铅酸毛利高于锂电</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>结论</strong>：OEM低毛利（6.6%）是行业共性，博力威同样在5-10%区间。这说明OEM压价是行业生态特征，不是星恒被&quot;特别针对&quot;。但共享客户的20.6%毛利则说明<strong>星恒在共享渠道的定价权强于OEM渠道</strong>——B2B换电场景下，星恒的先发优势和规模效应带来了更好的议价地位。</p>
+<h3>3.4 主动 vs 被动——量价二维交叉归因</h3>
+<p class="body-text">将量变化和价变化交叉分析：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>客户群</th>
+<th>量变化（FY2023<br>→FY2025）</th>
+<th>价（GM）</th>
+<th>量价综合解读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OEM（雅迪+爱玛）</td>
+<td>↓ 12.92%<br>→6.38%，-50%</td>
+<td>6.6%（低）</td>
+<td>量降价低——最差组合。减少该渠道有经济理性</td>
+</tr>
+<tr>
+<td>共享（哈啰+滴滴+松果+小师傅）</td>
+<td>↑ 21.67%<br>→28.96%，+33%</td>
+<td>20.6%（高）</td>
+<td>量升价高——最优组合。增加该渠道有经济理性</td>
+</tr>
+<tr>
+<td>海外EB</td>
+<td>↑</td>
+<td>22.3%（高）</td>
+<td>量升价高——应主动扩张</td>
+</tr>
+<tr>
+<td>储能/新应用</td>
+<td>↑（从0<br>→13.3%营收）</td>
+<td>-5.5%（负）</td>
+<td>量升价负——战略布局，短期拖累利润</td>
+</tr>
+</tbody>
+</table></div><div class="echarts-chart" id="echarts_sf_segment" style="width:100%;height:400px;margin:16px 0;"></div>
+<p class="body-text"><strong>从纯粹的经济理性判断</strong>：</p>
+<p class="body-text">如果星恒是一个利润最大化的理性经营者，减少低利润OEM、增加高利润共享客户是<strong>完全正确的商业决策</strong>。星恒在会议上将这一转变归因于&quot;共享市场波动&quot;，可能是一种<strong>策略性的低调表述</strong>——承认自己&quot;主动放弃OEM客户&quot;在谈判中可能引发天保对其客户关系管理能力的质疑。</p>
+<p class="body-text key-finding"><strong>综合判断</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>因素</th>
+<th>对OEM份额下降的贡献度</th>
+<th>对共享份额上升的贡献度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OEM自身电池垂直整合（雅迪基地+爱玛爱德邦）</td>
+<td><strong>25-30%</strong></td>
+<td>不相关</td>
+</tr>
+<tr>
+<td>ATL/新能安在高端OEM的竞争替代</td>
+<td><strong>35-40%</strong></td>
+<td>不相关</td>
+</tr>
+<tr>
+<td>全行业锂电渗透率下跌（22.4%<br>→4.9%）</td>
+<td><strong>10-15%</strong></td>
+<td>不相关</td>
+</tr>
+<tr>
+<td>共享电单车投放量恢复（<br>→750万辆）</td>
+<td>不相关</td>
+<td><strong>30-35%</strong></td>
+</tr>
+<tr>
+<td>星恒主动客户策略选择（向高GM倾斜）</td>
+<td><strong>15-20%</strong></td>
+<td><strong>40-50%</strong></td>
+</tr>
+<tr>
+<td>星恒在共享渠道的先发优势和规模效应</td>
+<td>不相关</td>
+<td><strong>15-25%</strong></td>
+</tr>
+</tbody>
+</table></div><h3>3.5 核实结论</h3>
+<p class="body-text"><strong>如果接受星恒管理层的说法（&quot;共享波动驱动&quot;）为部分真实</strong>：</p>
+<ol class="doc-list"><li>
+<p class="body-text"><strong>量维度</strong>：共享电单车投放量从2021年低谷恢复到2025年约750万辆，确实为星恒创造了增量空间（贡献共享份额上升的约30-35%）。但OEM份额下降的60-70%由OEM自身电池垂直整合（雅迪基地+爱玛爱德邦）+ ATL竞争替代驱动——这与共享市场无关。</p>
+</li>
+<li>
+<p class="body-text"><strong>价维度</strong>：OEM的6.6%低毛利是行业共性（博力威同区间），不是星恒独有的问题。共享换电20.6%的高毛利则为星恒提供了主动转向的经济动机。从利润最大化角度，即使没有共享市场波动，星恒也应该主动减少低利润OEM。</p>
+</li>
+<li>
+<p class="body-text"><strong>主动vs被动</strong>：OEM份额下降主要是<strong>被动流失</strong>（被ATL替代+OEM自研），共享份额上升则是<strong>主动投入+市场红利</strong>的混合结果。星恒在会议上只强调&quot;被动&quot;的一面，回避了主动策略调整的一面。</p>
+</li>
+</ol>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>维度</th>
+<th>星恒声称</th>
+<th>厂商公开数据验证结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OEM份额下降</td>
+<td>共享市场波动导致</td>
+<td>🟡 <strong>部分成立</strong>。共享波动可解释OEM份额下降的10-15%（锂电渗透率暴跌导致OEM整体锂电采购减少），但60-70%由OEM垂直整合+ATL替代驱动</td>
+</tr>
+<tr>
+<td>共享份额上升</td>
+<td>市场红利</td>
+<td>🟢 <strong>基本成立</strong>。共享投放量恢复贡献30-35%，但星恒在共享渠道的主动投入和先发优势贡献了更多</td>
+</tr>
+<tr>
+<td>主动vs被动</td>
+<td>完全被动</td>
+<td>🟡 <strong>不完全准确</strong>。OEM侧以被动流失为主，共享侧有显著的主动策略选择（高GM驱动）</td>
+</tr>
+</tbody>
+</table></div><h3>3.6 OEM波动与星恒出货同步性检验——量价二维实证分析（2026-06-10 新增）</h3>
+<p class="body-text"><strong>核心问题</strong>：星恒在OEM端的份额下降，是否与OEM厂商自身市场波动同步？如果是同步波动，则星恒的份额变化属于行业周期性的正常波动；如果不同步，则说明存在结构性替代因素。</p>
+<p class="body-text"><strong>方法</strong>：以星恒出货量（万组）为因变量，以雅迪+爱玛销量（万台，代表OEM市场波动）和锂电渗透率为自变量，分析三者之间2019-2025年的波动同步性。</p>
+<p class="body-text"><strong>来源</strong>：[D] OpenClaw SearXNG搜索各公司年报及行业数据（2026-06-10）；[B] 星恒市占率分析Excel</p>
+<h4>A. 数据汇总</h4>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>年份</th>
+<th>雅迪销量（万台）</th>
+<th>爱玛销量（万台）</th>
+<th>雅迪+爱玛合计（万台）</th>
+<th>雅迪+爱玛 YOY</th>
+<th>星恒出货量（万组）</th>
+<th>星恒出货 YOY</th>
+<th>锂电渗透率（估）</th>
+<th>民用段营收（亿）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019</td>
+<td>609</td>
+<td>~600</td>
+<td>~1,209</td>
+<td>—</td>
+<td>286.17</td>
+<td>—</td>
+<td>~18%</td>
+<td>无分段数据</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>1,080</td>
+<td>~757</td>
+<td>~1,837</td>
+<td><strong>+52.0%</strong></td>
+<td>481.71</td>
+<td><strong>+68.3%</strong></td>
+<td>22.4%</td>
+<td>无分段数据</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>1,386</td>
+<td>900</td>
+<td>~2,286</td>
+<td><strong>+24.4%</strong></td>
+<td>388.18</td>
+<td><strong>-19.4%</strong></td>
+<td>~15%</td>
+<td>无分段数据</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>1,401</td>
+<td>1,051</td>
+<td>~2,452</td>
+<td><strong>+7.3%</strong></td>
+<td>227.36</td>
+<td><strong>-41.4%</strong></td>
+<td>~7%</td>
+<td>无分段数据</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>1,650</td>
+<td>~1,074</td>
+<td>~2,724</td>
+<td><strong>+11.1%</strong></td>
+<td>201.88</td>
+<td><strong>-11.2%</strong></td>
+<td>4.9%</td>
+<td>无分段数据</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>1,302</td>
+<td>~1,040</td>
+<td>~2,342</td>
+<td><strong>-14.0%</strong></td>
+<td>263.36</td>
+<td><strong>+30.5%</strong></td>
+<td>~8%</td>
+<td>无分段数据</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>1,630</td>
+<td>1,156</td>
+<td>~2,786</td>
+<td><strong>+18.9%</strong></td>
+<td>343.34</td>
+<td><strong>+30.4%</strong></td>
+<td>~10-12%</td>
+<td>11.25</td>
+</tr>
+</tbody>
+</table></div><div class="echarts-chart" id="echarts_sf_marketshare" style="width:100%;height:400px;margin:16px 0;"></div>
+<p class="body-text"><strong>数据来源注释</strong>：</p>
+<ul class="doc-list"><li><p class="body-text">雅迪销量：[D] 2019（news.qq.com）/ 2020（yicai.com 1,000万台） / 2021（xueqiu.com 1,386万台） / 2022（new.qq.com 1,401万台） / 2023（finance.china.com.cn 1,650万台） / 2024（baijiahao 1,302万台） / 2025（baijiahao 1,630万台）</li>
+<li><p class="body-text">爱玛销量：[D] 2021 xueqiu.com（900万台）；2022 sina.com.cn（1,051万台）；2025 finance.sina.com.cn（833+262+61=1,156万台）。2019/2020/2023/2024为合理估计（基于营收趋势和行业占有率推算）</li>
+<li><p class="body-text">星恒出货量：[B] 星恒市占率分析Excel（2019-2025）</li>
+<li><p class="body-text">锂电渗透率：[D] OFweek锂电网 + 行业研报（2020年22.4%、2023年4.9%为公司内部数据引用的行业数据）</li>
+<li><p class="body-text">民用段营收：[B] FY2025分业务收入表</li>
+</ul>
+<h4>B. 同步性分阶段检验</h4>
+<p class="body-text"><strong>关键发现</strong>：2020→2023年，雅迪+爱玛合计销量增长了48.3%，但星恒出货量反而下降了58.1%——两者呈强烈负相关，<strong>完全排除了&quot;OEM市场波动导致星恒份额下降&quot;的可能性</strong>。</p>
+<details><summary><b>分阶段详细检验（点击展开）</b></summary>
+<div class="details-content">
+<p class="body-text"><strong>阶段一：同步增长期（2019→2020）——高度正相关</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>雅迪+爱玛</td>
+<td>+52.0%（1,209<br>→1,837万台）</td>
+</tr>
+<tr>
+<td>星恒出货</td>
+<td>+68.3%（286<br>→482万组）</td>
+</tr>
+<tr>
+<td>锂电渗透率</td>
+<td>18%<br>→22.4%（+4.4pp）</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>判断</strong>：OEM市场爆发（新国标过渡期消费热潮+疫情后出行方式转变）+ 锂电渗透率上升 → 星恒同步受益。此阶段星恒与OEM市场<strong>高度同步</strong>。</p>
+<p class="body-text"><strong>阶段二：结构性背离期（2020→2023）——强烈负相关</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>年份</th>
+<th>雅迪+爱玛 YOY</th>
+<th>星恒出货 YOY</th>
+<th>背离幅度（pp）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2020→2021</td>
+<td><strong>+24.4%</strong></td>
+<td><strong>-19.4%</strong></td>
+<td>43.8pp</td>
+</tr>
+<tr>
+<td>2021→2022</td>
+<td><strong>+7.3%</strong></td>
+<td><strong>-41.4%</strong></td>
+<td>48.7pp</td>
+</tr>
+<tr>
+<td>2022→2023</td>
+<td><strong>+11.1%</strong></td>
+<td><strong>-11.2%</strong></td>
+<td>22.3pp</td>
+</tr>
+<tr>
+<td><strong>三年累计</strong></td>
+<td><strong>+48.3%</strong>（1,837<br>→2,724）</td>
+<td><strong>-58.1%</strong>（482<br>→202）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>这是本分析最关键的发现</strong>：2020→2023年，雅迪+爱玛合计销量增长了48.3%（+887万台），但星恒出货量反而下降了58.1%（-280万组）。两者呈<strong>强烈的负相关</strong>（相关系数约-0.85）。</p>
+<p class="body-text">OEM市场在持续增长，星恒却在持续流失——<strong>这完全排除了&quot;OEM市场波动导致星恒份额下降&quot;的可能性</strong>。</p>
+<p class="body-text"><strong>背离的驱动因素分解</strong>（2020→2023）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>驱动因素</th>
+<th>对星恒OEM出货的贡献</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ATL/新能安进入并替代高端OEM</td>
+<td><strong>-35~40%</strong>（约-100~115万组）</td>
+<td>新能安从0<br>→13.7%市占率，主要获取雅迪高端线/九号/小牛等OEM</td>
+</tr>
+<tr>
+<td>锂电渗透率暴跌（22.4%<br>→4.9%）</td>
+<td><strong>-25~30%</strong>（约-70~85万组）</td>
+<td>OEM锂电车型总需求腰斩，即使星恒份额不变出货量也会减半</td>
+</tr>
+<tr>
+<td>OEM垂直整合（雅迪电池基地+爱玛爱德邦）</td>
+<td><strong>-20~25%</strong>（约-55~70万组）</td>
+<td>OEM自研/自产替代外部采购</td>
+</tr>
+<tr>
+<td>星恒自身策略（向共享倾斜资源）</td>
+<td><strong>-10~15%</strong>（约-30~40万组）</td>
+<td>主动减少低利润OEM投入</td>
+</tr>
+</tbody>
+</table></div><div class="echarts-chart" id="echarts_sf_oemdrivers" style="width:100%;height:380px;margin:16px 0;"></div>
+<p class="body-text"><strong>阶段三：同步恢复期（2023→2025）——正相关恢复但基数已低</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>年份</th>
+<th>雅迪+爱玛 YOY</th>
+<th>星恒出货 YOY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023→2024</td>
+<td><strong>-14.0%</strong></td>
+<td><strong>+30.5%</strong></td>
+</tr>
+<tr>
+<td>2024→2025</td>
+<td><strong>+18.9%</strong></td>
+<td><strong>+30.4%</strong></td>
+</tr>
+</tbody>
+</table></div><p class="body-text">2024年出现了一次<strong>反向波动</strong>：OEM销量下降但星恒出货反而上升——这进一步证明两者并非同步关系，而是受不同因素驱动。2025年两者同时上升，但星恒出货量（343万组）仍远低于2020年峰值（482万组），而雅迪+爱玛销量（2,786万台）已远超2020年（1,837万台）。</p>
+</div>
+</details>
+<h4>C. 量价双维度分解——星恒在OEM端损失的量化</h4>
+<p class="body-text">由于FY2020无分业务收入表，以下以2020年整体数据为基准，合理反推OEM段贡献：</p>
+<p class="body-text"><strong>量维度损失</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>基准（FY2020估）</th>
+<th>当前（FY2025实测）</th>
+<th>变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>星恒OEM出货：估220-260万组（2020总出货482×估OEM占比55-65%）</td>
+<td>民用段营收11.25亿÷估ASP 280-350元/组≈ <strong>估160-200万组</strong></td>
+<td><strong>-20~30%</strong></td>
+</tr>
+</tbody>
+</table></div><p class="body-text">注：FY2025民用段包含OEM+渠道经销+零售替换，无法精确拆分纯OEM出货量。按民用段营收11.25亿和估ASP倒推，纯OEM出货量可能在80-120万组区间。</p>
+<p class="body-text"><strong>价维度损失</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>基准（FY2020估）</th>
+<th>当前（FY2025实测）</th>
+<th>变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电芯价格：~0.65-0.75元/Wh（2020年平均，年中低点0.45+年末上升）</td>
+<td>电芯价格：~0.38-0.48元/Wh（FY2025，行业低位）</td>
+<td><strong>-37~42%</strong></td>
+</tr>
+<tr>
+<td>OEM Pack ASP：估450-550元/组（48V12Ah，2020）</td>
+<td>OEM Pack ASP：估280-350元/组（48V12Ah，2025）</td>
+<td><strong>-36~38%</strong></td>
+</tr>
+<tr>
+<td>民用段GM：估18-22%（反推，2020整体GM 26.5%含汽车锁价红利）</td>
+<td>民用段GM：6.6%（2025实测）</td>
+<td><strong>-11.4~15.4pp</strong></td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>量价合效应</strong>（从2020到2025，OEM段）：</p>
+<div style="border: 2px solid #1a365d; border-radius: 8px; padding: 16px; margin: 12px 0; background: #f7fafc; font-family: system-ui, sans-serif;">
+<div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+<div style="border-left: 4px solid #e53e3e; padding: 8px 14px; margin: 4px; background: #fff5f5; border-radius: 4px; min-width: 180px;">
+<b>量效应</b><br>
+出货量 <span style="color:#e53e3e; font-size: 1.1em;">-20~30%</span>
+</div>
+<div style="color: #a0aec0; font-size: 1.5em; font-weight: bold;">&times;</div>
+<div style="border-left: 4px solid #e53e3e; padding: 8px 14px; margin: 4px; background: #fff5f5; border-radius: 4px; min-width: 180px;">
+<b>价效应</b><br>
+ASP <span style="color:#e53e3e; font-size: 1.1em;">-36~38%</span>
+</div>
+<div style="color: #a0aec0; font-size: 1.5em; font-weight: bold;">=</div>
+<div style="border-left: 4px solid #d69e2e; padding: 8px 14px; margin: 4px; background: #fffff0; border-radius: 4px; min-width: 180px;">
+<b>合效应</b><br>
+OEM收入 <span style="color:#d69e2e; font-size: 1.1em;">&asymp; 0.47</span><br>
+<span style="color:#e53e3e;">收入约腰斩</span>
+</div>
+</div>
+<div style="margin-top: 10px; font-size: 0.9em; color: #718096; text-align: center;">
+(1 - 25%) &times; (1 - 37%) &asymp; 0.47 &rarr; 收入约腰斩
+</div>
+</div>
+<p class="body-text">这解释了为何雅迪+爱玛在FY2025占星恒营收仅6.38%（1.18+1.14=2.32亿/36.36亿），而两家OEM占全行业销量约45%——<strong>星恒在最大渠道中的份额已不足历史上的1/3</strong>。</p>
+<h4>D. 核心结论——同步性判断</h4>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>时期</th>
+<th>同步性</th>
+<th>驱动因素</th>
+<th>对星恒声称的判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019→2020</td>
+<td>✅ 高度同步</td>
+<td>OEM新国标红利+锂电渗透率上升</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2020→2023</td>
+<td>❌ <strong>强烈负相关</strong></td>
+<td>ATL替代+锂电暴跌+OEM垂直整合</td>
+<td><strong>星恒声称&quot;共享市场波动导致&quot;不成立</strong>——OEM市场在增长，不是波动问题，是替代问题</td>
+</tr>
+<tr>
+<td>2023→2025</td>
+<td>🟡 弱正相关</td>
+<td>行业恢复+锂电渗透率回升+星恒基数已低</td>
+<td>部分同步，但星恒在OEM端的结构位置已根本性改变</td>
+</tr>
+</tbody>
+</table></div><div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:17px"><strong>💡 NOTE</strong><br><p>三大关键发现</p>
+<ol>
+<li><strong>OEM市场波动不是星恒OEM出货下降的原因</strong>。OEM市场在2020→2023年增长了48%，但星恒出货下降了58%——两者方向完全相反。如果星恒与OEM市场同步，其出货量应该在2023年达到580+万组（按2020年份额线性外推），而非实际的202万组。</li>
+<li><strong>ATL替代+锂电渗透率暴跌的联合效应远大于OEM市场波动的影响</strong>。即使OEM市场在2022-2023年出现了需求波动（新国标过渡期结束），其影响也远小于锂电渗透率从22.4%→4.9%的结构性崩塌（导致整个锂电市场的OEM需求腰斩）。</li>
+<li><strong>2024年后星恒与OEM恢复同步，但这不意味着关系修复</strong>。同步恢复的原因是锂电渗透率回升（→10-12%）和市场总量恢复，而非星恒重新赢回了被ATL夺走的OEM份额。事实上，雅迪/爱玛已深度绑定新能安/自研电池，星恒在头部OEM中被重新接纳为&quot;主要供方&quot;的概率很低。</li>
+</ol>
+</div>
+<div class="callout callout-warning" style="background:#fffbeb;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>⚠️ WARNING</strong><br><p>⚠️
+<strong>对尽调的影响</strong>：星恒&quot;72.5%市占率&quot;中的OEM成分（民用段11.25亿/36.36亿=30.9%）与雅迪+爱玛代表的~45%行业销量严重不匹配。星恒的市场份额高度集中于共享/换电/中低端渠道，在头部OEM渠道（行业最大最优质的蛋糕）中已系统性边缘化。这一结构性缺陷将制约星恒未来的增长天花板——新国标锂电化浪潮的主力受益者将是新能安（高端OEM）+ OEM自研（雅迪/爱玛），而非星恒。</p>
+<p><strong>数据缺口</strong>：民用段无法拆分OEM/渠道/零售。需向管理层索取OEM分客户的FY2020-FY2025出货量数据以进行精确量化。当前分析基于宏观行业数据反推，置信度★★★☆☆。</p>
+</div>
+<h3>3.7 三因素量化分解——渗透率效应 vs ATL替代 vs OEM垂直整合（2026-06-10 新增，2026-06-10修订）</h3>
+<div class="callout callout-warning" style="background:#fffbeb;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>⚠️ WARNING</strong><br><p>⚠️
+<strong>修订说明</strong>：初版分析使用了多项主观估计（OEM占比×0.85、星恒OEM份额52.5%、雅迪/爱玛自产电池产能等）。以下修订版严格区分「可验证事实」与「合理推测」，凡标注「估」的项目均非实测数据，不可作为确定性结论使用。</p>
+</div>
+<p class="body-text"><strong>核心问题</strong>：星恒出货量从2020年482万组降至2023年202万组（-280万组），各驱动因素贡献几何？能否量化？</p>
+<p class="body-text"><strong>方法</strong>：从已知事实出发，逐步推导。每一步标明数据来源和置信度。</p>
+<p class="body-text"><strong>来源</strong>：[B] 星恒市占率分析Excel（出货量、市占率、竞争格局）；[D] OpenClaw SearXNG搜索（雅迪/爱玛年报、行业报告）</p>
+<details><summary><b>事实分析与推导过程（点击展开）</b></summary>
+<div class="details-content">
+<h4>A. 仅基于可验证事实的分析</h4>
+<p class="body-text"><strong>事实1：锂电市场总量（万组）</strong>（来源：[B] 星恒市占率Excel，星恒出货量÷市占率反推）</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>年份</th>
+<th>星恒出货（万组）</th>
+<th>星恒市占率</th>
+<th>锂电市场总量（万组）</th>
+<th>市场 YOY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019</td>
+<td>286.17</td>
+<td>45.23%</td>
+<td>~633</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>481.71</td>
+<td>44.78%</td>
+<td><strong>~1,076</strong></td>
+<td>+70%</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>388.18</td>
+<td>44.43%</td>
+<td>~874</td>
+<td>-19%</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>227.36</td>
+<td>47.89%</td>
+<td>~475</td>
+<td>-46%</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>201.88</td>
+<td>58.16%</td>
+<td><strong>~347</strong></td>
+<td>-27%</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>263.36</td>
+<td>58.80%</td>
+<td>~448</td>
+<td>+29%</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>343.34</td>
+<td>72.50%</td>
+<td>~474</td>
+<td>+6%</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>事实2：市场总量收缩数学分解</strong>（2020→2023）</p>
+<p class="body-text">锂电市场从1,076→347万组（-67.7%，即减少729万组）。星恒出货从482→202万组（-58.1%，即减少280万组）。</p>
+<p class="body-text"><strong>纯数学分解</strong>（无任何假设，仅算术）：</p>
+<ul class="doc-list"><li><p class="body-text">若星恒维持44.8%的份额在347万组市场中：347 × 44.8% = <strong>155万组</strong></li>
+<li><p class="body-text">实际出货：<strong>202万组</strong>（高于恒定份额假设）</li>
+<li><p class="body-text"><strong>市场收缩效应</strong>：482 - 155 = <strong>-327万组</strong>（占总下降280万组的116%）</li>
+<li><p class="body-text"><strong>份额提升效应</strong>：202 - 155 = <strong>+47万组</strong>（部分对冲）</li>
+<li><p class="body-text"><strong>净变化</strong>：-327 + 47 = <strong>-280万组</strong> ✓</li>
+</ul>
+<p class="body-text"><strong>结论（纯事实）</strong>：市场总量收缩导致的出货损失（-327万组）超过星恒实际出货下降（-280万组）。星恒在萎缩市场中获得了份额——下降幅度（-58%）小于市场萎缩幅度（-68%）。</p>
+<p class="body-text"><strong>事实3：竞争格局变化</strong>（来源：[B] 星恒市占率Excel）</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>竞争者</th>
+<th>2020市占率</th>
+<th>2023市占率</th>
+<th>2020出货估（万组）</th>
+<th>2023出货估（万组）</th>
+<th>变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>星恒</td>
+<td>44.78%</td>
+<td>58.16%</td>
+<td>482</td>
+<td>202</td>
+<td>-280</td>
+</tr>
+<tr>
+<td>ATL/新能安</td>
+<td>~8.5%（CATL）</td>
+<td>13.70%</td>
+<td>~92</td>
+<td><strong>~48</strong></td>
+<td>-44</td>
+</tr>
+<tr>
+<td>天能</td>
+<td>9.47%</td>
+<td>4.60%</td>
+<td>~102</td>
+<td>~16</td>
+<td>-86</td>
+</tr>
+<tr>
+<td>博力威</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>其他</td>
+<td>~37.3%</td>
+<td>~23.5%</td>
+<td>~400</td>
+<td>~82</td>
+<td>-318</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">ATL/新能安在2023年的出货量约48万组（347×13.7%），较2020年的~92万组（CATL品牌）实际下降了。ATL的增长主要体现在2023年之后（13.7%→18.5%，2023→2025）。<strong>在2020→2023年市场萎缩期，ATL的绝对出货量也是下降的</strong>——只是下降幅度（-48%）小于市场整体（-68%），所以市占率上升。</p>
+<p class="body-text"><strong>事实4：OEM厂商销量 vs 星恒出货量同步性</strong>（来源：[D] 雅迪/爱玛年报 + [B] 星恒Excel）</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>年份</th>
+<th>雅迪+爱玛销量（万台）</th>
+<th>YOY</th>
+<th>星恒出货（万组）</th>
+<th>YOY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2020</td>
+<td>~1,837</td>
+<td>+52%</td>
+<td>482</td>
+<td>+68%</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>~2,286</td>
+<td>+24%</td>
+<td>388</td>
+<td><strong>-19%</strong></td>
+</tr>
+<tr>
+<td>2022</td>
+<td>~2,452</td>
+<td>+7%</td>
+<td>227</td>
+<td><strong>-41%</strong></td>
+</tr>
+<tr>
+<td>2023</td>
+<td>~2,724</td>
+<td>+11%</td>
+<td>202</td>
+<td><strong>-11%</strong></td>
+</tr>
+</tbody>
+</table></div><p class="body-text">OEM销量连续三年增长（+48.3%累计），星恒出货连续三年下降（-58.1%累计）。两者方向相反——OEM端星恒的出货变化<strong>与OEM市场波动无关</strong>。</p>
+<p class="body-text"><strong>事实5：锂电渗透率两个可靠的数据点</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>年份</th>
+<th>渗透率</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2020</td>
+<td><strong>23.5%</strong>（锂电两轮车产量1,136万台）</td>
+<td>[D] EVTank《中国电动两轮车行业发展白皮书（2021年）》</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><strong>4.9%</strong></td>
+<td>[B] 星恒内部引用行业数据（GGII/起点研究院，具体出处待确认）</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">注：中间年份（2021/2022）和2024/2025的渗透率数据目前未找到单一权威来源的逐年级别数据。2020年23.5%与2023年4.9%之间差距巨大（-18.6pp），下降趋势明确但速率不确定。</p>
+<h4>B. 能从事实推导的结论（无需假设）</h4>
+<ol class="doc-list"><li>
+<p class="body-text"><strong>锂电市场总量收缩是星恒出货下降的直接原因</strong>。市场从1,076→347万组（-68%），即使星恒份额不变，出货也会从482→155万组（-327万组）。这327万组的损失是纯市场因素。</p>
+</li>
+<li>
+<p class="body-text"><strong>但市场收缩不完全等于渗透率暴跌</strong>。根据附件C的分析，市场从1,076→347万组包含两个成分：</p>
+<ul class="doc-list"><li><p class="body-text">合规锂电市场本身的收缩（渗透率从23.5%→4.9%，OEM锂电出货从~1,136→~270万台）</li>
+<li><p class="body-text">白牌/组装市场的政策性出清（从~386→0万组，附件C第3.1.6节有详细分析）</li>
+</ul>
+<p class="body-text">附件C的宽窄口径分析表明，白牌市场出清贡献了市场下降的约85-90%（~386万组），合规市场波动仅贡献10-15%。这意味着：<strong>市场总量从1,076→347万组中，大部分消失的成交量是白牌市场，是星恒从未参与竞争的部分。</strong></p>
+</li>
+<li>
+<p class="body-text"><strong>ATL在2020→2023年市场萎缩期间的绝对出货也是下降的</strong>（~92→48万组），只是下降幅度小于市场——所以市占率上升。这说明ATL并未在萎缩市场中&quot;抢夺&quot;星恒的大量存量份额，而是在<strong>存量市场中比星恒更抗跌</strong>。</p>
+</li>
+<li>
+<p class="body-text"><strong>OEM垂直整合的证据链是存在的，但量化缺乏直接数据</strong>：</p>
+<ul class="doc-list"><li><p class="body-text">雅迪拥有电池相关产线（9大基地中至少1个涉及电池）：[D] 雅迪ESG报告提及电池基地，但未披露产量</li>
+<li><p class="body-text">爱玛自研电池品牌&quot;爱德邦&quot;曾以3.67%市占率独立存在于市场中（2022年，[B] 星恒市占率Excel），后退出——说明爱玛将电池产能内部化（只供自用不出售）</li>
+<li><p class="body-text">但没有公开数据可以直接量化雅迪/爱玛每年自供了多少万组电池</li>
+</ul>
+</li>
+</ol>
+<h4>C. 需要主观假设才能量化的部分（仅列出，不做结论）</h4>
+<p class="body-text">以下项目的量化<strong>必须依赖假设</strong>，当前缺乏数据支撑：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>需要量化的项目</th>
+<th>需要的假设</th>
+<th>假设的可靠性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「渗透率暴跌贡献」vs「白牌出清贡献」的分离</td>
+<td>合规锂电市场每年的精确规模</td>
+<td>需GGII/起点研究院付费报告</td>
+</tr>
+<tr>
+<td>「ATL替代了星恒多少出货」</td>
+<td>ATL若不存在，星恒在OEM中的反事实份额</td>
+<td>无法验证的反事实推测</td>
+</tr>
+<tr>
+<td>「OEM垂直整合减少了星恒多少出货」</td>
+<td>雅迪/爱玛电池自产的实际年产量</td>
+<td>无公开数据，需直接向雅迪/爱玛核实</td>
+</tr>
+<tr>
+<td>「星恒OEM段精确出货量」</td>
+<td>民用段中OEM/渠道/零售的拆分比例</td>
+<td>需星恒管理层提供分客户出货数据</td>
+</tr>
+<tr>
+<td>「各年锂电渗透率」</td>
+<td>2021/2022/2024/2025的精确渗透率</td>
+<td>需GGII/起点研究院年度报告</td>
+</tr>
+</tbody>
+</table></div><h4>D. 诚实结论</h4>
+<p class="body-text"><strong>可以确定的事实</strong>：</p>
+<ol class="doc-list"><li><p class="body-text">星恒出货下降的主因是锂电市场总量从1,076→347万组的收缩（纯数学事实：市场收缩贡献116%的下降）</li>
+<li><p class="body-text">星恒在萎缩市场中的份额反而上升（44.8%→58.2%），且上升幅度大于ATL的同期市占率升幅——说明星恒在市场收缩期相对具有防御性</li>
+<li><p class="body-text">OEM市场自身在增长（雅迪+爱玛+48.3%，2020→2023），而星恒出货在下降——两者方向相反，不存在同步波动关系</li>
+<li><p class="body-text">ATL在2020→2023年萎缩期的绝对出货量也在下降（~92→48万组），并未在存量市场中大量抢夺星恒份额</li>
+</ol>
+<p class="body-text"><strong>无法精确确定的事项</strong>：</p>
+<ol class="doc-list"><li><p class="body-text">星恒出货下降中「渗透率暴跌」vs「白牌出清」vs「ATL替代」vs「OEM垂直整合」各自的精确贡献度——在当前数据精度下无法科学分离</li>
+<li><p class="body-text">OEM垂直整合对星恒的具体出货影响——雅迪/爱玛电池自产量无公开数据</li>
+</ol>
+<p class="body-text"><strong>对尽调的建议</strong>：</p>
+<ul class="doc-list"><li><p class="body-text">不应执着于精确量化各因素贡献度（数据不支持），而应关注方向性判断</li>
+<li><p class="body-text">核心判断应该是：<strong>当锂电渗透率回升到15-20%时，星恒能从OEM增量中获得多少份额？</strong>——这比追溯过去的下降原因更重要</li>
+<li><p class="body-text">为此需要获取：(1) 雅迪/爱玛当前的电池供应商名单和份额；(2) OEM自研/自产电池的比例和趋势；(3) 星恒在民用段中OEM/渠道/零售的各自出货量</li>
+</ul>
+<blockquote>
+<p class="body-text">[!NOTE] 💡
+<strong>方法说明</strong>：本节修订后，第一部分的纯数学分解（事实1-2）不依赖任何假设，仅基于[B] Excel中星恒出货量和市占率数据。第二部分（事实3-5）引用的竞争格局和OEM销量数据均有公开来源。第三部分（C节）明确列出了所有当前无法量化、需要主观假设的项目。</p>
+</blockquote>
+</div>
+</details>
+<h3>3.8 渠道级别市占率拆分——共享 vs OEM vs 零售（2026-06-10 新增）</h3>
+<p class="body-text"><strong>核心问题</strong>：星恒管理层声称&quot;72.5%市占率&quot;（[B] 市占率分析Excel），但这个市占率在不同渠道（共享/换电、OEM整车、零售替换、海外）中的分布如何？哪些渠道是真实优势，哪些是&quot;统计幻象&quot;？</p>
+<p class="body-text"><strong>方法约束</strong>：由于民用段（11.25亿）无法从[B]数据中精确拆分为OEM/渠道/零售子类，以下分析采用「FACT → DERIVED → ESTIMATED」三层递进结构，每层标注数据来源和假设前提。</p>
+<hr />
+<h4>A. 收入端渠道结构（FACT层——完全基于[B]实测数据，零假设）</h4>
+<p class="body-text"><strong>来源</strong>：[B] 分业务收入表2022-2026.3 + [B] 前十大客户清单2023-202603.xlsx</p>
+<p class="body-text"><strong>A1. 分业务段收入与毛利（FY2025）</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>业务段</th>
+<th>营收（亿）</th>
+<th>占总营收</th>
+<th>GM</th>
+<th>毛利（亿）</th>
+<th>业务实质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>国内商用</td>
+<td>12.26</td>
+<td>33.7%</td>
+<td>20.6%</td>
+<td>+2.53</td>
+<td>共享/换电 B2B</td>
+</tr>
+<tr>
+<td>国内民用</td>
+<td>11.25</td>
+<td>30.9%</td>
+<td>6.6%</td>
+<td>+0.74</td>
+<td>OEM+渠道+零售</td>
+</tr>
+<tr>
+<td>EB海外</td>
+<td>4.09</td>
+<td>11.2%</td>
+<td>22.3%</td>
+<td>+0.91</td>
+<td>海外E-bike</td>
+</tr>
+<tr>
+<td>东南亚</td>
+<td>~2.17</td>
+<td>~6.0%</td>
+<td>16.1%</td>
+<td>+0.35</td>
+<td>东南亚市场</td>
+</tr>
+<tr>
+<td>储能与新应用</td>
+<td>4.84</td>
+<td>13.3%</td>
+<td>-5.5%</td>
+<td>-0.27</td>
+<td>储能+ODM消费电子</td>
+</tr>
+<tr>
+<td>其他</td>
+<td>~1.75</td>
+<td>~4.8%</td>
+<td>—</td>
+<td>—</td>
+<td>未分类</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">注：东南亚营收由毛利0.35亿÷GM 16.1%反推。其他为总营收36.36亿减去以上五项。</p>
+<p class="body-text"><strong>A2. 前十大客户按渠道归类（FY2025）</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>渠道</th>
+<th>客户</th>
+<th>收入（亿）</th>
+<th>占营收</th>
+<th>累计占比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>共享</td>
+<td>哈啰</td>
+<td>5.60</td>
+<td>15.41%</td>
+<td>15.41%</td>
+</tr>
+<tr>
+<td>共享</td>
+<td>滴滴青桔</td>
+<td>2.88</td>
+<td>7.93%</td>
+<td>23.34%</td>
+</tr>
+<tr>
+<td>共享</td>
+<td>小师傅</td>
+<td>1.09</td>
+<td>2.98%</td>
+<td>26.32%</td>
+</tr>
+<tr>
+<td>共享</td>
+<td>松果</td>
+<td>0.96</td>
+<td>2.64%</td>
+<td>28.96%</td>
+</tr>
+<tr>
+<td>OEM</td>
+<td>小牛</td>
+<td>3.10</td>
+<td>8.53%</td>
+<td>37.49%</td>
+</tr>
+<tr>
+<td>OEM</td>
+<td>雅迪</td>
+<td>1.18</td>
+<td>3.25%</td>
+<td>40.74%</td>
+</tr>
+<tr>
+<td>OEM</td>
+<td>爱玛</td>
+<td>1.14</td>
+<td>3.13%</td>
+<td>43.87%</td>
+</tr>
+<tr>
+<td>储能</td>
+<td>麦田</td>
+<td>1.62</td>
+<td>4.46%</td>
+<td>48.33%</td>
+</tr>
+<tr>
+<td>储能</td>
+<td>德兰明海</td>
+<td>1.62</td>
+<td>4.45%</td>
+<td>52.78%</td>
+</tr>
+<tr>
+<td>ODM/储能</td>
+<td>钛氪（传音）</td>
+<td>1.09</td>
+<td>2.98%</td>
+<td>55.76%</td>
+</tr>
+<tr>
+<td><strong>前十大合计</strong></td>
+<td></td>
+<td><strong>21.28</strong></td>
+<td><strong>58.54%</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>A3. 渠道收入汇总（FACT层结论）</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>渠道</th>
+<th>已知客户收入（亿）</th>
+<th>渠道总收入（亿）</th>
+<th>占营收</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>共享/换电</td>
+<td>10.53（哈啰+滴滴+小师傅+松果）</td>
+<td><strong>12.26</strong></td>
+<td><strong>33.7%</strong></td>
+<td>商用段全部</td>
+</tr>
+<tr>
+<td>OEM（民用大客户）</td>
+<td>5.42（小牛+雅迪+爱玛）</td>
+<td>—</td>
+<td><strong>≥14.9%</strong></td>
+<td>民用段的OEM子集</td>
+</tr>
+<tr>
+<td>渠道经销</td>
+<td>未进入FY2025前10</td>
+<td>—</td>
+<td>—</td>
+<td>FY2024: 2.19亿</td>
+</tr>
+<tr>
+<td>储能/ODM</td>
+<td>4.33（麦田+德兰明海+钛氪）</td>
+<td><strong>4.84</strong></td>
+<td><strong>13.3%</strong></td>
+<td>储能段全部</td>
+</tr>
+<tr>
+<td>海外</td>
+<td>Amara退出前10</td>
+<td><strong>~6.26</strong></td>
+<td><strong>~17.2%</strong></td>
+<td>EB海外+东南亚</td>
+</tr>
+<tr>
+<td>未归入以上</td>
+<td>—</td>
+<td><strong>~1.75</strong></td>
+<td><strong>~4.8%</strong></td>
+<td>其他收入</td>
+</tr>
+</tbody>
+</table></div><div class="echarts-chart" id="echarts_sf_marketstruct" style="width:100%;height:400px;margin:16px 0;"></div>
+<p class="body-text key-finding"><strong>核心发现（纯事实，零假设）</strong>：</p>
+<ol class="doc-list"><li>
+<p class="body-text"><strong>共享/换电是星恒第一大渠道，占营收33.7%</strong>。哈啰+滴滴两个客户就占23.34%——超过所有OEM客户之和（14.91%）。</p>
+</li>
+<li>
+<p class="body-text"><strong>OEM客户在营收中的占比（14.9%）仅为共享渠道的44%</strong>。这意味着管理层的&quot;72.5%市占率&quot;叙事与OEM渠道的实际收入权重严重不匹配——星恒的高市占率并非建立在最大的行业渠道（OEM整车配套）之上。</p>
+</li>
+<li>
+<p class="body-text"><strong>储能/ODM（13.3%）已接近OEM的营收体量</strong>，但毛利率为负（-5.5%）——这是一个&quot;增收不增利&quot;的渠道。</p>
+</li>
+</ol>
+<hr />
+<h4>B. 量端渠道市占率推算（DERIVED层——基于公开数据三角验证）</h4>
+<p class="body-text"><strong>前提约束</strong>（来源：[B] 市占率Excel）：</p>
+<ul class="doc-list"><li><p class="body-text">星恒FY2025出货量：343.34万组</li>
+<li><p class="body-text">管理层声称市占率：72.5%</li>
+<li><p class="body-text">反推行业锂电两轮车市场总量：343.34÷72.5% ≈ <strong>474万组</strong></li>
+</ul>
+<p class="body-text"><strong>B1. 共享/换电渠道市场规模三角验证</strong></p>
+<p class="body-text">方法一：从共享电单车保有量反推（来源：[D] 163.com引用起点研究院/艾瑞咨询）</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>来源/推算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025年共享电单车保有量</td>
+<td>~750万台</td>
+<td>[D] 163.com 2026年报道</td>
+</tr>
+<tr>
+<td>单车年均换电次数</td>
+<td>0.5-0.7次/年</td>
+<td>[D] 共享电池寿命1.5-2年（高频充放场景）</td>
+</tr>
+<tr>
+<td>年替换电池需求</td>
+<td>375-525万组</td>
+<td>保有量×换电频率</td>
+</tr>
+<tr>
+<td>年新车投放电池需求</td>
+<td>50-80万组</td>
+<td>[D] 年投放约50-80万台新车</td>
+</tr>
+<tr>
+<td><strong>共享电池年总需求</strong></td>
+<td><strong>425-605万组</strong></td>
+<td>替换+新增</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">方法二：从星恒商用段收入反推</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>推算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>星恒商用段收入</td>
+<td>12.26亿</td>
+<td>[B] 分业务收入表</td>
+</tr>
+<tr>
+<td>共享电池B2B批量ASP（估）</td>
+<td>450-550元/组</td>
+<td>[D] 行业电芯0.38/Wh + pack溢价 <br>→ 48V20-24Ah约432-634元</td>
+</tr>
+<tr>
+<td>星恒共享渠道出货量（估）</td>
+<td><strong>223-272万组</strong></td>
+<td>12.26亿÷ASP区间</td>
+</tr>
+<tr>
+<td>星恒共享渠道市占率（估）</td>
+<td><strong>37-64%</strong></td>
+<td>223-272÷(425-605)</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>方法一与方法二的交叉验证</strong>：</p>
+<p class="body-text">两者之间存在张力——方法一推算的共享市场总量（425-605万组）与方法二推算的星恒共享出货量（223-272万组）结合，得出星恒共享渠道市占率仅37-64%，远低于72.5%的整体声称市占率。</p>
+<p class="body-text">这一张力的可能解释（非互斥）：</p>
+<ol class="doc-list"><li><p class="body-text"><strong>管理层72.5%市占率可能高估</strong>：如果共享渠道占国内锂电市场的60-70%（行业常态），而星恒共享市占率仅37-64%，那么72.5%的整体市占率需要OEM渠道有极高的市占率来拉高均值——但这与OEM仅14.9%的营收占比矛盾</li>
+<li><p class="body-text"><strong>共享电单车保有量数据可能偏高</strong>：750万台中可能包含铅酸车型（尤其在三线以下城市），实际锂电共享车型可能仅400-500万台</li>
+<li><p class="body-text"><strong>商用段收入可能包含非电池收入</strong>：如充电器、配件、维修服务等，导致用营收÷ASP推算的出货量偏低</li>
+</ol>
+<p class="body-text"><strong>B2. OEM渠道市场规模推算</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>来源/推算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>锂电两轮车市场总量</td>
+<td>~474万组</td>
+<td>[B] 市占率Excel反推</td>
+</tr>
+<tr>
+<td>共享/换电渠道占比（估）</td>
+<td>55-70%</td>
+<td>[D] GGII/起点研究院报告（行业经验值）</td>
+</tr>
+<tr>
+<td>共享渠道总量</td>
+<td>261-332万组</td>
+<td>市场总量×共享占比</td>
+</tr>
+<tr>
+<td>OEM+零售渠道总量</td>
+<td><strong>142-213万组</strong></td>
+<td>市场总量-共享渠道</td>
+</tr>
+<tr>
+<td>星恒民用段（OEM+渠道+零售）</td>
+<td>11.25亿</td>
+<td>[B] 分业务收入表</td>
+</tr>
+<tr>
+<td>民用段ASP（估）</td>
+<td>250-350元/组</td>
+<td>[D] 行业电芯0.38/Wh+pack溢价（OEM用48V12Ah为主，576Wh）</td>
+</tr>
+<tr>
+<td>星恒民用段出货量（估）</td>
+<td><strong>321-450万组</strong></td>
+<td>11.25亿÷ASP区间</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>B2的自我矛盾暴露</strong>：</p>
+<p class="body-text">据ASP推算的星恒民用段出货量（321-450万组）<strong>远超</strong>从市场总量反推的OEM+零售渠道总量（142-213万组），且321-450万组单独就已接近星恒总出货343万组。这意味着：</p>
+<ul class="doc-list"><li><p class="body-text"><strong>民用段ASP的假设（250-350元/组）可能过低</strong>：如果民用段包含了较大比例的零售替换（单体价高）、大容量电池（48V20Ah+），ASP可能接近400-500元/组</li>
+<li><p class="body-text">在ASP=450元/组下，民用段出货量≈250万组，加上商用段的~250万组，合计≈500万组——仍超343万组</li>
+<li><p class="body-text"><strong>最可能的解释</strong>：管理层声称的72.5%市占率存在夸大，真实市占率可能在45-55%区间</li>
+</ul>
+<p class="body-text"><strong>B3. 海外渠道（排除在国内市占率外）</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EB海外+东南亚收入</td>
+<td>~6.26亿</td>
+<td>[B] 分业务收入表</td>
+</tr>
+<tr>
+<td>海外ASP（显著高于国内）</td>
+<td>估600-1,000元/组</td>
+<td>[A] Amara PI: $9.70/电芯(~180$/kWh)；欧洲E-bike pack通常$200-400</td>
+</tr>
+<tr>
+<td>海外出货量（估）</td>
+<td><strong>60-100万组</strong></td>
+<td>6.26亿÷ASP区间</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">海外出货量约60-100万组，占星恒总出货的17-29%。这部分不包含在国内市占率计算中。</p>
+<hr />
+<h4>C. 渠道市占率估算汇总（ESTIMATED层——标注所有假设）</h4>
+<p class="body-text">基于以上FACT和DERIVED分析，以下为<strong>有来源约束的渠道市占率区间估算</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>渠道</th>
+<th>星恒出货量（估，万组）</th>
+<th>渠道市场总量（估，万组）</th>
+<th>星恒渠道市占率（估）</th>
+<th>关键假设</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>共享/换电</td>
+<td>200-250</td>
+<td>300-400</td>
+<td><strong>55-75%</strong></td>
+<td>(1) 商用段ASP 490-613元/组；(2) 共享占锂电市场60-70%</td>
+</tr>
+<tr>
+<td>OEM整车配套</td>
+<td>50-80</td>
+<td>100-180</td>
+<td><strong>30-50%</strong></td>
+<td>(1) 民用段OEM子集ASP 280-400元/组；(2) OEM+零售总量142-213万组</td>
+</tr>
+<tr>
+<td>零售替换+渠道</td>
+<td>30-50</td>
+<td>40-60</td>
+<td><strong>60-80%</strong></td>
+<td>零售场景是星恒传统优势（品牌+渠道），但绝对规模小</td>
+</tr>
+<tr>
+<td>海外</td>
+<td>60-100</td>
+<td>—</td>
+<td>—</td>
+<td>不含在国内市占率内</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td><strong>~343</strong></td>
+<td><strong>~474</strong></td>
+<td><strong>72.5%</strong></td>
+<td>管理层声称值（作为总量约束使用）</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>对上表的关键限定</strong>：</p>
+<ol class="doc-list"><li><p class="body-text"><strong>所有&quot;估&quot;标记的数字均非实测值</strong>。表中出货量和市占率是基于ASP假设区间和行业总量约束的<strong>合理推算</strong>，不是精确数据。</li>
+<li><p class="body-text"><strong>各渠道出货量之和必须等于343万组（[B]实测）</strong>，市场总量之和等于474万组（[B]反推）——这两个是硬约束。</li>
+<li><p class="body-text"><strong>最重要的结构性事实</strong>（不需ASP假设即可成立）：共享渠道贡献了星恒锂电出货量的<strong>60-70%</strong>（200-250÷343），OEM仅贡献<strong>15-25%</strong>（50-80÷343）。这一结论的置信度较高——因为即使ASP假设有±20%偏差，共享&gt;55%、OEM&lt;30%的方向性判断依然成立。</li>
+</ol>
+<hr />
+<h4>D. 渠道市占率的尽调含义</h4>
+<p class="body-text"><strong>D1. &quot;72.5%市占率&quot;的渠道解剖——三个&quot;不均衡&quot;</strong>：</p>
+<ol class="doc-list"><li>
+<p class="body-text"><strong>渠道结构极不均衡</strong>：星恒的市占率优势高度集中于共享/换电渠道（估55-75%），在OEM渠道中处于弱势（估30-50%）。管理层以&quot;72.5%&quot;单一数字概括，掩盖了渠道间的巨大分化。</p>
+</li>
+<li>
+<p class="body-text"><strong>利润质量极不均衡</strong>：共享渠道GM 20.6% vs OEM渠道GM 6.6%，相差3.1倍。星恒的利润几乎完全由共享/换电业务支撑（贡献毛利2.53亿，是OEM民用段0.74亿的3.4倍）——这意味着一旦共享客户流失（如哈啰引入亿纬锂能），星恒的利润支柱将受到直接冲击。</p>
+</li>
+<li>
+<p class="body-text"><strong>增长空间极不均衡</strong>：OEM渠道是行业最大的蛋糕（两轮车年产~5,500万台，锂电渗透率若回升至15-20%意味着800-1,100万台锂电OEM需求），但星恒在其中的份额仅30-50%且持续下降（雅迪/爱玛/九号/小牛均绑定新能安或自研）。共享/换电渠道的增量空间受限于城市电单车投放政策天花板。</p>
+</li>
+</ol>
+<details><summary><b>管理层声称交叉验证与估值建模建议（点击展开）</b></summary>
+<div class="details-content">
+<p class="body-text"><strong>D2. 对管理层声称的交叉验证</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>管理层声称</th>
+<th>渠道拆分后的验证</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;72.5%市占率&quot;</td>
+<td>共享55-75% + OEM 30-50% + 零售60-80%，加权可得70-75%区间</td>
+<td>🟡 数字本身可自洽，但渠道结构比数字更重要</td>
+</tr>
+<tr>
+<td>&quot;客户转变由共享波动驱动&quot;</td>
+<td>OEM渠道份额下降的核心是ATL替代+OEM垂直整合（与共享无关）</td>
+<td>🔴 渠道拆分进一步证实该声称不成立</td>
+</tr>
+<tr>
+<td>&quot;行业龙头地位稳固&quot;</td>
+<td>OEM渠道（行业最大蛋糕）份额仅30-50%且趋势向下</td>
+<td>🟡 需区分&quot;共享龙头&quot;vs&quot;全行业龙头&quot;——前者成立，后者存疑</td>
+</tr>
+</tbody>
+</table></div><blockquote>
+<p class="body-text">[!WARNING] 估值建模关键约束
+<strong>不应使用&quot;72.5%市占率&quot;作为DCF中市场份额的单一输入</strong>：应分别对共享、OEM、零售、海外四个渠道独立建模，各自设定市占率假设和增长率。</p>
+</blockquote>
+<p class="body-text"><strong>D3. 估值建模建议（全文）</strong>：</p>
+<ul class="doc-list"><li><p class="body-text"><strong>共享渠道的持续性和定价权</strong>应是尽调重点——哈啰已引入第二供应商（亿纬锂能），滴滴有国轩高科，共享客户的供应商多元化趋势将压缩星恒的议价空间</li>
+<li><p class="body-text"><strong>OEM渠道的恢复假设应保守</strong>：在雅迪自建电池基地+爱玛爱德邦+ATL占据高端OEM的格局下，星恒在OEM渠道的份额恢复至历史水平（50%+）的概率很低</li>
+</ul>
+<p class="body-text"><strong>D4. 需要向管理层索取的关键数据</strong>（以消除当前推算中的假设依赖）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>数据需求</th>
+<th>用途</th>
+<th>当前依赖的假设</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>民用段按OEM/渠道/零售的出货量拆分</td>
+<td>精确计算OEM渠道市占率</td>
+<td>民用段ASP + OEM占比假设</td>
+</tr>
+<tr>
+<td>商用段按客户的出货量（万组）</td>
+<td>精确计算共享渠道市占率</td>
+<td>商用段ASP假设</td>
+</tr>
+<tr>
+<td>前十大客户的电池组出货量</td>
+<td>验证ASP推算的一致性</td>
+<td>全部ASP假设</td>
+</tr>
+<tr>
+<td>管理层市占率72.5%的计算方法和数据来源</td>
+<td>验证市占率数字的可靠性</td>
+<td>将72.5%作为硬约束使用</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<hr />
+<h4>E. 多源三角验证——GWh维度 + 竞争排名 + 车队规模（2026-06-10 新增）</h4>
+<p class="body-text">前述渠道拆分依赖「474万组总市场」这一核心约束，该约束又完全依赖管理层声称的72.5%市占率（343.34÷72.5%）。本节从<strong>三个独立维度</strong>对该约束进行压力测试。</p>
+<hr />
+<p class="body-text"><strong>E1. GWh维度——行业总量独立反推</strong></p>
+<p class="body-text"><strong>数据来源</strong>：[D] 起点研究院（起点锂电）在2025第五届起点两轮车换电大会发布</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2024年中国两轮车锂电池出货量</td>
+<td><strong>~13.6 GWh</strong></td>
+<td>[D] sohu.com引用起点研究院</td>
+</tr>
+<tr>
+<td>2025H1中国轻型车锂电池销量同比</td>
+<td><strong>+40%</strong></td>
+<td>[D] 投资界(pedaily.cn)引用行业数据</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>从GWh反推万组市场总量</strong>（关键假设：平均单组pack能量）：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>Pack场景</th>
+<th>典型规格</th>
+<th>单组能量</th>
+<th>13.6GWh对应万组</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>共享/换电</td>
+<td>48V20Ah</td>
+<td>0.96 kWh</td>
+<td>1,417</td>
+</tr>
+<tr>
+<td>OEM民用</td>
+<td>48V12Ah</td>
+<td>0.576 kWh</td>
+<td>2,361</td>
+</tr>
+<tr>
+<td>综合（60%共享+40%OEM）</td>
+<td>—</td>
+<td>~0.806 kWh</td>
+<td><strong>~1,688</strong></td>
+</tr>
+<tr>
+<td>综合（50%共享+50%OEM）</td>
+<td>—</td>
+<td>~0.768 kWh</td>
+<td><strong>~1,771</strong></td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>GWh维度结论</strong>：在合理pack能量假设下，2024年中国两轮车锂电池市场总量约为<strong>1,500-2,400万组</strong>。取中值约1,700万组。</p>
+<p class="body-text"><strong>与[B]数据约束的关键张力</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>项目</th>
+<th>GWh反推（取中值1,700万组）</th>
+<th>[B]管理层数据反推（474万组）</th>
+<th>倍差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行业市场总量</td>
+<td>~1,700万组</td>
+<td>474万组</td>
+<td><strong>3.6x</strong></td>
+</tr>
+<tr>
+<td>星恒出货 FY2025</td>
+<td>343万组（[B]实测）</td>
+<td>343万组</td>
+<td>—</td>
+</tr>
+<tr>
+<td>星恒市占率</td>
+<td><strong>~20.2%</strong></td>
+<td>72.5%（管理层声称）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>这一3.6倍差异的四种可能解释</strong>（非互斥）：</p>
+<ol class="doc-list"><li>
+<p class="body-text"><strong>市场定义口径不同（最可能）</strong>：管理层72.5%的统计口径可能是「合规轻型车锂电池PACK市场（按组数）」且排除以下子市场——(a) 电芯级出货（亿纬/东磁/比克等以电芯形式出货给pack厂的部分不纳入）；(b) 出口/海外交付（星恒343万组中海外部分可能被计入国内）；(c) 白牌/非合规市场。若行业总出货13.6GWh中仅30-40%为合规pack市场，则剩余400-550万组与[B]数据可自洽。</p>
+</li>
+<li>
+<p class="body-text"><strong>13.6GWh可能高估</strong>：该数字来自行业论坛公开发布，可能包含重复统计（电芯→pack→整车三次计数）或广义&quot;轻型车&quot;定义（含三轮车、低速四轮车等）。</p>
+</li>
+<li>
+<p class="body-text"><strong>72.5%可能高估</strong>：管理层出于融资/交易谈判目的，可能将市占率定义在对自己最有利的最窄口径上。</p>
+</li>
+<li>
+<p class="body-text"><strong>时间口径错配</strong>：13.6GWh为2024日历年，343万组为FY2025（2024.7-2025.6），两者有半年重叠但不完全对齐。</p>
+</li>
+</ol>
+<p class="body-text"><strong>尽调判断</strong>：GWh维度的独立数据对管理层72.5%市占率构成<strong>实质性质疑</strong>。即使考虑口径差异，3.6倍的量级差距意味着管理层的市场定义口径需要大幅收窄才能自洽。<strong>建议要求管理层披露&quot;72.5%&quot;背后的市场总量定义和第三方数据来源</strong>。</p>
+<hr />
+<p class="body-text"><strong>E2. 竞争排名维度——电芯排名 vs Pack排名的「两种第一」</strong></p>
+<p class="body-text"><strong>数据来源</strong>：[D] 起点研究院（2025第五届起点两轮车换电大会发布）+ [D] 星恒官网</p>
+<p class="body-text"><strong>2024年中国两轮车锂电池电芯出货量TOP15（按GWh）</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>排名</th>
+<th>企业</th>
+<th>定位</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1</td>
+<td>亿纬锂能</td>
+<td>全品类电芯供应商，两轮车用圆柱电池</td>
+<td>[D] chinadaily.com.cn引用起点研究院</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>横店东磁</td>
+<td>18650圆柱电芯，全球出货TOP10</td>
+<td>[D] 同上</td>
+</tr>
+<tr>
+<td>#3</td>
+<td>比克电池</td>
+<td>圆柱电芯，PRO-M高安全系列</td>
+<td>[D] 同上</td>
+</tr>
+<tr>
+<td>#4-5</td>
+<td>星恒（据百度知道二轮锂电十大品牌列表出现在第4位）</td>
+<td>PACK为主+部分电芯</td>
+<td>[D] zhidao.baidu.com</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>星恒「七连冠」声称</strong>：[D] 星恒官网（xingheng.com.cn）声称「全球轻型车锂电池销量七连冠」。</p>
+<p class="body-text"><strong>两种排名的自洽解释</strong>：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>排名维度</th>
+<th>星恒位次</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电芯出货量（GWh）</td>
+<td>第4-5名</td>
+<td>星恒以pack为主，外购电芯比例高，自产电芯出货量不占优</td>
+</tr>
+<tr>
+<td>Pack出货量（万组）</td>
+<td>第1名（「七连冠」）</td>
+<td>星恒的核心竞争力在pack集成+渠道+品牌，而非电芯制造</td>
+</tr>
+<tr>
+<td>共享/换电渠道</td>
+<td>第1名</td>
+<td>[D] 投资界「星恒统治力更加明显，为哈啰、美团等平台累计...」</td>
+</tr>
+<tr>
+<td>高端OEM渠道</td>
+<td>与ATL/新能安竞争</td>
+<td>小牛NX Pro/九号F90/极核Ae4i等高端的5000+元车型仍有星恒配套</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>尽调含义</strong>：市场排名因统计维度不同而差异巨大。管理层若以「七连冠」论证行业地位，需明确是<strong>哪个维度的第一</strong>——pack出货量（万组）领先是事实，但GWh维度的领先地位已被亿纬锂能超越。对于估值而言，GWh维度反映的是实际的电池材料消耗量和行业影响力，pack维度反映的是渠道覆盖和客户关系——两者含义不同。</p>
+<hr />
+<p class="body-text"><strong>E3. 共享电单车车队规模——三源交叉验证</strong></p>
+<p class="body-text">前述B1节使用了750万台的共享电单车保有量数据。以下为三个独立来源的交叉验证：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>来源</th>
+<th>数据</th>
+<th>时间</th>
+<th>可信度评估</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[D] 百家号（baijiahao.baidu.com）</td>
+<td><strong>713万辆</strong></td>
+<td>2025年9月</td>
+<td>中——自媒体转载行业报告，原始来源未注明</td>
+</tr>
+<tr>
+<td>[D] 百度贴吧引用「2025年共享单车市场报告」</td>
+<td><strong>~800万辆</strong></td>
+<td>2025年</td>
+<td>低——贴吧二手引用，原始报告来源不明</td>
+</tr>
+<tr>
+<td>[D] 163.com引用起点研究院</td>
+<td><strong>~700万辆（2024）<br>→ ~750万辆（2025）</strong></td>
+<td>2024-2025年</td>
+<td>中高——引用第三方研究机构数据</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>三源区间</strong>：700-800万辆。B1节使用的750万辆位于区间中点，引用合理。</p>
+<p class="body-text"><strong>对渠道拆分的敏感性分析</strong>：若实际保有量为低值（700万）或高值（800万），B1节共享渠道市场总量估算（425-605万组）将相应调整为：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>保有量假设</th>
+<th>替换+新增总量</th>
+<th>星恒共享出货（223-272万组）市占率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>700万（保守）</td>
+<td>~400-560万组</td>
+<td>40-68%</td>
+</tr>
+<tr>
+<td>750万（基准）</td>
+<td>~425-605万组</td>
+<td>37-64%</td>
+</tr>
+<tr>
+<td>800万（乐观）</td>
+<td>~450-640万组</td>
+<td>35-60%</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>结论</strong>：车队规模±7%的浮动对共享渠道市占率估算的影响在可接受范围内（35-68%），不影响「星恒在共享渠道具有显著优势」的定性结论。</p>
+<hr />
+<p class="body-text"><strong>E4. 多源验证综合结论</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>验证维度</th>
+<th>核心发现</th>
+<th>对管理层声称的影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GWh行业总量</td>
+<td>13.6GWh<br>→1,500-2,400万组市场，星恒份额仅15-25%</td>
+<td>🔴 <strong>严重削弱</strong>「72.5%市占率」可信度</td>
+</tr>
+<tr>
+<td>竞争排名</td>
+<td>电芯排名亿纬#1 vs Pack排名星恒#1（七连冠）</td>
+<td>🟡 「七连冠」可能成立但需明确口径（Pack，非电芯）</td>
+</tr>
+<tr>
+<td>共享车队规模</td>
+<td>三源一致在700-800万区间</td>
+<td>✅ <strong>支持</strong>共享渠道市场总量估算</td>
+</tr>
+<tr>
+<td>渠道收入结构</td>
+<td>共享33.7% vs OEM 14.9%</td>
+<td>✅ <strong>支持</strong>星恒高度依赖共享渠道的判断</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>对尽调的最终建议</strong>：</p>
+<ol class="doc-list"><li>
+<p class="body-text"><strong>估值模型不应以72.5%市占率为基础</strong>：GWh维度证伪了这一数字的普适性。建议以<strong>20-25%</strong>（GWh维度）和<strong>45-55%</strong>（保守pack维度）两个情景分别建模。</p>
+</li>
+<li>
+<p class="body-text"><strong>「七连冠」= Pack出货量第一</strong>：该声称可自洽，但需在交易文件中明确口径，避免天保控股在投后发现GWh维度并非第一时产生纠纷。</p>
+</li>
+<li>
+<p class="body-text"><strong>共享渠道依赖是双刃剑</strong>：三源车队数据均支持共享/换电市场仍在增长，但星恒在该渠道的集中度（33.7%营收+大头利润）构成单一渠道依赖风险。</p>
+</li>
+</ol>
+<p class="body-text"><strong>E5. 竞争对手公开年报数据交叉验证</strong>（2026-06-10 新增）</p>
+<p class="body-text">E1-E4分别从GWh总量、竞争排名、车队规模三个外部维度进行了验证。此处增加第四个维度——从<strong>博力威（688345）和天能股份（688819）的FY2025年报公开披露数据 [A]</strong> 出发，独立验证市场总量。</p>
+<p class="body-text"><strong>E5.1 博力威FY2025年报数据 [A]</strong>（来源：东方财富网F10，2026-06-10提取）</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>产品类别</th>
+<th>FY2025收入</th>
+<th>毛利率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>轻型车用锂离子电池</td>
+<td>13.07亿</td>
+<td>20.07%</td>
+</tr>
+<tr>
+<td>消费电子类电池</td>
+<td>7.25亿</td>
+<td>16.98%</td>
+</tr>
+<tr>
+<td>储能电池</td>
+<td>3.17亿</td>
+<td>26.21%</td>
+</tr>
+<tr>
+<td>合计</td>
+<td>27.35亿</td>
+<td>18.08%</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">博力威年报仅披露收入，未披露单位出货量。以下通过收入反推出货量进行交叉验证：</p>
+<pre><code>已知：[B]星恒Excel中博力威2025年国内两轮车锂电市占率=1.99%
+假设：国内两轮车锂电池均价约500-700元/组
+
+若市场总量=474万组（星恒口径）：
+  博力威国内出货=474×1.99%=约9.4万组
+  博力威国内收入=9.4万×500-700元=0.47-0.66亿
+  博力威出口/海外收入=13.07亿-(0.47-0.66亿)=12.4-12.6亿
+  → 出口占比~95-96%，与&quot;海外电摩放量驱动复苏&quot;一致
+
+反向验证（从收入反推市场总量）：
+  假设博力威国内收入占轻型车锂电的5-15%
+  国内收入=13.07亿×(5-15%)=0.65-1.96亿
+  国内出货量=0.65-1.96亿÷(500-700元)=9.3-39.2万组
+  市场总量=9.3-39.2万组÷1.99%=468-1,970万组
+  → 区间下限468万组与星恒口径474万组接近一致
+  → 区间上限1,970万组接近GWh口径1,500-1,900万组
+</code></pre>
+<p class="body-text"><strong>结论</strong>：博力威年报数据<strong>同时兼容两种市场总量口径</strong>——取决于国内收入占比假设。市场总量的精确值无法仅通过收入端验证。</p>
+<p class="body-text"><strong>E5.2 天能股份FY2025年报数据 [A]</strong>（来源：东方财富网F10，2026-06-10提取）</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>产品类别</th>
+<th>FY2025收入</th>
+<th>占比</th>
+<th>毛利率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>铅蓄电池</td>
+<td>415.66亿</td>
+<td>90.8%</td>
+<td>15.9%</td>
+</tr>
+<tr>
+<td>锂电池</td>
+<td>15.71亿</td>
+<td>3.4%</td>
+<td><strong>-4.1%</strong></td>
+</tr>
+<tr>
+<td>合计</td>
+<td>457.92亿</td>
+<td>100%</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div><p class="body-text">天能年报未单独披露两轮车锂电收入及出货量。</p>
+<pre><code>已知：[B]星恒Excel中天能2025年国内两轮车锂电市占率=1.96%
+已知：天能锂电毛利率-4.1%，严重亏损 [A]
+
+天能锂电15.71亿中，若两轮车锂电占比10-20%：
+  两轮车锂电收入=1.57-3.14亿
+  出货量（均价500-700元/组）=2.2-6.3万组
+  市场总量÷1.96%=114-321万组
+  → 上限321万组 vs 星恒口径474万组，偏差约32%
+  → 若占比30%：出货9.4万组，市场总量=480万组 ← 一致
+
+关键定性验证：天能锂电GM -4.1%直接证实&quot;天能锂电严重亏损→战略撤退&quot;
+</code></pre>
+<p class="body-text"><strong>E5.3 新能安/ATL</strong>——非上市公司，无公开年报，无法进行独立出货量验证。</p>
+<p class="body-text"><strong>E5.4 综合结论</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>验证维度</th>
+<th>数据来源</th>
+<th>市场总量估计</th>
+<th>与星恒474万组的关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>星恒内部口径</td>
+<td>[B] 内部Excel</td>
+<td>~474万组</td>
+<td>基准</td>
+</tr>
+<tr>
+<td>GWh反推</td>
+<td>[C/D] 起点研究院13.6GWh</td>
+<td>1,500-1,900万组</td>
+<td>3-4倍</td>
+</tr>
+<tr>
+<td>博力威年报反推</td>
+<td>[A] FY2025年报</td>
+<td>468-1,970万组</td>
+<td>与两种口径均兼容</td>
+</tr>
+<tr>
+<td>天能年报反推</td>
+<td>[A] FY2025年报</td>
+<td>114-480万组</td>
+<td>接近管理口径（高占比下）</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>核心约束</strong>（置信度：★★★★★）：所有中国上市公司均不披露两轮车锂电池的<strong>单位出货量</strong>，仅披露收入（且不区分应用场景）。这意味着<strong>无法通过公开数据精确验证任何一家公司的出货量和市占率绝对值</strong>。此约束适用于星恒管理口径（B级）、GGII第三方口径（C级）以及本报告的所有推算——市占率数据的精确性从根本上受制于行业信息披露的局限性。</p>
+<p class="body-text"><strong>星恒声称验证结论</strong>（针对&quot;72.5%市占率&quot;）：</p>
+<ul class="doc-list"><li><p class="body-text">无法证伪——博力威/天能年报数据在合理参数范围内与474万组市场总量兼容</li>
+<li><p class="body-text">也无法证实——置信区间太宽（114-1,970万组），缺乏决定性证据</li>
+<li><p class="body-text">GWh维度（3-4倍差异）是对72.5%口径的最强质疑，但市场定义口径的不同可以解释该差异</li>
+</ul>
+<p class="body-text"><strong>E6. GGII/行业第三方数据交叉验证</strong>（2026-06-10 新增，来源：SearXNG联网搜索）</p>
+<p class="body-text"><strong>E6.1 GGII 2025年H1两轮车锂电池市场数据</strong> [C/D]</p>
+<blockquote>
+<p class="body-text">以下数据来自GGII/高工锂电及行业公开报道的联网搜索结果</p>
+</blockquote>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025 H1行业增速</td>
+<td>+40% YoY</td>
+<td>[D] SearXNG搜索</td>
+</tr>
+<tr>
+<td>星恒H1增速</td>
+<td>+50%+（高于行业）</td>
+<td>[D] 搜索</td>
+</tr>
+<tr>
+<td>星恒市占率（行业共识）</td>
+<td><strong>30%+</strong>（&quot;绝对龙头&quot;）</td>
+<td>[D] GGII/行业报道</td>
+</tr>
+<tr>
+<td>星恒定位</td>
+<td>&quot;1超+多强&quot;格局中的&quot;1超&quot;</td>
+<td>[D] 行业报道</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>GGII竞争格局排名</strong>（2025 H1）[D]：</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>排名</th>
+<th>企业</th>
+<th>类型</th>
+<th>定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>星恒电源</strong></td>
+<td>锰酸锂为主</td>
+<td>绝对龙头</td>
+</tr>
+<tr>
+<td>2</td>
+<td>天能电池</td>
+<td>铅酸→锂电转型</td>
+<td>追赶者</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>新能安 (Poweramp)</strong></td>
+<td>CATL子公司</td>
+<td>增速最快</td>
+</tr>
+<tr>
+<td>4</td>
+<td>博力威 (Greenway)</td>
+<td>出口领先</td>
+<td>欧洲E-bike</td>
+</tr>
+<tr>
+<td>5</td>
+<td>南都电源</td>
+<td>换电+特种场景</td>
+<td>细分市场</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>关键发现——GGII 30%+ vs 星恒 72.5%的巨大差距</strong>：</p>
+<div style="border: 2px solid #1a365d; border-radius: 8px; padding: 16px; margin: 12px 0; background: #f7fafc; font-family: system-ui, sans-serif;">
+<div style="margin-bottom: 10px; font-weight: bold; color: #1a365d;">
+出货基准：星恒出货量 = 343.34万组 [B]
+</div>
+<div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+<div style="flex: 1; min-width: 200px; border-left: 4px solid #d69e2e; padding: 10px 14px; background: #fffff0; border-radius: 4px; text-align: center;">
+<div style="font-size: 0.85em; color: #a0aec0; margin-bottom: 4px;">星恒口径（72.5%）</div>
+<div style="font-size: 1.2em; font-weight: bold; color: #1a365d;">474万组</div>
+<div style="font-size: 0.8em; color: #718096;">343 / 72.5%</div>
+</div>
+<div style="display: flex; align-items: center; font-size: 1.5em; font-weight: bold; color: #e53e3e;">
+2.4x 倍差
+</div>
+<div style="flex: 1; min-width: 200px; border-left: 4px solid #3182ce; padding: 10px 14px; background: #ebf8ff; border-radius: 4px; text-align: center;">
+<div style="font-size: 0.85em; color: #a0aec0; margin-bottom: 4px;">GGII口径（30%+）</div>
+<div style="font-size: 1.2em; font-weight: bold; color: #1a365d;">1,144万组</div>
+<div style="font-size: 0.8em; color: #718096;">343 / 30%</div>
+</div>
+</div>
+</div>
+<p class="body-text"><strong>三种解释</strong>（按可能性排序）：</p>
+<ol class="doc-list"><li><p class="body-text"><strong>口径差异（最可能）</strong>：星恒72.5%统计的是&quot;国内合规轻型车锂电池PACK市场（按组数）&quot;，而GGII的30%+统计的是更宽泛的&quot;两轮车锂电池市场&quot;（含出口/含电芯级/含非合规）。两者在统计口径上相差约2.4倍——恰好对应白牌/非标市场（~386万组）的出清效应</li>
+<li><p class="body-text"><strong>GGII低估</strong>：GGII的30%+为定性描述而非精确统计，实际可能为40-50%，则市场总量686-858万组</li>
+<li><p class="body-text"><strong>星恒高估</strong>：星恒的72.5%仅统计了其参与的渠道（共享+OEM合规部分），忽略了其他竞争者覆盖的市场</li>
+</ol>
+<p class="body-text"><strong>核心判断</strong>（置信度：★★★★☆）：<strong>GGII 30%+的行业共识数据是对星恒72.5%市占率最直接、最权威的第三方挑战</strong>。两种口径的2.4倍差异不能用&quot;统计误差&quot;解释，必须用&quot;统计口径不同&quot;解释。尽调建议：要求星恒管理层精确说明72.5%的产品范围、渠道范围、地域范围定义，并与GGII的30%+口径进行逐项对照。</p>
+<p class="body-text"><strong>E6.2 星恒H1供应链配套数据</strong> [D]</p>
+<blockquote>
+<p class="body-text">以下为联网搜索中提及的星恒H1供应链配套数据（注：来源为媒体报道，可能含重复统计或含所有电池类型）：</p>
+</blockquote>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>客户</th>
+<th>提及配套量</th>
+<th>注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>雅迪</td>
+<td>550万组</td>
+<td>可能含所有电池类型</td>
+</tr>
+<tr>
+<td>爱玛</td>
+<td>500万组</td>
+<td>可能含所有电池类型</td>
+</tr>
+<tr>
+<td>小牛</td>
+<td>280万组</td>
+<td></td>
+</tr>
+<tr>
+<td>台铃</td>
+<td>200万组</td>
+<td></td>
+</tr>
+<tr>
+<td>绿源</td>
+<td>150万组</td>
+<td></td>
+</tr>
+<tr>
+<td>九号</td>
+<td>100万组</td>
+<td></td>
+</tr>
+<tr>
+<td>新日</td>
+<td>100万组</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td><strong>1,880万组</strong></td>
+<td>⚠️ 明显含重复/含所有电池类型</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>验证判断</strong>：1880万组远超星恒年出货343万组，说明该数据为&quot;各品牌配套总量&quot;（含所有供应商+所有电池类型+可能为累计量）。<strong>不能作为星恒出货量的独立验证</strong>。若为各品牌全年锂电总配套的约50%，则对应星恒出货约940万组——与343万组仍差2.7倍，进一步支持&quot;星恒72.5%口径为子集&quot;的判断。</p>
+<p class="body-text"><strong>E7. 下游OEM锂电搭载率验证</strong> [A/D]</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>OEM</th>
+<th>FY2025营收</th>
+<th>FY2025销量</th>
+<th>锂电搭载率</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>雅迪</td>
+<td>370.08亿</td>
+<td>~1,630万台</td>
+<td>估计15-25%（电池自供65%）</td>
+<td>[A] 年报+[D] 第一上海研报</td>
+</tr>
+<tr>
+<td>爱玛</td>
+<td>250.95亿</td>
+<td>约1,100-1,200万台</td>
+<td><strong>降至5%以下</strong></td>
+<td>[A] 年报+[D] 联网搜索</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>爱玛锂电搭载率降至5%以下的竞争含义</strong>：</p>
+<ul class="doc-list"><li><p class="body-text">爱玛作为中国第二大电动自行车品牌，锂电搭载率仅5%——这意味着在2025年行业总量中，锂电渗透率远低于常见的&quot;20-25%&quot;行业叙事</li>
+<li><p class="body-text">按爱玛1100万台销量×5%锂电=55万台锂电车型，所需锂电池约55万组</li>
+<li><p class="body-text">星恒2025年对爱玛的OEM收入仅占星恒总收入的3.13%（[B] 前十大客户清单），对应约1.14亿收入，约2万组出货——星恒在爱玛锂电采购中的份额仅约3-4%</li>
+<li><p class="body-text"><strong>这验证了&quot;OEM垂直整合&quot;的判断</strong>：爱玛自建电池品牌爱德邦，锂电采购主要来自自产而非星恒</li>
+</ul>
+<p class="body-text"><strong>E8. 共享电单车投放量三源交叉验证</strong> [D]</p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>平台</th>
+<th>投放量</th>
+<th>覆盖城市</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>哈啰出行</td>
+<td>约140万辆</td>
+<td>500+城市</td>
+<td>[D] 艾瑞咨询2025</td>
+</tr>
+<tr>
+<td>滴滴青桔</td>
+<td>约120万辆</td>
+<td>约700城市</td>
+<td>[D] 艾瑞咨询2025</td>
+</tr>
+<tr>
+<td>美团</td>
+<td>约110万辆</td>
+<td>700+城市</td>
+<td>[D] 艾瑞咨询2025</td>
+</tr>
+<tr>
+<td><strong>Top3合计</strong></td>
+<td><strong>约370万辆</strong></td>
+<td>—</td>
+<td></td>
+</tr>
+<tr>
+<td>其他（松果等）</td>
+<td>约343万辆</td>
+<td>—</td>
+<td></td>
+</tr>
+<tr>
+<td>全国总投放量</td>
+<td><strong>约713万辆</strong></td>
+<td>31个省份</td>
+<td>[D] 艾瑞咨询2025-04</td>
+</tr>
+<tr>
+<td>2025年行业收入</td>
+<td>突破560亿元</td>
+<td>—</td>
+<td>[D] 艾瑞咨询</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>与星恒声称对照</strong>：</p>
+<ul class="doc-list"><li><p class="body-text">星恒声称共享累计供货1000万组、历史累计市占率60% [B/D]</li>
+<li><p class="body-text">按713万辆投放×2年更换周期（共享电池因高频使用一般2年更换）= 年需求约357万组</li>
+<li><p class="body-text">星恒60%份额 = 约214万组/年（共享渠道出货量）</li>
+<li><p class="body-text">与星恒FY2025共享收入约29%×36.36亿=10.5亿（按ASP~500元/组=约210万组）<strong>在数量级上一致</strong></li>
+<li><p class="body-text"><strong>1,000万组累计量</strong>：按年均200万组×5年=1,000万组，口径自洽</li>
+</ul>
+<p class="body-text"><strong>E9. 综合验证矩阵（更新版）</strong></p>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>验证维度</th>
+<th>星恒72.5%口径</th>
+<th>第三方口径/GWh口径</th>
+<th>倍差</th>
+<th>可信度判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>博力威年报反推</td>
+<td>474万组</td>
+<td>468-1,970万组</td>
+<td>1.0-4.2x</td>
+<td>兼容两种口径</td>
+</tr>
+<tr>
+<td>天能年报反推</td>
+<td>474万组</td>
+<td>114-480万组</td>
+<td>0.2-1.0x</td>
+<td>接近管理口径</td>
+</tr>
+<tr>
+<td>GWh反推</td>
+<td>474万组</td>
+<td>1,500-1,900万组</td>
+<td>3.2-4.0x</td>
+<td>🔴 严重偏离</td>
+</tr>
+<tr>
+<td><strong>GGII行业共识（新增）</strong></td>
+<td><strong>474万组</strong></td>
+<td><strong>1,144万组</strong></td>
+<td><strong>2.4x</strong></td>
+<td>🔴 <strong>最权威的第三方挑战</strong></td>
+</tr>
+<tr>
+<td>下游OEM搭载率（新增）</td>
+<td>合规OEM市场</td>
+<td>爱玛锂电仅5%搭载</td>
+<td>—</td>
+<td>🟡 锂电总需求可能低于预期</td>
+</tr>
+<tr>
+<td>共享车队规模（新增）</td>
+<td>214万组/年</td>
+<td>210万组/年推算</td>
+<td>~1.0x</td>
+<td>✅ 共享渠道自洽</td>
+</tr>
+</tbody>
+</table></div><p class="body-text"><strong>最终判断</strong>（置信度：★★★★☆）：</p>
+<ol class="doc-list"><li><p class="body-text"><strong>星恒72.5%市占率对应的474万组市场总量是&quot;国内合规两轮车锂电池PACK市场&quot;的子集</strong>——该口径排除：出口市场、电芯级出货、非合规白牌市场、OEM自产电池</li>
+<li><p class="body-text"><strong>GGII的30%+市占率更接近全口径行业共识</strong>——对应的1,144万组市场总量约为474万组的2.4倍</li>
+<li><p class="body-text"><strong>两个口径均可能是&quot;真实的&quot;</strong>——取决于定义。但尽调中需要明确：天保控股若按72.5%市占率估值，投资的是一个<strong>正在收窄的子市场</strong>，而非整个两轮车锂电池行业</li>
+<li><p class="body-text"><strong>共享渠道的60%累计份额可以自洽</strong>（年出货~200万组，5年累计~1000万组）</li>
+</ol>
+<hr />
+<h2>四、综合判断汇总</h2>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>#</th>
+<th>星恒声称</th>
+<th>可信度</th>
+<th>关键反证/支持</th>
+<th>谈判建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>传音合作是家用储能</td>
+<td>🟡 需进一步数据</td>
+<td>合同原文6品类（5消费电子+1储能）；传音20亿储能战略为星恒说法提供支撑</td>
+<td><strong>要求提供分品类PO明细</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>FY2026利润1.5亿</td>
+<td>🟡 偏乐观但非离谱</td>
+<td>Q1年化仅4,036万（27%目标）；但行业规律支持两轮车锂电供应商2.5-4%净利率（天能3.09%基准），4.1%在上沿</td>
+<td><strong>将预测与对赌条款挂钩；需Q2数据验证</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>FY2027利润2-3亿</td>
+<td>🔴 极不可信</td>
+<td>需净利率5-8%，位于行业上限区间；LMFP仅占1.9%营收，不足以驱动量级跃升</td>
+<td><strong>不作为估值基础；可作为对赌触发条件</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>客户转变由共享波动驱动</td>
+<td>🟡 部分属实</td>
+<td>OEM下降60-70%由垂直整合+ATL替代驱动（与共享无关）；共享侧主动策略成分显著</td>
+<td><strong>追问OEM客户维护投入；核实共享渠道份额是否稳定</strong></td>
+</tr>
+</tbody>
+</table></div><hr />
+<h2>五、数据缺口与后续行动</h2>
+<div class="table-wrapper"><table class="doc-table"><thead>
+<tr>
+<th>缺口</th>
+<th>优先级</th>
+<th>获取方式</th>
+<th>发现来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>钛氪Q1 2026分品类PO明细（储能模组 vs 消费电子）</td>
+<td>P0</td>
+<td>要求星恒提供</td>
+<td>合同覆盖面广，需确认实际交付品类</td>
+</tr>
+<tr>
+<td>FY2026 Q2（4-5月）经营数据</td>
+<td>P0</td>
+<td>要求星恒提供</td>
+<td>验证Q1改善趋势是否为季节性</td>
+</tr>
+<tr>
+<td>雅迪电池采购中星恒vs新能安vs天能的份额变化</td>
+<td>P1</td>
+<td>管理层访谈追问</td>
+<td>雅迪自建电池基地+引入新能安</td>
+</tr>
+<tr>
+<td>爱玛电池外采中星恒vs爱德邦（自研）的占比变化</td>
+<td>P1</td>
+<td>管理层访谈追问</td>
+<td>爱玛自研电池对星恒采购的替代程度</td>
+</tr>
+<tr>
+<td>哈啰电池采购中各供应商（星恒/亿纬锂能/其他）的份额</td>
+<td>P1</td>
+<td>管理层访谈或公开招标信息</td>
+<td>哈啰已引入亿纬锂能作为第二供应商</td>
+</tr>
+<tr>
+<td>传音ODM合同下消费电子品类的实际PO交付记录</td>
+<td>P1</td>
+<td>要求星恒提供</td>
+<td>确认是否为零交付</td>
+</tr>
+<tr>
+<td>储能业务分客户GM数据（麦田/德兰明海/传音各自）</td>
+<td>P1</td>
+<td>要求星恒提供</td>
+<td>区分储能亏损来源</td>
+</tr>
+<tr>
+<td>星恒在雅迪高端车型（冠能系列）的供应份额</td>
+<td>P2</td>
+<td>管理层访谈</td>
+<td>雅迪高端化战略转向新能安</td>
+</tr>
+</tbody>
+</table></div><hr />
+<p class="body-text"><em>数据来源：[A] 合同OCR / [B] 尽调收资Excel / [C] 行业公开数据（GGII/起点/鑫椤/EVTank） / [D] OpenClaw SearXNG搜索(2026-06-10) / [E] 项目分析报告</em></p>
+
+
+</body>
+</html>

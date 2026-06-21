@@ -152,7 +152,7 @@ pre code{background:none;color:inherit;font-size:13px}
 
 /* ── ECharts交互图表容器 ── */
 .echarts-chart{
-    width:100%;height:350px;margin:16px 0;background:#fff;
+    width:100%;min-height:0;margin:16px 0;background:#fff;
     border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.04);
     border:1px solid #e2e8f0;
 }
@@ -167,7 +167,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <a href="#top">回顶部</a>
 <a href="appendix_g.html">切换到桌面版</a>
 <span style="color:rgba(255,255,255,0.5);font-size:12px;margin-left:auto">
-  更新于 2026-06-21 17:42
+  更新于 2026-06-21 18:29
 </span>
 </div>
 <div id="top"></div>
@@ -354,6 +354,9 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <p class="body-text"><strong>来源</strong>：[A] OCR提取自 <code>尽调收资材料/2.13/大客户合同-2020、2021年/</code> 共约35份PDF合同（置信度：★★★★☆，OCR准确率有限，部分数字可能存在偏差）</p>
 <h5>2.2.2 2024-2025年客户合同核验证据（2026-06-03新增OCR分析）</h5>
 <p class="body-text">2024-2025年合同核验显示，2020-2021年发现的合同结构性风险<strong>未改善且在部分维度加深</strong>。以下为OCR核验的三个关键合同/合同群。</p>
+<details>
+<summary>2024-2025年客户合同核验详情（九号/松果/经销商）</summary>
+<div class="details-content">
 <p class="body-text"><strong>A. 九号物料采购框架协议（2025年新签）——高度买方友好的OEM框架</strong></p>
 <p class="body-text">九号（Segway-Ninebot）为星恒新开拓的高端电动两轮车OEM客户。合同为框架协议，由星恒电源(滁州)有限公司签署。</p>
 <p class="body-text">核心条款的尽调含义：</p>
@@ -525,6 +528,11 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <li><p class="body-text"><strong>交期差异化</strong>：481X模块7天/其他25天——暴露出星恒在481X之外的SKU上存货深度不足</li>
 <li><p class="body-text"><strong>窜货严格禁止</strong>保护了价格体系但限制了经销商的跨区域增长</li>
 </ol>
+</div>
+</details>
+<details>
+<summary>2023年客户合同OCR核验详情（滴滴补充协议/城满电关联交易/Amara Raja PI证据）</summary>
+<div class="details-content">
 <p class="body-text"><strong>D. 2023年客户合同OCR核验——滴滴/城满电/AMARA新发现</strong> 🔴（2026-06-03更新）</p>
 <p class="body-text">此前认为重大客户合同-2023目录为空（因原始目录下文件位于<code>重大客户合同-2023/重大客户合同-2023/</code>子路径）。经逐文件核查，该目录下有<strong>7份文件</strong>，其中3份此前未被任何报告覆盖。</p>
 <p class="body-text"><strong>D1. 滴滴补充协议（CON2023010900008）——15份历史协议的结算框架</strong> 🟡</p>
@@ -692,6 +700,9 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <p class="body-text"><strong>4. 客户层级确认为Tier-1</strong>：Amara Raja集团是印度Tier-1汽车零部件供应商（与博世/瓦尔塔同级），其锂电子公司采购星恒电芯说明星恒产品品质达到了国际OEM准入标准。但值得关注的是——56份PI为总价$1,162万的订单，而非年度框架合同。若Amara Raja转为更大规模的年度采购，对星恒海外营收将是重大增量。</p>
 <p class="body-text"><strong>5. 国轩高科技术许可风险（需高度警觉）</strong>：2024年6月，Amara Raja与国轩高科签署了磷酸铁锂电池技术许可协议（参见04主报告2.8.8节）。该协议使Amara Raja获得了自有磷酸铁锂电池制造的技术路线和产能建设路径，对星恒与Amara Raja的战略合作关系构成实质性威胁。该合作关系可能已从直接采购转向技术合作，或已终止。在估值建模中，不应将Amara Raja视为可持续的收入来源。</p>
 <p class="body-text"><strong>6. 时间窗口</strong>：所有PI签署于2023年7-8月，对应FY2024确认收入。在FY2024海外收入结构中，这笔约8,400万的印度订单可能占海外收入的相当比例。</p>
+</div>
+</details>
+<div class="echarts-chart" id="echarts_kh_amara"></div>
 <p class="body-text"><strong>D4. 2020-2021年历史合同验证——客户演变时间线确认</strong>（2026-06-03新增，Phase 3逐文件核查扩展）</p>
 <p class="body-text">对2020-2021年共约35份历史合同的代表性样本OCR核验（前期14份+本轮8份深度核查），验证客户演变叙事的准确性：</p>
 <div class="table-wrapper"><table class="doc-table"><thead>
@@ -759,6 +770,9 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 </tr>
 </tbody>
 </table></div><p class="body-text"><strong>以下为新增深度核查的5份合同详情</strong>：</p>
+<details>
+<summary>2020-2021年历史合同深度核查详情（D4a-D4e：深铃/小遛/富士达/快松果/青奇）</summary>
+<div class="details-content">
 <p class="body-text"><strong>D4a. 深铃(台铃)2021采购合同——二线OEM的10倍差价罚则</strong> 🔴</p>
 <div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
@@ -954,6 +968,8 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 </tr>
 </tbody>
 </table></div><p class="body-text"><strong>尽调判断</strong>：青奇2021合同采用了三方协议模式（青奇+苏州星恒+滁州星恒），而2020年合同仅苏州签约。这标志着滁州基地在共享客户中的供货主体地位正式确立——至2024年，青奇战略协议签约主体已完全切换为滁州星恒。滴滴(@didiglobal.com)邮箱的一致性确认了青奇为滴滴全资子公司，与D1中的滴滴补充协议形成完整证据链。滁州签约主体的普遍化在FY2020→FY2021期间完成，这一时点与苏州基地2023年产能利用率断崖式下降（61.4%→4.8%）高度吻合。</p>
+</div>
+</details>
 <p class="body-text"><strong>核心判断</strong>：历史合同验证附件F1客户4阶段演变框架总体准确。关键补充：</p>
 <ul class="doc-list"><li><p class="body-text">(a) 爱玛MFC条款存续至少7年未变——非恶化信号；</li>
 <li><p class="body-text">(b) 松果定价5年降39%——量化了共享客户议价权对利润的持续挤压；</li>
@@ -962,6 +978,9 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <li><p class="body-text">(e) <strong>快松果2020合同是共享客户&quot;黄金时代&quot;的唯一合同证据</strong>——30万组承诺+2%返点+15天回款，此后合同条件逐年恶化；</li>
 <li><p class="body-text">(f) <strong>滁州主体替代苏州主体在FY2020-FY2021期间完成</strong>——与苏州产能利用率断崖下降的时点吻合。</li>
 </ul>
+<details>
+<summary>各客户合同详细OCR分析与横向对比（爱玛/青奇/钛氪/麦田/德兰明海 + 横向对比总表）</summary>
+<div class="details-content">
 <p class="body-text"><strong>E. 爱玛2023采购框架合同——关联公司清单揭示分类异常原因</strong> 🔴</p>
 <p class="body-text"><strong>来源</strong>：[A] OCR提取自 <code>重大客户合同-2025/爱玛-2023采购框架合同-滁州.pdf</code>（24页，置信度：★★★☆☆，部分OCR识别有误差）</p>
 <div class="table-wrapper"><table class="doc-table"><thead>
@@ -1298,9 +1317,10 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 </tr>
 </tbody>
 </table></div><p class="body-text"><strong>尽调判断</strong>：德兰明海（BLUETTI，深圳）是全球便携储能头部品牌（2025年全球便携储能出货量Top 3，置信度 [D] ★★★★☆），通过星恒采购电芯/模组用于其便携储能和户用储能产品。合同条款对星恒偏不利——5%质保金+3年质保期+2倍违约金+供应优先级。不过BLUETTI作为有品牌溢价的终端厂家，其采购规模和持续性优于麦田等同层级储能客户。</p>
-<div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:17px"><strong>💡 NOTE</strong><br><p>💡
+<blockquote>
+<p class="body-text">[!NOTE] 💡
 <strong>I节德兰明海背景</strong>：[D] 基于公开信息推断。BLUETTI（德兰明海旗下品牌）为全球便携储能知名品牌，2024-2025年通过Kickstarter和Amazon渠道在欧美市场占据较高份额，与Jackery（华宝新能）、EcoFlow（正浩创新）并称&quot;便携储能三强&quot;。此处背景描述置信度★★★☆☆（无2026年最新公开财务数据支持）。</p>
-</div>
+</blockquote>
 <p class="body-text"><strong>J. 2024-2025年客户合同条款横向对比总表</strong></p>
 <div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
@@ -1460,7 +1480,10 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <td>窜货重罚+竞品禁售</td>
 </tr>
 </tbody>
-</table></div><p class="body-text"><strong>来源汇总</strong>：[A] OCR提取（九号/松果/爱玛/青奇/钛氪/德兰明海/麦田/经销商协议共约15份PDF合同，置信度★★★☆☆-★★★★☆）；[B] 前十大客户清单2023-202603.xlsx；[D] 推断（德兰明海市场地位等）。</p>
+</table></div><div class="echarts-chart" id="echarts_kh_contracts"></div>
+<p class="body-text"><strong>来源汇总</strong>：[A] OCR提取（九号/松果/爱玛/青奇/钛氪/德兰明海/麦田/经销商协议共约15份PDF合同，置信度★★★☆☆-★★★★☆）；[B] 前十大客户清单2023-202603.xlsx；[D] 推断（德兰明海市场地位等）。</p>
+</div>
+</details>
 <h4>阶段三：共享超越OEM（2023-2024）——决定性转折</h4>
 <p class="body-text"><strong>2023年客户结构</strong>（来源：前十大客户清单2023 [B/尽调收资材料]）：</p>
 <div class="table-wrapper"><table class="doc-table"><thead>
@@ -1759,7 +1782,9 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <td>↓ 退出前10</td>
 </tr>
 </tbody>
-</table></div><p class="body-text"><strong>Q1 2026客户结构</strong>（最新数据 [B/尽调收资材料]）：</p>
+</table></div><div class="echarts-chart" id="echarts_kh_concentration"></div>
+<div class="echarts-chart" id="echarts_kh_evolution"></div>
+<p class="body-text"><strong>Q1 2026客户结构</strong>（最新数据 [B/尽调收资材料]）：</p>
 <div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
 <th>排名</th>
