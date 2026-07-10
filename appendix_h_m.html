@@ -43,18 +43,18 @@ strong{color:#1a365d}
 }
 table.doc-table{
     width:auto;min-width:100%;border-collapse:collapse;margin:0;
-    font-size:14px;line-height:1.5;
+    font-size:14px;line-height:1.6;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif;
     table-layout:auto;
 }
 table.doc-table thead{background:#1a365d;}
 table.doc-table th{
     color:#fff;padding:8px 8px;text-align:left;
-    font-size:12px;font-weight:600;white-space:normal;
+    font-size:13px;font-weight:600;white-space:normal;
     word-wrap:break-word;overflow-wrap:break-word;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
 }
 table.doc-table td{
     padding:7px 8px;border-bottom:1px solid #e2e8f0;
-    font-size:13px;vertical-align:top;
+    font-size:14px;vertical-align:top;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif;
     word-wrap:break-word;overflow-wrap:break-word;word-break:break-word;
     min-width:65px;
 }
@@ -101,10 +101,10 @@ blockquote{
 }
 
 /* ── 代码块 ── */
-code{background:#f7fafc;padding:2px 4px;border-radius:3px;font-size:13px}
+code{background:#f7fafc;padding:2px 4px;border-radius:3px;font-size:14px;font-family:"Courier New","Consolas",monospace}
 pre{background:#1a202c;color:#e2e8f0;padding:14px;border-radius:6px;
-    margin:14px 0;overflow-x:auto;line-height:1.5;font-size:13px}
-pre code{background:none;color:inherit;font-size:13px}
+    margin:14px 0;overflow-x:auto;line-height:1.6}
+pre code{background:none;color:inherit;font-size:14px;font-family:"Courier New","Consolas",monospace}
 
 /* ── 推论卡片 ── */
 .corollary-card{
@@ -167,7 +167,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <a href="#top">回顶部</a>
 <a href="appendix_h.html">切换到桌面版</a>
 <span style="color:rgba(255,255,255,0.5);font-size:12px;margin-left:auto">
-  更新于 2026-06-21 18:29
+  更新于 2026-07-11 07:42
 </span>
 </div>
 <div id="top"></div>
@@ -178,8 +178,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <h2>一、可比公司全维度数据（估值基础）</h2>
 <h3>1.1 锂电行业可比公司——港股为主，A股仅作行业参照</h3>
 <p class="body-text">星恒拟港股IPO，因此可比公司<strong>以港股锂电上市公司为核心估值锚</strong>。宁德时代为A+H双重上市公司（A股300750.SZ / H股03750.HK），以下数据源自iFind数据浏览器——iFind返回的主代码为A股300750.SZ，PE=22.22x为<strong>A股PE</strong>（300750.SZ，2026-06-15实时）。H股03750.HK收盘价704.50 HKD，以EPS=17.93元计，隐含H股PE约36.3x——<strong>H股较A股溢价约63%</strong>，方向与典型A-H溢价相反（H股流通盘仅约5%导致稀缺性溢价）。由于116x规模差距本身已导致结构不可比（详见1.2节），且H股PE(36x)反而高于A股PE(22x)，宁德时代无论取A股或H股PE均不纳入估值锚推导。</p>
-<div class="callout callout-caution" style="background:#fffff0;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>🟡 CAUTION</strong><br><p>🟡
-<strong>A股PE不可直接混入港股估值锚</strong>：宁德时代A股PE 22.22x（300750.SZ），H股03750.HK收盘价704.50 HKD，隐含PE约36.3x——<strong>H股较A股溢价63%</strong>（与典型A-H溢价方向相反，因H股流通盘仅约5%），其H股PE反而高于A股PE。券商32.86x PE均值存在两个方法论问题：(1) 纳入了营收规模116倍于星恒的宁德时代——无论取A股PE(22.22x, 300750.SZ)还是H股PE(约36.3x, 03750.HK)，116x营收规模差距（CATL 4,237亿 vs 星恒36.36亿，FY2025）已使其结构不可比（详见1.2节规模不可比的理论与实证依据）；(2) 纳入了规模差距&gt;5x的不可比公司（中创新航8.5x/瑞浦兰钧3.6x营收倍率）。以下可比分析严格以可比的纯港股为锚。[K]</p>
+<div class="callout callout-caution" style="background:#fffff0;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>🟡 注意</strong><br><p><strong>A股PE不可直接混入港股估值锚</strong>：宁德时代A股PE 22.22x（300750.SZ），H股03750.HK收盘价704.50 HKD，隐含PE约36.3x——<strong>H股较A股溢价63%</strong>（与典型A-H溢价方向相反，因H股流通盘仅约5%），其H股PE反而高于A股PE。券商32.86x PE均值存在两个方法论问题：(1) 纳入了营收规模116倍于星恒的宁德时代——无论取A股PE(22.22x, 300750.SZ)还是H股PE(约36.3x, 03750.HK)，116x营收规模差距（CATL 4,237亿 vs 星恒36.36亿，FY2025）已使其结构不可比（详见1.2节规模不可比的理论与实证依据）；(2) 纳入了规模差距&gt;5x的不可比公司（中创新航8.5x/瑞浦兰钧3.6x营收倍率）。以下可比分析严格以可比的纯港股为锚。[K]</p>
 </div>
 <div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
@@ -466,8 +465,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 </tr>
 </tbody>
 </table></div><p class="body-text"><strong>数据来源</strong>：中信证券方案初稿引用的A股可比交易数据 [B]。</p>
-<div class="callout callout-caution" style="background:#fffff0;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>🟡 CAUTION</strong><br><p>🟡
-资产基础法的A股可比交易仅佛塑科技1例可获得。样本量n=1，PB 1.13x作为锚点的统计稳健性受限于此。更广泛的资产基础法可比交易数据库（如通过CVSource/Wind并购数据库扩充至≥3例）将提高估值区间可信度。[K]</p>
+<div class="callout callout-caution" style="background:#fffff0;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>🟡 注意</strong><br><p>资产基础法的A股可比交易仅佛塑科技1例可获得。样本量n=1，PB 1.13x作为锚点的统计稳健性受限于此。更广泛的资产基础法可比交易数据库（如通过CVSource/Wind并购数据库扩充至≥3例）将提高估值区间可信度。[K]</p>
 </div>
 <hr />
 <h2>二、PE估值法——正力新能锚点+折价链</h2>
@@ -548,8 +546,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 → 完整理论区间：11.5-16.2x
 </code></pre>
 <p class="body-text">综上，星恒合理PE约<strong>12-16x</strong>（理论全区间）。但极端乐观端（16x）假设「无质量折价」——即星恒与正力新能在盈利质量上无差异——与事实不符（NPM 1.24% vs 9.98%）。因此采用<strong>12-15x</strong>作为可辩护的实操区间（不含极端乐观假设），其中15x对应轻质量折价（-15%）+轻规模折价（-10%）。[K]</p>
-<div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:17px"><strong>💡 NOTE</strong><br><p>💡
-<strong>折价链的局限性</strong>：规模折价和盈利质量折价的具体幅度属于框架性估算，非精确计量经济学推导。Damodaran框架提供方向性指导，精确幅度需基于更广泛的同行业可比交易数据库回归分析。在n=1可比公司（正力新能）的限制下，折价链的精度受限于样本量。[K]</p>
+<div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:17px"><strong>💡 说明</strong><br><p><strong>折价链的局限性</strong>：规模折价和盈利质量折价的具体幅度属于框架性估算，非精确计量经济学推导。Damodaran框架提供方向性指导，精确幅度需基于更广泛的同行业可比交易数据库回归分析。在n=1可比公司（正力新能）的限制下，折价链的精度受限于样本量。[K]</p>
 </div>
 <h3>2.3 PE估值结果</h3>
 <div class="table-wrapper"><table class="doc-table"><thead>
@@ -782,8 +779,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <p class="body-text">行业基准数据来源: iFinD数据浏览器F9个股资料（年报原始披露），OpenClaw研究代理查询确认（2026-06-21） | <strong>置信度</strong>: ⭐⭐⭐（折溢价率为基于可得行业数据的专家判断）</p>
 </blockquote>
 <p class="body-text"><strong>天保PS 1.0x（36亿）约为修正后PS上限（0.77x/28.0亿）的约1.3倍——溢价约30%，偏高但非严重溢价。</strong></p>
-<div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:17px"><strong>💡 NOTE</strong><br><p>💡
-<strong>方法论修正说明（2026-06-21）</strong>：此前版本使用「双层折价」框架（仅考虑折价因子，得出PS 0.23-0.51x/8.4-18.5亿），存在方法论不对称问题——只考虑折价不考虑溢价，系统性低估。修正后采用「折溢价对称调整」框架，同时考虑星恒独有的溢价因子（市占率龙头+固相法期权）和折价因子（安全尾部风险+客户集中增量），并基于iFinD行业基准数据锚定各因子幅度。修正后PS区间0.41-0.77x（14.9-28.0亿），天保PS 1.0x溢价幅度从约100%收窄至约30%。</p>
+<div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:17px"><strong>💡 说明</strong><br><p><strong>方法论修正说明（2026-06-21）</strong>：此前版本使用「双层折价」框架（仅考虑折价因子，得出PS 0.23-0.51x/8.4-18.5亿），存在方法论不对称问题——只考虑折价不考虑溢价，系统性低估。修正后采用「折溢价对称调整」框架，同时考虑星恒独有的溢价因子（市占率龙头+固相法期权）和折价因子（安全尾部风险+客户集中增量），并基于iFinD行业基准数据锚定各因子幅度。修正后PS区间0.41-0.77x（14.9-28.0亿），天保PS 1.0x溢价幅度从约100%收窄至约30%。</p>
 </div>
 <hr />
 <h2>四、PB估值法——资产基础法</h2>
@@ -838,8 +834,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <li><p class="body-text">专利/客户关系是否满足「可辨认」标准需资产评估师逐项认定</li>
 <li><p class="body-text">星恒净利仅0.45亿，&quot;盈利&quot;优势微弱</li>
 </ul>
-<div class="callout callout-warning" style="background:#fffbeb;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>⚠️ WARNING</strong><br><p>⚠️
-若土地增值低于预期、或专利/客户关系无法确认为可辨认无形资产，PB应向1.13x收敛——对应26.01亿整体估值。[K]</p>
+<div class="callout callout-warning" style="background:#fffbeb;border-left:4px solid #d69e2e;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px"><strong>⚠️ 警告</strong><br><p>若土地增值低于预期、或专利/客户关系无法确认为可辨认无形资产，PB应向1.13x收敛——对应26.01亿整体估值。[K]</p>
 </div>
 <hr />
 <h2>五、PS与PB的交叉验证——估值收敛</h2>
@@ -882,8 +877,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:24px 0}
 <hr />
 <h2>六、方案一（13.73%少数股权）——概率加权期望价值</h2>
 <h3>6.1 收敛情景量化（统一使用PRE-IPO估值=IPO市值×85%）</h3>
-<div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:17px"><strong>💡 NOTE</strong><br><p>💡
-<strong>方法论说明</strong>：以下PS法和PE法基于不同估值锚点，得出的整体估值不可直接对比——PE法估值远低于PS法估值，根源在于星恒NPM仅1.24%（FY2025）/2.0%（FY2027E假设），PE×NPM隐含的PS仅为0.36x（vs中创新航市场PS 0.85x）。PS和PE两种方法的分歧本身说明：<strong>对于微利企业，PE法不稳定性高、不适合作为主估值方法</strong>（参见第十章适用性总结）。以下情景分析以PS法为主，PE法仅作参考。[K]</p>
+<div class="callout callout-note" style="background:#eff6ff;border-left:4px solid #3182ce;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;color:#1e40af;font-size:17px"><strong>💡 说明</strong><br><p><strong>方法论说明</strong>：以下PS法和PE法基于不同估值锚点，得出的整体估值不可直接对比——PE法估值远低于PS法估值，根源在于星恒NPM仅1.24%（FY2025）/2.0%（FY2027E假设），PE×NPM隐含的PS仅为0.36x（vs中创新航市场PS 0.85x）。PS和PE两种方法的分歧本身说明：<strong>对于微利企业，PE法不稳定性高、不适合作为主估值方法</strong>（参见第十章适用性总结）。以下情景分析以PS法为主，PE法仅作参考。[K]</p>
 </div>
 <div class="table-wrapper"><table class="doc-table"><thead>
 <tr>
