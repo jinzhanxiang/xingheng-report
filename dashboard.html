@@ -13,162 +13,499 @@
   --c-text:#2d3748;--c-text2:#4a5568;
 }
 body{font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif;color:var(--c-text);background:var(--c-bg);line-height:1.8;font-size:16px;min-height:100vh}
-.back-nav{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:var(--c-card);border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:100}
-.back-nav a{color:var(--c-blue);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:6px;transition:.15s}
+.back-nav{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:var(--c-card);border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:8px}
+.back-nav .nav-left,.back-nav .nav-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.back-nav a{color:var(--c-blue);text-decoration:none;font-size:13px;display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:6px;transition:.15s}
 .back-nav a:hover{background:#ebf8ff;text-decoration:none}
+.back-nav a.nav-emphasis{background:#fef5e7;color:#b7791f;font-weight:600;border:1px solid #fbd38d}
+.back-nav a.nav-emphasis:hover{background:#fbd38d;color:#7c2d12}
 .project-title{font-size:13px;color:var(--c-muted)}
 
-.hero{background:linear-gradient(135deg,#1a365d,#2d3748);color:#fff;padding:36px 20px 28px;text-align:center}
-.hero h1{font-size:28px;margin-bottom:8px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
-.hero p{color:rgba(255,255,255,.7);font-size:14px;margin-top:6px}
-.hero-stats{display:flex;justify-content:center;gap:30px;margin-top:18px;flex-wrap:wrap}
+.hero{background:linear-gradient(135deg,#1a365d,#2d3748);color:#fff;padding:32px 20px 24px;text-align:center}
+.hero h1{font-size:26px;margin-bottom:6px;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.hero p{color:rgba(255,255,255,.7);font-size:13px;margin-top:4px}
+.hero-stats{display:flex;justify-content:center;gap:24px;margin-top:14px;flex-wrap:wrap}
 .hero-stat{color:#fff}
-.hero-stat .num{font-size:26px;font-weight:800;font-family:-apple-system,"PingFang SC",sans-serif}
-.hero-stat .lbl{font-size:12px;color:rgba(255,255,255,.7);margin-top:2px}
+.hero-stat .num{font-size:24px;font-weight:800;font-family:-apple-system,"PingFang SC",sans-serif}
+.hero-stat .lbl{font-size:11px;color:rgba(255,255,255,.7);margin-top:2px}
+.hero-stat.danger .num{color:#fbd38d}
+.hero-stat.warn .num{color:#fbd38d}
+.hero-stat.success .num{color:#9ae6b4}
 
 /* Tab 切换 */
 .tabs{display:flex;justify-content:center;gap:0;background:var(--c-card);border-bottom:1px solid #e2e8f0;position:sticky;top:53px;z-index:99}
-.tab{padding:14px 28px;cursor:pointer;font-size:15px;font-weight:600;color:var(--c-muted);border-bottom:3px solid transparent;transition:.2s;font-family:-apple-system,"PingFang SC",sans-serif}
+.tab{padding:14px 24px;cursor:pointer;font-size:14px;font-weight:600;color:var(--c-muted);border-bottom:3px solid transparent;transition:.2s;font-family:-apple-system,"PingFang SC",sans-serif}
 .tab:hover{color:var(--c-accent)}
 .tab.active{color:var(--c-accent);border-bottom-color:var(--c-blue);background:linear-gradient(180deg,transparent,rgba(49,130,206,.04))}
 .tab .tab-count{display:inline-block;background:var(--c-muted);color:#fff;font-size:11px;padding:1px 7px;border-radius:8px;margin-left:6px;vertical-align:middle}
 .tab.active .tab-count{background:var(--c-blue)}
 
-.container{max-width:960px;margin:0 auto;padding:24px 20px 60px}
-
+.container{max-width:960px;margin:0 auto;padding:20px 20px 60px}
 .tab-panel{display:none;animation:fadeIn .3s ease}
 .tab-panel.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
+/* 重要决策横幅 */
+.decision-banner{background:linear-gradient(135deg,#7c2d12,#c53030);color:#fff;padding:18px 22px;border-radius:10px;margin-bottom:20px;display:flex;align-items:center;gap:18px;border:2px solid #fbd38d;box-shadow:0 4px 16px rgba(197,48,48,.15)}
+.decision-banner .db-icon{font-size:32px;flex-shrink:0}
+.decision-banner .db-body{flex:1}
+.decision-banner .db-title{font-size:17px;font-weight:700;margin-bottom:4px;font-family:-apple-system,"PingFang SC",sans-serif}
+.decision-banner .db-desc{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.decision-banner .db-link{display:inline-block;background:#fbd38d;color:#7c2d12;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap;font-family:-apple-system,"PingFang SC",sans-serif}
+.decision-banner .db-link:hover{background:#fff}
+
 /* 时间线样式 */
 .timeline{position:relative;padding-left:32px;margin-top:20px}
 .timeline::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:3px;background:linear-gradient(180deg,var(--c-blue),var(--c-accent));border-radius:2px}
-.tl-item{position:relative;padding:0 0 32px 20px}
+.tl-item{position:relative;padding:0 0 28px 20px}
 .tl-item:last-child{padding-bottom:0}
 .tl-dot{position:absolute;left:-26px;top:6px;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--c-blue);box-shadow:0 0 0 4px rgba(49,130,206,.12)}
 .tl-item.tl-main .tl-dot{border-color:var(--c-accent);background:var(--c-accent);box-shadow:0 0 0 4px rgba(26,54,93,.15)}
 .tl-item.tl-thirdparty .tl-dot{border-color:var(--c-danger);background:var(--c-danger)}
 .tl-item.tl-meeting .tl-dot{border-color:var(--c-warning);background:var(--c-warning)}
 .tl-item.tl-first .tl-dot{border-color:var(--c-success);background:var(--c-success)}
+.tl-item.tl-decision .tl-dot{border-color:#7c2d12;background:#7c2d12;box-shadow:0 0 0 5px rgba(124,45,18,.2);width:20px;height:20px;left:-27px;top:5px}
 .tl-date{font-size:12px;color:var(--c-muted);font-family:-apple-system,"PingFang SC",sans-serif;letter-spacing:.5px}
-.tl-title{font-size:17px;font-weight:700;color:var(--c-accent);margin:4px 0 6px;font-family:-apple-system,"PingFang SC",sans-serif}
-.tl-desc{font-size:15px;color:var(--c-text2);margin-bottom:10px}
-.tl-links{display:flex;flex-wrap:wrap;gap:8px}
-.tl-link{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:#edf2f7;color:var(--c-blue);border-radius:6px;text-decoration:none;font-size:13px;font-family:-apple-system,"PingFang SC",sans-serif;transition:.15s;border:1px solid transparent}
+.tl-title{font-size:16px;font-weight:700;color:var(--c-accent);margin:3px 0 5px;font-family:-apple-system,"PingFang SC",sans-serif}
+.tl-item.tl-decision .tl-title{color:#7c2d12}
+.tl-desc{font-size:14px;color:var(--c-text2);margin-bottom:8px}
+.tl-links{display:flex;flex-wrap:wrap;gap:6px}
+.tl-link{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;background:#edf2f7;color:var(--c-blue);border-radius:5px;text-decoration:none;font-size:13px;font-family:-apple-system,"PingFang SC",sans-serif;transition:.15s;border:1px solid transparent}
 .tl-link:hover{background:#bee3f8;color:var(--c-accent);border-color:var(--c-blue);transform:translateY(-1px)}
+.tl-link.tl-link-warn{background:#fef5e7;color:#7c2d12;border-color:#fbd38d}
+.tl-link.tl-link-warn:hover{background:#fbd38d;color:#fff}
 
 /* 报告总览样式 */
-.report-group{margin-bottom:24px}
-.rg-title{font-size:14px;font-weight:700;color:var(--c-muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;font-family:-apple-system,"PingFang SC",sans-serif;padding-left:8px;border-left:3px solid var(--c-blue)}
-.rg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
-.r-card{background:var(--c-card);border:1px solid #e2e8f0;border-radius:8px;padding:14px 16px;display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;transition:.15s}
+.report-group{margin-bottom:22px}
+.rg-title{font-size:13px;font-weight:700;color:var(--c-muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;font-family:-apple-system,"PingFang SC",sans-serif;padding-left:8px;border-left:3px solid var(--c-blue)}
+.rg-title.rg-decision{border-left-color:#7c2d12;color:#7c2d12}
+.rg-title.rg-supplementary{border-left-color:var(--c-warning);color:#7c2d12}
+.rg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.r-card{background:var(--c-card);border:1px solid #e2e8f0;border-radius:8px;padding:12px 14px;display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;transition:.15s}
 .r-card:hover{border-color:var(--c-blue);box-shadow:0 4px 12px rgba(49,130,206,.1);transform:translateY(-2px)}
-.r-emoji{font-size:24px;flex-shrink:0}
+.r-card.r-card-decision{border-color:#fbd38d;background:linear-gradient(135deg,#fffaf0,#fef5e7)}
+.r-card.r-card-decision:hover{border-color:#c53030;box-shadow:0 4px 12px rgba(197,48,48,.15)}
+.r-emoji{font-size:22px;flex-shrink:0}
 .r-body{flex:1;min-width:0}
-.r-name{font-size:14px;font-weight:600;color:var(--c-accent);margin-bottom:2px;font-family:-apple-system,"PingFang SC",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.r-badge{display:inline-block;background:#fef5e7;color:#b7791f;font-size:11px;padding:1px 7px;border-radius:8px;margin-left:4px;vertical-align:middle;font-family:-apple-system,sans-serif}
+.r-name{font-size:13px;font-weight:600;color:var(--c-accent);margin-bottom:2px;font-family:-apple-system,"PingFang SC",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.r-badge{display:inline-block;background:#fef5e7;color:#b7791f;font-size:10px;padding:1px 6px;border-radius:8px;margin-left:4px;vertical-align:middle;font-family:-apple-system,sans-serif}
 .r-badge.b-main{background:#e6fffa;color:#234e52}
-.r-arrow{color:var(--c-muted);font-size:14px;transition:.15s}
+.r-badge.b-new{background:#fef5e7;color:#7c2d12;font-weight:700}
+.r-badge.b-warn{background:#fed7d7;color:#742a2a}
+.r-arrow{color:var(--c-muted);font-size:14px;transition:.15s;flex-shrink:0}
 .r-card:hover .r-arrow{color:var(--c-blue);transform:translateX(3px)}
+.r-card.r-card-decision .r-name{color:#7c2d12}
 
-.footer{text-align:center;color:var(--c-muted);font-size:13px;margin-top:30px;padding:20px 0;border-top:1px solid #e2e8f0}
+/* 关键数据卡片 */
+.kpi-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:24px}
+.kpi{background:var(--c-card);border:1px solid #e2e8f0;border-radius:8px;padding:12px 14px}
+.kpi-lbl{font-size:11px;color:var(--c-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;font-family:-apple-system,sans-serif}
+.kpi-val{font-size:18px;font-weight:800;color:var(--c-accent);font-family:-apple-system,"PingFang SC",sans-serif;line-height:1.3}
+.kpi-val.danger{color:#c53030}
+.kpi-val.warn{color:#b7791f}
+.kpi-val.success{color:#38a169}
+.kpi-sub{font-size:11px;color:var(--c-muted);margin-top:2px}
+
+.footer{text-align:center;color:var(--c-muted);font-size:12px;margin-top:30px;padding:20px 0;border-top:1px solid #e2e8f0}
+.footer a{color:var(--c-blue);text-decoration:none}
 
 @media(max-width:600px){
-  .hero h1{font-size:22px}
-  .hero-stat .num{font-size:20px}
+  .hero h1{font-size:20px}
+  .hero-stat .num{font-size:18px}
   .tabs{top:53px}
-  .tab{padding:12px 14px;font-size:14px}
+  .tab{padding:10px 12px;font-size:13px}
   .tl-links{flex-direction:column}
   .tl-link{width:100%;justify-content:center}
-  .rg-grid{grid-template-columns:1fr}
+  .rg-grid,.kpi-strip{grid-template-columns:1fr}
+  .decision-banner{flex-direction:column;text-align:center;gap:10px}
 }
 </style>
 </head>
 <body>
 
 <div class="back-nav">
-  <a href="https://jinzhanxiang.github.io/tianbao-projects/">← 返回报告中心</a>
-  <span class="project-title">天保控股 · 项目管理</span>
+  <div class="nav-left">
+    <a href="https://jinzhanxiang.github.io/tianbao-projects/">← 返回主中心</a>
+    <a href="index.html">📋 简易目录</a>
+  </div>
+  <span class="project-title">天保控股 · 星恒电源并购项目</span>
+  <div class="nav-right">
+    <a href="index_m.html" class="nav-emphasis">📱 切换手机版 →</a>
+  </div>
 </div>
 
 <div class="hero">
   <h1>⭐ 星恒电源 · 投资并购分析</h1>
-  <p>重大并购项目 · 已立项 · 17 份尽调报告 · 双视图导航</p>
+  <p>重大并购项目 · 22 份尽调报告 · 1 份专题会决策（暂缓推进）· v2 双视图</p>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="num">16</div><div class="lbl">报告总数</div></div>
-    <div class="hero-stat"><div class="num">7</div><div class="lbl">时间节点</div></div>
-    <div class="hero-stat"><div class="num">6 版</div><div class="lbl">综合分析</div></div>
+    <div class="hero-stat success"><div class="num">23</div><div class="lbl">网站文件</div></div>
+    <div class="hero-stat"><div class="num">22</div><div class="lbl">桌面报告</div></div>
+    <div class="hero-stat"><div class="num">22</div><div class="lbl">手机报告</div></div>
+    <div class="hero-stat danger"><div class="num">1</div><div class="lbl">决策</div></div>
   </div>
 </div>
 
 <div class="tabs">
-  <div class="tab active" data-tab="timeline">📅 时间线视图<span class="tab-count">7</span></div>
-  <div class="tab" data-tab="reports">📋 全部报告总览<span class="tab-count">16</span></div>
+  <div class="tab active" data-tab="timeline">📅 时间线视图<span class="tab-count">8</span></div>
+  <div class="tab" data-tab="reports">📋 全部报告总览<span class="tab-count">22</span></div>
+  <div class="tab" data-tab="decision">🛑 决策记录<span class="tab-count">1</span></div>
 </div>
 
 <div class="container">
 
+  <!-- 决策横幅（顶部固定） -->
+  <div class="decision-banner">
+    <div class="db-icon">🛑</div>
+    <div class="db-body">
+      <div class="db-title">2026-07-02 专题会决定：星恒电源项目暂缓推进</div>
+      <div class="db-desc">晓龙同志主持专题会议，原则同意项目工作专班汇报，<strong>决定暂缓推进星恒电源项目</strong>。核心原因：①独立估值约 21 亿 vs 管理层报价 40 亿，PE &gt;80倍超 15-20 倍红线；②天保基建装入新能源形成双主业结构性约束；③法律尽调 31 个问题。</div>
+    </div>
+    <a href="decision_20260702.html" class="db-link" target="_blank">阅读决策全文 →</a>
+  </div>
+
+  <div class="kpi-strip">
+    <div class="kpi"><div class="kpi-lbl">管理层报价</div><div class="kpi-val danger">40 亿元</div><div class="kpi-sub">13.73% 股权对价 5 亿</div></div>
+    <div class="kpi"><div class="kpi-lbl">独立估值（附件H）</div><div class="kpi-val success">~21 亿元</div><div class="kpi-sub">PS 0.57x 中枢估值</div></div>
+    <div class="kpi"><div class="kpi-lbl">PE 倍数</div><div class="kpi-val danger">&gt;80 倍</div><div class="kpi-sub">超并购市场 15-20 倍红线</div></div>
+    <div class="kpi"><div class="kpi-lbl">法律问题</div><div class="kpi-val warn">31 个</div><div class="kpi-sub">6 家标的公司均有问题</div></div>
+    <div class="kpi"><div class="kpi-lbl">决策</div><div class="kpi-val danger">暂缓推进</div><div class="kpi-sub">2026-07-02 专题会</div></div>
+  </div>
+
   <div class="tab-panel active" id="panel-timeline">
     <div class="timeline">
-    <div class="tl-item tl-thirdparty">
-      <div class="tl-dot"></div>
-      <div class="tl-date">2026-06-23</div>
-      <div class="tl-title">📜 法律尽职调查专项分析</div>
-      <div class="tl-desc">允公律所出具的法律尽调报告，指出6家标的公司存在31个问题</div>
-      <div class="tl-links"><a href="https://jinzhanxiang.github.io/xingheng-report/appendix_a.html" class="tl-link" target="_blank"><span>⚖️</span>法律尽调报告</a></div>
-    </div>
-    <div class="tl-item tl-main">
-      <div class="tl-dot"></div>
-      <div class="tl-date">2026-06-22</div>
-      <div class="tl-title">🔄 综合分析报告（第6版）</div>
-      <div class="tl-desc">16份报告的完整尽调分析，涵盖商业/法律/财务/估值等维度</div>
-      <div class="tl-links"><a href="https://jinzhanxiang.github.io/xingheng-report/report_main.html" class="tl-link" target="_blank"><span>📊</span>主报告</a></div>
-    </div>
-    <div class="tl-item tl-analysis">
-      <div class="tl-dot"></div>
-      <div class="tl-date">2026-06-21</div>
-      <div class="tl-title">🔗 锂电池产业链纵横分析</div>
-      <div class="tl-desc">投资标的推荐分析，覆盖上游材料/电芯/PACK/回收全链条</div>
-      <div class="tl-links"><a href="https://jinzhanxiang.github.io/xingheng-report/appendix_i.html" class="tl-link" target="_blank"><span>🔗</span>产业链分析</a></div>
-    </div>
-    <div class="tl-item tl-analysis">
-      <div class="tl-dot"></div>
-      <div class="tl-date">2026-06-15</div>
-      <div class="tl-title">📐 估值分析专项</div>
-      <div class="tl-desc">多方法交叉验证估值分析（DCF/可比交易/可比公司）</div>
-      <div class="tl-links"><a href="https://jinzhanxiang.github.io/xingheng-report/appendix_h.html" class="tl-link" target="_blank"><span>📐</span>估值分析</a></div>
-    </div>
-    <div class="tl-item tl-meeting">
-      <div class="tl-dot"></div>
-      <div class="tl-date">2026-06-15</div>
-      <div class="tl-title">📋 专题会汇报</div>
-      <div class="tl-desc">关于收购星恒电源股权项目方案相关事宜的汇报</div>
-      <div class="tl-links"><a href="https://jinzhanxiang.github.io/xingheng-report/meeting_briefing.html" class="tl-link" target="_blank"><span>📋</span>会议汇报</a></div>
-    </div>
-    <div class="tl-item tl-analysis">
-      <div class="tl-dot"></div>
-      <div class="tl-date">2026-06-15</div>
-      <div class="tl-title">💎 收购方案综合分析</div>
-      <div class="tl-desc">券商方案主框架分析，含 4 套方案对比</div>
-      <div class="tl-links"><a href="https://jinzhanxiang.github.io/xingheng-report/proposal_analysis.html" class="tl-link" target="_blank"><span>💎</span>方案分析</a><a href="https://jinzhanxiang.github.io/xingheng-report/appendix_b.html" class="tl-link" target="_blank"><span>🎯</span>路径分析</a></div>
-    </div>
-    <div class="tl-item tl-first">
-      <div class="tl-dot"></div>
-      <div class="tl-date">2026-05-15</div>
-      <div class="tl-title">🌱 星恒电源商业尽调首版</div>
-      <div class="tl-desc">首版商业分析报告，包含行业/竞争/财务三大附件</div>
-      <div class="tl-links"><a href="https://jinzhanxiang.github.io/xingheng-report/appendix_c.html" class="tl-link" target="_blank"><span>📈</span>竞争力</a><a href="https://jinzhanxiang.github.io/xingheng-report/appendix_d.html" class="tl-link" target="_blank"><span>💰</span>财务</a><a href="https://jinzhanxiang.github.io/xingheng-report/appendix_e.html" class="tl-link" target="_blank"><span>🏭</span>技术</a><a href="https://jinzhanxiang.github.io/xingheng-report/appendix_f.html" class="tl-link" target="_blank"><span>🔬</span>固相法</a><a href="https://jinzhanxiang.github.io/xingheng-report/appendix_g.html" class="tl-link" target="_blank"><span>🔍</span>客户</a></div>
-    </div>
+      <div class="tl-item tl-decision">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-07-02</div>
+        <div class="tl-title">🛑 专题会决策 · 项目暂缓推进</div>
+        <div class="tl-desc">晓龙同志主持专题会议，原则同意项目专班汇报，决定暂缓推进星恒电源项目。核心原因：估值性价比不高、装入天保基建形成双主业约束、法律尽调 31 个问题。</div>
+        <div class="tl-links">
+          <a href="decision_20260702.html" class="tl-link tl-link-warn" target="_blank"><span>🛑</span>决策全文</a>
+          <a href="decision_20260702_m.html" class="tl-link" target="_blank"><span>📱</span>手机版</a>
+        </div>
+      </div>
+      <div class="tl-item tl-thirdparty">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-06-23</div>
+        <div class="tl-title">📜 法律尽职调查专项分析</div>
+        <div class="tl-desc">允公律所出具的法律尽调报告，指出6家标的公司存在31个问题</div>
+        <div class="tl-links"><a href="appendix_a.html" class="tl-link" target="_blank"><span>⚖️</span>法律尽调报告</a></div>
+      </div>
+      <div class="tl-item tl-main">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-06-22</div>
+        <div class="tl-title">🔄 综合分析报告（第6版）</div>
+        <div class="tl-desc">16 份报告的完整尽调分析，涵盖商业/法律/财务/估值等维度</div>
+        <div class="tl-links">
+          <a href="report_main.html" class="tl-link" target="_blank"><span>📊</span>桌面主报告</a>
+          <a href="report_main_m.html" class="tl-link" target="_blank"><span>📱</span>手机主报告</a>
+        </div>
+      </div>
+      <div class="tl-item tl-analysis">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-06-21</div>
+        <div class="tl-title">🔗 锂电池产业链纵横分析</div>
+        <div class="tl-desc">投资标的推荐分析，覆盖上游材料/电芯/PACK/回收全链条</div>
+        <div class="tl-links"><a href="appendix_i.html" class="tl-link" target="_blank"><span>🔗</span>产业链分析</a></div>
+      </div>
+      <div class="tl-item tl-analysis">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-06-15</div>
+        <div class="tl-title">📐 估值分析专项</div>
+        <div class="tl-desc">多方法交叉验证估值分析（DCF/可比交易/可比公司）</div>
+        <div class="tl-links"><a href="appendix_h.html" class="tl-link" target="_blank"><span>📐</span>估值分析</a></div>
+      </div>
+      <div class="tl-item tl-meeting">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-06-15</div>
+        <div class="tl-title">📋 专题会汇报</div>
+        <div class="tl-desc">关于收购星恒电源股权项目方案相关事宜的汇报</div>
+        <div class="tl-links">
+          <a href="meeting_briefing.html" class="tl-link" target="_blank"><span>📋</span>桌面会议汇报</a>
+          <a href="meeting_briefing_m.html" class="tl-link" target="_blank"><span>📱</span>手机会议汇报</a>
+        </div>
+      </div>
+      <div class="tl-item tl-analysis">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-06-15</div>
+        <div class="tl-title">💎 收购方案综合分析</div>
+        <div class="tl-desc">券商方案主框架分析，含 4 套方案对比</div>
+        <div class="tl-links">
+          <a href="proposal_analysis.html" class="tl-link" target="_blank"><span>💎</span>方案分析</a>
+          <a href="appendix_b.html" class="tl-link" target="_blank"><span>🎯</span>路径分析</a>
+        </div>
+      </div>
+      <div class="tl-item tl-first">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-05-15</div>
+        <div class="tl-title">🌱 星恒电源商业尽调首版</div>
+        <div class="tl-desc">首版商业分析报告，包含行业/竞争/财务三大附件</div>
+        <div class="tl-links">
+          <a href="appendix_c.html" class="tl-link" target="_blank"><span>📈</span>竞争力</a>
+          <a href="appendix_d.html" class="tl-link" target="_blank"><span>💰</span>财务</a>
+          <a href="appendix_e.html" class="tl-link" target="_blank"><span>🏭</span>技术</a>
+          <a href="appendix_f.html" class="tl-link" target="_blank"><span>🔬</span>固相法</a>
+          <a href="appendix_g.html" class="tl-link" target="_blank"><span>🔍</span>客户</a>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="tab-panel" id="panel-reports">
-    <div class="report-group"><div class="rg-title">📊 主报告与法律尽调</div><div class="rg-grid"><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/report_main.html" target="_blank"><div class="r-emoji">📊</div><div class="r-body"><div class="r-name">星恒电源商业尽调分析报告<span class="r-badgeb' b-main'">主报告</span></div></div><div class="r-arrow">→</div></a><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/appendix_a.html" target="_blank"><div class="r-emoji">⚖️</div><div class="r-body"><div class="r-name">附件A：法律尽职调查专项分析<span class="r-badge">核心尽调</span></div></div><div class="r-arrow">→</div></a></div></div><div class="report-group"><div class="rg-title">📋 会议汇报与方案分析</div><div class="rg-grid"><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/meeting_briefing.html" target="_blank"><div class="r-emoji">📋</div><div class="r-body"><div class="r-name">关于收购星恒电源股权项目方案相关事宜的汇报<span class="r-badge">专题会6.15</span></div></div><div class="r-arrow">→</div></a><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/proposal_analysis.html" target="_blank"><div class="r-emoji">💎</div><div class="r-body"><div class="r-name">星恒电源收购方案综合分析（券商方案主框架）<span class="r-badge">6.15更新</span></div></div><div class="r-arrow">→</div></a><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/appendix_b.html" target="_blank"><div class="r-emoji">🎯</div><div class="r-body"><div class="r-name">附件B：收并购方案与天保收购路径分析<span class="r-badge">6.14更新</span></div></div><div class="r-arrow">→</div></a></div></div><div class="report-group"><div class="rg-title">📑 附件专项分析（C-G）</div><div class="rg-grid"><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/appendix_c.html" target="_blank"><div class="r-emoji">📈</div><div class="r-body"><div class="r-name">附件C：竞争力演变与归因纵横分析</div></div><div class="r-arrow">→</div></a><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/appendix_d.html" target="_blank"><div class="r-emoji">💰</div><div class="r-body"><div class="r-name">附件D：财务健康度纵横分析</div></div><div class="r-arrow">→</div></a><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/appendix_e.html" target="_blank"><div class="r-emoji">🏭</div><div class="r-body"><div class="r-name">附件E：前驱体体外循环与斯科兰德竞争力分析</div></div><div class="r-arrow">→</div></a><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/appendix_f.html" target="_blank"><div class="r-emoji">🔬</div><div class="r-body"><div class="r-name">附件F：固相法技术纵横分析法深度研判</div></div><div class="r-arrow">→</div></a><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/appendix_g.html" target="_blank"><div class="r-emoji">🔍</div><div class="r-body"><div class="r-name">附件G：客户结构与产品安全风险纵横分析</div></div><div class="r-arrow">→</div></a></div></div><div class="report-group"><div class="rg-title">📐 估值与产业链分析</div><div class="rg-grid"><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/appendix_h.html" target="_blank"><div class="r-emoji">📐</div><div class="r-body"><div class="r-name">附件H：估值分析专项——多方法交叉验证<span class="r-badge">6.15新增</span></div></div><div class="r-arrow">→</div></a><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/appendix_i.html" target="_blank"><div class="r-emoji">🔗</div><div class="r-body"><div class="r-name">附件I：锂电池产业链纵横分析——投资标的推荐<span class="r-badge">6.21新增</span></div></div><div class="r-arrow">→</div></a></div></div><div class="report-group"><div class="rg-title">🔍 专项核验与并购研究</div><div class="rg-grid"><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/marketshare_verify.html" target="_blank"><div class="r-emoji">📊</div><div class="r-body"><div class="r-name">市场份额数据专项验证</div></div><div class="r-arrow">→</div></a><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/claims_verification.html" target="_blank"><div class="r-emoji">✅</div><div class="r-body"><div class="r-name">陈述事项专项核验</div></div><div class="r-arrow">→</div></a><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/mgmt_performance.html" target="_blank"><div class="r-emoji">👔</div><div class="r-body"><div class="r-name">管理层业绩专项核查</div></div><div class="r-arrow">→</div></a><a class="r-card" href="https://jinzhanxiang.github.io/xingheng-report/shareholder_mna.html" target="_blank"><div class="r-emoji">🤝</div><div class="r-body"><div class="r-name">股东并购历史专项分析</div></div><div class="r-arrow">→</div></a></div></div>
+    <div class="report-group">
+      <div class="rg-title rg-decision">🛑 专题会决策（最重要的）</div>
+      <div class="rg-grid">
+        <a class="r-card r-card-decision" href="decision_20260702.html" target="_blank">
+          <div class="r-emoji">🛑</div>
+          <div class="r-body">
+            <div class="r-name">7.2专题会决定：星恒电源项目暂缓推进<span class="r-badge b-warn">最新决策</span></div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card r-card-decision" href="decision_20260702_m.html" target="_blank">
+          <div class="r-emoji">📱</div>
+          <div class="r-body">
+            <div class="r-name">决策全文 · 手机版</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="report-group">
+      <div class="rg-title">📊 主报告（核心尽调）</div>
+      <div class="rg-grid">
+        <a class="r-card" href="report_main.html" target="_blank">
+          <div class="r-emoji">📊</div>
+          <div class="r-body">
+            <div class="r-name">星恒电源商业尽调分析报告<span class="r-badge b-main">主报告</span></div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="report_main_m.html" target="_blank">
+          <div class="r-emoji">📱</div>
+          <div class="r-body">
+            <div class="r-name">主报告 · 手机版</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="appendix_a.html" target="_blank">
+          <div class="r-emoji">⚖️</div>
+          <div class="r-body">
+            <div class="r-name">附件A：法律尽职调查专项分析<span class="r-badge">核心尽调</span></div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="report-group">
+      <div class="rg-title">📋 会议汇报与方案分析</div>
+      <div class="rg-grid">
+        <a class="r-card" href="meeting_briefing.html" target="_blank">
+          <div class="r-emoji">📋</div>
+          <div class="r-body">
+            <div class="r-name">关于收购星恒电源股权项目方案相关事宜的汇报<span class="r-badge">专题会6.15</span></div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="meeting_briefing_m.html" target="_blank">
+          <div class="r-emoji">📱</div>
+          <div class="r-body">
+            <div class="r-name">会议汇报 · 手机版</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="proposal_analysis.html" target="_blank">
+          <div class="r-emoji">💎</div>
+          <div class="r-body">
+            <div class="r-name">星恒电源收购方案综合分析（券商方案主框架）<span class="r-badge">6.15更新</span></div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="appendix_b.html" target="_blank">
+          <div class="r-emoji">🎯</div>
+          <div class="r-body">
+            <div class="r-name">附件B：收并购方案与天保收购路径分析<span class="r-badge">7.2更新</span></div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="report-group">
+      <div class="rg-title">📑 附件专项分析（C-I）</div>
+      <div class="rg-grid">
+        <a class="r-card" href="appendix_c.html" target="_blank">
+          <div class="r-emoji">📈</div>
+          <div class="r-body">
+            <div class="r-name">附件C：竞争力演变与归因纵横分析</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="appendix_d.html" target="_blank">
+          <div class="r-emoji">💰</div>
+          <div class="r-body">
+            <div class="r-name">附件D：财务健康度纵横分析</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="appendix_e.html" target="_blank">
+          <div class="r-emoji">🏭</div>
+          <div class="r-body">
+            <div class="r-name">附件E：前驱体体外循环与斯科兰德竞争力分析</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="appendix_f.html" target="_blank">
+          <div class="r-emoji">🔬</div>
+          <div class="r-body">
+            <div class="r-name">附件F：固相法技术纵横分析法深度研判</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="appendix_g.html" target="_blank">
+          <div class="r-emoji">🔍</div>
+          <div class="r-body">
+            <div class="r-name">附件G：客户结构与产品安全风险纵横分析</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="appendix_h.html" target="_blank">
+          <div class="r-emoji">📐</div>
+          <div class="r-body">
+            <div class="r-name">附件H：估值分析专项——多方法交叉验证<span class="r-badge b-new">6.15新增</span></div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="appendix_i.html" target="_blank">
+          <div class="r-emoji">🔗</div>
+          <div class="r-body">
+            <div class="r-name">附件I：锂电池产业链纵横分析——投资标的推荐<span class="r-badge b-new">6.21新增</span></div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="report-group">
+      <div class="rg-title rg-supplementary">🔍 专项核验与并购研究（补充分析）</div>
+      <div class="rg-grid">
+        <a class="r-card" href="marketshare_verify.html" target="_blank">
+          <div class="r-emoji">📊</div>
+          <div class="r-body">
+            <div class="r-name">市场份额数据专项验证</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="claims_verification.html" target="_blank">
+          <div class="r-emoji">✅</div>
+          <div class="r-body">
+            <div class="r-name">陈述事项专项核验</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="mgmt_performance.html" target="_blank">
+          <div class="r-emoji">👔</div>
+          <div class="r-body">
+            <div class="r-name">管理层业绩专项核查</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="shareholder_mna.html" target="_blank">
+          <div class="r-emoji">🤝</div>
+          <div class="r-body">
+            <div class="r-name">股东并购历史专项分析</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="timeline.html" target="_blank">
+          <div class="r-emoji">📅</div>
+          <div class="r-body">
+            <div class="r-name">项目时间线（独立视图）</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="report-group">
+      <div class="rg-title">📱 视图与目录</div>
+      <div class="rg-grid">
+        <a class="r-card" href="index.html" target="_blank">
+          <div class="r-emoji">📋</div>
+          <div class="r-body">
+            <div class="r-name">简易目录（桌面版）</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="index_m.html" target="_blank">
+          <div class="r-emoji">📱</div>
+          <div class="r-body">
+            <div class="r-name">简易目录（手机版）</div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+        <a class="r-card" href="dashboard.html" target="_blank">
+          <div class="r-emoji">⭐</div>
+          <div class="r-body">
+            <div class="r-name">项目报告中心（本页面）<span class="r-badge b-main">当前</span></div>
+          </div>
+          <div class="r-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="panel-decision">
+    <div style="background:#fffaf0;border:2px solid #fbd38d;border-radius:10px;padding:24px;margin-top:16px">
+      <h2 style="color:#7c2d12;font-family:-apple-system,'PingFang SC',sans-serif;margin-bottom:14px;font-size:20px">🛑 2026-07-02 专题会决定 · 暂缓推进</h2>
+      <div style="color:#4a5568;font-size:14px;line-height:1.8">
+        <p style="margin-bottom:12px"><strong>会议主持</strong>：晓龙同志<br>
+        <strong>出席</strong>：胜强、仲昊、李华<br>
+        <strong>列席</strong>：公司投资部、战发部、新兴科技、项目专班</p>
+
+        <h3 style="color:#7c2d12;margin-top:16px;font-size:16px">三、核心结论</h3>
+        <p style="margin-bottom:10px">会议原则同意项目工作专班汇报，<strong style="color:#c53030">决定暂缓推进星恒电源项目</strong>。</p>
+
+        <h3 style="color:#7c2d12;margin-top:16px;font-size:16px">一、估值性价比不高</h3>
+        <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:13px">
+          <tr><td style="padding:6px;border-bottom:1px solid #e2e8f0"><strong>整体估值</strong></td><td style="padding:6px;border-bottom:1px solid #e2e8f0">40 亿元</td><td style="padding:6px;border-bottom:1px solid #e2e8f0;color:#718096">星恒管理层报价</td></tr>
+          <tr><td style="padding:6px;border-bottom:1px solid #e2e8f0"><strong>PE（2026管理层预测）</strong></td><td style="padding:6px;border-bottom:1px solid #e2e8f0;color:#c53030;font-weight:700">26.7 倍</td><td style="padding:6px;border-bottom:1px solid #e2e8f0">按管理层 2026 盈利预测</td></tr>
+          <tr><td style="padding:6px;border-bottom:1px solid #e2e8f0"><strong>PE（2025 实际盈利）</strong></td><td style="padding:6px;border-bottom:1px solid #e2e8f0;color:#c53030;font-weight:700">&gt;80 倍</td><td style="padding:6px;border-bottom:1px solid #e2e8f0">按 FY2025 审计口径</td></tr>
+          <tr><td style="padding:6px;border-bottom:1px solid #e2e8f0"><strong>并购市场参考红线</strong></td><td style="padding:6px;border-bottom:1px solid #e2e8f0;color:#b7791f">15-20 倍 PE</td><td style="padding:6px;border-bottom:1px solid #e2e8f0">超过即引发交易所重点关注</td></tr>
+          <tr><td style="padding:6px;border-bottom:1px solid #e2e8f0"><strong>独立估值（附件H）</strong></td><td style="padding:6px;border-bottom:1px solid #e2e8f0;color:#38a169;font-weight:700">约 21 亿元</td><td style="padding:6px;border-bottom:1px solid #e2e8f0">PS 0.57x 折溢价对称框架</td></tr>
+        </table>
+
+        <h3 style="color:#7c2d12;margin-top:16px;font-size:16px">二、天保基建主业问题</h3>
+        <ul style="margin-left:20px;margin-bottom:12px">
+          <li>装入星恒电源后，天保基建将转变为"地产 + 新能源"双主业格局</li>
+          <li>触及总资产/净资产/营业收入任一超 50% 临界线 → 重大资产重组</li>
+          <li>"地产 + 新能源 + 其他主业"三元结构稀释公司主业辨识度</li>
+          <li>再融资工具（定增、可转债）发行难度上升，IR 成本增加</li>
+        </ul>
+
+        <h3 style="color:#7c2d12;margin-top:16px;font-size:16px">三、法律尽调结论（终稿 2026-06-23）</h3>
+        <p style="margin-bottom:10px">允公律所 6 月 23 日完成现场尽调，<strong style="color:#c53030">倾向性认为星恒电源现阶段并非合适的投资时点</strong>：</p>
+        <ul style="margin-left:20px;margin-bottom:12px">
+          <li><strong>股东</strong>：35 家对赌股东回购条件全部触发，仅 20 余家口头同意临时中止协议（无法律约束力）；第一大股东启源纳川为失信被执行人 + 股权冻结 + 限消</li>
+          <li><strong>公司治理</strong>：三会虚化、经营高度依赖经理层；星恒电源与星恒滁州法人人格混同；制度不成体系</li>
+          <li><strong>经营安全</strong>：1 人死亡安全事故；星恒滁州 2023-2025 年 7 次锂电池质量行政处罚；9 起产品责任纠纷</li>
+        </ul>
+
+        <div style="text-align:center;margin-top:24px">
+          <a href="decision_20260702.html" style="display:inline-block;background:#c53030;color:#fff;padding:12px 28px;border-radius:6px;text-decoration:none;font-weight:700;font-family:-apple-system,'PingFang SC',sans-serif" target="_blank">→ 阅读决策全文</a>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>
 
-<div class="footer">星恒电源投资并购分析 · GitHub Pages · 2026-07-09 v2 双视图更新</div>
+<div class="footer">
+  <a href="https://jinzhanxiang.github.io/tianbao-projects/">天保控股项目报告中心</a> ·
+  星恒电源投资并购分析 · GitHub Pages ·
+  2026-07-11 v3 全报告中心更新（添加专题会决策 + 双视图）
+</div>
 
 <script>
 document.querySelectorAll('.tab').forEach(tab => {
