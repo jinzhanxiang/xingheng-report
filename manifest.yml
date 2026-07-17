@@ -1,167 +1,179 @@
-# 📋 manifest.yml — 星恒电源商业分析
-# ========================================================
-# 主公 2026-07-17 v12 跨项目推广 · 大仓细化
-# 策略：active 只保留 V15.2.13 黄金线最新版 + 9 份附录；历史版本全部归档
-# _m.html 手机版豁免（v12.1 · 见 manifest.py）
-
 project: xingheng-report
 title: 星恒电源商业分析
 subtitle: 重大并购 · 新能源动力电池 · 16 份专题报告
 stage: 重大并购
 report_version: V15.2.13
-last_update: 2026-07-17
-
+last_update: '2026-07-17'
 hero:
   category: 重大并购
   amount: 待立项请示披露
   highlight: V15.2.13 黄金线主报告 + 9 份专题附录
-
-# 有效报告（dashboard 展示 · PC 版）
 reports:
-  # 主报告（V15.2.13 黄金线最新版）
-  - file: report_main_v15213.html
-    title: 主报告 · V15.2.13 黄金线
-    date: 2026-07-15
-    status: active
-    tags: [主报告, V15.2.13, 黄金线]
-    desc: 当前生效的最终版主报告
-    color: main
-
-  # 9 份专题附录
-  - file: appendix_a.html
-    title: 附录 A · 业务结构图
-    date: 2026-06
-    status: active
-    tags: [附录, 业务]
-    color: default
-  - file: appendix_b.html
-    title: 附录 B · 产能与客户
-    date: 2026-06
-    status: active
-    tags: [附录, 产能]
-    color: default
-  - file: appendix_c.html
-    title: 附录 C · 上下游
-    date: 2026-06
-    status: active
-    tags: [附录, 产业链]
-    color: default
-  - file: appendix_d.html
-    title: 附录 D · 财务模型
-    date: 2026-06
-    status: active
-    tags: [附录, 财务]
-    color: default
-  - file: appendix_e.html
-    title: 附录 E · 估值对标
-    date: 2026-06
-    status: active
-    tags: [附录, 估值]
-    color: default
-  - file: appendix_f.html
-    title: 附录 F · 风险揭示
-    date: 2026-06
-    status: active
-    tags: [附录, 风险]
-    color: default
-  - file: appendix_g.html
-    title: 附录 G · 政策环境
-    date: 2026-06
-    status: active
-    tags: [附录, 政策]
-    color: default
-  - file: appendix_h.html
-    title: 附录 H · 交易结构
-    date: 2026-06
-    status: active
-    tags: [附录, 交易]
-    color: default
-  - file: appendix_i.html
-    title: 附录 I · 退出路径
-    date: 2026-06
-    status: active
-    tags: [附录, 退出]
-    color: default
-
-  # 6 份专题分析（与主报告并列展示）
-  - file: claims_verification.html
-    title: 尽调专题 · 关键陈述核实
-    date: 2026-06
-    status: active
-    tags: [尽调, 专题]
-    desc: 关键事实陈述核实
-    color: meeting
-  - file: decision_20260702.html
-    title: 决策汇报 · 2026-07-02
-    date: 2026-07-02
-    status: active
-    tags: [决策, 汇报]
-    desc: 立项决策会议汇报稿
-    color: first
-  - file: meeting_briefing.html
-    title: 会谈简报
-    date: 2026-06
-    status: active
-    tags: [会谈]
-    desc: 主要会谈沟通简报
-    color: meeting
-  - file: mgmt_performance.html
-    title: 管理层绩效分析
-    date: 2026-06
-    status: active
-    tags: [管理层]
-    desc: 管理层背景与历史业绩
-    color: default
-  - file: proposal_analysis.html
-    title: 收购方案分析
-    date: 2026-06
-    status: active
-    tags: [方案]
-    desc: 收购方案结构与定价
-    color: default
-  - file: shareholder_mna.html
-    title: 股东与并购对价
-    date: 2026-06
-    status: active
-    tags: [股东]
-    desc: 现有股东结构与对价安排
-    color: default
-
-# 已归档（历史主报告版本 · 全部归档到 deprecated）
-# 这些是被 V15.2.13 取代的历史版本，dashboard 不展示
+- file: report_main_v15213.html
+  title: 主报告 · V15.2.13 黄金线
+  date: 2026-07-15
+  status: active
+  tags:
+  - 主报告
+  - V15.2.13
+  - 黄金线
+  desc: 当前生效的最终版主报告
+  color: main
+- file: appendix_a.html
+  title: 附录 A · 业务结构图
+  date: 2026-06
+  status: active
+  tags:
+  - 附录
+  - 业务
+  color: default
+- file: appendix_b.html
+  title: 附录 B · 产能与客户
+  date: 2026-06
+  status: active
+  tags:
+  - 附录
+  - 产能
+  color: default
+- file: appendix_c.html
+  title: 附录 C · 上下游
+  date: 2026-06
+  status: active
+  tags:
+  - 附录
+  - 产业链
+  color: default
+- file: appendix_d.html
+  title: 附录 D · 财务模型
+  date: 2026-06
+  status: active
+  tags:
+  - 附录
+  - 财务
+  color: default
+- file: appendix_e.html
+  title: 附录 E · 估值对标
+  date: 2026-06
+  status: active
+  tags:
+  - 附录
+  - 估值
+  color: default
+- file: appendix_f.html
+  title: 附录 F · 风险揭示
+  date: 2026-06
+  status: active
+  tags:
+  - 附录
+  - 风险
+  color: default
+- file: appendix_g.html
+  title: 附录 G · 政策环境
+  date: 2026-06
+  status: active
+  tags:
+  - 附录
+  - 政策
+  color: default
+- file: appendix_h.html
+  title: 附录 H · 交易结构
+  date: 2026-06
+  status: active
+  tags:
+  - 附录
+  - 交易
+  color: default
+- file: appendix_i.html
+  title: 附录 I · 退出路径
+  date: 2026-06
+  status: active
+  tags:
+  - 附录
+  - 退出
+  color: default
+- file: claims_verification.html
+  title: 尽调专题 · 关键陈述核实
+  date: 2026-06
+  status: active
+  tags:
+  - 尽调
+  - 专题
+  desc: 关键事实陈述核实
+  color: meeting
+- file: decision_20260702.html
+  title: 决策汇报 · 2026-07-02
+  date: 2026-07-02
+  status: active
+  tags:
+  - 决策
+  - 汇报
+  desc: 立项决策会议汇报稿
+  color: first
+- file: meeting_briefing.html
+  title: 会谈简报
+  date: 2026-06
+  status: active
+  tags:
+  - 会谈
+  desc: 主要会谈沟通简报
+  color: meeting
+- file: mgmt_performance.html
+  title: 管理层绩效分析
+  date: 2026-06
+  status: active
+  tags:
+  - 管理层
+  desc: 管理层背景与历史业绩
+  color: default
+- file: proposal_analysis.html
+  title: 收购方案分析
+  date: 2026-06
+  status: active
+  tags:
+  - 方案
+  desc: 收购方案结构与定价
+  color: default
+- file: shareholder_mna.html
+  title: 股东与并购对价
+  date: 2026-06
+  status: active
+  tags:
+  - 股东
+  desc: 现有股东结构与对价安排
+  color: default
 deprecated:
-  - file: report_main.html
-    title: 主报告（旧版·被 v15.2.13 取代）
-    removed: 2026-07-17
-    note: 旧版主报告，已被 V15.2.13 取代
-  - file: report_main_v1527.html
-    title: 主报告 V15.2.7
-    removed: 2026-07-17
-  - file: report_main_v1528.html
-    title: 主报告 V15.2.8
-    removed: 2026-07-17
-  - file: report_main_v1529.html
-    title: 主报告 V15.2.9
-    removed: 2026-07-17
-  - file: report_main_v15210.html
-    title: 主报告 V15.2.10
-    removed: 2026-07-17
-  - file: report_main_v15211.html
-    title: 主报告 V15.2.11
-    removed: 2026-07-17
-  - file: report_main_v152111.html
-    title: 主报告 V15.2.11.1
-    removed: 2026-07-17
-  - file: report_main_v152112.html
-    title: 主报告 V15.2.11.2
-    removed: 2026-07-17
-  - file: report_main_v15212.html
-    title: 主报告 V15.2.12
-    removed: 2026-07-17
-  - file: report_main_v152113.html
-    title: 主报告 V15.2.11.3
-    removed: 2026-07-17
-  - file: marketshare_verify.html
-    title: 市场份额核实（早期版本）
-    removed: 2026-07-17
-    note: 早期数据核实脚本，已被 claims_verification.html 取代
+- file: report_main.html
+  title: 主报告（旧版·被 v15.2.13 取代）
+  removed: 2026-07-17
+  note: 旧版主报告，已被 V15.2.13 取代
+- file: report_main_v1527.html
+  title: 主报告 V15.2.7
+  removed: 2026-07-17
+- file: report_main_v1528.html
+  title: 主报告 V15.2.8
+  removed: 2026-07-17
+- file: report_main_v1529.html
+  title: 主报告 V15.2.9
+  removed: 2026-07-17
+- file: report_main_v15210.html
+  title: 主报告 V15.2.10
+  removed: 2026-07-17
+- file: report_main_v15211.html
+  title: 主报告 V15.2.11
+  removed: 2026-07-17
+- file: report_main_v152111.html
+  title: 主报告 V15.2.11.1
+  removed: 2026-07-17
+- file: report_main_v152112.html
+  title: 主报告 V15.2.11.2
+  removed: 2026-07-17
+- file: report_main_v15212.html
+  title: 主报告 V15.2.12
+  removed: 2026-07-17
+- file: report_main_v152113.html
+  title: 主报告 V15.2.11.3
+  removed: 2026-07-17
+- file: marketshare_verify.html
+  title: 市场份额核实（早期版本）
+  removed: 2026-07-17
+  note: 早期数据核实脚本，已被 claims_verification.html 取代
