@@ -3,393 +3,486 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>星恒电源 · 项目报告中心</title>
+<title>星恒电源商业分析 · 项目报告中心</title>
 <link rel="stylesheet" href="https://jinzhanxiang.github.io/tianbao-projects/assets/report.css">
+<style>
+:root {
+  --primary: #1a365d;
+  --accent: #c53030;
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --text: #2d3748;
+  --muted: #718096;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.nav { background: var(--primary); color: white; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+.nav a { color: white; text-decoration: none; opacity: 0.85; margin-left: 18px; font-size: 14px; }
+.nav a:hover { opacity: 1; }
+.container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+.hero { background: linear-gradient(135deg, var(--primary) 0%, #2c5282 100%); color: white; padding: 40px 32px; border-radius: 12px; margin-bottom: 28px; }
+.hero h1 { font-size: 28px; margin-bottom: 8px; }
+.hero p { opacity: 0.9; font-size: 15px; margin-bottom: 24px; }
+.hero-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+.hero-stat { background: rgba(255,255,255,0.15); padding: 12px 20px; border-radius: 8px; min-width: 110px; }
+.hero-stat .num { font-size: 28px; font-weight: 700; }
+.hero-stat .lbl { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+.tabs { display: flex; border-bottom: 2px solid var(--border); margin-bottom: 24px; }
+.tab { padding: 14px 24px; cursor: pointer; color: var(--muted); border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.2s; }
+.tab:hover { color: var(--primary); }
+.tab.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+.tab-count { background: var(--primary); color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-left: 6px; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+.tl-item { position: relative; margin-bottom: 28px; padding-left: 20px; }
+.tl-item::before { content: ''; position: absolute; left: -28px; top: 8px; width: 14px; height: 14px; border-radius: 50%; background: var(--primary); border: 3px solid white; box-shadow: 0 0 0 2px var(--primary); }
+.tl-item.tl-main::before { background: var(--primary); }
+.tl-item.tl-thirdparty::before { background: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.tl-item.tl-meeting::before { background: #d69e2e; box-shadow: 0 0 0 2px #d69e2e; }
+.tl-item.tl-first::before { background: #38a169; box-shadow: 0 0 0 2px #38a169; }
+.tl-date { color: var(--muted); font-size: 13px; margin-bottom: 4px; }
+.tl-title { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+.tl-desc { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
+.tl-link { display: inline-block; padding: 6px 14px; background: var(--primary); color: white; text-decoration: none; border-radius: 6px; font-size: 14px; }
+.tl-link:hover { background: #2c5282; }
+.report-group { margin-bottom: 32px; }
+.rg-title { font-size: 18px; font-weight: 600; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+.r-card { display: flex; align-items: center; gap: 16px; padding: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 12px; text-decoration: none; color: var(--text); transition: all 0.2s; }
+.r-card:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(26,54,93,0.1); }
+.r-emoji { font-size: 24px; }
+.r-body { flex: 1; }
+.r-name { font-weight: 600; margin-bottom: 4px; }
+.r-meta { font-size: 13px; color: var(--muted); }
+.r-arrow { color: var(--muted); font-size: 18px; }
+.archived { opacity: 0.7; border-style: dashed; }
+.archived-note { background: #fef5e7; border-left: 4px solid #d69e2e; padding: 12px 16px; border-radius: 4px; margin-bottom: 20px; font-size: 14px; color: #744210; }
+@media (max-width: 768px) {
+  .hero { padding: 24px 20px; }
+  .hero h1 { font-size: 22px; }
+  .hero-stats { gap: 16px; }
+  .tab { padding: 12px 16px; font-size: 14px; }
+}
+</style>
 </head>
 <body>
-
-<div class="back-nav">
-  <div class="nav-left">
+<div class="nav">
+  <div>📊 星恒电源商业分析</div>
+  <div>
     <a href="https://jinzhanxiang.github.io/tianbao-projects/">← 返回主中心</a>
-    <a href="index.html">📋 简易目录</a>
   </div>
-  <span class="project-title">天保控股 · 星恒电源并购项目</span>
-  <div class="nav-right">
-    <a href="index_m.html" class="nav-emphasis">📱 切换手机版 →</a>
-  </div>
-</div>
-
-<div class="hero">
-  <h1>⭐ 星恒电源 · 投资并购分析</h1>
-  <p>重大并购项目 · 22 份尽调报告 · 1 份专题会决策（暂缓推进）· v2 双视图</p>
-  <div class="hero-stats">
-    <div class="hero-stat success"><div class="num">23</div><div class="lbl">网站文件</div></div>
-    <div class="hero-stat"><div class="num">22</div><div class="lbl">桌面报告</div></div>
-    <div class="hero-stat"><div class="num">22</div><div class="lbl">手机报告</div></div>
-    <div class="hero-stat danger"><div class="num">1</div><div class="lbl">决策</div></div>
-  </div>
-</div>
-
-<div class="tabs">
-  <div class="tab active" data-tab="timeline">📅 时间线视图<span class="tab-count">8</span></div>
-  <div class="tab" data-tab="reports">📋 全部报告总览<span class="tab-count">22</span></div>
-  <div class="tab" data-tab="decision">🛑 决策记录<span class="tab-count">1</span></div>
 </div>
 
 <div class="container">
-
-  <!-- 决策横幅（顶部固定） -->
-  <div class="decision-banner">
-    <div class="db-icon">🛑</div>
-    <div class="db-body">
-      <div class="db-title">2026-07-02 专题会决定：星恒电源项目暂缓推进</div>
-      <div class="db-desc">晓龙同志主持专题会议，原则同意项目工作专班汇报，<strong>决定暂缓推进星恒电源项目</strong>。核心原因：①独立估值约 21 亿 vs 管理层报价 40 亿，PE &gt;80倍超 15-20 倍红线；②天保基建装入新能源形成双主业结构性约束；③法律尽调 31 个问题。</div>
+  <div class="hero">
+    <h1>星恒电源商业分析</h1>
+    <p>重大并购 · 新能源动力电池 · 16 份专题报告 · 重大并购 · 16 份有效报告 · 主报告V15.2.13 · 部署 2026-07-17</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">16</div><div class="lbl">有效报告</div></div>
+      <div class="hero-stat"><div class="num">11</div><div class="lbl">已归档</div></div>
+      <div class="hero-stat"><div class="num">V15.2.13</div><div class="lbl">主报告版本</div></div>
+      <div class="hero-stat"><div class="num">待立项请示披露</div><div class="lbl">重大并购</div></div>
     </div>
-    <a href="decision_20260702.html" class="db-link" target="_blank">阅读决策全文 →</a>
   </div>
 
-  <div class="kpi-strip">
-    <div class="kpi"><div class="kpi-lbl">管理层报价</div><div class="kpi-val danger">40 亿元</div><div class="kpi-sub">13.73% 股权对价 5 亿</div></div>
-    <div class="kpi"><div class="kpi-lbl">独立估值（附件H）</div><div class="kpi-val success">~21 亿元</div><div class="kpi-sub">PS 0.57x 中枢估值</div></div>
-    <div class="kpi"><div class="kpi-lbl">PE 倍数</div><div class="kpi-val danger">&gt;80 倍</div><div class="kpi-sub">超并购市场 15-20 倍红线</div></div>
-    <div class="kpi"><div class="kpi-lbl">法律问题</div><div class="kpi-val warn">31 个</div><div class="kpi-sub">6 家标的公司均有问题</div></div>
-    <div class="kpi"><div class="kpi-lbl">决策</div><div class="kpi-val danger">暂缓推进</div><div class="kpi-sub">2026-07-02 专题会</div></div>
+  <div class="tabs">
+    <div class="tab active" data-tab="timeline">📅 时间线视图<span class="tab-count">27</span></div>
+    <div class="tab" data-tab="reports">📋 全部报告总览<span class="tab-count">16</span></div>
   </div>
 
   <div class="tab-panel active" id="panel-timeline">
     <div class="timeline">
-      <div class="tl-item tl-decision">
-        <div class="tl-dot"></div>
+      <div class="tl-item tl-main">
+        <div class="tl-date">2026-07-15</div>
+        <div class="tl-title">📜 主报告 · V15.2.13 黄金线</div>
+        <div class="tl-desc">当前生效的最终版主报告</div>
+        <a class="tl-link" href="report_main_v15213.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 附录 A · 业务结构图</div>
+        <div class="tl-desc"></div>
+        <a class="tl-link" href="appendix_a.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 附录 B · 产能与客户</div>
+        <div class="tl-desc"></div>
+        <a class="tl-link" href="appendix_b.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 附录 C · 上下游</div>
+        <div class="tl-desc"></div>
+        <a class="tl-link" href="appendix_c.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 附录 D · 财务模型</div>
+        <div class="tl-desc"></div>
+        <a class="tl-link" href="appendix_d.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 附录 E · 估值对标</div>
+        <div class="tl-desc"></div>
+        <a class="tl-link" href="appendix_e.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 附录 F · 风险揭示</div>
+        <div class="tl-desc"></div>
+        <a class="tl-link" href="appendix_f.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 附录 G · 政策环境</div>
+        <div class="tl-desc"></div>
+        <a class="tl-link" href="appendix_g.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 附录 H · 交易结构</div>
+        <div class="tl-desc"></div>
+        <a class="tl-link" href="appendix_h.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 附录 I · 退出路径</div>
+        <div class="tl-desc"></div>
+        <a class="tl-link" href="appendix_i.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 尽调专题 · 关键陈述核实</div>
+        <div class="tl-desc">关键事实陈述核实</div>
+        <a class="tl-link" href="claims_verification.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
         <div class="tl-date">2026-07-02</div>
-        <div class="tl-title">🛑 专题会决策 · 项目暂缓推进</div>
-        <div class="tl-desc">晓龙同志主持专题会议，原则同意项目专班汇报，决定暂缓推进星恒电源项目。核心原因：估值性价比不高、装入天保基建形成双主业约束、法律尽调 31 个问题。</div>
-        <div class="tl-links">
-          <a href="decision_20260702.html" class="tl-link tl-link-warn" target="_blank"><span>🛑</span>决策全文</a>
-          <a href="decision_20260702_m.html" class="tl-link" target="_blank"><span>📱</span>手机版</a>
-        </div>
+        <div class="tl-title">📜 决策汇报 · 2026-07-02</div>
+        <div class="tl-desc">立项决策会议汇报稿</div>
+        <a class="tl-link" href="decision_20260702.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 会谈简报</div>
+        <div class="tl-desc">主要会谈沟通简报</div>
+        <a class="tl-link" href="meeting_briefing.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 管理层绩效分析</div>
+        <div class="tl-desc">管理层背景与历史业绩</div>
+        <a class="tl-link" href="mgmt_performance.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 收购方案分析</div>
+        <div class="tl-desc">收购方案结构与定价</div>
+        <a class="tl-link" href="proposal_analysis.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">2026-06</div>
+        <div class="tl-title">📜 股东与并购对价</div>
+        <div class="tl-desc">现有股东结构与对价安排</div>
+        <a class="tl-link" href="shareholder_mna.html">📊 查看报告</a>
       </div>
       <div class="tl-item tl-thirdparty">
-        <div class="tl-dot"></div>
-        <div class="tl-date">2026-06-23</div>
-        <div class="tl-title">📜 法律尽职调查专项分析</div>
-        <div class="tl-desc">允公律所出具的法律尽调报告，指出6家标的公司存在31个问题</div>
-        <div class="tl-links"><a href="appendix_a.html" class="tl-link" target="_blank"><span>⚖️</span>法律尽调报告</a></div>
+        <div class="tl-date"> → 已归档 2026-07-17</div>
+        <div class="tl-title">🗄 主报告（旧版·被 v15.2.13 取代）</div>
+        <div class="tl-desc">旧版主报告，已被 V15.2.13 取代</div>
       </div>
-      <div class="tl-item tl-main">
-        <div class="tl-dot"></div>
-        <div class="tl-date">2026-06-22</div>
-        <div class="tl-title">🔄 综合分析报告（第6版）</div>
-        <div class="tl-desc">16 份报告的完整尽调分析，涵盖商业/法律/财务/估值等维度</div>
-        <div class="tl-links">
-          <a href="report_main.html" class="tl-link" target="_blank"><span>📊</span>桌面主报告</a>
-          <a href="report_main_m.html" class="tl-link" target="_blank"><span>📱</span>手机主报告</a>
-        </div>
+      <div class="tl-item tl-thirdparty">
+        <div class="tl-date"> → 已归档 2026-07-17</div>
+        <div class="tl-title">🗄 主报告 V15.2.7</div>
+        <div class="tl-desc">已从仓库删除，git 历史可找回</div>
       </div>
-      <div class="tl-item tl-analysis">
-        <div class="tl-dot"></div>
-        <div class="tl-date">2026-06-21</div>
-        <div class="tl-title">🔗 锂电池产业链纵横分析</div>
-        <div class="tl-desc">投资标的推荐分析，覆盖上游材料/电芯/PACK/回收全链条</div>
-        <div class="tl-links"><a href="appendix_i.html" class="tl-link" target="_blank"><span>🔗</span>产业链分析</a></div>
+      <div class="tl-item tl-thirdparty">
+        <div class="tl-date"> → 已归档 2026-07-17</div>
+        <div class="tl-title">🗄 主报告 V15.2.8</div>
+        <div class="tl-desc">已从仓库删除，git 历史可找回</div>
       </div>
-      <div class="tl-item tl-analysis">
-        <div class="tl-dot"></div>
-        <div class="tl-date">2026-06-15</div>
-        <div class="tl-title">📐 估值分析专项</div>
-        <div class="tl-desc">多方法交叉验证估值分析（DCF/可比交易/可比公司）</div>
-        <div class="tl-links"><a href="appendix_h.html" class="tl-link" target="_blank"><span>📐</span>估值分析</a></div>
+      <div class="tl-item tl-thirdparty">
+        <div class="tl-date"> → 已归档 2026-07-17</div>
+        <div class="tl-title">🗄 主报告 V15.2.9</div>
+        <div class="tl-desc">已从仓库删除，git 历史可找回</div>
       </div>
-      <div class="tl-item tl-meeting">
-        <div class="tl-dot"></div>
-        <div class="tl-date">2026-06-15</div>
-        <div class="tl-title">📋 专题会汇报</div>
-        <div class="tl-desc">关于收购星恒电源股权项目方案相关事宜的汇报</div>
-        <div class="tl-links">
-          <a href="meeting_briefing.html" class="tl-link" target="_blank"><span>📋</span>桌面会议汇报</a>
-          <a href="meeting_briefing_m.html" class="tl-link" target="_blank"><span>📱</span>手机会议汇报</a>
-        </div>
+      <div class="tl-item tl-thirdparty">
+        <div class="tl-date"> → 已归档 2026-07-17</div>
+        <div class="tl-title">🗄 主报告 V15.2.10</div>
+        <div class="tl-desc">已从仓库删除，git 历史可找回</div>
       </div>
-      <div class="tl-item tl-analysis">
-        <div class="tl-dot"></div>
-        <div class="tl-date">2026-06-15</div>
-        <div class="tl-title">💎 收购方案综合分析</div>
-        <div class="tl-desc">券商方案主框架分析，含 4 套方案对比</div>
-        <div class="tl-links">
-          <a href="proposal_analysis.html" class="tl-link" target="_blank"><span>💎</span>方案分析</a>
-          <a href="appendix_b.html" class="tl-link" target="_blank"><span>🎯</span>路径分析</a>
-        </div>
+      <div class="tl-item tl-thirdparty">
+        <div class="tl-date"> → 已归档 2026-07-17</div>
+        <div class="tl-title">🗄 主报告 V15.2.11</div>
+        <div class="tl-desc">已从仓库删除，git 历史可找回</div>
       </div>
-      <div class="tl-item tl-first">
-        <div class="tl-dot"></div>
-        <div class="tl-date">2026-05-15</div>
-        <div class="tl-title">🌱 星恒电源商业尽调首版</div>
-        <div class="tl-desc">首版商业分析报告，包含行业/竞争/财务三大附件</div>
-        <div class="tl-links">
-          <a href="appendix_c.html" class="tl-link" target="_blank"><span>📈</span>竞争力</a>
-          <a href="appendix_d.html" class="tl-link" target="_blank"><span>💰</span>财务</a>
-          <a href="appendix_e.html" class="tl-link" target="_blank"><span>🏭</span>技术</a>
-          <a href="appendix_f.html" class="tl-link" target="_blank"><span>🔬</span>固相法</a>
-          <a href="appendix_g.html" class="tl-link" target="_blank"><span>🔍</span>客户</a>
-        </div>
+      <div class="tl-item tl-thirdparty">
+        <div class="tl-date"> → 已归档 2026-07-17</div>
+        <div class="tl-title">🗄 主报告 V15.2.11.1</div>
+        <div class="tl-desc">已从仓库删除，git 历史可找回</div>
+      </div>
+      <div class="tl-item tl-thirdparty">
+        <div class="tl-date"> → 已归档 2026-07-17</div>
+        <div class="tl-title">🗄 主报告 V15.2.11.2</div>
+        <div class="tl-desc">已从仓库删除，git 历史可找回</div>
+      </div>
+      <div class="tl-item tl-thirdparty">
+        <div class="tl-date"> → 已归档 2026-07-17</div>
+        <div class="tl-title">🗄 主报告 V15.2.12</div>
+        <div class="tl-desc">已从仓库删除，git 历史可找回</div>
+      </div>
+      <div class="tl-item tl-thirdparty">
+        <div class="tl-date"> → 已归档 2026-07-17</div>
+        <div class="tl-title">🗄 主报告 V15.2.11.3</div>
+        <div class="tl-desc">已从仓库删除，git 历史可找回</div>
+      </div>
+      <div class="tl-item tl-thirdparty">
+        <div class="tl-date"> → 已归档 2026-07-17</div>
+        <div class="tl-title">🗄 市场份额核实（早期版本）</div>
+        <div class="tl-desc">早期数据核实脚本，已被 claims_verification.html 取代</div>
       </div>
     </div>
   </div>
 
   <div class="tab-panel" id="panel-reports">
     <div class="report-group">
-      <div class="rg-title rg-decision">🛑 专题会决策（最重要的）</div>
-      <div class="rg-grid">
-        <a class="r-card r-card-decision" href="decision_20260702.html" target="_blank">
-          <div class="r-emoji">🛑</div>
-          <div class="r-body">
-            <div class="r-name">7.2专题会决定：星恒电源项目暂缓推进<span class="r-badge b-warn">最新决策</span></div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card r-card-decision" href="decision_20260702_m.html" target="_blank">
-          <div class="r-emoji">📱</div>
-          <div class="r-body">
-            <div class="r-name">决策全文 · 手机版</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="report-group">
-      <div class="rg-title">📊 主报告（核心尽调）</div>
-      <div class="rg-grid">
-        <a class="r-card" href="report_main.html" target="_blank">
-          <div class="r-emoji">📊</div>
-          <div class="r-body">
-            <div class="r-name">星恒电源商业尽调分析报告<span class="r-badge b-main">主报告</span></div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="report_main_m.html" target="_blank">
-          <div class="r-emoji">📱</div>
-          <div class="r-body">
-            <div class="r-name">主报告 · 手机版</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="appendix_a.html" target="_blank">
-          <div class="r-emoji">⚖️</div>
-          <div class="r-body">
-            <div class="r-name">附件A：法律尽职调查专项分析<span class="r-badge">核心尽调</span></div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="report-group">
-      <div class="rg-title">📋 会议汇报与方案分析</div>
-      <div class="rg-grid">
-        <a class="r-card" href="meeting_briefing.html" target="_blank">
-          <div class="r-emoji">📋</div>
-          <div class="r-body">
-            <div class="r-name">关于收购星恒电源股权项目方案相关事宜的汇报<span class="r-badge">专题会6.15</span></div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="meeting_briefing_m.html" target="_blank">
-          <div class="r-emoji">📱</div>
-          <div class="r-body">
-            <div class="r-name">会议汇报 · 手机版</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="proposal_analysis.html" target="_blank">
-          <div class="r-emoji">💎</div>
-          <div class="r-body">
-            <div class="r-name">星恒电源收购方案综合分析（券商方案主框架）<span class="r-badge">6.15更新</span></div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="appendix_b.html" target="_blank">
-          <div class="r-emoji">🎯</div>
-          <div class="r-body">
-            <div class="r-name">附件B：收并购方案与天保收购路径分析<span class="r-badge">7.2更新</span></div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="report-group">
-      <div class="rg-title">📑 附件专项分析（C-I）</div>
-      <div class="rg-grid">
-        <a class="r-card" href="appendix_c.html" target="_blank">
-          <div class="r-emoji">📈</div>
-          <div class="r-body">
-            <div class="r-name">附件C：竞争力演变与归因纵横分析</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="appendix_d.html" target="_blank">
-          <div class="r-emoji">💰</div>
-          <div class="r-body">
-            <div class="r-name">附件D：财务健康度纵横分析</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="appendix_e.html" target="_blank">
-          <div class="r-emoji">🏭</div>
-          <div class="r-body">
-            <div class="r-name">附件E：前驱体体外循环与斯科兰德竞争力分析</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="appendix_f.html" target="_blank">
-          <div class="r-emoji">🔬</div>
-          <div class="r-body">
-            <div class="r-name">附件F：固相法技术纵横分析法深度研判</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="appendix_g.html" target="_blank">
-          <div class="r-emoji">🔍</div>
-          <div class="r-body">
-            <div class="r-name">附件G：客户结构与产品安全风险纵横分析</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="appendix_h.html" target="_blank">
-          <div class="r-emoji">📐</div>
-          <div class="r-body">
-            <div class="r-name">附件H：估值分析专项——多方法交叉验证<span class="r-badge b-new">6.15新增</span></div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="appendix_i.html" target="_blank">
-          <div class="r-emoji">🔗</div>
-          <div class="r-body">
-            <div class="r-name">附件I：锂电池产业链纵横分析——投资标的推荐<span class="r-badge b-new">6.21新增</span></div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="report-group">
-      <div class="rg-title rg-supplementary">🔍 专项核验与并购研究（补充分析）</div>
-      <div class="rg-grid">
-        <a class="r-card" href="marketshare_verify.html" target="_blank">
-          <div class="r-emoji">📊</div>
-          <div class="r-body">
-            <div class="r-name">市场份额数据专项验证</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="claims_verification.html" target="_blank">
-          <div class="r-emoji">✅</div>
-          <div class="r-body">
-            <div class="r-name">陈述事项专项核验</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="mgmt_performance.html" target="_blank">
-          <div class="r-emoji">👔</div>
-          <div class="r-body">
-            <div class="r-name">管理层业绩专项核查</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="shareholder_mna.html" target="_blank">
-          <div class="r-emoji">🤝</div>
-          <div class="r-body">
-            <div class="r-name">股东并购历史专项分析</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="timeline.html" target="_blank">
-          <div class="r-emoji">📅</div>
-          <div class="r-body">
-            <div class="r-name">项目时间线（独立视图）</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="report-group">
-      <div class="rg-title">📱 视图与目录</div>
-      <div class="rg-grid">
-        <a class="r-card" href="index.html" target="_blank">
-          <div class="r-emoji">📋</div>
-          <div class="r-body">
-            <div class="r-name">简易目录（桌面版）</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="index_m.html" target="_blank">
-          <div class="r-emoji">📱</div>
-          <div class="r-body">
-            <div class="r-name">简易目录（手机版）</div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-        <a class="r-card" href="dashboard.html" target="_blank">
-          <div class="r-emoji">⭐</div>
-          <div class="r-body">
-            <div class="r-name">项目报告中心（本页面）<span class="r-badge b-main">当前</span></div>
-          </div>
-          <div class="r-arrow">→</div>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="tab-panel" id="panel-decision">
-    <div style="background:#fffaf0;border:2px solid #fbd38d;border-radius:10px;padding:24px;margin-top:16px">
-      <h2 style="color:#7c2d12;font-family:-apple-system,'PingFang SC',sans-serif;margin-bottom:14px;font-size:20px">🛑 2026-07-02 专题会决定 · 暂缓推进</h2>
-      <div style="color:#4a5568;font-size:14px;line-height:1.8">
-        <p style="margin-bottom:12px"><strong>会议主持</strong>：晓龙同志<br>
-        <strong>出席</strong>：胜强、仲昊、李华<br>
-        <strong>列席</strong>：公司投资部、战发部、新兴科技、项目专班</p>
-
-        <h3 style="color:#7c2d12;margin-top:16px;font-size:16px">三、核心结论</h3>
-        <p style="margin-bottom:10px">会议原则同意项目工作专班汇报，<strong style="color:#c53030">决定暂缓推进星恒电源项目</strong>。</p>
-
-        <h3 style="color:#7c2d12;margin-top:16px;font-size:16px">一、估值性价比不高</h3>
-        <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:13px">
-          <tr><td style="padding:6px;border-bottom:1px solid #e2e8f0"><strong>整体估值</strong></td><td style="padding:6px;border-bottom:1px solid #e2e8f0">40 亿元</td><td style="padding:6px;border-bottom:1px solid #e2e8f0;color:#718096">星恒管理层报价</td></tr>
-          <tr><td style="padding:6px;border-bottom:1px solid #e2e8f0"><strong>PE（2026管理层预测）</strong></td><td style="padding:6px;border-bottom:1px solid #e2e8f0;color:#c53030;font-weight:700">26.7 倍</td><td style="padding:6px;border-bottom:1px solid #e2e8f0">按管理层 2026 盈利预测</td></tr>
-          <tr><td style="padding:6px;border-bottom:1px solid #e2e8f0"><strong>PE（2025 实际盈利）</strong></td><td style="padding:6px;border-bottom:1px solid #e2e8f0;color:#c53030;font-weight:700">&gt;80 倍</td><td style="padding:6px;border-bottom:1px solid #e2e8f0">按 FY2025 审计口径</td></tr>
-          <tr><td style="padding:6px;border-bottom:1px solid #e2e8f0"><strong>并购市场参考红线</strong></td><td style="padding:6px;border-bottom:1px solid #e2e8f0;color:#b7791f">15-20 倍 PE</td><td style="padding:6px;border-bottom:1px solid #e2e8f0">超过即引发交易所重点关注</td></tr>
-          <tr><td style="padding:6px;border-bottom:1px solid #e2e8f0"><strong>独立估值（附件H）</strong></td><td style="padding:6px;border-bottom:1px solid #e2e8f0;color:#38a169;font-weight:700">约 21 亿元</td><td style="padding:6px;border-bottom:1px solid #e2e8f0">PS 0.57x 折溢价对称框架</td></tr>
-        </table>
-
-        <h3 style="color:#7c2d12;margin-top:16px;font-size:16px">二、天保基建主业问题</h3>
-        <ul style="margin-left:20px;margin-bottom:12px">
-          <li>装入星恒电源后，天保基建将转变为"地产 + 新能源"双主业格局</li>
-          <li>触及总资产/净资产/营业收入任一超 50% 临界线 → 重大资产重组</li>
-          <li>"地产 + 新能源 + 其他主业"三元结构稀释公司主业辨识度</li>
-          <li>再融资工具（定增、可转债）发行难度上升，IR 成本增加</li>
-        </ul>
-
-        <h3 style="color:#7c2d12;margin-top:16px;font-size:16px">三、法律尽调结论（终稿 2026-06-23）</h3>
-        <p style="margin-bottom:10px">允公律所 6 月 23 日完成现场尽调，<strong style="color:#c53030">倾向性认为星恒电源现阶段并非合适的投资时点</strong>：</p>
-        <ul style="margin-left:20px;margin-bottom:12px">
-          <li><strong>股东</strong>：35 家对赌股东回购条件全部触发，仅 20 余家口头同意临时中止协议（无法律约束力）；第一大股东启源纳川为失信被执行人 + 股权冻结 + 限消</li>
-          <li><strong>公司治理</strong>：三会虚化、经营高度依赖经理层；星恒电源与星恒滁州法人人格混同；制度不成体系</li>
-          <li><strong>经营安全</strong>：1 人死亡安全事故；星恒滁州 2023-2025 年 7 次锂电池质量行政处罚；9 起产品责任纠纷</li>
-        </ul>
-
-        <div style="text-align:center;margin-top:24px">
-          <a href="decision_20260702.html" style="display:inline-block;background:#c53030;color:#fff;padding:12px 28px;border-radius:6px;text-decoration:none;font-weight:700;font-family:-apple-system,'PingFang SC',sans-serif" target="_blank">→ 阅读决策全文</a>
+      <div class="rg-title">📊 主报告</div>
+      <a class="r-card" href="report_main_v15213.html" target="_blank">
+        <div class="r-emoji">📊</div>
+        <div class="r-body">
+          <div class="r-name">主报告 · V15.2.13 黄金线</div>
+          <div class="r-meta">2026-07-15 · 主报告, V15.2.13, 黄金线</div>
         </div>
+        <div class="r-arrow">→</div>
+      </a>
+    </div>
+    <div class="report-group">
+      <div class="rg-title">📑 其他有效报告</div>
+      <a class="r-card" href="appendix_a.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">附录 A · 业务结构图</div>
+          <div class="r-meta">2026-06 · 附录, 业务</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="appendix_b.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">附录 B · 产能与客户</div>
+          <div class="r-meta">2026-06 · 附录, 产能</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="appendix_c.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">附录 C · 上下游</div>
+          <div class="r-meta">2026-06 · 附录, 产业链</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="appendix_d.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">附录 D · 财务模型</div>
+          <div class="r-meta">2026-06 · 附录, 财务</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="appendix_e.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">附录 E · 估值对标</div>
+          <div class="r-meta">2026-06 · 附录, 估值</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="appendix_f.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">附录 F · 风险揭示</div>
+          <div class="r-meta">2026-06 · 附录, 风险</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="appendix_g.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">附录 G · 政策环境</div>
+          <div class="r-meta">2026-06 · 附录, 政策</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="appendix_h.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">附录 H · 交易结构</div>
+          <div class="r-meta">2026-06 · 附录, 交易</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="appendix_i.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">附录 I · 退出路径</div>
+          <div class="r-meta">2026-06 · 附录, 退出</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="claims_verification.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">尽调专题 · 关键陈述核实</div>
+          <div class="r-meta">2026-06 · 尽调, 专题</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="decision_20260702.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">决策汇报 · 2026-07-02</div>
+          <div class="r-meta">2026-07-02 · 决策, 汇报</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="meeting_briefing.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">会谈简报</div>
+          <div class="r-meta">2026-06 · 会谈</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="mgmt_performance.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">管理层绩效分析</div>
+          <div class="r-meta">2026-06 · 管理层</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="proposal_analysis.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">收购方案分析</div>
+          <div class="r-meta">2026-06 · 方案</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a class="r-card" href="shareholder_mna.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">股东与并购对价</div>
+          <div class="r-meta">2026-06 · 股东</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+    </div>
+    <div class="archived-note">
+      📦 以下 11 份报告已归档（2026-07-17 起不再在线展示）。如需找回，请告知主公从 git 历史取回。
+    </div>
+    <div class="report-group">
+      <div class="rg-title">🗄 已归档（不计入有效报告）</div>
+      <div class="r-card archived">
+        <div class="r-emoji">🗄</div>
+        <div class="r-body">
+          <div class="r-name">主报告（旧版·被 v15.2.13 取代）</div>
+          <div class="r-meta"> · 旧版主报告，已被 V15.2.13 取代</div>
+        </div>
+        <div class="r-arrow">—</div>
+      </div>
+      <div class="r-card archived">
+        <div class="r-emoji">🗄</div>
+        <div class="r-body">
+          <div class="r-name">主报告 V15.2.7</div>
+          <div class="r-meta"> · 已归档</div>
+        </div>
+        <div class="r-arrow">—</div>
+      </div>
+      <div class="r-card archived">
+        <div class="r-emoji">🗄</div>
+        <div class="r-body">
+          <div class="r-name">主报告 V15.2.8</div>
+          <div class="r-meta"> · 已归档</div>
+        </div>
+        <div class="r-arrow">—</div>
+      </div>
+      <div class="r-card archived">
+        <div class="r-emoji">🗄</div>
+        <div class="r-body">
+          <div class="r-name">主报告 V15.2.9</div>
+          <div class="r-meta"> · 已归档</div>
+        </div>
+        <div class="r-arrow">—</div>
+      </div>
+      <div class="r-card archived">
+        <div class="r-emoji">🗄</div>
+        <div class="r-body">
+          <div class="r-name">主报告 V15.2.10</div>
+          <div class="r-meta"> · 已归档</div>
+        </div>
+        <div class="r-arrow">—</div>
+      </div>
+      <div class="r-card archived">
+        <div class="r-emoji">🗄</div>
+        <div class="r-body">
+          <div class="r-name">主报告 V15.2.11</div>
+          <div class="r-meta"> · 已归档</div>
+        </div>
+        <div class="r-arrow">—</div>
+      </div>
+      <div class="r-card archived">
+        <div class="r-emoji">🗄</div>
+        <div class="r-body">
+          <div class="r-name">主报告 V15.2.11.1</div>
+          <div class="r-meta"> · 已归档</div>
+        </div>
+        <div class="r-arrow">—</div>
+      </div>
+      <div class="r-card archived">
+        <div class="r-emoji">🗄</div>
+        <div class="r-body">
+          <div class="r-name">主报告 V15.2.11.2</div>
+          <div class="r-meta"> · 已归档</div>
+        </div>
+        <div class="r-arrow">—</div>
+      </div>
+      <div class="r-card archived">
+        <div class="r-emoji">🗄</div>
+        <div class="r-body">
+          <div class="r-name">主报告 V15.2.12</div>
+          <div class="r-meta"> · 已归档</div>
+        </div>
+        <div class="r-arrow">—</div>
+      </div>
+      <div class="r-card archived">
+        <div class="r-emoji">🗄</div>
+        <div class="r-body">
+          <div class="r-name">主报告 V15.2.11.3</div>
+          <div class="r-meta"> · 已归档</div>
+        </div>
+        <div class="r-arrow">—</div>
+      </div>
+      <div class="r-card archived">
+        <div class="r-emoji">🗄</div>
+        <div class="r-body">
+          <div class="r-name">市场份额核实（早期版本）</div>
+          <div class="r-meta"> · 早期数据核实脚本，已被 claims_verification.html 取代</div>
+        </div>
+        <div class="r-arrow">—</div>
       </div>
     </div>
   </div>
 
-</div>
-
-<div class="footer">
-  <a href="https://jinzhanxiang.github.io/tianbao-projects/">天保控股项目报告中心</a> ·
-  星恒电源投资并购分析 · GitHub Pages ·
-  2026-07-11 v3 全报告中心更新（添加专题会决策 + 双视图）
+  <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; text-align: center;">
+    📅 主报告V15.2.13 更新：2026-07-17 · 双视图 dashboard 自动生成（manifest 派生）<br>
+    🔗 <a href="https://jinzhanxiang.github.io/tianbao-projects/" style="color: var(--primary);">天保控股项目中心</a> · 仓库 jinzhanxiang/xingheng-report
+  </div>
 </div>
 
 <script>
@@ -399,7 +492,7 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     tab.classList.add('active');
     document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
-    window.scrollTo({top:0, behavior:'smooth'});
+    window.scrollTo({top: 0, behavior: 'smooth'});
   });
 });
 </script>
